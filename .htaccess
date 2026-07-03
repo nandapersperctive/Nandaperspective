@@ -1,0 +1,137 @@
+# ═══════════════════════════════════════════════════════════════
+#  .htaccess — Nanda Perspective
+#  Untuk: cPanel / Shared Hosting / Apache Web Server
+#  Fitur: Security headers, HTTPS redirect, cache, blokir serangan
+# ═══════════════════════════════════════════════════════════════
+
+Options -Indexes -ExecCGI
+ServerSignature Off
+
+# ── Aktifkan mod_rewrite ─────────────────────────────────────────
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Paksa HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redirect www → non-www
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ── Security Headers ─────────────────────────────────────────────
+<IfModule mod_headers.c>
+
+    # HTTPS wajib 1 tahun
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # Anti MIME sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Anti clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # XSS filter lama
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Matikan fitur berbahaya
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+
+    # Content Security Policy
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; frame-src 'none'; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+
+    # Lapisan tambahan
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    Header always set Cross-Origin-Resource-Policy "same-origin"
+
+    # Sembunyikan info server
+    Header always unset X-Powered-By
+    Header always unset Server
+    Header always set Server "Web"
+
+    # Cegah sniffer
+    Header always set X-DNS-Prefetch-Control "off"
+
+    # Cache aset statis
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+
+    <FilesMatch "\.html$">
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+    </FilesMatch>
+
+    <FilesMatch "\.(xlsx|pdf)$">
+        Header set Cache-Control "public, max-age=86400"
+        Header set Content-Disposition "attachment"
+    </FilesMatch>
+
+</IfModule>
+
+# ── Blokir akses ke file sensitif ────────────────────────────────
+<FilesMatch "(^\.htaccess|^\.env|^composer\.(json|lock)|package\.json|package-lock\.json|^netlify\.toml|^_headers|\.(bak|old|orig|sql|sql\.gz|zip|tar|tar\.gz|log|swp|config)$)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ── Blokir folder/file yang tidak boleh diakses langsung ─────────
+RedirectMatch 403 ^/\.git
+RedirectMatch 403 ^/\.svn
+
+# ── Blokir path yang sering disasar scanner/bot serangan ─────────
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} ^/(wp-admin|wp-login\.php|xmlrpc\.php|phpmyadmin|administrator)(/.*)?$ [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ── Blokir User-Agent bot berbahaya ──────────────────────────────
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_USER_AGENT} (sqlmap|nikto|nmap|masscan|havij|acunetix|dirbuster|zgrab|gobuster|wpscan|nuclei|fimap|w3af) [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ── Blokir pola serangan umum di query string (XSS/SQLi/traversal) ─
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (union.*select|select.*from|insert.*into|drop.*table) [NC,OR]
+    RewriteCond %{QUERY_STRING} \.\./|\.\.\\  [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ── Rate limiting dasar (mod_evasive / jika tersedia) ────────────
+<IfModule mod_evasive24.c>
+    DOSHashTableSize    3097
+    DOSPageCount        10
+    DOSSiteCount        100
+    DOSPageInterval     2
+    DOSSiteInterval     1
+    DOSBlockingPeriod   600
+</IfModule>
+
+# ── Kompresi GZIP (hemat bandwidth, percepat loading) ────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json text/plain text/xml
+</IfModule>
+
+# ── MIME Types ───────────────────────────────────────────────────
+<IfModule mod_mime.c>
+    AddType application/javascript         .js
+    AddType text/css                       .css
+    AddType application/vnd.ms-excel      .xlsx
+    AddType font/woff2                     .woff2
+    AddType font/woff                      .woff
+</IfModule>
+
+# ── Blokir akses langsung ke folder ──────────────────────────────
+RedirectMatch 403 ^/content/?$
+RedirectMatch 403 ^/js/?$
+RedirectMatch 403 ^/css/?$

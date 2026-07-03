@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/bug-monitor.js"></script>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Materi dan template akuntansi gratis untuk UMKM dan masyarakat umum.">
+    <title>Public Resources | Nanda Perspective</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nanda Perspective">
+    <meta property="og:title" content="Public Resources | Nanda Perspective">
+    <meta property="og:description" content="Materi dan template akuntansi gratis untuk UMKM dan masyarakat umum.">
+    <meta property="og:url" content="https://nandaperspective.com/public.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Public Resources | Nanda Perspective">
+    <meta name="twitter:description" content="Materi dan template akuntansi gratis untuk UMKM dan masyarakat umum.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <a class="logo" href="index.html" aria-label="Nanda Perspective home">
+        NANDA PERSPECTIVE
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        Menu
+    </button>
+    <nav id="main-nav" aria-label="Main navigation">
+        <a href="index.html#home" data-i18n="navHome">Home</a>
+        <a href="index.html#articles" data-i18n="navArticles">Insights</a>
+        <a href="portfolio.html" data-i18n="navPortfolio">Portfolio</a>
+        <a href="public.html" data-i18n="navPublic">Public</a>
+        <a href="about.html" data-i18n="navAbout">About</a>
+        <a href="index.html#contact" data-i18n="navContact">Contact</a>
+    </nav>
+</header>
+
+<main class="public-page">
+
+    <section class="public-hero">
+        <p class="eyebrow" id="public-eyebrow">Free Resources</p>
+        <h1 id="public-title">Akuntansi untuk Semua</h1>
+        <p id="public-description"></p>
+    </section>
+
+    <div class="section public-body" id="resources-container"></div>
+
+    <section class="section public-note">
+        <p class="eyebrow" id="public-note-eyebrow">Catatan</p>
+        <h2 id="public-note-title"></h2>
+        <p id="public-note-body"></p>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; <span id="year">2026</span> Nanda Perspective.</p>
+    <a href="index.html" data-i18n="backToHome">Back to home</a>
+</footer>
+
+<!-- Material reader modal -->
+<div id="mat-modal" class="mat-modal-bg">
+    <div class="mat-modal">
+        <div class="mat-modal-header">
+            <h2 class="mat-modal-title" id="mat-modal-title"></h2>
+            <div class="mat-modal-actions">
+                <button class="mat-print-btn" onclick="window.print()">🖨 Cetak / Simpan PDF</button>
+                <button class="mat-close-btn" onclick="closeMaterial()" aria-label="Tutup">✕</button>
+            </div>
+        </div>
+        <div class="mat-modal-body" id="mat-modal-body"></div>
+    </div>
+</div>
+
+<script src="content/site-text.js"></script>
+<script src="content/about-content.js"></script>
+<script src="content/portfolio-content.js"></script>
+<script src="content/articles-content.js"></script>
+<script src="content/public-content.js"></script>
+<script src="js/articles.js"></script>
+<script src="js/site.js"></script>
+<script src="js/public.js"></script>
+
+</body>
+</html>

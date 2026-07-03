@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n \"</div><!-- WELCOME\\\\|</div>$\" /Users/aaaa/nandaperspective/downloads/siklus-akuntansi.html)",
+      "Bash(node --input-type=module)",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}

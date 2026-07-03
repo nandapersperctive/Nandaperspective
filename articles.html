@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/bug-monitor.js"></script>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Read insights from Nanda Perspective.">
+    <title>Article | Nanda Perspective</title>
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Nanda Perspective">
+    <meta property="og:title" content="Article | Nanda Perspective">
+    <meta property="og:description" content="Read insights from Nanda Perspective.">
+    <meta property="og:url" content="https://nandaperspective.com/articles.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Article | Nanda Perspective">
+    <meta name="twitter:description" content="Read insights from Nanda Perspective.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <a class="logo" href="index.html">NANDA PERSPECTIVE</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        Menu
+    </button>
+    <nav id="main-nav" aria-label="Main navigation">
+        <a href="index.html#home" data-i18n="navHome">Home</a>
+        <a href="index.html#articles" data-i18n="navArticles">Articles</a>
+        <a href="portfolio.html" data-i18n="navPortfolio">Portfolio</a>
+        <a href="public.html" data-i18n="navPublic">Public</a>
+        <a href="about.html" data-i18n="navAbout">About</a>
+        <a href="index.html#contact" data-i18n="navContact">Contact</a>
+    </nav>
+</header>
+
+<main class="article-page">
+
+    <!-- Two-column layout -->
+    <div class="article-layout">
+
+        <!-- Main article content -->
+        <article class="article-main">
+            <a class="back-link" href="index.html#articles" data-i18n="backToArticles">← Back to articles</a>
+
+            <!-- CATEGORY • DATE • READ TIME (filled by JS) -->
+            <p id="category"></p>
+
+            <!-- Article title -->
+            <h1 id="title"></h1>
+
+            <!-- Excerpt / lead paragraph -->
+            <p id="meta"></p>
+
+            <!-- Optional hero image (injected by JS if article.image is set) -->
+            <div id="article-hero-img"></div>
+
+            <!-- Table of contents (injected by JS) -->
+            <div id="article-toc"></div>
+
+            <!-- Article sections (injected by JS) -->
+            <div id="content"></div>
+
+            <!-- Share bar (injected by JS) -->
+            <div id="article-share"></div>
+        </article>
+
+        <!-- Sticky sidebar -->
+        <aside class="article-sidebar">
+            <div class="sidebar-author">
+                <p class="eyebrow">Author</p>
+                <h3>Nanda Mulia</h3>
+                <p>Accounting student at Universitas Syiah Kuala, writing about investing, economics, and business from a long-term perspective.</p>
+                <a href="about.html" class="view-analysis-link">About me →</a>
+            </div>
+
+            <div class="sidebar-card">
+                <p class="eyebrow">Portfolio</p>
+                <p>View my investment holdings and the analysis behind each position.</p>
+                <a href="portfolio.html" class="view-analysis-link">View Portfolio →</a>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Related insights -->
+    <section class="section related-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">Next reading</p>
+                <h2 data-i18n="relatedArticles">Related Insights</h2>
+            </div>
+        </div>
+        <div class="article-grid" id="related-list"></div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; <span id="year">2026</span> Nanda Perspective.</p>
+    <a href="index.html" data-i18n="backToHome">Back to home</a>
+</footer>
+
+<script src="content/site-text.js"></script>
+<script src="content/about-content.js"></script>
+<script src="content/portfolio-content.js"></script>
+<script src="content/articles-content.js"></script>
+<script src="js/articles.js"></script>
+<script src="js/site.js"></script>
+<script src="js/article.js"></script>
+
+</body>
+</html>

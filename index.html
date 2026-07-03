@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/bug-monitor.js"></script>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Nanda Perspective explores investing, business, finance, and economics with a long-term mindset.">
+    <title>Nanda Perspective | Investment & Economics Journal</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nanda Perspective">
+    <meta property="og:title" content="Nanda Perspective | Investment & Economics Journal">
+    <meta property="og:description" content="Nanda Perspective explores investing, business, finance, and economics with a long-term mindset.">
+    <meta property="og:url" content="https://nandaperspective.com/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nanda Perspective | Investment & Economics Journal">
+    <meta name="twitter:description" content="Nanda Perspective explores investing, business, finance, and economics with a long-term mindset.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <a class="logo" href="index.html" aria-label="Nanda Perspective home">
+        NANDA PERSPECTIVE
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        Menu
+    </button>
+
+    <nav id="main-nav" aria-label="Main navigation">
+        <a href="#home" data-i18n="navHome">Home</a>
+        <a href="#articles" data-i18n="navArticles">Insights</a>
+        <a href="portfolio.html" data-i18n="navPortfolio">Portfolio</a>
+        <a href="public.html" data-i18n="navPublic">Public</a>
+        <a href="about.html" data-i18n="navAbout">About</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-copy">
+            <p class="eyebrow" data-i18n="heroEyebrow">Personal journal</p>
+            <h1>Read Widely.<br>Think Deeply.<br>Write Honestly.</h1>
+
+            <p data-i18n="heroDescription">
+                A personal space to explore ideas across business, markets, and everyday thinking — written by a student learning to see the world more clearly.
+            </p>
+
+            <div class="hero-actions">
+                <a class="button primary" href="#articles" data-i18n="readArticles">Read Insights</a>
+                <a class="button secondary" href="portfolio.html" data-i18n="viewPortfolio">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section intro">
+        <div>
+            <p class="eyebrow">Approach</p>
+            <h2 data-i18n="approachTitle">Writing to understand, not just to react to markets.</h2>
+        </div>
+        <p data-i18n="approachBody">
+            Every article starts with a simple question: what truly drives the value of an asset, business, or economic policy?
+        </p>
+    </section>
+
+    <section class="section articles-section" id="articles">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow" data-i18n="latestThinking">Latest thinking</p>
+                <h2 data-i18n="latestArticles">Latest Insights</h2>
+            </div>
+            <div class="article-tools">
+                <label class="search-box">
+                    <span data-i18n="searchLabel">Search</span>
+                    <input id="article-search" type="search" placeholder="Search topics, categories, or titles" data-i18n-placeholder="searchPlaceholder">
+                </label>
+                <label class="select-box">
+                    <span data-i18n="sortLabel">Sort</span>
+                    <select id="article-sort">
+                        <option value="newest" data-i18n="sortNewest">Newest</option>
+                        <option value="oldest" data-i18n="sortOldest">Oldest</option>
+                        <option value="readTime" data-i18n="sortReadTime">Read time</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <div class="article-summary">
+            <span id="article-count"></span>
+            <div class="filter-group" id="category-filter" aria-label="Filter artikel"></div>
+        </div>
+
+        <div id="featured-article"></div>
+        <div class="article-grid" id="article-list"></div>
+        <div class="empty-state" id="empty-state" hidden>
+            <h3 data-i18n="emptyTitle">No insights found</h3>
+            <p data-i18n="emptyBody">Try another keyword or choose a different category.</p>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <div>
+            <p class="eyebrow">Newsletter</p>
+            <h2 data-i18n="newsletterTitle">Get a summary of new insights.</h2>
+            <p data-i18n="newsletterBody">Enter your email for a browser-only subscription simulation. Data is stored locally on this device.</p>
+        </div>
+        <form class="subscribe-form" id="subscribe-form">
+            <label>
+                <span>Email</span>
+                <input id="subscriber-email" type="email" placeholder="name@email.com" required data-i18n-placeholder="emailPlaceholder">
+            </label>
+            <button class="button primary" type="submit" data-i18n="subscribe">Subscribe</button>
+            <p class="form-message" id="form-message" role="status"></p>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; <span id="year">2026</span> Nanda Perspective.</p>
+    <a href="#home" data-i18n="backToTop">Back to top</a>
+</footer>
+
+<script src="content/site-text.js"></script>
+<script src="content/about-content.js"></script>
+<script src="content/portfolio-content.js"></script>
+<script src="content/articles-content.js"></script>
+<script src="js/articles.js"></script>
+<script src="js/site.js"></script>
+<script src="js/home.js"></script>
+
+</body>
+</html>

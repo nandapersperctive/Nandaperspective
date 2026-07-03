@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/bug-monitor.js"></script>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Stock analysis from Nanda Perspective.">
+    <title>Stock Analysis | Nanda Perspective</title>
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Nanda Perspective">
+    <meta property="og:title" content="Stock Analysis | Nanda Perspective">
+    <meta property="og:description" content="Stock analysis from Nanda Perspective.">
+    <meta property="og:url" content="https://nandaperspective.com/stock.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Stock Analysis | Nanda Perspective">
+    <meta name="twitter:description" content="Stock analysis from Nanda Perspective.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <a class="logo" href="index.html" aria-label="Nanda Perspective home">
+        NANDA PERSPECTIVE
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        Menu
+    </button>
+
+    <nav id="main-nav" aria-label="Main navigation">
+        <a href="index.html#home" data-i18n="navHome">Home</a>
+        <a href="index.html#articles" data-i18n="navArticles">Insights</a>
+        <a href="portfolio.html" data-i18n="navPortfolio">Portfolio</a>
+        <a href="public.html" data-i18n="navPublic">Public</a>
+        <a href="about.html" data-i18n="navAbout">About</a>
+        <a href="index.html#contact" data-i18n="navContact">Contact</a>
+    </nav>
+</header>
+
+<main class="stock-page">
+
+    <!-- Hero section: ticker, company, key stats -->
+    <div class="stock-hero" id="stock-hero">
+        <a class="back-link" href="portfolio.html" id="stock-back-link">← Back to portfolio</a>
+
+        <div class="stock-identity">
+            <div>
+                <h1 id="stock-company"></h1>
+                <p class="stock-sector" id="stock-sector"></p>
+            </div>
+        </div>
+
+        <div class="stock-snapshot" id="stock-snapshot"></div>
+    </div>
+
+    <!-- Full analysis sections -->
+    <div class="stock-body">
+        <div class="stock-analysis" id="stock-analysis"></div>
+
+        <aside class="stock-sidebar">
+            <div class="sidebar-card" id="stock-sidebar"></div>
+        </aside>
+    </div>
+
+    <!-- Other holdings -->
+    <section class="section related-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow" id="other-eyebrow">Portfolio</p>
+                <h2 id="other-title">Other Holdings</h2>
+            </div>
+        </div>
+        <div class="holding-grid" id="related-holdings"></div>
+    </section>
+
+    <div class="stock-disclaimer">
+        <p class="disclaimer-icon">⚠</p>
+        <div>
+            <p class="disclaimer-title" id="disclaimer-title">Not Investment Advice</p>
+            <p class="disclaimer-body" id="disclaimer-body"></p>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; <span id="year">2026</span> Nanda Perspective.</p>
+    <a href="portfolio.html" id="footer-back-link">Back to portfolio</a>
+</footer>
+
+<script src="content/site-text.js"></script>
+<script src="content/about-content.js"></script>
+<script src="content/portfolio-content.js"></script>
+<script src="content/articles-content.js"></script>
+<script src="js/articles.js"></script>
+<script src="js/site.js"></script>
+<script src="js/stock.js"></script>
+
+</body>
+</html>

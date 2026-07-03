@@ -1,0 +1,149 @@
+# ═══════════════════════════════════════════════════════════════
+#  NETLIFY CONFIG — Nanda Perspective
+#  Hosting: Netlify Free Tier
+#  CDN: Netlify Edge Network (100+ lokasi di dunia)
+#  DDoS: Dilindungi otomatis oleh Netlify infrastructure
+#  Kapasitas: Jutaan request/bulan tanpa crash
+# ═══════════════════════════════════════════════════════════════
+
+[build]
+  publish = "."
+
+# ── Social preview (Open Graph / Twitter Card) untuk artikel & saham ─
+# Menyisipkan judul/foto/ringkasan yang benar per-artikel/per-saham saat
+# linknya dibagikan, dengan membaca ulang content/*.js setiap request —
+# jadi otomatis ikut berubah kalau kamu edit artikel atau data saham.
+[[edge_functions]]
+  path = "/articles.html"
+  function = "social-preview"
+
+[[edge_functions]]
+  path = "/stock.html"
+  function = "social-preview"
+
+# ── Security Headers (berlaku untuk SEMUA halaman) ──────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+
+    # ▸ HTTPS wajib selama 1 tahun, termasuk subdomain
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # ▸ Blokir MIME-type sniffing (lindungi dari file upload attack)
+    X-Content-Type-Options = "nosniff"
+
+    # ▸ Blokir iframe embedding dari domain lain (anti-clickjacking)
+    X-Frame-Options = "SAMEORIGIN"
+
+    # ▸ Legacy XSS filter (untuk browser lama)
+    X-XSS-Protection = "1; mode=block"
+
+    # ▸ Kontrol informasi referrer yang dikirim
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # ▸ Matikan fitur browser yang tidak dipakai (kamera, mikrofon, GPS, dll)
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=(), interest-cohort=()"
+
+    # ▸ Content Security Policy — paling penting
+    #   Hanya izinkan resource dari domain sendiri + Google Fonts
+    #   Blokir semua script inline yang tidak dikenal, inline eval, dll.
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; frame-src 'none'; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+
+    # ▸ Sembunyikan info server (jangan kasih tahu penyerang pakai apa)
+    Server = "Nanda"
+    X-Powered-By = ""
+
+    # ▸ Cegah DNS prefetch yang tidak perlu
+    X-DNS-Prefetch-Control = "off"
+
+    # ▸ Lapisan tambahan: cegah embed lintas-origin & policy file Flash/Silverlight lama
+    X-Permitted-Cross-Domain-Policies = "none"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
+
+# ── Cache aset statis (performa CDN) ────────────────────────────
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/downloads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Disposition = "attachment"
+
+# ── HTML: jangan cache (agar update langsung terlihat) ──────────
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ── Redirect HTTP → HTTPS otomatis ──────────────────────────────
+[[redirects]]
+  from = "http://nandaperspective.com/*"
+  to   = "https://nandaperspective.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from = "http://www.nandaperspective.com/*"
+  to   = "https://nandaperspective.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from = "https://www.nandaperspective.com/*"
+  to   = "https://nandaperspective.com/:splat"
+  status = 301
+
+# ── Blokir path yang sering disasar scanner/bot serangan ────────
+[[redirects]]
+  from   = "/.env"
+  to     = "/index.html"
+  status = 404
+[[redirects]]
+  from   = "/.git/*"
+  to     = "/index.html"
+  status = 404
+[[redirects]]
+  from   = "/wp-admin/*"
+  to     = "/index.html"
+  status = 404
+[[redirects]]
+  from   = "/wp-login.php"
+  to     = "/index.html"
+  status = 404
+[[redirects]]
+  from   = "/xmlrpc.php"
+  to     = "/index.html"
+  status = 404
+[[redirects]]
+  from   = "/phpmyadmin/*"
+  to     = "/index.html"
+  status = 404
+[[redirects]]
+  from   = "/administrator/*"
+  to     = "/index.html"
+  status = 404
+
+# ── Halaman 404 custom ──────────────────────────────────────────
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 404

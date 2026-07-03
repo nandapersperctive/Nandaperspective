@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/bug-monitor.js"></script>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Nanda Perspective portfolio holdings and investment analysis.">
+    <title>Portfolio | Nanda Perspective</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nanda Perspective">
+    <meta property="og:title" content="Portfolio | Nanda Perspective">
+    <meta property="og:description" content="Nanda Perspective portfolio holdings and investment analysis.">
+    <meta property="og:url" content="https://nandaperspective.com/portfolio.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Portfolio | Nanda Perspective">
+    <meta name="twitter:description" content="Nanda Perspective portfolio holdings and investment analysis.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <a class="logo" href="index.html" aria-label="Nanda Perspective home">
+        NANDA PERSPECTIVE
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        Menu
+    </button>
+
+    <nav id="main-nav" aria-label="Main navigation">
+        <a href="index.html#home" data-i18n="navHome">Home</a>
+        <a href="index.html#articles" data-i18n="navArticles">Insights</a>
+        <a href="portfolio.html" data-i18n="navPortfolio">Portfolio</a>
+        <a href="public.html" data-i18n="navPublic">Public</a>
+        <a href="about.html" data-i18n="navAbout">About</a>
+        <a href="index.html#contact" data-i18n="navContact">Contact</a>
+    </nav>
+
+</header>
+
+<main class="portfolio-page">
+    <section class="portfolio-hero">
+        <p class="eyebrow" data-i18n="portfolioEyebrow">Personal portfolio</p>
+        <h1 data-i18n="portfolioTitle">Stocks I Own and the Analysis Behind Them</h1>
+        <p data-i18n="portfolioDescription">A structured view of holdings, investment thesis, risk factors, and monitoring notes. This page is for personal documentation, not investment advice.</p>
+    </section>
+
+    <div class="portfolio-body">
+        <section class="section holdings-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow" data-i18n="holdingsEyebrow">Holdings</p>
+                    <h2 data-i18n="holdingsTitle">Current Stock Analysis</h2>
+                </div>
+            </div>
+            <div class="holding-grid" id="holding-list"></div>
+        </section>
+
+        <aside class="updates-sidebar">
+            <p class="eyebrow">Reports</p>
+            <h2 class="updates-title">Portfolio Update</h2>
+            <div class="updates-list" id="updates-list"></div>
+        </aside>
+    </div>
+
+    <section class="section portfolio-note">
+        <p class="eyebrow" data-i18n="portfolioNoteEyebrow">Important note</p>
+        <h2 data-i18n="portfolioNoteTitle">This portfolio is a learning journal.</h2>
+        <p data-i18n="portfolioNoteBody">The analysis here records personal reasoning and may change as new information appears. It should not be treated as a recommendation to buy or sell any stock.</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; <span id="year">2026</span> Nanda Perspective.</p>
+    <a href="index.html" data-i18n="backToHome">Back to home</a>
+</footer>
+
+<script src="content/site-text.js"></script>
+<script src="content/about-content.js"></script>
+<script src="content/portfolio-content.js"></script>
+<script src="content/articles-content.js"></script>
+<script src="js/articles.js"></script>
+<script src="js/site.js"></script>
+<script src="js/portfolio.js"></script>
+
+</body>
+</html>
