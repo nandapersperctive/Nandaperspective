@@ -1816,6 +1816,12 @@ footer a:hover { color: rgba(255,255,255,.55); }
     margin-top: 8px;
 }
 
+.sidebar-card audio {
+    width: 100%;
+    display: block;
+    margin-top: 12px;
+}
+
 /* Sidebar TOC (used on stock pages) */
 .sidebar-toc {
     padding-left: 16px;

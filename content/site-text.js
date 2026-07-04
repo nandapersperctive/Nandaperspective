@@ -10,6 +10,15 @@
    Article text lives in content/articles-content.js
    About page text lives in content/about-content.js
    Portfolio page text lives in content/portfolio-content.js
+
+   HOW TO ADD AN AUDIOBOOK PLAYER TO THE ARTICLE SIDEBAR
+   1. Put the audio file (.mp3, .m4a, .wav, etc.) inside the
+      "images/profile/" folder — e.g. images/profile/my-audiobook.mp3.
+   2. Change audiobookTrack: "" to
+      audiobookTrack: "images/profile/my-audiobook.mp3".
+   3. Save. A small card with an audio player appears in the sidebar of
+      every article page, right below the Portfolio card.
+   Leave audiobookTrack: "" if you don't want it shown.
    ===================================================================== */
 
 const siteText = {
@@ -62,4 +71,8 @@ const siteText = {
     articleNotFoundMeta: "Please return to the insights list.",
     articleNotFoundBody: "The insight you are looking for is not available or the link has changed.",
     articleNotFoundButton: "Browse All Insights",
+
+    audiobookEyebrow: "Audiobook",
+    audiobookBody: "Listen to the audiobook that shaped how I think about investing.",
+    audiobookTrack: ""
 };

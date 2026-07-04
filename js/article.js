@@ -17,6 +17,16 @@ const tocEl       = document.getElementById("article-toc");
 const contentEl   = document.getElementById("content");
 const relatedList = document.getElementById("related-list");
 
+/* Optional audiobook player in the sidebar — same on every article page */
+const sidebarAudiobookEl = document.getElementById("sidebar-audiobook");
+if (sidebarAudiobookEl && siteText.audiobookTrack) {
+    sidebarAudiobookEl.innerHTML = `
+        <p class="eyebrow">${siteText.audiobookEyebrow}</p>
+        <p>${siteText.audiobookBody}</p>
+        <audio controls preload="none" src="${siteText.audiobookTrack}"></audio>
+    `;
+}
+
 function card(article) {
     return `
         <article class="card">

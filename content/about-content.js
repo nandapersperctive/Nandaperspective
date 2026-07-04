@@ -31,6 +31,6 @@ const aboutText = {
 
     quote: "",
 
-    audioTrack: "",
-    audioLabel: "Now Playing"
+    audioTrack: "images/profile/Feeling-Good.mp3",
+    audioLabel: "Feeling Good"
 };
