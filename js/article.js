@@ -16,14 +16,24 @@ const heroImgEl   = document.getElementById("article-hero-img");
 const tocEl       = document.getElementById("article-toc");
 const contentEl   = document.getElementById("content");
 const relatedList = document.getElementById("related-list");
-
-/* Optional audiobook player in the sidebar — same on every article page */
 const sidebarAudiobookEl = document.getElementById("sidebar-audiobook");
-if (sidebarAudiobookEl && siteText.audiobookTrack) {
+
+/* Optional audiobook player in the sidebar — specific to whichever
+   article is currently open (see the "audiobook" field per article). */
+function renderAudiobook(article) {
+    if (!sidebarAudiobookEl) return;
+
+    if (!article || !article.audiobook) {
+        sidebarAudiobookEl.innerHTML = "";
+        sidebarAudiobookEl.hidden = true;
+        return;
+    }
+
+    sidebarAudiobookEl.hidden = false;
     sidebarAudiobookEl.innerHTML = `
         <p class="eyebrow">${siteText.audiobookEyebrow}</p>
         <p>${siteText.audiobookBody}</p>
-        <audio controls preload="none" src="${siteText.audiobookTrack}"></audio>
+        <audio controls preload="none" src="${article.audiobook}"></audio>
     `;
 }
 
@@ -55,8 +65,11 @@ function renderArticle() {
             <a class="button primary not-found-cta" href="index.html#articles">${siteText.articleNotFoundButton}</a>
         `;
         relatedList.innerHTML  = articles.slice(0, 3).map(card).join("");
+        renderAudiobook(null);
         return;
     }
+
+    renderAudiobook(article);
 
     document.title = `${article.title} | Nanda Perspective`;
 

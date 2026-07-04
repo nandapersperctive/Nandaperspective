@@ -76,6 +76,13 @@
                    Jika field ini tidak ada (atau diisi "") → kartu tampil seperti biasa (teks saja).
    - imageAlt      (optional) teks alt untuk foto. Default: judul artikel.
    - imageCaption  (optional) keterangan foto, muncul di bawah foto halaman artikel.
+   - audiobook     (optional) audiobook khusus untuk artikel ini — muncul sebagai
+                   kartu pemutar audio di sidebar, HANYA saat artikel ini dibuka.
+                   1. Taruh file audio (.mp3, .m4a, .wav) di folder
+                      images/articles/audiobook/
+                   2. Isi path-nya, contoh:
+                      audiobook: "images/articles/audiobook/artikel1.mp3"
+                   Kosongkan ("") kalau artikel ini tidak punya audiobook.
    - sections      list of sections, each with "sectionTitle" + "paragraphs"
    ===================================================================== */
 
@@ -93,6 +100,7 @@ const articleCatalog = [
     excerpt: "Investing is not only for wealthy people. Students can start by understanding assets, cash flow, and risk management.",
     image: "images/articles/article-id1.png",
     imageAlt: "Why Students Should Learn Investing Early",
+    audiobook: "",
     sections: [
         {
             sectionTitle: "Time Is the Student's Greatest Asset",
@@ -147,6 +155,7 @@ const articleCatalog = [
     excerpt: "Interest rate changes often influence the stock market, company valuations, and investor decisions.",
     image: "images/articles/article-id2.png",
     imageAlt: "How BI Interest Rates Affect Stock Prices",
+    audiobook: "",
     sections: [
         {
             sectionTitle: "How Interest Rates Work",
@@ -181,6 +190,7 @@ const articleCatalog = [
     excerpt: "Large revenue does not always mean a healthy business. Investors need to examine earnings quality, cash flow, and capital structure.",
     image: "images/articles/article-id3.png",
     imageAlt: "How to Read Financial Statements Without Getting Trapped by Big Numbers",
+    audiobook: "",
     sections: [
         {
             sectionTitle: "Revenue Is Vanity, Profit Is Sanity, Cash Is Reality",
@@ -269,6 +279,7 @@ const articleCatalog = [
     excerpt: "Prices rise, money weakens, and savings quietly lose value. Understanding inflation is the first step to protecting yourself from it.",
     image: "images/articles/article-id5.png",
     imageAlt: "What Is Inflation? Understanding the Silent Force That Shrinks Your Money",
+    audiobook: "",
     sections: [
         {
             sectionTitle: "The Definition",
