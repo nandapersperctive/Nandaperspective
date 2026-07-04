@@ -372,7 +372,7 @@ function pgWelcome(){
     <p class="welcome-p">Sesuaikan siklus akuntansi dan Chart of Accounts (COA) otomatis berdasarkan jenis usaha Anda. Pilihan dapat diubah kapan saja melalui Pengaturan.</p>
 
     <!-- UMKM Featured -->
-    <div class="type-card featured" onclick="selectCompanyType('umkm')">
+    <div class="type-card featured" data-fn="selectCompanyType" data-arg="umkm">
       <div class="type-card-tag">⭐ Utama — Paling Populer</div>
       <div class="type-card-name">UMKM / Usaha Kecil Menengah</div>
       <div class="type-card-desc">Cocok untuk semua jenis usaha kecil. COA lengkap namun sederhana, siklus 8 langkah penuh, dan mudah dipahami tanpa latar belakang akuntansi mendalam.</div>
@@ -387,7 +387,7 @@ function pgWelcome(){
 
     <!-- 3 other types -->
     <div class="type-grid-others" style="width:100%;max-width:860px">
-      <div class="type-card" onclick="selectCompanyType('jasa')">
+      <div class="type-card" data-fn="selectCompanyType" data-arg="jasa">
         <div class="type-card-tag">Perusahaan Jasa</div>
         <div class="type-card-name">Jasa</div>
         <div class="type-card-desc">Tidak ada persediaan barang. Pendapatan dari layanan atau jasa yang diberikan.</div>
@@ -398,7 +398,7 @@ function pgWelcome(){
           <span class="type-tag">Laundry</span>
         </div>
       </div>
-      <div class="type-card" onclick="selectCompanyType('dagang')">
+      <div class="type-card" data-fn="selectCompanyType" data-arg="dagang">
         <div class="type-card-tag">Perusahaan Dagang + HPP</div>
         <div class="type-card-name">Dagang</div>
         <div class="type-card-desc">Beli dan jual barang dagangan. Dilengkapi perhitungan HPP Dagang (persediaan awal + pembelian bersih − persediaan akhir).</div>
@@ -408,7 +408,7 @@ function pgWelcome(){
           <span class="type-tag">Grosir</span>
         </div>
       </div>
-      <div class="type-card" onclick="selectCompanyType('manufaktur')">
+      <div class="type-card" data-fn="selectCompanyType" data-arg="manufaktur">
         <div class="type-card-tag">Perusahaan Manufaktur + HPP</div>
         <div class="type-card-name">Manufaktur</div>
         <div class="type-card-desc">Produksi barang. HPP lengkap: BB + BTKL + BOP ± perubahan WIP dan Barang Jadi.</div>
@@ -452,7 +452,7 @@ function stepBar(active){
            ['5','Penyesuaian'],['6','Disesuaikan'],['7','Laporan'],['8','Penutup']];
   return`<div class="step-bar">${s.map(([n,l])=>{
     const cls=+n<active?'done':+n===active?'active':'';
-    return`<div class="step-pill ${cls}" onclick="go('step${n}')" style="cursor:pointer">
+    return`<div class="step-pill ${cls}" data-fn="go" data-arg="step${n}" style="cursor:pointer">
       <span class="sn">${+n<active?'✓':n}</span>${l}
     </div>`;
   }).join('')}</div>`;
@@ -502,9 +502,9 @@ function pgDashboard(){
     ${stepBar(txn>0?(adj>0?6:4):1)}
     ${txn===0?`<div class="alert alert-info"><span class="alert-icon">💡</span><div>Mulai dari <strong>Langkah 1</strong> untuk menginput transaksi bisnis Anda. Atau klik <strong>"Muat Contoh Data"</strong> untuk mencoba dengan data demo.</div></div>`:''}
     <div class="flex-gap">
-      <button class="btn btn-primary" onclick="go('step1')">+ Tambah Transaksi</button>
-      ${txn===0?`<button class="btn btn-ghost" onclick="loadSampleData()">🎯 Muat Contoh Data</button>`:''}
-      <button class="btn btn-ghost" onclick="go('step7')">📊 Lihat Laporan</button>
+      <button class="btn btn-primary" data-fn="go" data-arg="step1">+ Tambah Transaksi</button>
+      ${txn===0?`<button class="btn btn-ghost" data-fn="loadSampleData">🎯 Muat Contoh Data</button>`:''}
+      <button class="btn btn-ghost" data-fn="go" data-arg="step7">📊 Lihat Laporan</button>
     </div>
   </div>
 
@@ -519,7 +519,7 @@ function pgDashboard(){
          ['6','Neraca Disesuaikan','Neraca saldo final setelah penyesuaian'],
          ['7','Laporan Keuangan','Laba Rugi, Neraca, dan Arus Kas'],
          ['8','Jurnal Penutup','Tutup akun & siapkan periode baru']
-      ].map(([n,t,d])=>`<div class="quick-card" onclick="go('step${n}')">
+      ].map(([n,t,d])=>`<div class="quick-card" data-fn="go" data-arg="step${n}">
         <div class="quick-card-num">Langkah ${n}</div>
         <div class="quick-card-title">${t}</div>
         <div class="quick-card-desc">${d}</div>
@@ -602,8 +602,8 @@ function pgStep1(){
       <td class="num">${fmt(t.entries.reduce((s,e)=>s+(e.debit||0),0))}</td>
       <td>
         <div class="flex-gap">
-          <button class="btn btn-ghost btn-xs" onclick="openTxModal(${i})">Edit</button>
-          <button class="btn btn-danger btn-xs" onclick="delTx(${i})">Hapus</button>
+          <button class="btn btn-ghost btn-xs" data-fn="openTxModal" data-arg="${i}">Edit</button>
+          <button class="btn btn-danger btn-xs" data-fn="delTx" data-arg="${i}">Hapus</button>
         </div>
       </td>
     </tr>`).join('');
@@ -615,12 +615,12 @@ function pgStep1(){
       <h2>Input Transaksi</h2>
       <p>Catat setiap transaksi bisnis. Sistem otomatis memproses ke langkah berikutnya.</p>
     </div>
-    <button class="btn btn-primary" onclick="openTxModal()">+ Tambah Transaksi</button>
+    <button class="btn btn-primary" data-fn="openTxModal">+ Tambah Transaksi</button>
   </div>
   <div class="tip-box mb-16">
     <strong>💡 Double-Entry:</strong> Setiap transaksi memiliki dua sisi — Debit dan Kredit. Total keduanya harus selalu sama. Contoh: Terima uang tunai → Debit Kas, Kredit Pendapatan.
   </div>
-  ${db.transactions.length===0?`<div class="empty"><div class="empty-icon">📋</div><h3>Belum ada transaksi</h3><p>Klik tombol "+ Tambah Transaksi" untuk mulai mencatat, atau muat contoh data dari Dasbor.</p><button class="btn btn-primary" onclick="openTxModal()">+ Tambah Transaksi</button></div>`:`
+  ${db.transactions.length===0?`<div class="empty"><div class="empty-icon">📋</div><h3>Belum ada transaksi</h3><p>Klik tombol "+ Tambah Transaksi" untuk mulai mencatat, atau muat contoh data dari Dasbor.</p><button class="btn btn-primary" data-fn="openTxModal">+ Tambah Transaksi</button></div>`:`
   <div class="table-wrap">
     <table>
       <thead><tr><th>Tanggal</th><th>Ref</th><th>Keterangan</th><th>Entri</th><th class="text-right">Total Debit</th><th>Aksi</th></tr></thead>
@@ -628,8 +628,8 @@ function pgStep1(){
     </table>
   </div>`}
   <div class="flex-between" style="margin-top:16px">
-    <button class="btn btn-ghost" onclick="go('dashboard')">← Dasbor</button>
-    <button class="btn btn-green" onclick="go('step2')">Lanjut ke Jurnal Umum →</button>
+    <button class="btn btn-ghost" data-fn="go" data-arg="dashboard">← Dasbor</button>
+    <button class="btn btn-green" data-fn="go" data-arg="step2">Lanjut ke Jurnal Umum →</button>
   </div>`;
 }
 
@@ -652,11 +652,11 @@ function openTxModal(idx){
       <span>Akun</span><span>Debit</span><span>Kredit</span><span></span>
     </div>
     <div id="entries-wrap">${t.entries.map((e,i)=>entryRowHTML(e,i)).join('')}</div>
-    <button class="btn btn-ghost btn-sm" style="margin-top:10px" onclick="addEntryRow('entries-wrap')">+ Tambah Baris</button>
+    <button class="btn btn-ghost btn-sm" style="margin-top:10px" data-fn="addEntryRow" data-arg="entries-wrap">+ Tambah Baris</button>
     <div id="bal-check" style="margin-top:10px"></div>`;
   document.getElementById('modal-foot').innerHTML=`
-    <button class="btn btn-ghost" onclick="closeModal()">Batal</button>
-    <button class="btn btn-primary" onclick="saveTx(${isEdit?idx:'undefined'})">Simpan</button>`;
+    <button class="btn btn-ghost" data-fn="closeModal">Batal</button>
+    <button class="btn btn-primary" data-fn="saveTx" ${isEdit?`data-arg="${idx}"`:''}>Simpan</button>`;
   openModal();
 }
 window.openTxModal=openTxModal;
@@ -667,7 +667,7 @@ function entryRowHTML(e,i){
     <div class="field" style="margin:0"><select onchange="calcBal()">${opts}</select></div>
     <div class="field" style="margin:0"><input type="number" min="0" placeholder="0" value="${e.debit||''}" oninput="calcBal()"></div>
     <div class="field" style="margin:0"><input type="number" min="0" placeholder="0" value="${e.credit||''}" oninput="calcBal()"></div>
-    <button class="del-btn" onclick="this.closest('.entry-row').remove();calcBal()">×</button>
+    <button class="del-btn" data-fn="removeEntryRow">×</button>
   </div>`;
 }
 
@@ -751,7 +751,7 @@ function pgStep2(){
       <h2>Jurnal Umum</h2>
       <p>Seluruh transaksi diurutkan berdasarkan tanggal.</p>
     </div>
-    <button class="btn btn-primary" onclick="go('step1')">+ Input Transaksi</button>
+    <button class="btn btn-primary" data-fn="go" data-arg="step1">+ Input Transaksi</button>
   </div>
   ${rows.length===0?`<div class="empty"><div class="empty-icon">📒</div><h3>Belum ada jurnal</h3><p>Tambah transaksi terlebih dahulu di Langkah 1.</p></div>`:`
   <div class="table-wrap">
@@ -769,8 +769,8 @@ function pgStep2(){
     </table>
   </div>`}
   <div class="flex-between" style="margin-top:16px">
-    <button class="btn btn-ghost" onclick="go('step1')">← Langkah 1</button>
-    <button class="btn btn-green" onclick="go('step3')">Lanjut ke Buku Besar →</button>
+    <button class="btn btn-ghost" data-fn="go" data-arg="step1">← Langkah 1</button>
+    <button class="btn btn-green" data-fn="go" data-arg="step3">Lanjut ke Buku Besar →</button>
   </div>`;
 }
 
@@ -817,8 +817,8 @@ function pgStep3(){
   </div>
   ${active.length===0?`<div class="empty"><div class="empty-icon">📚</div><h3>Belum ada data</h3><p>Tambah transaksi di Langkah 1 terlebih dahulu.</p></div>`:`<div class="ledger-grid">${cards}</div>`}
   <div class="flex-between" style="margin-top:20px">
-    <button class="btn btn-ghost" onclick="go('step2')">← Langkah 2</button>
-    <button class="btn btn-green" onclick="go('step4')">Lanjut ke Neraca Saldo →</button>
+    <button class="btn btn-ghost" data-fn="go" data-arg="step2">← Langkah 2</button>
+    <button class="btn btn-green" data-fn="go" data-arg="step4">Lanjut ke Neraca Saldo →</button>
   </div>`;
 }
 
@@ -850,8 +850,8 @@ function renderTB(type,stepNum,prev,next,title,hint){
     </table>
   </div>`}
   <div class="flex-between" style="margin-top:16px">
-    <button class="btn btn-ghost" onclick="go('${prev}')">← Langkah ${stepNum-1}</button>
-    <button class="btn btn-green" onclick="go('${next}')">Lanjut →</button>
+    <button class="btn btn-ghost" data-fn="go" data-arg="${prev}">← Langkah ${stepNum-1}</button>
+    <button class="btn btn-green" data-fn="go" data-arg="${next}">Lanjut →</button>
   </div>`;
 }
 
@@ -887,7 +887,7 @@ function pgHPP(){
   const type=db.settings.companyType;
   if(type==='dagang')return pgHPPDagang();
   if(type==='manufaktur')return pgHPPManufaktur();
-  return`<div class="empty"><div class="empty-icon">📊</div><h3>HPP hanya tersedia untuk Dagang & Manufaktur</h3><p>Ubah jenis perusahaan di Pengaturan.</p><button class="btn btn-ghost" onclick="go('settings')">Buka Pengaturan</button></div>`;
+  return`<div class="empty"><div class="empty-icon">📊</div><h3>HPP hanya tersedia untuk Dagang & Manufaktur</h3><p>Ubah jenis perusahaan di Pengaturan.</p><button class="btn btn-ghost" data-fn="go" data-arg="settings">Buka Pengaturan</button></div>`;
 }
 
 function renderHppDagangResult(pA,pmb,ang,ret,dis,pAk){
@@ -925,15 +925,15 @@ function pgHPPDagang(){
       <div class="field"><label>Diskon Pembelian</label><input type="number" id="hpp-dis" value="${h.diskon||0}" oninput="calcHppDagang()" min="0"></div>
       <div class="field"><label>Persediaan Akhir</label><input type="number" id="hpp-pAk" value="${h.persediaanAkhir||0}" oninput="calcHppDagang()" min="0"></div>
     </div>
-    <button class="btn btn-primary" style="margin-top:16px" onclick="saveHppDagang()">Simpan HPP</button>
+    <button class="btn btn-primary" style="margin-top:16px" data-fn="saveHppDagang">Simpan HPP</button>
   </div>
   <div class="fs-card" id="hpp-result" style="max-width:560px;margin-top:16px">
     <div class="fs-header"><h3>Hasil Perhitungan HPP Dagang</h3><p>${esc(db.settings.company)} · ${periodLabel()}</p></div>
     ${renderHppDagangResult(h.persediaanAwal||0,h.pembelian||0,h.angkut||0,h.retur||0,h.diskon||0,h.persediaanAkhir||0)}
   </div>
   <div class="flex-between" style="margin-top:16px">
-    <button class="btn btn-ghost" onclick="go('step6')">← Langkah 6</button>
-    <button class="btn btn-green" onclick="go('step7')">Lanjut ke Laporan Keuangan →</button>
+    <button class="btn btn-ghost" data-fn="go" data-arg="step6">← Langkah 6</button>
+    <button class="btn btn-green" data-fn="go" data-arg="step7">Lanjut ke Laporan Keuangan →</button>
   </div>`;
 }
 
@@ -1014,14 +1014,14 @@ function pgHPPManufaktur(){
       </div>
     </div>
   </div>
-  <button class="btn btn-primary" style="margin-top:4px" onclick="saveHppMfg()">Simpan HPP</button>
+  <button class="btn btn-primary" style="margin-top:4px" data-fn="saveHppMfg">Simpan HPP</button>
   <div class="fs-card" id="hpp-result" style="margin-top:16px">
     <div class="fs-header"><h3>Hasil Perhitungan HPP Manufaktur</h3><p>${esc(db.settings.company)} · ${periodLabel()}</p></div>
     ${renderHppMfgResult(h.bbAwal||0,h.pembelianBB||0,h.bbAkhir||0,h.btkl||0,h.bop||0,h.wipAwal||0,h.wipAkhir||0,h.bjAwal||0,h.bjAkhir||0)}
   </div>
   <div class="flex-between" style="margin-top:16px">
-    <button class="btn btn-ghost" onclick="go('step6')">← Langkah 6</button>
-    <button class="btn btn-green" onclick="go('step7')">Lanjut ke Laporan Keuangan →</button>
+    <button class="btn btn-ghost" data-fn="go" data-arg="step6">← Langkah 6</button>
+    <button class="btn btn-green" data-fn="go" data-arg="step7">Lanjut ke Laporan Keuangan →</button>
   </div>`;
 }
 
@@ -1066,7 +1066,7 @@ function lrHtml(is,co,per){
 
   return`<div class="fs-card">
     <div class="fs-header"><h3>Laporan Laba Rugi</h3><p>${esc(co)} · Periode: ${per}</p></div>
-    ${needsHPP?`<div style="padding:10px 22px 0"><div class="alert alert-warn" style="margin:0"><span class="alert-icon">⚠</span><div style="font-size:12px">Lengkapi <strong>Perhitungan HPP</strong> untuk tampilan Laba Kotor yang lebih akurat. <button class="btn btn-ghost btn-xs" onclick="go('hpp')" style="margin-left:8px">Isi HPP →</button></div></div></div>`:''}
+    ${needsHPP?`<div style="padding:10px 22px 0"><div class="alert alert-warn" style="margin:0"><span class="alert-icon">⚠</span><div style="font-size:12px">Lengkapi <strong>Perhitungan HPP</strong> untuk tampilan Laba Kotor yang lebih akurat. <button class="btn btn-ghost btn-xs" data-fn="go" data-arg="hpp" style="margin-left:8px">Isi HPP →</button></div></div></div>`:''}
     <div class="fs-sub">PENDAPATAN</div>
     ${is.rev.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span class="pos">${fmt(r.cr)}</span></div>`).join('')}
     <div class="fs-row subtotal"><span>Total Pendapatan</span><span class="pos">${fmt(is.totRev)}</span></div>
@@ -1088,8 +1088,8 @@ function pgStep5(){
       <td>${t.description}</td>
       <td class="num">${fmt(t.entries.reduce((s,e)=>s+(e.debit||0),0))}</td>
       <td><div class="flex-gap">
-        <button class="btn btn-ghost btn-xs" onclick="openAjeModal(${i})">Edit</button>
-        <button class="btn btn-danger btn-xs" onclick="delAje(${i})">Hapus</button>
+        <button class="btn btn-ghost btn-xs" data-fn="openAjeModal" data-arg="${i}">Edit</button>
+        <button class="btn btn-danger btn-xs" data-fn="delAje" data-arg="${i}">Hapus</button>
       </div></td>
     </tr>`).join('');
 
@@ -1100,7 +1100,7 @@ function pgStep5(){
       <h2>Jurnal Penyesuaian</h2>
       <p>Koreksi akhir periode: depresiasi, akrual, dan penyesuaian lainnya.</p>
     </div>
-    <button class="btn btn-primary" onclick="openAjeModal()">+ Tambah Penyesuaian</button>
+    <button class="btn btn-primary" data-fn="openAjeModal">+ Tambah Penyesuaian</button>
   </div>
   <div class="tip-box mb-16">
     <strong>Contoh penyesuaian umum:</strong><br>
@@ -1117,8 +1117,8 @@ function pgStep5(){
     </table>
   </div>`}
   <div class="flex-between" style="margin-top:16px">
-    <button class="btn btn-ghost" onclick="go('step4')">← Langkah 4</button>
-    <button class="btn btn-green" onclick="go('step6')">Lanjut ke Neraca Disesuaikan →</button>
+    <button class="btn btn-ghost" data-fn="go" data-arg="step4">← Langkah 4</button>
+    <button class="btn btn-green" data-fn="go" data-arg="step6">Lanjut ke Neraca Disesuaikan →</button>
   </div>`;
 }
 
@@ -1139,11 +1139,11 @@ function openAjeModal(idx){
     </div>
     <div class="entry-row-head" style="margin-bottom:6px"><span>Akun</span><span>Debit</span><span>Kredit</span><span></span></div>
     <div id="entries-wrap">${t.entries.map((e,i)=>entryRowHTML(e,i)).join('')}</div>
-    <button class="btn btn-ghost btn-sm" style="margin-top:10px" onclick="addEntryRow('entries-wrap')">+ Tambah Baris</button>
+    <button class="btn btn-ghost btn-sm" style="margin-top:10px" data-fn="addEntryRow" data-arg="entries-wrap">+ Tambah Baris</button>
     <div id="bal-check" style="margin-top:10px"></div>`;
   document.getElementById('modal-foot').innerHTML=`
-    <button class="btn btn-ghost" onclick="closeModal()">Batal</button>
-    <button class="btn btn-primary" onclick="saveAje(${isEdit?idx:'undefined'})">Simpan</button>`;
+    <button class="btn btn-ghost" data-fn="closeModal">Batal</button>
+    <button class="btn btn-primary" data-fn="saveAje" ${isEdit?`data-arg="${idx}"`:''}>Simpan</button>`;
   openModal();
 }
 window.openAjeModal=openAjeModal;
@@ -1257,15 +1257,15 @@ function pgStep7(){
   ${stepBar(7)}
   <div class="page-header"><h2>Laporan Keuangan</h2><p>Hasil akhir dari siklus akuntansi. Klik tab untuk berpindah antar laporan.</p></div>
   <div class="tabs">
-    <button class="tab ${fsTab==='lr'?'active':''}" onclick="switchFsTab('lr',this)">Laba Rugi</button>
-    <button class="tab ${fsTab==='ekuitas'?'active':''}" onclick="switchFsTab('ekuitas',this)">Ekuitas</button>
-    <button class="tab ${fsTab==='neraca'?'active':''}" onclick="switchFsTab('neraca',this)">Neraca</button>
-    <button class="tab ${fsTab==='kas'?'active':''}" onclick="switchFsTab('kas',this)">Arus Kas</button>
+    <button class="tab ${fsTab==='lr'?'active':''}" data-fn="switchFsTab" data-arg="lr">Laba Rugi</button>
+    <button class="tab ${fsTab==='ekuitas'?'active':''}" data-fn="switchFsTab" data-arg="ekuitas">Ekuitas</button>
+    <button class="tab ${fsTab==='neraca'?'active':''}" data-fn="switchFsTab" data-arg="neraca">Neraca</button>
+    <button class="tab ${fsTab==='kas'?'active':''}" data-fn="switchFsTab" data-arg="kas">Arus Kas</button>
   </div>
   <div id="fs-content">${content[fsTab]}</div>
   <div class="flex-between" style="margin-top:16px">
-    <button class="btn btn-ghost" onclick="go((db.settings.companyType==='dagang'||db.settings.companyType==='manufaktur')?'hpp':'step6')">← Kembali</button>
-    <button class="btn btn-green" onclick="go('step8')">Lanjut ke Jurnal Penutup →</button>
+    <button class="btn btn-ghost" data-fn="go" data-arg="${(db.settings.companyType==='dagang'||db.settings.companyType==='manufaktur')?'hpp':'step6'}">← Kembali</button>
+    <button class="btn btn-green" data-fn="go" data-arg="step8">Lanjut ke Jurnal Penutup →</button>
   </div>`;
 }
 
@@ -1358,12 +1358,12 @@ function pgStep8(){
     </div>
     <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line)">
       <p class="text-muted text-sm mb-8">Siklus akuntansi periode <strong>${periodLabel()}</strong> telah selesai.</p>
-      <button class="btn btn-primary" onclick="startNewPeriod()">🔄 Mulai Periode Baru</button>
+      <button class="btn btn-primary" data-fn="startNewPeriod">🔄 Mulai Periode Baru</button>
     </div>
   </div>`}
   <div class="flex-between" style="margin-top:16px">
-    <button class="btn btn-ghost" onclick="go('step7')">← Langkah 7</button>
-    <button class="btn btn-green" onclick="go('dashboard')">Kembali ke Dasbor</button>
+    <button class="btn btn-ghost" data-fn="go" data-arg="step7">← Langkah 7</button>
+    <button class="btn btn-green" data-fn="go" data-arg="dashboard">Kembali ke Dasbor</button>
   </div>`;
 }
 
@@ -1414,7 +1414,7 @@ function pgCOA(){
   return`
   <div class="flex-between mb-24">
     <div class="page-header" style="margin:0"><h2>Kode Akun (COA)</h2><p>Kelola semua akun yang digunakan dalam sistem.</p></div>
-    <button class="btn btn-primary" onclick="openCoaModal()">+ Tambah Akun</button>
+    <button class="btn btn-primary" data-fn="openCoaModal">+ Tambah Akun</button>
   </div>
   ${types.map(t=>!grouped[t].length?'':`
   <div class="card mb-16">
@@ -1427,8 +1427,8 @@ function pgCOA(){
           <td>${esc(a.name)}</td>
           <td><span class="badge" style="background:var(--cream);color:var(--muted)">${a.normal==='D'?'Debit':'Kredit'}</span></td>
           <td><div class="flex-gap">
-            <button class="btn btn-ghost btn-xs" onclick="openCoaModal('${a.code}')">Edit</button>
-            <button class="btn btn-danger btn-xs" onclick="delCoa('${a.code}')">Hapus</button>
+            <button class="btn btn-ghost btn-xs" data-fn="openCoaModal" data-arg="${esc(a.code)}">Edit</button>
+            <button class="btn btn-danger btn-xs" data-fn="delCoa" data-arg="${esc(a.code)}">Hapus</button>
           </div></td>
         </tr>`).join('')}</tbody>
       </table>
@@ -1454,8 +1454,8 @@ function openCoaModal(code){
       </select></div>
     </div>`;
   document.getElementById('modal-foot').innerHTML=`
-    <button class="btn btn-ghost" onclick="closeModal()">Batal</button>
-    <button class="btn btn-primary" onclick="saveCoa('${isEdit?code:''}')">Simpan</button>`;
+    <button class="btn btn-ghost" data-fn="closeModal">Batal</button>
+    <button class="btn btn-primary" data-fn="saveCoa" data-arg="${esc(isEdit?code:'')}">Simpan</button>`;
   openModal();
 }
 window.openCoaModal=openCoaModal;
@@ -1583,9 +1583,9 @@ function pgAnalitik(){
     <p>Tren keuangan dari <strong>semua periode</strong> yang tersimpan — harian, mingguan, bulanan, kuartalan, tahunan.</p>
   </div>
   <div class="tabs">
-    ${ANALITIK_TABS.map(([k,l])=>`<button class="tab ${analitikTab===k?'active':''}" onclick="switchAnalitikTab('${k}',this)">${l}</button>`).join('')}
+    ${ANALITIK_TABS.map(([k,l])=>`<button class="tab ${analitikTab===k?'active':''}" data-fn="switchAnalitikTab" data-arg="${k}">${l}</button>`).join('')}
   </div>
-  ${empty?`<div class="empty"><div class="empty-icon">📈</div><h3>Belum ada data transaksi</h3><p>Tambah transaksi di Langkah 1 untuk melihat analitik.</p><button class="btn btn-primary" onclick="go('step1')">+ Tambah Transaksi</button></div>` : `
+  ${empty?`<div class="empty"><div class="empty-icon">📈</div><h3>Belum ada data transaksi</h3><p>Tambah transaksi di Langkah 1 untuk melihat analitik.</p><button class="btn btn-primary" data-fn="go" data-arg="step1">+ Tambah Transaksi</button></div>` : `
   <div class="stats-row" style="grid-template-columns:repeat(3,1fr);margin-bottom:20px">
     <div class="stat-box">
       <div class="stat-label">Total Pendapatan</div>
@@ -1702,7 +1702,7 @@ function pgSettings(){
         <div style="font-size:15px;font-weight:700;color:var(--navy);font-family:'Fraunces',serif">${typeLabel}${hppBadge}</div>
         <div class="text-muted text-sm" style="margin-top:3px">COA dan fitur disesuaikan dengan jenis ini</div>
       </div>
-      <button class="btn btn-ghost btn-sm" onclick="showChangeTypeWarning()">Ganti Jenis</button>
+      <button class="btn btn-ghost btn-sm" data-fn="showChangeTypeWarning">Ganti Jenis</button>
     </div>
   </div>
 
@@ -1717,18 +1717,18 @@ function pgSettings(){
         <div class="field"><label>Simbol Mata Uang</label><input type="text" id="s-currency" value="${s.currency}" placeholder="Rp" maxlength="5"></div>
       </div>
     </div>
-    <div style="margin-top:16px"><button class="btn btn-primary" onclick="saveSettings()">Simpan Pengaturan</button></div>
+    <div style="margin-top:16px"><button class="btn btn-primary" data-fn="saveSettings">Simpan Pengaturan</button></div>
   </div>
   <div class="card" style="max-width:520px">
     <div class="card-title">Backup & Restore Data</div>
     <p class="text-muted text-sm mb-16">Data tersimpan di browser (IndexedDB) dan mendukung <strong>ratusan ribu transaksi</strong> lintas periode. Ekspor untuk backup atau impor untuk restore.</p>
     <div class="flex-gap">
-      <button class="btn btn-navy" onclick="exportJSON()">⬇ Ekspor Semua Periode</button>
-      <button class="btn btn-ghost" onclick="document.getElementById('import-file').click()">⬆ Impor JSON</button>
+      <button class="btn btn-navy" data-fn="exportJSON">⬇ Ekspor Semua Periode</button>
+      <button class="btn btn-ghost" data-fn="triggerImport">⬆ Impor JSON</button>
       <input type="file" id="import-file" accept=".json" style="display:none" onchange="importJSON(event)">
     </div>
     <hr class="divider">
-    <button class="btn btn-danger btn-sm" onclick="resetAllData()">🗑 Hapus Semua Data</button>
+    <button class="btn btn-danger btn-sm" data-fn="resetAllData">🗑 Hapus Semua Data</button>
   </div>`;
 }
 
@@ -1940,8 +1940,8 @@ function pgPeriods(){
       <td class="num neg">${s.totB?fmt(s.totB):'—'}</td>
       <td class="num ${s.net>=0?'pos':'neg'}">${s.totP||s.totB?fmt(Math.abs(s.net)):'-'}</td>
       <td><div class="flex-gap">
-        ${!isActive?`<button class="btn btn-ghost btn-xs" onclick="switchToPeriod('${p.period}')">Buka</button>`:'<span class="text-muted" style="font-size:12px">—</span>'}
-        <button class="btn btn-danger btn-xs" onclick="deletePeriod('${p.period}')" ${isActive?'disabled title="Tidak bisa menghapus periode aktif"':''}>Hapus</button>
+        ${!isActive?`<button class="btn btn-ghost btn-xs" data-fn="switchToPeriod" data-arg="${esc(p.period)}">Buka</button>`:'<span class="text-muted" style="font-size:12px">—</span>'}
+        <button class="btn btn-danger btn-xs" data-fn="deletePeriod" data-arg="${esc(p.period)}" ${isActive?'disabled title="Tidak bisa menghapus periode aktif"':''}>Hapus</button>
       </div></td>
     </tr>`;
   }).join('');
@@ -2033,6 +2033,56 @@ function toggleSidebar(){
 window.toggleSidebar=toggleSidebar;
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+function removeEntryRow(arg,el){el.closest('.entry-row').remove();calcBal();}
+function triggerImport(){document.getElementById('import-file').click();}
+
+/* ═══════════════════════════════════════════
+   CLICK DELEGATION
+   Every button in this app used to carry its own onclick="..." attribute.
+   The site's Content-Security-Policy (script-src 'self') blocks inline
+   event handlers, so instead every button gets data-fn (which function
+   to call) and, when needed, data-arg (a single string argument) — one
+   listener here reads those and calls the real function. This also
+   closes off a JS-injection route that existed when values like account
+   codes were spliced straight into an onclick="...('${value}')" string.
+═══════════════════════════════════════════ */
+const ACTIONS={
+  go:(arg)=>go(arg),
+  closeModal:()=>closeModal(),
+  exportJSON:()=>exportJSON(),
+  loadSampleData:()=>loadSampleData(),
+  resetAllData:()=>resetAllData(),
+  showChangeTypeWarning:()=>showChangeTypeWarning(),
+  startNewPeriod:()=>startNewPeriod(),
+  saveHppDagang:()=>saveHppDagang(),
+  saveHppMfg:()=>saveHppMfg(),
+  saveSettings:()=>saveSettings(),
+  triggerImport:()=>triggerImport(),
+  removeEntryRow:(arg,el)=>removeEntryRow(arg,el),
+  addEntryRow:(arg)=>addEntryRow(arg),
+  selectCompanyType:(arg)=>selectCompanyType(arg),
+  deletePeriod:(arg)=>deletePeriod(arg),
+  switchToPeriod:(arg)=>switchToPeriod(arg),
+  openCoaModal:(arg)=>openCoaModal(arg),
+  delCoa:(arg)=>delCoa(arg),
+  saveCoa:(arg)=>saveCoa(arg),
+  delAje:(arg)=>delAje(Number(arg)),
+  delTx:(arg)=>delTx(Number(arg)),
+  openAjeModal:(arg)=>openAjeModal(arg===undefined?undefined:Number(arg)),
+  openTxModal:(arg)=>openTxModal(arg===undefined?undefined:Number(arg)),
+  saveAje:(arg)=>saveAje(arg===undefined?undefined:Number(arg)),
+  saveTx:(arg)=>saveTx(arg===undefined?undefined:Number(arg)),
+  switchFsTab:(arg,el)=>switchFsTab(arg,el),
+  switchAnalitikTab:(arg,el)=>switchAnalitikTab(arg,el),
+};
+
+document.addEventListener('click',(e)=>{
+  const el=e.target.closest('[data-fn]');
+  if(!el)return;
+  const handler=ACTIONS[el.dataset.fn];
+  if(handler)handler(el.dataset.arg,el);
+});
 
 /* BOOT — async to support IndexedDB */
 (async()=>{
