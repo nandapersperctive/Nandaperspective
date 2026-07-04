@@ -349,48 +349,6 @@ nav a:hover { color: var(--primary); }
 }
 
 /* =====================
-   MARKET PANEL
-===================== */
-.market-panel {
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.18);
-    border-left: 5px solid rgba(255,255,255,.35);
-    padding: 28px;
-    display: grid;
-    gap: 22px;
-    animation: fadeInUp .7s ease .2s both;
-}
-
-.market-panel div:not(.mini-chart) {
-    display: flex;
-    justify-content: space-between;
-    gap: 18px;
-    border-bottom: 1px solid rgba(255,255,255,.1);
-    padding-bottom: 16px;
-}
-
-.market-panel span { color: rgba(255,255,255,.5); font-size: .88rem; }
-.market-panel strong { color: white; text-align: right; font-size: .95rem; }
-
-.mini-chart {
-    height: 150px;
-    display: flex;
-    align-items: end;
-    gap: 12px;
-    padding-top: 10px;
-}
-
-.mini-chart span {
-    display: block;
-    flex: 1;
-    min-width: 20px;
-    background: rgba(255,255,255,.22);
-    border-radius: 2px 2px 0 0;
-    transform-origin: bottom;
-    animation: growBar .8s ease .4s both;
-}
-
-/* =====================
    ANIMATIONS
 ===================== */
 @keyframes fadeInUp {
@@ -401,11 +359,6 @@ nav a:hover { color: var(--primary); }
 @keyframes cardZoom {
     from { background-size: 100%; }
     to   { background-size: 116%; }
-}
-
-@keyframes growBar {
-    from { transform: scaleY(0); }
-    to   { transform: scaleY(1); }
 }
 
 .reveal {
@@ -681,7 +634,7 @@ nav a:hover { color: var(--primary); }
 }
 
 /* =====================
-   CONTACT / NEWSLETTER
+   CONTACT / CTA SECTION
 ===================== */
 .contact {
     max-width: 720px;
@@ -1040,20 +993,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
     pointer-events: none;
 }
 
-.featured-app-icon-wrap {
-    flex-shrink: 0;
-    width: 88px;
-    height: 88px;
-    border-radius: 24px;
-    background: linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.06));
-    border: 1px solid rgba(255,255,255,.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.6rem;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.15);
-}
-
 .featured-app-body { flex: 1; min-width: 0; position: relative; z-index: 1; }
 
 .featured-app-badges {
@@ -1371,45 +1310,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
     line-height: 1.75;
     font-size: 1.05rem;
 }
-
-.focus-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
-    gap: 0;
-    margin-top: 28px;
-    border: 1px solid var(--line);
-}
-
-.focus-grid article {
-    border-top: 4px solid var(--primary);
-    padding: 28px;
-    border-right: 1px solid var(--line);
-    transition: background .25s ease, transform .25s ease;
-}
-
-.focus-grid article:last-child { border-right: 0; }
-
-.focus-grid article:hover {
-    background: #fff;
-    transform: translateY(-4px);
-}
-
-.focus-grid span {
-    color: var(--muted);
-    font-size: .72rem;
-    font-weight: 700;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-}
-
-.focus-grid h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.8rem;
-    margin: 8px 0;
-    color: var(--navy);
-}
-
-.focus-grid p { color: #465467; line-height: 1.7; }
 
 /* =====================
    ABOUT PAGE
@@ -2011,28 +1911,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
     margin: 26px 0 18px;
 }
 
-.stock-ticker {
-    width: 84px;
-    height: 84px;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: .08em;
-    background: rgba(255,255,255,.1);
-    border: 1px solid rgba(255,255,255,.2);
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    overflow: hidden;
-}
-
-/* When ticker contains a logo image */
-.stock-ticker img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
 .stock-hero h1 {
     font-family: 'Fraunces', serif;
     font-size: clamp(2.4rem, 6vw, 5rem);
@@ -2045,14 +1923,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
     color: rgba(255,255,255,.55);
     font-size: .88rem;
     letter-spacing: .06em;
-}
-
-.stock-hero .holding-tags { margin-bottom: 28px; }
-
-.stock-hero .holding-tags span {
-    background: rgba(255,255,255,.08);
-    border-color: rgba(255,255,255,.18);
-    color: white;
 }
 
 .stock-snapshot {
@@ -2165,7 +2035,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
 
     .article-layout,
     .article-grid,
-    .focus-grid,
     .about-layout,
     .stock-body,
     .stock-snapshot { grid-template-columns: 1fr; }
@@ -2174,20 +2043,12 @@ footer a:hover { color: rgba(255,255,255,.55); }
     .updates-sidebar { position: static; border-left: none; border-top: 1px solid var(--line); padding: 40px 6%; }
 
     .featured-app-card { flex-direction: column; align-items: flex-start; padding: 32px 28px; gap: 24px; }
-    .featured-app-icon-wrap { width: 68px; height: 68px; font-size: 2rem; border-radius: 18px; }
     .featured-app-desc { margin-bottom: 20px; }
 
     .holding-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 2px; }
 
     .article-layout { padding: 32px 5% 48px; gap: 28px; }
     .article-sidebar { position: static; }
-
-    .focus-grid { border: none; }
-    .focus-grid article {
-        border: 1px solid var(--line);
-        border-top: 4px solid var(--primary);
-        margin-bottom: 16px;
-    }
 
     .profile-card { position: static; animation: aboutPhotoIn .7s ease both; }
     .profile-photo-card { aspect-ratio: 16/9; }
@@ -2210,7 +2071,7 @@ footer a:hover { color: rgba(255,255,255,.55); }
     nav a { margin: 0; }
     .hero { padding-top: 46px; min-height: auto; }
     .hero-actions, footer { flex-direction: column; }
-    .market-panel, .featured-card, .card { padding: 20px; }
+    .featured-card, .card { padding: 20px; }
     .holding-grid { grid-template-columns: 1fr; }
 }
 

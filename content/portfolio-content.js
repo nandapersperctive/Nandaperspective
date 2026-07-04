@@ -76,7 +76,9 @@
 
    HOW TO ADD A NEW STOCK
    Copy one complete stock block (from "{" to "},"), paste it before the
-   closing "];", and fill in every field.
+   closing "];", and fill in every field. Also add a line for it in
+   sitemap.xml (copy an existing stock.html?ticker=... entry and change
+   the ticker) so search engines find it.
    ===================================================================== */
 
 /* =====================================================================
@@ -132,13 +134,6 @@ const portfolioHoldings = [
     thesis: "High-quality private bank with strong deposit franchise, consistent profitability, and disciplined risk management.",
     risk: "Premium valuation, slowing loan growth, sensitivity to liquidity conditions, and rising digital/fintech competition.",
     monitor: "CASA ratio, loan growth, net interest margin, asset quality, and fee-based income.",
-
-    /* Info boxes shown in the dark hero section — edit labels and values freely, add or remove boxes */
-    snapshot: [
-        { label: "Thesis",  value: "High-quality private bank with strong deposit franchise, consistent profitability, and disciplined risk management." },
-        { label: "Risk",    value: "Premium valuation, slowing loan growth, sensitivity to liquidity conditions, and rising digital/fintech competition." },
-        { label: "Monitor", value: "CASA ratio, loan growth, net interest margin, asset quality, and fee-based income." }
-    ],
 
     /* Full analysis — shown on the stock's own page (stock.html?ticker=BBCA).
        Edit the paragraphs below to fill in your complete personal analysis. */

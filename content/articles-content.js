@@ -28,6 +28,9 @@
    2. Paste it at the very bottom of the list, before the "];".
    3. Change "id" to a number not already used by another article.
    4. Fill in all the text fields.
+   5. Also add a line for it in sitemap.xml (copy an existing
+      articles.html?id=... entry and change the number) so search
+      engines find it.
 
    HOW TO ADD OR REMOVE A CATEGORY
    Categories are created automatically from the articles — no separate list to edit.

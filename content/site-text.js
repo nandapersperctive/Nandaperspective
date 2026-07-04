@@ -1,5 +1,5 @@
 /* =====================================================================
-   SITE TEXT — shared text used across pages (nav, home page, newsletter,
+   SITE TEXT — shared text used across pages (nav, home page, CTA section,
    footer, etc.). The site is single-language (English) now, so each
    line below is the only place that text lives.
    =====================================================================
@@ -23,7 +23,6 @@ const siteText = {
     heroEyebrow: "Personal journal",
     heroDescription: "A personal space to explore ideas across business, markets, and everyday thinking — written by a student learning to see the world more clearly.",
     readArticles: "Read Insights",
-    viewFocus: "View Focus",
     viewPortfolio: "View Portfolio",
 
     approachTitle: "Writing to understand, not just to react to markets.",
@@ -42,14 +41,6 @@ const siteText = {
     readArticleLink: "Read Insight",
     readFeaturedLink: "Read",
     articlesShownSuffix: "insights shown",
-
-    focusTitle: "Analysis Focus",
-    focusInvestmentTitle: "Investing",
-    focusInvestmentBody: "Assessing assets through business quality, valuation, cash flow, and permanent risk.",
-    focusEconomicsTitle: "Economics",
-    focusEconomicsBody: "Reading monetary policy, inflation, interest rates, and their impact on markets.",
-    focusBusinessTitle: "Business",
-    focusBusinessBody: "Studying strategy, moats, competition, and management decisions.",
 
     ctaEyebrow: "Keep Reading",
     ctaTitle: "Explore More Insights.",

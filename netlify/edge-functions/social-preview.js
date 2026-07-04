@@ -133,10 +133,14 @@ function splitTopLevelObjects(arrayBody) {
 }
 
 function extractString(block, key) {
-    const re = new RegExp(key + '\\s*:\\s*"((?:[^"\\\\]|\\\\.)*)"');
-    const m = block.match(re);
+    // Content files normally use double quotes, but tolerate single quotes
+    // too (e.g. heroBg: 'images/...') so an editor's quote-style choice
+    // doesn't silently break the social-preview fallback.
+    const doubleQuoted = new RegExp(key + '\\s*:\\s*"((?:[^"\\\\]|\\\\.)*)"');
+    const singleQuoted = new RegExp(key + "\\s*:\\s*'((?:[^'\\\\]|\\\\.)*)'");
+    const m = block.match(doubleQuoted) || block.match(singleQuoted);
     if (!m) return "";
-    return m[1].replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+    return m[1].replace(/\\(.)/g, "$1");
 }
 
 function extractNumber(block, key) {

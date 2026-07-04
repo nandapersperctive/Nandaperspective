@@ -8,6 +8,8 @@ document.getElementById("public-description").textContent = pt.description;
 document.getElementById("public-note-eyebrow").textContent = pt.noteEyebrow;
 document.getElementById("public-note-title").textContent   = pt.noteTitle;
 document.getElementById("public-note-body").textContent    = pt.noteBody;
+document.getElementById("mat-print-btn").textContent = pt.printBtn;
+document.getElementById("mat-close-btn").setAttribute("aria-label", pt.closeBtn);
 
 function escAttr(str) {
     return String(str).replace(/[&<>"']/g, function (c) {
