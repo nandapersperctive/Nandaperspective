@@ -13,9 +13,10 @@
 
    HOW TO ADD AN AUDIOBOOK PLAYER TO THE ARTICLE SIDEBAR
    1. Put the audio file (.mp3, .m4a, .wav, etc.) inside the
-      "images/profile/" folder — e.g. images/profile/my-audiobook.mp3.
+      "images/articles/audiobook/" folder —
+      e.g. images/articles/audiobook/my-audiobook.mp3.
    2. Change audiobookTrack: "" to
-      audiobookTrack: "images/profile/my-audiobook.mp3".
+      audiobookTrack: "images/articles/audiobook/my-audiobook.mp3".
    3. Save. A small card with an audio player appears in the sidebar of
       every article page, right below the Portfolio card.
    Leave audiobookTrack: "" if you don't want it shown.
