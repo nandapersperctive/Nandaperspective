@@ -1799,6 +1799,10 @@ footer a:hover { color: rgba(255,255,255,.55); }
     hyphens: auto;
 }
 
+.not-found-cta {
+    margin-top: 12px;
+}
+
 /* Article sidebar */
 .article-sidebar {
     position: sticky;

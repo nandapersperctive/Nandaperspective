@@ -9,6 +9,12 @@ document.getElementById("public-note-eyebrow").textContent = pt.noteEyebrow;
 document.getElementById("public-note-title").textContent   = pt.noteTitle;
 document.getElementById("public-note-body").textContent    = pt.noteBody;
 
+function escAttr(str) {
+    return String(str).replace(/[&<>"']/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+}
+
 function typeColor(type) {
     if (type === "Excel") return "badge-excel";
     if (type === "PDF")   return "badge-pdf";
@@ -26,14 +32,17 @@ function slugify(str) {
 /* Share block markup is fully static — the real title/URL are wired in
    afterwards by wireShareButtons(), so nothing dynamic ever gets typed
    into innerHTML here. Pass compact=true to render the small icon-only
-   button used in the top-right corner of resource cards. */
+   button used in the top-right corner of resource cards.
+   No inline onclick here on purpose — the site's CSP (script-src 'self')
+   blocks inline event handlers, so the toggle is wired via addEventListener
+   in the delegated click handler further down. */
 function shareBlockHtml(compact) {
     const wrapClass = "resource-share-wrap" + (compact ? " resource-share-wrap--corner" : "");
     const btnClass  = "resource-download-btn resource-share-btn" + (compact ? " resource-share-btn--icon" : "");
     const btnLabel  = compact ? "↗" : "Share ↗";
     return `
         <div class="${wrapClass}">
-            <button type="button" class="${btnClass}" onclick="toggleShareMenu(this)" aria-label="Share this resource">${btnLabel}</button>
+            <button type="button" class="${btnClass} resource-share-toggle" aria-label="Share this resource" aria-haspopup="true" aria-expanded="false">${btnLabel}</button>
             <div class="resource-share-menu">
                 <a class="share-btn share-wa" target="_blank" rel="noopener">WhatsApp</a>
                 <a class="share-btn share-x" target="_blank" rel="noopener">X</a>
@@ -71,10 +80,8 @@ function buildButtons(item) {
     let btns = "";
 
     if (hasContent) {
-        const safe = encodeURIComponent(item.title);
-        const idx  = encodeURIComponent(JSON.stringify(item.content));
-        btns += `<button class="resource-download-btn resource-read-btn"
-                    onclick="openMaterial('${safe}', this)"
+        btns += `<button type="button" class="resource-download-btn resource-read-btn"
+                    data-title="${escAttr(item.title)}"
                     data-content='${JSON.stringify(item.content).replace(/'/g,"&#39;")}'>
                     ${pt.readBtn}
                  </button>`;
@@ -195,17 +202,38 @@ function wireShareButtons() {
     });
 }
 
-function toggleShareMenu(btn) {
-    const wrap = btn.closest(".resource-share-wrap");
-    const willOpen = !wrap.classList.contains("open");
-    document.querySelectorAll(".resource-share-wrap.open").forEach(function (w) { w.classList.remove("open"); });
-    if (willOpen) wrap.classList.add("open");
+function closeAllShareMenus() {
+    document.querySelectorAll(".resource-share-wrap.open").forEach(function (w) {
+        w.classList.remove("open");
+        w.querySelector(".resource-share-toggle").setAttribute("aria-expanded", "false");
+    });
 }
-window.toggleShareMenu = toggleShareMenu;
+
+/* Delegated click handling — covers every share-toggle and "Baca Materi"
+   button even though they're generated dynamically, and needs no inline
+   onclick attributes (which the site's CSP blocks). */
+document.getElementById("resources-container").addEventListener("click", function (e) {
+    const toggleBtn = e.target.closest(".resource-share-toggle");
+    if (toggleBtn) {
+        const wrap = toggleBtn.closest(".resource-share-wrap");
+        const willOpen = !wrap.classList.contains("open");
+        closeAllShareMenus();
+        if (willOpen) {
+            wrap.classList.add("open");
+            toggleBtn.setAttribute("aria-expanded", "true");
+        }
+        return;
+    }
+
+    const readBtn = e.target.closest(".resource-read-btn");
+    if (readBtn) {
+        openMaterial(readBtn.getAttribute("data-title"), readBtn);
+    }
+});
 
 document.addEventListener("click", function (e) {
     if (!e.target.closest(".resource-share-wrap")) {
-        document.querySelectorAll(".resource-share-wrap.open").forEach(function (w) { w.classList.remove("open"); });
+        closeAllShareMenus();
     }
 });
 
@@ -220,8 +248,7 @@ if (window.location.hash.indexOf("#resource-") === 0) {
 }
 
 /* ── Material modal ── */
-function openMaterial(encodedTitle, btn) {
-    const title   = decodeURIComponent(encodedTitle);
+function openMaterial(title, btn) {
     const content = JSON.parse(btn.getAttribute("data-content"));
 
     document.getElementById("mat-modal-title").textContent = title;
@@ -235,14 +262,18 @@ function openMaterial(encodedTitle, btn) {
     document.getElementById("mat-modal").classList.add("open");
     document.body.style.overflow = "hidden";
 }
-window.openMaterial = openMaterial;
 
 function closeMaterial() {
     document.getElementById("mat-modal").classList.remove("open");
     document.body.style.overflow = "";
 }
-window.closeMaterial = closeMaterial;
 
-document.getElementById("mat-modal").addEventListener("click", function(e) {
+document.getElementById("mat-modal").addEventListener("click", function (e) {
     if (e.target === this) closeMaterial();
 });
+
+document.getElementById("mat-print-btn").addEventListener("click", function () {
+    window.print();
+});
+
+document.getElementById("mat-close-btn").addEventListener("click", closeMaterial);

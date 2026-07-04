@@ -1,5 +1,13 @@
 const params    = new URLSearchParams(window.location.search);
-const id        = parseInt(params.get("id"));
+
+/* No id at all in the URL (e.g. someone opened articles.html directly) —
+   send them to the insights list instead of showing "not found". A
+   present-but-wrong id (an old/broken link) still shows "not found". */
+if (!params.has("id")) {
+    window.location.replace("index.html#articles");
+}
+
+const id = parseInt(params.get("id"));
 
 const categoryEl  = document.getElementById("category");
 const titleEl     = document.getElementById("title");
@@ -32,7 +40,10 @@ function renderArticle() {
         titleEl.textContent    = siteText.articleNotFoundTitle;
         categoryEl.textContent = "Not found";
         metaEl.textContent     = siteText.articleNotFoundMeta;
-        contentEl.innerHTML    = `<p>${siteText.articleNotFoundBody}</p>`;
+        contentEl.innerHTML    = `
+            <p>${siteText.articleNotFoundBody}</p>
+            <a class="button primary not-found-cta" href="index.html#articles">${siteText.articleNotFoundButton}</a>
+        `;
         relatedList.innerHTML  = articles.slice(0, 3).map(card).join("");
         return;
     }
@@ -152,4 +163,6 @@ function showShareToast(msg) {
     toast._timer = setTimeout(() => toast.classList.remove("share-toast--show"), 3500);
 }
 
-renderArticle();
+if (params.has("id")) {
+    renderArticle();
+}

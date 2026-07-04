@@ -207,12 +207,17 @@ function injectMeta(html, pageUrl, meta) {
     let out = html.replace(/<title>.*?<\/title>/i, () => `<title>${title}</title>${tags}`);
 
     // Also swap out the static og:*/twitter:* tags already baked into the page,
-    // so bots that read the whole <head> don't see two conflicting titles.
+    // so bots that read the whole <head> don't see two conflicting titles
+    // (or two og:type / twitter:card tags, which is just as confusing).
+    out = out.replace(/<meta property="og:type"[^>]*>/i, "");
     out = out.replace(/<meta property="og:title"[^>]*>/i, "");
     out = out.replace(/<meta property="og:description"[^>]*>/i, "");
     out = out.replace(/<meta property="og:url"[^>]*>/i, "");
+    out = out.replace(/<meta property="og:image"[^>]*>/i, "");
+    out = out.replace(/<meta name="twitter:card"[^>]*>/i, "");
     out = out.replace(/<meta name="twitter:title"[^>]*>/i, "");
     out = out.replace(/<meta name="twitter:description"[^>]*>/i, "");
+    out = out.replace(/<meta name="twitter:image"[^>]*>/i, "");
     out = out.replace(/<meta name="description"[^>]*>/i, `<meta name="description" content="${description}">`);
 
     return out;

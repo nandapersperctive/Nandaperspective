@@ -62,13 +62,13 @@
 </footer>
 
 <!-- Material reader modal -->
-<div id="mat-modal" class="mat-modal-bg">
+<div id="mat-modal" class="mat-modal-bg" role="dialog" aria-modal="true" aria-label="Pembaca materi">
     <div class="mat-modal">
         <div class="mat-modal-header">
             <h2 class="mat-modal-title" id="mat-modal-title"></h2>
             <div class="mat-modal-actions">
-                <button class="mat-print-btn" onclick="window.print()">🖨 Cetak / Simpan PDF</button>
-                <button class="mat-close-btn" onclick="closeMaterial()" aria-label="Tutup">✕</button>
+                <button class="mat-print-btn" id="mat-print-btn">🖨 Cetak / Simpan PDF</button>
+                <button class="mat-close-btn" id="mat-close-btn" aria-label="Tutup">✕</button>
             </div>
         </div>
         <div class="mat-modal-body" id="mat-modal-body"></div>

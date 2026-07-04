@@ -116,6 +116,81 @@ function renderStock() {
 
     const others = portfolioHoldings.filter(h => h.ticker !== tickerParam);
     relatedHoldings.innerHTML = others.map(relatedCard).join("");
+
+    renderShare(holding);
+}
+
+function renderShare(holding) {
+    const shareEl = document.getElementById("stock-share");
+    if (!shareEl) return;
+
+    const pageUrl   = encodeURIComponent(window.location.href);
+    const pageTitle = encodeURIComponent(`${holding.ticker} — ${holding.company} | Nanda Perspective`);
+
+    const waUrl      = `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
+    const xUrl       = `https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`;
+    const threadsUrl = `https://www.threads.net/intent/post?text=${pageTitle}%20${pageUrl}`;
+
+    const nativeBtn = navigator.share
+        ? `<button class="share-btn share-native" id="share-native-btn">Share</button>`
+        : "";
+
+    shareEl.innerHTML = `
+        <div class="share-bar">
+            <p class="share-label">Share this analysis</p>
+            <div class="share-buttons">
+                ${nativeBtn}
+                <button class="share-btn share-copy"  id="share-copy-btn">Copy Link</button>
+                <button class="share-btn share-ig"    id="share-ig-btn">Instagram</button>
+                <a class="share-btn share-wa"      href="${waUrl}"      target="_blank" rel="noopener">WhatsApp</a>
+                <a class="share-btn share-x"       href="${xUrl}"       target="_blank" rel="noopener">X / Twitter</a>
+                <a class="share-btn share-threads" href="${threadsUrl}" target="_blank" rel="noopener">Threads</a>
+            </div>
+        </div>
+    `;
+
+    document.getElementById("share-copy-btn").addEventListener("click", () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            const btn = document.getElementById("share-copy-btn");
+            btn.textContent = "✓ Copied!";
+            btn.classList.add("share-copy--done");
+            setTimeout(() => {
+                btn.textContent = "Copy Link";
+                btn.classList.remove("share-copy--done");
+            }, 2200);
+        });
+    });
+
+    if (navigator.share) {
+        document.getElementById("share-native-btn").addEventListener("click", () => {
+            navigator.share({
+                title: `${holding.ticker} — ${holding.company}`,
+                text: holding.thesis || "",
+                url: window.location.href
+            });
+        });
+    }
+
+    document.getElementById("share-ig-btn").addEventListener("click", () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            showShareToast("Link copied! Now open Instagram and paste it in your story, bio, or DM.");
+            setTimeout(() => window.open("https://www.instagram.com", "_blank"), 600);
+        });
+    });
+}
+
+function showShareToast(msg) {
+    let toast = document.getElementById("share-toast");
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "share-toast";
+        toast.className = "share-toast";
+        document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add("share-toast--show");
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove("share-toast--show"), 3500);
 }
 
 renderStock();

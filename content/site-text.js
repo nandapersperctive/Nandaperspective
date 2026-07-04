@@ -63,5 +63,6 @@ const siteText = {
 
     articleNotFoundTitle: "Insight not found",
     articleNotFoundMeta: "Please return to the insights list.",
-    articleNotFoundBody: "The insight you are looking for is not available or the link has changed."
+    articleNotFoundBody: "The insight you are looking for is not available or the link has changed.",
+    articleNotFoundButton: "Browse All Insights",
 };

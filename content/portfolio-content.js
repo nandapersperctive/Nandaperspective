@@ -208,54 +208,61 @@ const portfolioHoldings = [
     sector: "Mining",
     allocation: "Growth income",
     horizon: "Mid term",
-    thesis: "Dominant microfinance franchise with wide distribution, strong customer base, and attractive exposure to Indonesia's productive economy.",
-    risk: "Credit quality pressure in micro lending, funding cost increases, and economic slowdown.",
-    monitor: "NPL ratio, loan restructuring, micro loan growth, cost of credit, and dividend sustainability.",
+    thesis: "Low-cost nickel ore producer with improving margins, a strengthening balance sheet, and direct exposure to Indonesia's nickel downstreaming policy.",
+    risk: "Nickel price volatility, production quota (RKAB) dependency, single-commodity concentration, and smelter economics.",
+    monitor: "Nickel prices, RKAB quota approvals, production and sales volume, net profit margin, and smelter utilization.",
 
     analysis: [
         {
             sectionTitle: "Business Overview",
             image: "",  /* Optional photo — e.g. "images/portfolio/bbca-overview.jpg". Leave empty for no photo. */
             paragraphs: [
-                "Write your overview here — the company's business model, its microfinance network, and the segments that drive its growth and profitability."
+                "Central Omega Resources is an Indonesian nickel mining group with operations concentrated in Central and Southeast Sulawesi, the heart of the country's nickel belt. Through its subsidiaries, the company mines and sells nickel ore into the domestic market and operates a ferronickel processing facility, giving it a foot in both segments of Indonesia's nickel value chain: raw ore supply and downstream processing.",
+                "The strategic backdrop matters more for DKFT than for most companies. Since Indonesia banned raw nickel ore exports, all ore must be sold to domestic smelters — a policy that transformed the country into the center of global nickel processing. For a miner like DKFT, this means a captive, growing domestic customer base sitting close to its mines, with demand structurally supported by the stainless steel and electric vehicle battery supply chains being built onshore.",
+                "DKFT is a small player next to giants like Antam or the IMIP ecosystem, but small has its advantages: incremental production growth moves the needle, and operational improvements show up quickly in the bottom line."
             ]
         },
         {
             sectionTitle: "Why I Own This",
             image: "",
             paragraphs: [
-                "Dominant microfinance franchise with wide distribution, strong customer base, and attractive exposure to Indonesia's productive economy.",
-                "Add your deeper reasoning here — why microfinance exposure is attractive, what structural tailwinds you see, and your long-term view."
+                "The investment case is a combination of macro tailwind and micro execution. The macro tailwind is Indonesia's downstreaming policy: domestic nickel demand from smelters keeps ore absorbed locally, and every new processing facility tightens the market for the ore DKFT digs. The company is positioned exactly where national industrial policy is pushing value creation.",
+                "The micro execution is visible in the numbers. This is a company whose profits are growing much faster than its revenue — the signature of expanding margins rather than mere volume. Management has been disciplined about costs, and the company is preparing to grow: it has applied to revise its RKAB (the government-approved work plan and budget) to raise production quotas, and secured a Rp245 billion credit facility to fund expansion, a small enough sum to leave the balance sheet comfortable.",
+                "Warren Buffett's timing principle applies to cyclical stocks more than anywhere else: \"Be fearful when others are greedy and greedy when others are fearful.\"",
+                "Nickel is a deeply cyclical commodity, and the time to study a miner is precisely when the market treats the whole sector with indifference. The position is a bet that DKFT's cost discipline lets it prosper across the cycle, not just at the top of it."
             ]
         },
         {
             sectionTitle: "Financial Highlights",
             image: "",
             paragraphs: [
-                "Add the key financial metrics you track — NPL, ROE, cost of credit, dividend yield, and any others relevant to your analysis."
+                "Full-year 2025 showed the operating leverage clearly: revenue rose 7.9% year-on-year to Rp1.58 trillion, while net profit jumped 56.9% to Rp574.4 billion. Profit growing seven times faster than sales is margin expansion at work — better prices, better cost control, or both.",
+                "The first quarter of 2026 accelerated the pattern. Revenue grew 20.2% year-on-year to Rp506 billion, driven by domestic nickel ore sales up 17.9%, while net profit surged roughly 73% to Rp238.5 billion. Net profit margin reached an exceptional ~47% — a level few miners anywhere achieve, and one that signals DKFT sits low on the industry cost curve. Notably, analysts observed that profit leapt even as production volume fell, underlining that efficiency and pricing, not tonnage, drove the result.",
+                "For the full year 2026, management targets revenue of about Rp1.6 trillion and net profit of Rp628.9 billion. If Q1 is any guide — Rp238 billion of profit in a single quarter — that target may prove conservative, though commodity businesses have a way of humbling extrapolation."
             ]
         },
         {
             sectionTitle: "Risk Analysis",
             image: "",
             paragraphs: [
-                "Credit quality pressure in micro lending, funding cost increases, and economic slowdown.",
-                "Add a more detailed discussion of each risk and how you think about managing it."
+                "Every attraction here has a mirror-image risk. First and dominant: the nickel price. DKFT does not set the price of what it sells; the global market does. A margin of 47% at today's prices can compress brutally if nickel enters one of its periodic gluts — and Indonesia's own massive supply growth is the usual suspect behind such gluts. The very policy that guarantees DKFT's customers also floods the world with Indonesian nickel.",
+                "Second, regulatory dependency. Production is capped by the government-approved RKAB quota. The planned quota increase is an opportunity, but it is also a reminder that DKFT's growth requires periodic state permission. Delays or rejections in RKAB approvals — a recurring industry complaint — directly cap revenue.",
+                "Third, concentration. This is a single-commodity, single-country, few-assets company. There is no diversified cash flow to cushion a bad year in nickel, and mining operations in Sulawesi carry weather, logistics, and community-relations risks that large diversified miners can absorb more easily.",
+                "Fourth, smelter economics. Ferronickel processing is energy-intensive and margin-volatile; a downstream facility can be a value-add in good times and a cash drain when processing spreads collapse. The smelter deserves separate scrutiny from the mining business, not consolidated applause."
             ]
         },
         {
             sectionTitle: "What I Monitor",
             image: "",
             paragraphs: [
-                "NPL ratio, loan restructuring, micro loan growth, cost of credit, and dividend sustainability.",
-                "Note any specific threshold or trigger that would change your position."
+                "Five things, in order. The nickel price and Indonesian supply dynamics, because they set the ceiling on everything else. RKAB quota approvals, because they set the volume DKFT is legally allowed to sell. Quarterly production and sales volumes against those quotas, to separate price-driven results from real operational growth. Net profit margin, because the ~47% level is extraordinary and its erosion would be the first sign the cycle has turned. And smelter utilization and profitability, to confirm downstream operations are adding value rather than consuming the mine's cash."
             ]
         },
         {
             sectionTitle: "Conclusion",
             image: "",
             paragraphs: [
-                "Write your current conviction level, position sizing rationale, and what would change your view."
+                "DKFT is a focused, low-cost nickel producer riding the strongest industrial-policy tailwind in Indonesia, with financials — accelerating profit growth, premium margins, modest debt — that show a management team converting that tailwind into shareholder value. But it remains a small, single-commodity cyclical whose fortunes are leased from the nickel price and licensed by the state. The position deserves to be sized accordingly, watched quarterly, and judged over a full cycle rather than a good year. The thesis holds as long as costs stay low, quotas keep coming, and margins stay well above the industry's — the moment those three slip together, the cycle, not the company, is in charge."
             ]
         }
     ]
@@ -268,54 +275,61 @@ const portfolioHoldings = [
     sector: "Energy",
     allocation: "Defensive income",
     horizon: "Medium to long term",
-    thesis: "Large telecom infrastructure owner with recurring demand for connectivity and potential value from digital infrastructure assets.",
-    risk: "Competitive pricing, high capital expenditure, and execution risk in digital transformation.",
-    monitor: "ARPU, subscriber quality, capex intensity, data revenue, and infrastructure monetization.",
+    thesis: "Diversified energy group transitioning from thermal coal toward metallurgical coal, power, aluminum, and renewables, with strong cash generation and a generous dividend policy.",
+    risk: "Coal price volatility, execution risk in the green transition, post-spinoff earnings decline, and capital intensity of new ventures.",
+    monitor: "Coal prices, metallurgical coal volumes (ADMR), dividend sustainability, smelter and renewables progress, and cost discipline.",
 
     analysis: [
         {
             sectionTitle: "Business Overview",
             image: "",  /* Optional photo — e.g. "images/portfolio/bbca-overview.jpg". Leave empty for no photo. */
             paragraphs: [
-                "Write your overview of TLKM here — its main infrastructure assets, subsidiary structure, and its role in Indonesia's digital ecosystem."
+                "Alamtri Resources Indonesia is the company formerly known as Adaro Energy — one of Indonesia's largest energy groups — midway through the most consequential reinvention in its history. In late 2024 it spun off its thermal coal engine, Adaro Andalan Indonesia (AADI), into a separate listing, and rebranded the remaining group as Alamtri. What is left is a deliberately different animal: metallurgical (coking) coal through Adaro Minerals (ADMR), one of Indonesia's largest mining services contractors (SIS), power generation, an aluminum smelter project in North Kalimantan, and a growing renewables portfolio spanning hydro and solar.",
+                "The logic of the split was to separate the cash-rich but sunset thermal coal business from the growth assets, allowing Alamtri to pursue greener, processing-oriented ventures — and cleaner ESG optics — without the thermal coal discount hanging over the whole group.",
+                "Peter Lynch's oldest rule applies with unusual force here: \"Know what you own, and know why you own it.\"",
+                "Anyone holding ADRO today owns a fundamentally different company than the Adaro of two years ago. The analysis has to start from that fact."
             ]
         },
         {
             sectionTitle: "Why I Own This",
             image: "",
             paragraphs: [
-                "Large telecom infrastructure owner with recurring demand for connectivity and potential value from digital infrastructure assets.",
-                "Add your investment rationale — why connectivity demand is structural, what optionality you see in TLKM's digital assets, and your long-term thesis."
+                "The case rests on three legs. First, proven cash generation and shareholder returns: even in a transition year, Alamtri paid out essentially its entire 2025 profit — US$447.5 million, or 99.96% of net income — as dividends, worth Rp3.40 trillion (Rp118.26 per share, paid May 2026). Few Indonesian companies match this record of returning cash, and it reflects a controlling family with a long history of aligning with minority shareholders on payouts.",
+                "Second, the metallurgical coal growth story. ADMR's coking coal serves steelmaking, not power generation — a commodity with a different demand curve and a scarcer supply base than thermal coal, and one that fits the aluminum smelter strategy: the group is effectively building an integrated energy-and-materials chain in Kalimantan.",
+                "Third, optionality on the energy transition. The Kaltara aluminum smelter, hydropower plans, and solar projects are early-stage, but they are funded by a balance sheet and operating cash flow that most transition-story companies can only wish for. If even part of this portfolio matures, today's valuation — priced largely as a shrunken coal company — gets re-rated."
             ]
         },
         {
             sectionTitle: "Financial Highlights",
             image: "",
             paragraphs: [
-                "Add the key financial metrics — ARPU trends, data revenue growth, capex-to-revenue ratio, EBITDA margin, and dividend coverage."
+                "The 2025 numbers must be read through the lens of the spinoff. Revenue fell 9.9% to US$1.87 billion, and net profit attributable to shareholders dropped 68% to US$447.7 million — a decline driven by the deconsolidation of the thermal coal business and by weaker commodity prices through the year. Within the smaller revenue base, mining contributed US$966 million and mining services US$865 million, confirming that the group's earnings engine is now split between ADMR's coal and SIS's contracting work.",
+                "The encouraging signal came in the first quarter of 2026: net profit jumped 67% year-on-year to US$128.1 million. Annualized, that pace would comfortably exceed the whole of 2025 — evidence that the post-spinoff base is stabilizing and the remaining businesses are gaining traction rather than merely shrinking gracefully.",
+                "The dividend deserves its own paragraph. Paying out 99.96% of profit is extraordinary — and double-edged. It signals confidence and discipline, but a payout ratio that high leaves nothing retained; it can only be sustained if operating cash flow keeps covering both the dividend and the group's ambitious capex pipeline. That tension between generosity and growth investment is the central capital-allocation question for this company."
             ]
         },
         {
             sectionTitle: "Risk Analysis",
             image: "",
             paragraphs: [
-                "Competitive pricing, high capital expenditure, and execution risk in digital transformation.",
-                "Elaborate on the competitive landscape, capex cycle concerns, and what transformation milestones you'd want to see."
+                "The first risk remains commodity prices. Metallurgical coal is less structurally challenged than thermal, but it is still cyclical, still hostage to Chinese and Indian steel demand, and the 68% profit fall in 2025 shows how fast the tide can go out.",
+                "Second, execution risk in the transformation. Aluminum smelting and renewables are capital-hungry businesses in which Alamtri has limited operating history. Smelters are notorious for cost overruns and delays; renewables in Indonesia face tariff and offtake uncertainties. The green story is currently a promise, and promises consume cash before they produce it.",
+                "Third, the dividend-versus-capex squeeze described above. If management insists on jumbo payouts while funding the smelter buildout, debt must fill the gap — and leverage layered onto cyclical earnings is how good companies manufacture bad years.",
+                "Fourth, structural complexity. Post-spinoff, value sits in layered listed entities (ADRO, ADMR, and related companies), with holding-company discounts, related-party transactions, and minority-shareholder alignment all requiring ongoing vigilance."
             ]
         },
         {
             sectionTitle: "What I Monitor",
             image: "",
             paragraphs: [
-                "ARPU, subscriber quality, capex intensity, data revenue, and infrastructure monetization.",
-                "Add any specific event or metric shift that would prompt you to revisit the position."
+                "Coal prices — metallurgical above all — because they still set the earnings weather. ADMR's production volumes and costs, as the group's primary profit engine. The dividend payout ratio against operating cash flow and capex, because the 99.96% payout is either a statement of strength or a warning sign, and the cash flow statement will say which. Milestones at the Kaltara smelter and renewables projects — budgets, timelines, first production — to judge whether the transition is real. And the balance sheet: net debt creeping upward while payouts stay jumbo would be the earliest signal that something has to give."
             ]
         },
         {
             sectionTitle: "Conclusion",
             image: "",
             paragraphs: [
-                "Write your current conviction level, time horizon reasoning, and what would change your view on TLKM."
+                "Alamtri is a bet that one of Indonesia's best-run energy groups can do something very few commodity companies manage: redeploy a fortune earned in coal into durable assets on the right side of the energy transition, while paying shareholders handsomely along the way. The 2025 profit decline was the accounting cost of that choice; the 67% rebound in early 2026 is the first evidence the remaining engine works. The thesis holds as long as cash generation covers both the dividend and the buildout — and the moment those two start competing, the payout, the projects, or the balance sheet will tell the story before the headlines do."
             ]
         }
     ]
