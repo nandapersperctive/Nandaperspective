@@ -66,7 +66,7 @@ if (contactForm) {
         const subject = encodeURIComponent(`Message from ${name} via Nanda Perspective`);
         const body    = encodeURIComponent(`${message}\n\n— ${name} (${fromEmail})`);
 
-        window.location.href = `mailto:nandaperspective@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:nandapersperctive@gmail.com?subject=${subject}&body=${body}`;
     });
 }
 

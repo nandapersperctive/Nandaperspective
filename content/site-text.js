@@ -49,7 +49,7 @@ const siteText = {
 
     contactEyebrow: "Get in Touch",
     contactTitle: "Have a question or feedback?",
-    contactBody: "Fill in the form below — it will open in your email app, ready to send straight to nandaperspective@gmail.com.",
+    contactBody: "Fill in the form below — it will open in your email app, ready to send straight to nandapersperctive@gmail.com.",
     contactNameLabel: "Name",
     contactNamePlaceholder: "Your name",
     contactEmailLabel: "Your Email",
