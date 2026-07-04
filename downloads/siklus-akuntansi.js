@@ -294,6 +294,10 @@ function getBS(tb,netIncome){
 /* ═══════════════════════════════════════════
    FORMATTING
 ═══════════════════════════════════════════ */
+/* Escapes free-text fields (company name, account names, transaction
+   descriptions, etc.) before they go into innerHTML — without this,
+   typing HTML into any of those fields would render as real markup. */
+const esc=(s)=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cur=()=>db.settings.currency||'Rp';
 const fmt=(n)=>cur()+' '+Math.round(n).toLocaleString('id-ID');
 const fmtD=(d)=>{try{return new Date(d).toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'})}catch(e){return d}};
@@ -592,7 +596,7 @@ function pgStep1(){
   const rows=db.transactions.map((t,i)=>`
     <tr>
       <td>${fmtD(t.date)}</td>
-      <td style="font-weight:600;color:var(--primary)">${t.ref}</td>
+      <td style="font-weight:600;color:var(--primary)">${esc(t.ref)}</td>
       <td>${t.description}</td>
       <td>${t.entries.length} akun</td>
       <td class="num">${fmt(t.entries.reduce((s,e)=>s+(e.debit||0),0))}</td>
@@ -641,7 +645,7 @@ function openTxModal(idx){
   document.getElementById('modal-body').innerHTML=`
     <div class="form-grid c3 mb-16">
       <div class="field"><label>Tanggal</label><input type="date" id="tx-date" value="${t.date}"></div>
-      <div class="field"><label>No. Referensi</label><input type="text" id="tx-ref" value="${t.ref}"></div>
+      <div class="field"><label>No. Referensi</label><input type="text" id="tx-ref" value="${esc(t.ref)}"></div>
       <div class="field"><label>Keterangan</label><input type="text" id="tx-desc" value="${t.description}" placeholder="Deskripsi transaksi"></div>
     </div>
     <div class="entry-row-head" style="margin-bottom:6px">
@@ -658,7 +662,7 @@ function openTxModal(idx){
 window.openTxModal=openTxModal;
 
 function entryRowHTML(e,i){
-  const opts=db.coa.map(a=>`<option value="${a.code}" ${a.code===e.account?'selected':''}>${a.code} — ${a.name}</option>`).join('');
+  const opts=db.coa.map(a=>`<option value="${esc(a.code)}" ${a.code===e.account?'selected':''}>${esc(a.code)} — ${esc(a.name)}</option>`).join('');
   return`<div class="entry-row" id="er-${i}">
     <div class="field" style="margin:0"><select onchange="calcBal()">${opts}</select></div>
     <div class="field" style="margin:0"><input type="number" min="0" placeholder="0" value="${e.debit||''}" oninput="calcBal()"></div>
@@ -755,11 +759,11 @@ function pgStep2(){
       <thead><tr><th>Tanggal</th><th>Ref</th><th>Nama Akun</th><th class="text-right">Debit</th><th class="text-right">Kredit</th><th>Keterangan</th></tr></thead>
       <tbody>${rows.map(r=>`<tr>
         <td class="text-muted">${r.desc?fmtD(r.date):''}</td>
-        <td style="font-weight:600;color:var(--primary)">${r.desc?r.ref:''}</td>
-        <td ${r.K?'style="padding-left:28px;color:var(--accent2)"':'style="font-weight:500"'}>${r.name}</td>
+        <td style="font-weight:600;color:var(--primary)">${r.desc?esc(r.ref):''}</td>
+        <td ${r.K?'style="padding-left:28px;color:var(--accent2)"':'style="font-weight:500"'}>${esc(r.name)}</td>
         <td class="num dr">${r.D?fmt(r.D):''}</td>
         <td class="num cr">${r.K?fmt(r.K):''}</td>
-        <td class="text-muted text-sm">${r.desc}</td>
+        <td class="text-muted text-sm">${esc(r.desc)}</td>
       </tr>`).join('')}</tbody>
       <tfoot><tr class="tfoot-row"><td colspan="3">TOTAL</td><td class="num">${fmt(totD)}</td><td class="num">${fmt(totK)}</td><td></td></tr></tfoot>
     </table>
@@ -785,8 +789,8 @@ function pgStep3(){
     return`<div class="t-card">
       <div class="t-card-head">
         <div>
-          <div class="t-card-name">${a.name}</div>
-          <div class="t-card-code">${a.code} · ${a.type} · Normal: ${a.normal==='D'?'Debit':'Kredit'}</div>
+          <div class="t-card-name">${esc(a.name)}</div>
+          <div class="t-card-code">${esc(a.code)} · ${a.type} · Normal: ${a.normal==='D'?'Debit':'Kredit'}</div>
         </div>
         <div class="t-card-balance" style="color:${net>=0?'#A7F3D0':'#FECDD3'}">${fmt(Math.abs(net))}</div>
       </div>
@@ -837,7 +841,7 @@ function renderTB(type,stepNum,prev,next,title,hint){
       <thead><tr><th>Kode</th><th>Nama Akun</th><th>Tipe</th><th class="text-right">Debit</th><th class="text-right">Kredit</th></tr></thead>
       <tbody>${tb.map(r=>`<tr>
         <td class="text-muted text-sm" style="font-family:monospace">${r.code}</td>
-        <td style="font-weight:500">${r.name}</td>
+        <td style="font-weight:500">${esc(r.name)}</td>
         <td><span class="badge ${badgeMap[r.type]||''}">${r.type}</span></td>
         <td class="num dr">${r.dr?fmt(r.dr):''}</td>
         <td class="num cr">${r.cr?fmt(r.cr):''}</td>
@@ -924,7 +928,7 @@ function pgHPPDagang(){
     <button class="btn btn-primary" style="margin-top:16px" onclick="saveHppDagang()">Simpan HPP</button>
   </div>
   <div class="fs-card" id="hpp-result" style="max-width:560px;margin-top:16px">
-    <div class="fs-header"><h3>Hasil Perhitungan HPP Dagang</h3><p>${db.settings.company} · ${periodLabel()}</p></div>
+    <div class="fs-header"><h3>Hasil Perhitungan HPP Dagang</h3><p>${esc(db.settings.company)} · ${periodLabel()}</p></div>
     ${renderHppDagangResult(h.persediaanAwal||0,h.pembelian||0,h.angkut||0,h.retur||0,h.diskon||0,h.persediaanAkhir||0)}
   </div>
   <div class="flex-between" style="margin-top:16px">
@@ -936,7 +940,7 @@ function pgHPPDagang(){
 function calcHppDagang(){
   const v=id=>parseFloat(document.getElementById(id)?.value)||0;
   const el=document.getElementById('hpp-result');
-  if(el)el.innerHTML=`<div class="fs-header"><h3>Hasil Perhitungan HPP Dagang</h3><p>${db.settings.company} · ${periodLabel()}</p></div>`+renderHppDagangResult(v('hpp-pA'),v('hpp-pmb'),v('hpp-ang'),v('hpp-ret'),v('hpp-dis'),v('hpp-pAk'));
+  if(el)el.innerHTML=`<div class="fs-header"><h3>Hasil Perhitungan HPP Dagang</h3><p>${esc(db.settings.company)} · ${periodLabel()}</p></div>`+renderHppDagangResult(v('hpp-pA'),v('hpp-pmb'),v('hpp-ang'),v('hpp-ret'),v('hpp-dis'),v('hpp-pAk'));
 }
 window.calcHppDagang=calcHppDagang;
 
@@ -1012,7 +1016,7 @@ function pgHPPManufaktur(){
   </div>
   <button class="btn btn-primary" style="margin-top:4px" onclick="saveHppMfg()">Simpan HPP</button>
   <div class="fs-card" id="hpp-result" style="margin-top:16px">
-    <div class="fs-header"><h3>Hasil Perhitungan HPP Manufaktur</h3><p>${db.settings.company} · ${periodLabel()}</p></div>
+    <div class="fs-header"><h3>Hasil Perhitungan HPP Manufaktur</h3><p>${esc(db.settings.company)} · ${periodLabel()}</p></div>
     ${renderHppMfgResult(h.bbAwal||0,h.pembelianBB||0,h.bbAkhir||0,h.btkl||0,h.bop||0,h.wipAwal||0,h.wipAkhir||0,h.bjAwal||0,h.bjAkhir||0)}
   </div>
   <div class="flex-between" style="margin-top:16px">
@@ -1024,7 +1028,7 @@ function pgHPPManufaktur(){
 function calcHppMfg(){
   const v=id=>parseFloat(document.getElementById(id)?.value)||0;
   const el=document.getElementById('hpp-result');
-  if(el)el.innerHTML=`<div class="fs-header"><h3>Hasil Perhitungan HPP Manufaktur</h3><p>${db.settings.company} · ${periodLabel()}</p></div>`+renderHppMfgResult(v('hpp-bbA'),v('hpp-pmBB'),v('hpp-bbAk'),v('hpp-btkl'),v('hpp-bop'),v('hpp-wA'),v('hpp-wAk'),v('hpp-bjA'),v('hpp-bjAk'));
+  if(el)el.innerHTML=`<div class="fs-header"><h3>Hasil Perhitungan HPP Manufaktur</h3><p>${esc(db.settings.company)} · ${periodLabel()}</p></div>`+renderHppMfgResult(v('hpp-bbA'),v('hpp-pmBB'),v('hpp-bbAk'),v('hpp-btkl'),v('hpp-bop'),v('hpp-wA'),v('hpp-wAk'),v('hpp-bjA'),v('hpp-bjAk'));
 }
 window.calcHppMfg=calcHppMfg;
 
@@ -1046,28 +1050,28 @@ function lrHtml(is,co,per){
     const grossProfit=is.totRev-hpp;
     const net=grossProfit-is.totExp;
     return`<div class="fs-card">
-      <div class="fs-header"><h3>Laporan Laba Rugi</h3><p>${co} · Periode: ${per}</p></div>
+      <div class="fs-header"><h3>Laporan Laba Rugi</h3><p>${esc(co)} · Periode: ${per}</p></div>
       <div class="fs-sub">PENDAPATAN</div>
-      ${is.rev.map(r=>`<div class="fs-row indent"><span>${r.name}</span><span class="pos">${fmt(r.cr)}</span></div>`).join('')}
+      ${is.rev.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span class="pos">${fmt(r.cr)}</span></div>`).join('')}
       <div class="fs-row subtotal"><span>Total Pendapatan</span><span class="pos">${fmt(is.totRev)}</span></div>
       <div class="fs-sub">HARGA POKOK PENJUALAN</div>
       <div class="fs-row indent"><span>HPP (dari Perhitungan HPP)</span><span class="neg">(${fmt(hpp)})</span></div>
       <div class="fs-row subtotal"><span>LABA KOTOR</span><span class="${grossProfit>=0?'pos':'neg'}">${fmt(Math.abs(grossProfit))}</span></div>
       <div class="fs-sub">BEBAN USAHA</div>
-      ${is.exp.map(r=>`<div class="fs-row indent"><span>${r.name}</span><span class="neg">${fmt(r.dr)}</span></div>`).join('')}
+      ${is.exp.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span class="neg">${fmt(r.dr)}</span></div>`).join('')}
       <div class="fs-row subtotal"><span>Total Beban</span><span class="neg">(${fmt(is.totExp)})</span></div>
       <div class="fs-row grand"><span>${net>=0?'LABA BERSIH':'RUGI BERSIH'}</span><span>${fmt(Math.abs(net))}</span></div>
     </div>`;
   }
 
   return`<div class="fs-card">
-    <div class="fs-header"><h3>Laporan Laba Rugi</h3><p>${co} · Periode: ${per}</p></div>
+    <div class="fs-header"><h3>Laporan Laba Rugi</h3><p>${esc(co)} · Periode: ${per}</p></div>
     ${needsHPP?`<div style="padding:10px 22px 0"><div class="alert alert-warn" style="margin:0"><span class="alert-icon">⚠</span><div style="font-size:12px">Lengkapi <strong>Perhitungan HPP</strong> untuk tampilan Laba Kotor yang lebih akurat. <button class="btn btn-ghost btn-xs" onclick="go('hpp')" style="margin-left:8px">Isi HPP →</button></div></div></div>`:''}
     <div class="fs-sub">PENDAPATAN</div>
-    ${is.rev.map(r=>`<div class="fs-row indent"><span>${r.name}</span><span class="pos">${fmt(r.cr)}</span></div>`).join('')}
+    ${is.rev.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span class="pos">${fmt(r.cr)}</span></div>`).join('')}
     <div class="fs-row subtotal"><span>Total Pendapatan</span><span class="pos">${fmt(is.totRev)}</span></div>
     <div class="fs-sub">BEBAN USAHA</div>
-    ${is.exp.map(r=>`<div class="fs-row indent"><span>${r.name}</span><span class="neg">${fmt(r.dr)}</span></div>`).join('')}
+    ${is.exp.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span class="neg">${fmt(r.dr)}</span></div>`).join('')}
     <div class="fs-row subtotal"><span>Total Beban</span><span class="neg">(${fmt(is.totExp)})</span></div>
     <div class="fs-row grand"><span>${is.net>=0?'LABA BERSIH':'RUGI BERSIH'}</span><span>${fmt(Math.abs(is.net))}</span></div>
   </div>`;
@@ -1080,7 +1084,7 @@ function pgStep5(){
   const rows=db.adjustingEntries.map((t,i)=>`
     <tr>
       <td>${fmtD(t.date)}</td>
-      <td style="font-weight:600;color:var(--primary)">${t.ref}</td>
+      <td style="font-weight:600;color:var(--primary)">${esc(t.ref)}</td>
       <td>${t.description}</td>
       <td class="num">${fmt(t.entries.reduce((s,e)=>s+(e.debit||0),0))}</td>
       <td><div class="flex-gap">
@@ -1130,7 +1134,7 @@ function openAjeModal(idx){
   document.getElementById('modal-body').innerHTML=`
     <div class="form-grid c3 mb-16">
       <div class="field"><label>Tanggal</label><input type="date" id="tx-date" value="${t.date}"></div>
-      <div class="field"><label>Referensi</label><input type="text" id="tx-ref" value="${t.ref}"></div>
+      <div class="field"><label>Referensi</label><input type="text" id="tx-ref" value="${esc(t.ref)}"></div>
       <div class="field"><label>Keterangan</label><input type="text" id="tx-desc" value="${t.description}" placeholder="Contoh: Penyusutan peralatan"></div>
     </div>
     <div class="entry-row-head" style="margin-bottom:6px"><span>Akun</span><span>Debit</span><span>Kredit</span><span></span></div>
@@ -1195,8 +1199,8 @@ function pgStep7(){
   /* Equity Statement */
   const ekuitas=`
   <div class="fs-card">
-    <div class="fs-header"><h3>Laporan Perubahan Ekuitas</h3><p>${co} · Periode: ${per}</p></div>
-    ${bs.eq.filter(r=>r.code!=='3-9000').map(r=>`<div class="fs-row indent"><span>${r.name}</span><span>${fmt(r.cr-r.dr)}</span></div>`).join('')}
+    <div class="fs-header"><h3>Laporan Perubahan Ekuitas</h3><p>${esc(co)} · Periode: ${per}</p></div>
+    ${bs.eq.filter(r=>r.code!=='3-9000').map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span>${fmt(r.cr-r.dr)}</span></div>`).join('')}
     <div class="fs-row indent"><span>${is.net>=0?'Laba Bersih Periode Ini':'Rugi Bersih Periode Ini'}</span><span class="${is.net>=0?'pos':'neg'}">${fmt(is.net)}</span></div>
     <div class="fs-row grand"><span>TOTAL EKUITAS</span><span>${fmt(bs.totEq)}</span></div>
   </div>`;
@@ -1208,26 +1212,26 @@ function pgStep7(){
   const totLL=lL.reduce((s,r)=>s+r.cr,0),totLP=lP.reduce((s,r)=>s+r.cr,0);
   const neraca=`
   <div class="fs-card">
-    <div class="fs-header"><h3>Neraca (Balance Sheet)</h3><p>${co} · Per ${per}</p></div>
+    <div class="fs-header"><h3>Neraca (Balance Sheet)</h3><p>${esc(co)} · Per ${per}</p></div>
     <div class="fs-two-col">
       <div class="fs-col">
         <div class="fs-sub">ASET LANCAR</div>
-        ${aL.map(r=>`<div class="fs-row indent"><span>${r.name}</span><span>${fmt(r.dr-r.cr)}</span></div>`).join('')}
+        ${aL.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span>${fmt(r.dr-r.cr)}</span></div>`).join('')}
         <div class="fs-row subtotal"><span>Total Aset Lancar</span><span>${fmt(totAL)}</span></div>
         <div class="fs-sub">ASET TETAP</div>
-        ${aT.map(r=>`<div class="fs-row indent"><span>${r.name}</span><span>${fmt(r.dr-r.cr)}</span></div>`).join('')}
+        ${aT.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span>${fmt(r.dr-r.cr)}</span></div>`).join('')}
         <div class="fs-row subtotal"><span>Total Aset Tetap (Neto)</span><span>${fmt(totAT)}</span></div>
         <div class="fs-row grand"><span>TOTAL ASET</span><span>${fmt(bs.totA)}</span></div>
       </div>
       <div class="fs-col">
         <div class="fs-sub">LIABILITAS JANGKA PENDEK</div>
-        ${lL.map(r=>`<div class="fs-row indent"><span>${r.name}</span><span>${fmt(r.cr)}</span></div>`).join('')}
+        ${lL.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span>${fmt(r.cr)}</span></div>`).join('')}
         <div class="fs-row subtotal"><span>Total Liabilitas Lancar</span><span>${fmt(totLL)}</span></div>
         <div class="fs-sub">LIABILITAS JANGKA PANJANG</div>
-        ${lP.map(r=>`<div class="fs-row indent"><span>${r.name}</span><span>${fmt(r.cr)}</span></div>`).join('')||'<div class="fs-row indent text-muted"><span>—</span><span>—</span></div>'}
+        ${lP.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span>${fmt(r.cr)}</span></div>`).join('')||'<div class="fs-row indent text-muted"><span>—</span><span>—</span></div>'}
         <div class="fs-row subtotal"><span>Total Liabilitas</span><span>${fmt(bs.totL)}</span></div>
         <div class="fs-sub">EKUITAS</div>
-        ${bs.eq.filter(r=>r.code!=='3-9000').map(r=>`<div class="fs-row indent"><span>${r.name}</span><span>${fmt(r.cr-r.dr)}</span></div>`).join('')}
+        ${bs.eq.filter(r=>r.code!=='3-9000').map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span>${fmt(r.cr-r.dr)}</span></div>`).join('')}
         <div class="fs-row indent"><span>Laba Bersih</span><span class="${is.net>=0?'pos':'neg'}">${fmt(is.net)}</span></div>
         <div class="fs-row subtotal"><span>Total Ekuitas</span><span>${fmt(bs.totEq)}</span></div>
         <div class="fs-row grand"><span>TOTAL LIABILITAS + EKUITAS</span><span>${fmt(bs.totL+bs.totEq)}</span></div>
@@ -1240,7 +1244,7 @@ function pgStep7(){
   const kasEnd=netBal('1-1100',led)+netBal('1-1200',led);
   const arusKas=`
   <div class="fs-card">
-    <div class="fs-header"><h3>Laporan Arus Kas (Disederhanakan)</h3><p>${co} · Periode: ${per}</p></div>
+    <div class="fs-header"><h3>Laporan Arus Kas (Disederhanakan)</h3><p>${esc(co)} · Periode: ${per}</p></div>
     <div class="fs-sub">AKTIVITAS OPERASI</div>
     <div class="fs-row indent"><span>Laba Bersih</span><span>${fmt(is.net)}</span></div>
     <div class="fs-row subtotal"><span>Arus Kas dari Operasi (estimasi)</span><span class="${is.net>=0?'pos':'neg'}">${fmt(is.net)}</span></div>
@@ -1274,9 +1278,9 @@ function switchFsTab(tab,btn){
   const led=getLedger('all');const kasEnd=netBal('1-1100',led)+netBal('1-1200',led);
   const content={
     lr:lrHtml(is,co,per),
-    ekuitas:`<div class="fs-card"><div class="fs-header"><h3>Laporan Perubahan Ekuitas</h3><p>${co} · Periode: ${per}</p></div>${bs.eq.filter(r=>r.code!=='3-9000').map(r=>`<div class="fs-row indent"><span>${r.name}</span><span>${fmt(r.cr-r.dr)}</span></div>`).join('')}<div class="fs-row indent"><span>${is.net>=0?'Laba Bersih':'Rugi Bersih'} Periode Ini</span><span class="${is.net>=0?'pos':'neg'}">${fmt(is.net)}</span></div><div class="fs-row grand"><span>TOTAL EKUITAS</span><span>${fmt(bs.totEq)}</span></div></div>`,
-    neraca:(()=>{const aL=bs.assets.filter(a=>a.code.startsWith('1-1')),aT=bs.assets.filter(a=>a.code.startsWith('1-2'));const totAL=aL.reduce((s,r)=>s+r.dr-r.cr,0),totAT=aT.reduce((s,r)=>s+r.dr-r.cr,0);const lL=bs.liab.filter(a=>a.code.startsWith('2-1')),lP=bs.liab.filter(a=>a.code.startsWith('2-2'));const totLL=lL.reduce((s,r)=>s+r.cr,0),totLP=lP.reduce((s,r)=>s+r.cr,0);return`<div class="fs-card"><div class="fs-header"><h3>Neraca</h3><p>${co} · Per ${per}</p></div><div class="fs-two-col"><div class="fs-col"><div class="fs-sub">ASET LANCAR</div>${aL.map(r=>`<div class="fs-row indent"><span>${r.name}</span><span>${fmt(r.dr-r.cr)}</span></div>`).join('')}<div class="fs-row subtotal"><span>Total Aset Lancar</span><span>${fmt(totAL)}</span></div><div class="fs-sub">ASET TETAP</div>${aT.map(r=>`<div class="fs-row indent"><span>${r.name}</span><span>${fmt(r.dr-r.cr)}</span></div>`).join('')}<div class="fs-row subtotal"><span>Total Aset Tetap</span><span>${fmt(totAT)}</span></div><div class="fs-row grand"><span>TOTAL ASET</span><span>${fmt(bs.totA)}</span></div></div><div class="fs-col"><div class="fs-sub">LIABILITAS JANGKA PENDEK</div>${lL.map(r=>`<div class="fs-row indent"><span>${r.name}</span><span>${fmt(r.cr)}</span></div>`).join('')}<div class="fs-row subtotal"><span>Total Liabilitas Lancar</span><span>${fmt(totLL)}</span></div><div class="fs-sub">EKUITAS</div>${bs.eq.filter(r=>r.code!=='3-9000').map(r=>`<div class="fs-row indent"><span>${r.name}</span><span>${fmt(r.cr-r.dr)}</span></div>`).join('')}<div class="fs-row indent"><span>Laba Bersih</span><span>${fmt(is.net)}</span></div><div class="fs-row subtotal"><span>Total Ekuitas</span><span>${fmt(bs.totEq)}</span></div><div class="fs-row grand"><span>TOTAL LIABILITAS + EKUITAS</span><span>${fmt(bs.totL+bs.totEq)}</span></div></div></div></div>`;})(),
-    kas:`<div class="fs-card"><div class="fs-header"><h3>Arus Kas (Disederhanakan)</h3><p>${co} · Periode: ${per}</p></div><div class="fs-sub">AKTIVITAS OPERASI</div><div class="fs-row indent"><span>Laba Bersih</span><span>${fmt(is.net)}</span></div><div class="fs-row subtotal"><span>Arus Kas Operasi (estimasi)</span><span class="${is.net>=0?'pos':'neg'}">${fmt(is.net)}</span></div><div class="fs-row grand"><span>Saldo Kas & Bank Akhir Periode</span><span class="pos">${fmt(kasEnd)}</span></div></div>`,
+    ekuitas:`<div class="fs-card"><div class="fs-header"><h3>Laporan Perubahan Ekuitas</h3><p>${esc(co)} · Periode: ${per}</p></div>${bs.eq.filter(r=>r.code!=='3-9000').map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span>${fmt(r.cr-r.dr)}</span></div>`).join('')}<div class="fs-row indent"><span>${is.net>=0?'Laba Bersih':'Rugi Bersih'} Periode Ini</span><span class="${is.net>=0?'pos':'neg'}">${fmt(is.net)}</span></div><div class="fs-row grand"><span>TOTAL EKUITAS</span><span>${fmt(bs.totEq)}</span></div></div>`,
+    neraca:(()=>{const aL=bs.assets.filter(a=>a.code.startsWith('1-1')),aT=bs.assets.filter(a=>a.code.startsWith('1-2'));const totAL=aL.reduce((s,r)=>s+r.dr-r.cr,0),totAT=aT.reduce((s,r)=>s+r.dr-r.cr,0);const lL=bs.liab.filter(a=>a.code.startsWith('2-1')),lP=bs.liab.filter(a=>a.code.startsWith('2-2'));const totLL=lL.reduce((s,r)=>s+r.cr,0),totLP=lP.reduce((s,r)=>s+r.cr,0);return`<div class="fs-card"><div class="fs-header"><h3>Neraca</h3><p>${esc(co)} · Per ${per}</p></div><div class="fs-two-col"><div class="fs-col"><div class="fs-sub">ASET LANCAR</div>${aL.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span>${fmt(r.dr-r.cr)}</span></div>`).join('')}<div class="fs-row subtotal"><span>Total Aset Lancar</span><span>${fmt(totAL)}</span></div><div class="fs-sub">ASET TETAP</div>${aT.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span>${fmt(r.dr-r.cr)}</span></div>`).join('')}<div class="fs-row subtotal"><span>Total Aset Tetap</span><span>${fmt(totAT)}</span></div><div class="fs-row grand"><span>TOTAL ASET</span><span>${fmt(bs.totA)}</span></div></div><div class="fs-col"><div class="fs-sub">LIABILITAS JANGKA PENDEK</div>${lL.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span>${fmt(r.cr)}</span></div>`).join('')}<div class="fs-row subtotal"><span>Total Liabilitas Lancar</span><span>${fmt(totLL)}</span></div><div class="fs-sub">EKUITAS</div>${bs.eq.filter(r=>r.code!=='3-9000').map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span>${fmt(r.cr-r.dr)}</span></div>`).join('')}<div class="fs-row indent"><span>Laba Bersih</span><span>${fmt(is.net)}</span></div><div class="fs-row subtotal"><span>Total Ekuitas</span><span>${fmt(bs.totEq)}</span></div><div class="fs-row grand"><span>TOTAL LIABILITAS + EKUITAS</span><span>${fmt(bs.totL+bs.totEq)}</span></div></div></div></div>`;})(),
+    kas:`<div class="fs-card"><div class="fs-header"><h3>Arus Kas (Disederhanakan)</h3><p>${esc(co)} · Periode: ${per}</p></div><div class="fs-sub">AKTIVITAS OPERASI</div><div class="fs-row indent"><span>Laba Bersih</span><span>${fmt(is.net)}</span></div><div class="fs-row subtotal"><span>Arus Kas Operasi (estimasi)</span><span class="${is.net>=0?'pos':'neg'}">${fmt(is.net)}</span></div><div class="fs-row grand"><span>Saldo Kas & Bank Akhir Periode</span><span class="pos">${fmt(kasEnd)}</span></div></div>`,
   };
   document.getElementById('fs-content').innerHTML=content[tab]||'';
 }
@@ -1331,11 +1335,11 @@ function pgStep8(){
     <table>
       <thead><tr><th>Ref</th><th>Nama Akun</th><th class="text-right">Debit</th><th class="text-right">Kredit</th><th>Keterangan</th></tr></thead>
       <tbody>${rows.map(r=>`<tr>
-        <td style="font-weight:600;color:var(--primary)">${r.ref}</td>
-        <td ${r.K?'style="padding-left:28px"':''}>${r.name}</td>
+        <td style="font-weight:600;color:var(--primary)">${esc(r.ref)}</td>
+        <td ${r.K?'style="padding-left:28px"':''}>${esc(r.name)}</td>
         <td class="num dr">${r.D?fmt(r.D):''}</td>
         <td class="num cr">${r.K?fmt(r.K):''}</td>
-        <td class="text-muted text-sm">${r.desc}</td>
+        <td class="text-muted text-sm">${esc(r.desc)}</td>
       </tr>`).join('')}</tbody>
     </table>
   </div>
@@ -1349,7 +1353,7 @@ function pgStep8(){
     <div class="table-wrap">
       <table>
         <thead><tr><th>Kode</th><th>Nama Akun</th><th class="text-right">Debit</th><th class="text-right">Kredit</th></tr></thead>
-        <tbody>${postTb.map(r=>`<tr><td class="text-muted text-sm" style="font-family:monospace">${r.code}</td><td>${r.name}</td><td class="num dr">${r.dr?fmt(r.dr):''}</td><td class="num cr">${r.cr?fmt(r.cr):''}</td></tr>`).join('')}</tbody>
+        <tbody>${postTb.map(r=>`<tr><td class="text-muted text-sm" style="font-family:monospace">${r.code}</td><td>${esc(r.name)}</td><td class="num dr">${r.dr?fmt(r.dr):''}</td><td class="num cr">${r.cr?fmt(r.cr):''}</td></tr>`).join('')}</tbody>
       </table>
     </div>
     <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line)">
@@ -1419,8 +1423,8 @@ function pgCOA(){
       <table>
         <thead><tr><th>Kode</th><th>Nama Akun</th><th>Normal</th><th>Aksi</th></tr></thead>
         <tbody>${grouped[t].map(a=>`<tr>
-          <td style="font-family:monospace;font-weight:600;color:var(--primary)">${a.code}</td>
-          <td>${a.name}</td>
+          <td style="font-family:monospace;font-weight:600;color:var(--primary)">${esc(a.code)}</td>
+          <td>${esc(a.name)}</td>
           <td><span class="badge" style="background:var(--cream);color:var(--muted)">${a.normal==='D'?'Debit':'Kredit'}</span></td>
           <td><div class="flex-gap">
             <button class="btn btn-ghost btn-xs" onclick="openCoaModal('${a.code}')">Edit</button>
@@ -1439,8 +1443,8 @@ function openCoaModal(code){
   document.getElementById('modal-title').textContent=isEdit?'Edit Akun':'Tambah Akun Baru';
   document.getElementById('modal-body').innerHTML=`
     <div class="form-grid c2">
-      <div class="field"><label>Kode Akun</label><input type="text" id="coa-code" value="${a.code}" placeholder="1-1000" ${isEdit?'readonly':''}></div>
-      <div class="field"><label>Nama Akun</label><input type="text" id="coa-name" value="${a.name}" placeholder="Contoh: Kas"></div>
+      <div class="field"><label>Kode Akun</label><input type="text" id="coa-code" value="${esc(a.code)}" placeholder="1-1000" ${isEdit?'readonly':''}></div>
+      <div class="field"><label>Nama Akun</label><input type="text" id="coa-name" value="${esc(a.name)}" placeholder="Contoh: Kas"></div>
       <div class="field"><label>Tipe Akun</label><select id="coa-type" onchange="const nm={'Aset':'D','Liabilitas':'K','Ekuitas':'K','Pendapatan':'K','Beban':'D'};document.getElementById('coa-normal').value=nm[this.value]||'D'">
         ${['Aset','Liabilitas','Ekuitas','Pendapatan','Beban'].map(t=>`<option ${t===a.type?'selected':''}>${t}</option>`).join('')}
       </select></div>
@@ -1705,9 +1709,9 @@ function pgSettings(){
   <div class="card" style="max-width:520px">
     <div class="card-title">Informasi Perusahaan</div>
     <div class="form-grid">
-      <div class="field"><label>Nama Perusahaan / UMKM</label><input type="text" id="s-company" value="${s.company}" placeholder="Nama Usaha Anda"></div>
-      <div class="field"><label>Nama Pemilik</label><input type="text" id="s-owner" value="${s.owner}"></div>
-      <div class="field"><label>Alamat</label><textarea id="s-address">${s.address||''}</textarea></div>
+      <div class="field"><label>Nama Perusahaan / UMKM</label><input type="text" id="s-company" value="${esc(s.company)}" placeholder="Nama Usaha Anda"></div>
+      <div class="field"><label>Nama Pemilik</label><input type="text" id="s-owner" value="${esc(s.owner)}"></div>
+      <div class="field"><label>Alamat</label><textarea id="s-address">${esc(s.address||'')}</textarea></div>
       <div class="form-grid c2">
         <div class="field"><label>Periode (YYYY-MM)</label><input type="month" id="s-period" value="${s.period}"></div>
         <div class="field"><label>Simbol Mata Uang</label><input type="text" id="s-currency" value="${s.currency}" placeholder="Rp" maxlength="5"></div>
@@ -1817,7 +1821,7 @@ let _dangerAction=null;
 function openDangerModal({title,subtitle,items,requireTyping=false,onConfirm}){
   document.getElementById('danger-title').textContent=title;
   document.getElementById('danger-subtitle').textContent=subtitle;
-  document.getElementById('danger-list').innerHTML=items.map(i=>`<li>${i}</li>`).join('');
+  document.getElementById('danger-list').innerHTML=items.map(i=>`<li>${esc(i)}</li>`).join('');
   const typeField=document.getElementById('danger-type-field');
   const typeInput=document.getElementById('danger-type-input');
   const confirmBtn=document.getElementById('danger-confirm-btn');
