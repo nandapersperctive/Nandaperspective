@@ -634,14 +634,18 @@ nav a:hover { color: var(--primary); }
 }
 
 /* =====================
-   CONTACT / CTA SECTION
+   CONTACT SECTION
 ===================== */
-.contact, .contact-form-section {
+.contact-form-section {
+    display: grid;
+    grid-template-columns: minmax(0,.95fr) minmax(320px,.55fr);
+    gap: 40px;
+    align-items: start;
     background: var(--bg);
     color: var(--ink);
 }
 
-.contact h2, .contact-form-section h2 {
+.contact-form-section h2 {
     font-family: 'Fraunces', serif;
     font-size: clamp(2rem, 4vw, 3.4rem);
     line-height: 1.05;
@@ -649,21 +653,11 @@ nav a:hover { color: var(--primary); }
     color: var(--navy);
 }
 
-.contact p:not(.eyebrow), .contact-form-section p:not(.eyebrow) {
+.contact-form-section p:not(.eyebrow) {
     color: #465467;
     line-height: 1.75;
     font-size: 1.05rem;
     margin-bottom: 26px;
-}
-
-.contact { max-width: 720px; }
-.contact .button { display: inline-flex; }
-
-.contact-form-section {
-    display: grid;
-    grid-template-columns: minmax(0,.95fr) minmax(320px,.55fr);
-    gap: 40px;
-    align-items: start;
 }
 
 .contact-card {

@@ -42,11 +42,6 @@ const siteText = {
     readFeaturedLink: "Read",
     articlesShownSuffix: "insights shown",
 
-    ctaEyebrow: "Keep Reading",
-    ctaTitle: "Explore More Insights.",
-    ctaBody: "Every article starts with a question worth thinking through — browse the full collection of insights on investing, business, and economics.",
-    ctaButton: "Read All Insights",
-
     contactEyebrow: "Get in Touch",
     contactTitle: "Have a question or feedback?",
     contactBody: "Fill in the form below — it will open in your email app, ready to send straight to nandapersperctive@gmail.com.",
