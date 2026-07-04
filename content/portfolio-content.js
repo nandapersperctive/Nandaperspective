@@ -99,7 +99,7 @@ const portfolioText = {
     portfolioEyebrow: "Personal portfolio",
     portfolioTitle: "Stocks I Own and the Analysis Behind Them",
     portfolioDescription: "A structured view of holdings, investment thesis, risk factors, and monitoring notes. This page is for personal documentation, not investment advice.",
-    portfolioHeroImage: "images/portfolio/portofolio-banner.png",   /* Photo behind this banner, e.g. "images/portfolio/portfolio-hero.jpg". Leave empty for plain navy. */
+    portfolioHeroImage: "images/portfolio/portfolio-banner.png",   /* Photo behind this banner, e.g. "images/portfolio/portfolio-hero.jpg". Leave empty for plain navy. */
     portfolioStyleLabel: "Style",
     portfolioStyleValue: "Long-term, quality-first",
     portfolioRiskLabel: "Risk Control",
