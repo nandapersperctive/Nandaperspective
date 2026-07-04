@@ -6,9 +6,6 @@ const CONTENT_SIGNATURE = '<p class="content-signature">â€” Nanda Perspective â€
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.getElementById("main-nav");
 const year = document.getElementById("year");
-const subscribeForm = document.getElementById("subscribe-form");
-const subscriberEmail = document.getElementById("subscriber-email");
-const formMessage = document.getElementById("form-message");
 
 /* All page text is filled in from the content/ folder. This file just
    combines the shared text (content/site-text.js) with the Portfolio
@@ -49,32 +46,6 @@ if (menuToggle && mainNav) {
             mainNav.classList.remove("open");
             menuToggle.setAttribute("aria-expanded", "false");
         }
-    });
-}
-
-if (subscribeForm && subscriberEmail && formMessage) {
-    subscribeForm.addEventListener("submit", event => {
-        event.preventDefault();
-
-        const email = subscriberEmail.value.trim().toLowerCase();
-
-        if (!email) {
-            formMessage.textContent = uiText.subscribeEmpty;
-            return;
-        }
-
-        const subscribers = JSON.parse(localStorage.getItem("nandaSubscribers") || "[]");
-        const isExisting = subscribers.includes(email);
-
-        if (!isExisting) {
-            subscribers.push(email);
-            localStorage.setItem("nandaSubscribers", JSON.stringify(subscribers));
-        }
-
-        formMessage.textContent = isExisting
-            ? uiText.subscribeExisting
-            : uiText.subscribeSuccess;
-        subscribeForm.reset();
     });
 }
 

@@ -51,13 +51,10 @@ const siteText = {
     focusBusinessTitle: "Business",
     focusBusinessBody: "Studying strategy, moats, competition, and management decisions.",
 
-    newsletterTitle: "Get a summary of new insights.",
-    newsletterBody: "Enter your email for a browser-only subscription simulation. Data is stored locally on this device.",
-    emailPlaceholder: "name@email.com",
-    subscribe: "Subscribe",
-    subscribeEmpty: "Email is required.",
-    subscribeExisting: "This email is already registered in this browser.",
-    subscribeSuccess: "Subscribed. The email is stored locally in this browser.",
+    ctaEyebrow: "Keep Reading",
+    ctaTitle: "Explore More Insights.",
+    ctaBody: "Every article starts with a question worth thinking through — browse the full collection of insights on investing, business, and economics.",
+    ctaButton: "Read All Insights",
 
     backToTop: "Back to top",
     backToHome: "Back to home",

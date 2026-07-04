@@ -464,8 +464,7 @@ nav a:hover { color: var(--primary); }
 }
 
 .search-box,
-.select-box,
-.subscribe-form label {
+.select-box {
     display: grid;
     gap: 6px;
     font-size: .72rem;
@@ -476,8 +475,7 @@ nav a:hover { color: var(--primary); }
 }
 
 .search-box input,
-.select-box select,
-.subscribe-form input {
+.select-box select {
     width: 100%;
     min-height: 44px;
     border: none;
@@ -493,8 +491,7 @@ nav a:hover { color: var(--primary); }
 }
 
 .search-box input:focus,
-.select-box select:focus,
-.subscribe-form input:focus {
+.select-box select:focus {
     outline: none;
     box-shadow: var(--clay), 0 0 0 3px rgba(224,90,58,.15);
 }
@@ -687,10 +684,7 @@ nav a:hover { color: var(--primary); }
    CONTACT / NEWSLETTER
 ===================== */
 .contact {
-    display: grid;
-    grid-template-columns: minmax(0,.95fr) minmax(320px,.55fr);
-    gap: 40px;
-    align-items: start;
+    max-width: 720px;
     background: var(--bg);
     color: var(--ink);
 }
@@ -703,30 +697,14 @@ nav a:hover { color: var(--primary); }
     color: var(--navy);
 }
 
-.contact p:not(.eyebrow):not(.form-message) {
+.contact p:not(.eyebrow) {
     color: #465467;
     line-height: 1.75;
     font-size: 1.05rem;
+    margin-bottom: 26px;
 }
 
-.subscribe-form {
-    background: linear-gradient(145deg, #fffcf9, #fff4ee);
-    border: none;
-    border-radius: var(--radius-lg);
-    padding: 30px;
-    display: grid;
-    gap: 14px;
-    box-shadow: var(--clay);
-}
-
-.subscribe-form .button { width: 100%; cursor: pointer; font: inherit; font-weight: 700; }
-
-.form-message {
-    min-height: 22px;
-    color: var(--navy);
-    line-height: 1.5;
-    font-size: .88rem;
-}
+.contact .button { display: inline-flex; }
 
 /* =====================
    FOOTER
@@ -2184,7 +2162,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
     .article-layout,
     .article-grid,
     .focus-grid,
-    .contact,
     .about-layout,
     .stock-body,
     .stock-snapshot { grid-template-columns: 1fr; }
