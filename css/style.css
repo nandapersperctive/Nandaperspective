@@ -636,13 +636,12 @@ nav a:hover { color: var(--primary); }
 /* =====================
    CONTACT / CTA SECTION
 ===================== */
-.contact {
-    max-width: 720px;
+.contact, .contact-form-section {
     background: var(--bg);
     color: var(--ink);
 }
 
-.contact h2 {
+.contact h2, .contact-form-section h2 {
     font-family: 'Fraunces', serif;
     font-size: clamp(2rem, 4vw, 3.4rem);
     line-height: 1.05;
@@ -650,14 +649,65 @@ nav a:hover { color: var(--primary); }
     color: var(--navy);
 }
 
-.contact p:not(.eyebrow) {
+.contact p:not(.eyebrow), .contact-form-section p:not(.eyebrow) {
     color: #465467;
     line-height: 1.75;
     font-size: 1.05rem;
     margin-bottom: 26px;
 }
 
+.contact { max-width: 720px; }
 .contact .button { display: inline-flex; }
+
+.contact-form-section {
+    display: grid;
+    grid-template-columns: minmax(0,.95fr) minmax(320px,.55fr);
+    gap: 40px;
+    align-items: start;
+}
+
+.contact-card {
+    background: linear-gradient(145deg, #fffcf9, #fff4ee);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    display: grid;
+    gap: 14px;
+    box-shadow: var(--clay);
+}
+
+.contact-card label {
+    display: grid;
+    gap: 6px;
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.contact-card input,
+.contact-card textarea {
+    width: 100%;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--paper);
+    box-shadow: var(--clay-sm);
+    color: var(--ink);
+    font: inherit;
+    padding: 10px 18px;
+    letter-spacing: 0;
+    text-transform: none;
+    transition: box-shadow .2s ease;
+    resize: vertical;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+    outline: none;
+    box-shadow: var(--clay), 0 0 0 3px rgba(224,90,58,.15);
+}
+
+.contact-card .button { width: 100%; cursor: pointer; font: inherit; font-weight: 700; }
 
 /* =====================
    FOOTER
@@ -2041,6 +2091,8 @@ footer a:hover { color: rgba(255,255,255,.55); }
 
     .portfolio-body { grid-template-columns: 1fr; }
     .updates-sidebar { position: static; border-left: none; border-top: 1px solid var(--line); padding: 40px 6%; }
+
+    .contact-form-section { grid-template-columns: 1fr; }
 
     .featured-app-card { flex-direction: column; align-items: flex-start; padding: 32px 28px; gap: 24px; }
     .featured-app-desc { margin-bottom: 20px; }

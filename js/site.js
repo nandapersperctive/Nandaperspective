@@ -51,6 +51,25 @@ if (menuToggle && mainNav) {
 
 translatePage();
 
+/* Contact form (homepage only) — builds a mailto: link from the fields
+   and hands it to the visitor's own email app. No backend involved, so
+   this works the moment the site is online with zero extra setup. */
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name       = document.getElementById("contact-name").value.trim();
+        const fromEmail  = document.getElementById("contact-email-from").value.trim();
+        const message    = document.getElementById("contact-message").value.trim();
+
+        const subject = encodeURIComponent(`Message from ${name} via Nanda Perspective`);
+        const body    = encodeURIComponent(`${message}\n\n— ${name} (${fromEmail})`);
+
+        window.location.href = `mailto:nandaperspective@gmail.com?subject=${subject}&body=${body}`;
+    });
+}
+
 /* Fade sections into view as the visitor scrolls down the page. */
 const revealSections = document.querySelectorAll(".section");
 

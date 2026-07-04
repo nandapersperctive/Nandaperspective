@@ -47,6 +47,17 @@ const siteText = {
     ctaBody: "Every article starts with a question worth thinking through — browse the full collection of insights on investing, business, and economics.",
     ctaButton: "Read All Insights",
 
+    contactEyebrow: "Get in Touch",
+    contactTitle: "Have a question or feedback?",
+    contactBody: "Fill in the form below — it will open in your email app, ready to send straight to nandaperspective@gmail.com.",
+    contactNameLabel: "Name",
+    contactNamePlaceholder: "Your name",
+    contactEmailLabel: "Your Email",
+    emailPlaceholder: "name@email.com",
+    contactMessageLabel: "Message",
+    contactMessagePlaceholder: "What's on your mind?",
+    contactSend: "Send Email",
+
     backToTop: "Back to top",
     backToHome: "Back to home",
     backToArticles: "← Back to insights",
