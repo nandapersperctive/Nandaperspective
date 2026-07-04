@@ -2,6 +2,17 @@ const aboutHeading = document.getElementById("about-heading");
 const aboutBio     = document.getElementById("about-bio");
 const aboutQuote   = document.getElementById("about-quote");
 
+/* ── Optional audio player (song or podcast) above the profile photo ── */
+const profileAudioEl = document.getElementById("profile-audio");
+if (profileAudioEl && aboutText.audioTrack) {
+    profileAudioEl.innerHTML = `
+        <div class="profile-audio-card">
+            <p class="profile-audio-label">${aboutText.audioLabel || "Now Playing"}</p>
+            <audio controls preload="none" src="${aboutText.audioTrack}"></audio>
+        </div>
+    `;
+}
+
 /* ── Heading: render kata per kata dengan delay bertingkat ── */
 function animateHeading(el, text) {
     const words = text.trim().split(/\s+/);

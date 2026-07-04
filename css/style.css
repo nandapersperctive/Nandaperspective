@@ -1447,12 +1447,33 @@ footer a:hover { color: rgba(255,255,255,.55); }
 .profile-card {
     position: sticky;
     top: 100px;
-    box-shadow: var(--shadow);
-    animation: aboutPhotoIn .8s cubic-bezier(.22,1,.36,1) both,
-               borderPulse 5s ease-in-out 1.2s infinite;
+    display: grid;
+    gap: 16px;
+    animation: aboutPhotoIn .8s cubic-bezier(.22,1,.36,1) both;
     /* gerakan mouse ditangani JS — transition untuk smoothness */
-    transition: transform .12s ease, box-shadow .3s ease;
+    transition: transform .12s ease;
     will-change: transform;
+}
+
+.profile-audio-card {
+    padding: 14px 18px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, #fffcf9, #fff4ee);
+    box-shadow: var(--clay);
+}
+
+.profile-audio-label {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.profile-audio-card audio {
+    width: 100%;
+    display: block;
 }
 
 .profile-photo-card {
@@ -1462,7 +1483,9 @@ footer a:hover { color: rgba(255,255,255,.55); }
     aspect-ratio: 3/4;
     background: var(--navy);
     border-radius: 32px;
-    /* foto tidak float sendiri — sudah ikut dari .profile-card */
+    box-shadow: var(--shadow);
+    animation: borderPulse 5s ease-in-out 1.2s infinite;
+    transition: box-shadow .3s ease;
 }
 
 .profile-photo-card img {
