@@ -664,9 +664,9 @@ window.openTxModal=openTxModal;
 function entryRowHTML(e,i){
   const opts=db.coa.map(a=>`<option value="${esc(a.code)}" ${a.code===e.account?'selected':''}>${esc(a.code)} — ${esc(a.name)}</option>`).join('');
   return`<div class="entry-row" id="er-${i}">
-    <div class="field" style="margin:0"><select onchange="calcBal()">${opts}</select></div>
-    <div class="field" style="margin:0"><input type="number" min="0" placeholder="0" value="${e.debit||''}" oninput="calcBal()"></div>
-    <div class="field" style="margin:0"><input type="number" min="0" placeholder="0" value="${e.credit||''}" oninput="calcBal()"></div>
+    <div class="field" style="margin:0"><select data-fn="calcBal">${opts}</select></div>
+    <div class="field" style="margin:0"><input type="number" min="0" placeholder="0" value="${e.debit||''}" data-fn="calcBal"></div>
+    <div class="field" style="margin:0"><input type="number" min="0" placeholder="0" value="${e.credit||''}" data-fn="calcBal"></div>
     <button class="del-btn" data-fn="removeEntryRow">×</button>
   </div>`;
 }
@@ -918,12 +918,12 @@ function pgHPPDagang(){
   <div class="card" style="max-width:560px">
     <div class="card-title">Input Data HPP Dagang — ${periodLabel()}</div>
     <div class="form-grid c2">
-      <div class="field"><label>Persediaan Awal</label><input type="number" id="hpp-pA" value="${h.persediaanAwal||0}" oninput="calcHppDagang()" min="0"></div>
-      <div class="field"><label>Pembelian (gross)</label><input type="number" id="hpp-pmb" value="${h.pembelian||0}" oninput="calcHppDagang()" min="0"></div>
-      <div class="field"><label>Beban Angkut Masuk</label><input type="number" id="hpp-ang" value="${h.angkut||0}" oninput="calcHppDagang()" min="0"></div>
-      <div class="field"><label>Retur Pembelian</label><input type="number" id="hpp-ret" value="${h.retur||0}" oninput="calcHppDagang()" min="0"></div>
-      <div class="field"><label>Diskon Pembelian</label><input type="number" id="hpp-dis" value="${h.diskon||0}" oninput="calcHppDagang()" min="0"></div>
-      <div class="field"><label>Persediaan Akhir</label><input type="number" id="hpp-pAk" value="${h.persediaanAkhir||0}" oninput="calcHppDagang()" min="0"></div>
+      <div class="field"><label>Persediaan Awal</label><input type="number" id="hpp-pA" value="${h.persediaanAwal||0}" data-fn="calcHppDagang" min="0"></div>
+      <div class="field"><label>Pembelian (gross)</label><input type="number" id="hpp-pmb" value="${h.pembelian||0}" data-fn="calcHppDagang" min="0"></div>
+      <div class="field"><label>Beban Angkut Masuk</label><input type="number" id="hpp-ang" value="${h.angkut||0}" data-fn="calcHppDagang" min="0"></div>
+      <div class="field"><label>Retur Pembelian</label><input type="number" id="hpp-ret" value="${h.retur||0}" data-fn="calcHppDagang" min="0"></div>
+      <div class="field"><label>Diskon Pembelian</label><input type="number" id="hpp-dis" value="${h.diskon||0}" data-fn="calcHppDagang" min="0"></div>
+      <div class="field"><label>Persediaan Akhir</label><input type="number" id="hpp-pAk" value="${h.persediaanAkhir||0}" data-fn="calcHppDagang" min="0"></div>
     </div>
     <button class="btn btn-primary" style="margin-top:16px" data-fn="saveHppDagang">Simpan HPP</button>
   </div>
@@ -987,30 +987,30 @@ function pgHPPManufaktur(){
     <div class="card">
       <div class="card-title">1. Biaya Bahan Baku (BB)</div>
       <div class="form-grid">
-        <div class="field"><label>Persediaan BB Awal</label><input type="number" id="hpp-bbA" value="${h.bbAwal||0}" oninput="calcHppMfg()" min="0"></div>
-        <div class="field"><label>Pembelian Bahan Baku</label><input type="number" id="hpp-pmBB" value="${h.pembelianBB||0}" oninput="calcHppMfg()" min="0"></div>
-        <div class="field"><label>Persediaan BB Akhir</label><input type="number" id="hpp-bbAk" value="${h.bbAkhir||0}" oninput="calcHppMfg()" min="0"></div>
+        <div class="field"><label>Persediaan BB Awal</label><input type="number" id="hpp-bbA" value="${h.bbAwal||0}" data-fn="calcHppMfg" min="0"></div>
+        <div class="field"><label>Pembelian Bahan Baku</label><input type="number" id="hpp-pmBB" value="${h.pembelianBB||0}" data-fn="calcHppMfg" min="0"></div>
+        <div class="field"><label>Persediaan BB Akhir</label><input type="number" id="hpp-bbAk" value="${h.bbAkhir||0}" data-fn="calcHppMfg" min="0"></div>
       </div>
     </div>
     <div class="card">
       <div class="card-title">2. BTKL & BOP</div>
       <div class="form-grid">
-        <div class="field"><label>BTKL (Biaya TK Langsung)</label><input type="number" id="hpp-btkl" value="${h.btkl||0}" oninput="calcHppMfg()" min="0"></div>
-        <div class="field"><label>BOP (Overhead Pabrik)</label><input type="number" id="hpp-bop" value="${h.bop||0}" oninput="calcHppMfg()" min="0"></div>
+        <div class="field"><label>BTKL (Biaya TK Langsung)</label><input type="number" id="hpp-btkl" value="${h.btkl||0}" data-fn="calcHppMfg" min="0"></div>
+        <div class="field"><label>BOP (Overhead Pabrik)</label><input type="number" id="hpp-bop" value="${h.bop||0}" data-fn="calcHppMfg" min="0"></div>
       </div>
     </div>
     <div class="card">
       <div class="card-title">3. Barang Dalam Proses (WIP)</div>
       <div class="form-grid">
-        <div class="field"><label>WIP Awal</label><input type="number" id="hpp-wA" value="${h.wipAwal||0}" oninput="calcHppMfg()" min="0"></div>
-        <div class="field"><label>WIP Akhir</label><input type="number" id="hpp-wAk" value="${h.wipAkhir||0}" oninput="calcHppMfg()" min="0"></div>
+        <div class="field"><label>WIP Awal</label><input type="number" id="hpp-wA" value="${h.wipAwal||0}" data-fn="calcHppMfg" min="0"></div>
+        <div class="field"><label>WIP Akhir</label><input type="number" id="hpp-wAk" value="${h.wipAkhir||0}" data-fn="calcHppMfg" min="0"></div>
       </div>
     </div>
     <div class="card">
       <div class="card-title">4. Persediaan Barang Jadi</div>
       <div class="form-grid">
-        <div class="field"><label>Persediaan BJ Awal</label><input type="number" id="hpp-bjA" value="${h.bjAwal||0}" oninput="calcHppMfg()" min="0"></div>
-        <div class="field"><label>Persediaan BJ Akhir</label><input type="number" id="hpp-bjAk" value="${h.bjAkhir||0}" oninput="calcHppMfg()" min="0"></div>
+        <div class="field"><label>Persediaan BJ Awal</label><input type="number" id="hpp-bjA" value="${h.bjAwal||0}" data-fn="calcHppMfg" min="0"></div>
+        <div class="field"><label>Persediaan BJ Akhir</label><input type="number" id="hpp-bjAk" value="${h.bjAkhir||0}" data-fn="calcHppMfg" min="0"></div>
       </div>
     </div>
   </div>
@@ -1436,16 +1436,20 @@ function pgCOA(){
   </div>`).join('')}`;
 }
 
+function updateCoaNormal(arg,el){
+  const nm={'Aset':'D','Liabilitas':'K','Ekuitas':'K','Pendapatan':'K','Beban':'D'};
+  document.getElementById('coa-normal').value=nm[el.value]||'D';
+}
+
 function openCoaModal(code){
   const isEdit=!!code;
   const a=isEdit?db.coa.find(x=>x.code===code):{code:'',name:'',type:'Aset',normal:'D'};
-  const normalMap={Aset:'D',Liabilitas:'K',Ekuitas:'K',Pendapatan:'K',Beban:'D'};
   document.getElementById('modal-title').textContent=isEdit?'Edit Akun':'Tambah Akun Baru';
   document.getElementById('modal-body').innerHTML=`
     <div class="form-grid c2">
       <div class="field"><label>Kode Akun</label><input type="text" id="coa-code" value="${esc(a.code)}" placeholder="1-1000" ${isEdit?'readonly':''}></div>
       <div class="field"><label>Nama Akun</label><input type="text" id="coa-name" value="${esc(a.name)}" placeholder="Contoh: Kas"></div>
-      <div class="field"><label>Tipe Akun</label><select id="coa-type" onchange="const nm={'Aset':'D','Liabilitas':'K','Ekuitas':'K','Pendapatan':'K','Beban':'D'};document.getElementById('coa-normal').value=nm[this.value]||'D'">
+      <div class="field"><label>Tipe Akun</label><select id="coa-type" data-fn="updateCoaNormal">
         ${['Aset','Liabilitas','Ekuitas','Pendapatan','Beban'].map(t=>`<option ${t===a.type?'selected':''}>${t}</option>`).join('')}
       </select></div>
       <div class="field"><label>Saldo Normal</label><select id="coa-normal">
@@ -1725,7 +1729,7 @@ function pgSettings(){
     <div class="flex-gap">
       <button class="btn btn-navy" data-fn="exportJSON">⬇ Ekspor Semua Periode</button>
       <button class="btn btn-ghost" data-fn="triggerImport">⬆ Impor JSON</button>
-      <input type="file" id="import-file" accept=".json" style="display:none" onchange="importJSON(event)">
+      <input type="file" id="import-file" accept=".json" style="display:none" data-fn="importJSON">
     </div>
     <hr class="divider">
     <button class="btn btn-danger btn-sm" data-fn="resetAllData">🗑 Hapus Semua Data</button>
@@ -2075,14 +2079,30 @@ const ACTIONS={
   saveTx:(arg)=>saveTx(arg===undefined?undefined:Number(arg)),
   switchFsTab:(arg,el)=>switchFsTab(arg,el),
   switchAnalitikTab:(arg,el)=>switchAnalitikTab(arg,el),
+  toggleSidebar:()=>toggleSidebar(),
+  print:()=>window.print(),
+  showResetPeriodWarning:()=>showResetPeriodWarning(),
+  closeDangerModal:()=>closeDangerModal(),
+  executeDangerAction:()=>executeDangerAction(),
+  checkDangerConfirm:(arg,el)=>checkDangerConfirm(el),
+  calcBal:()=>calcBal(),
+  calcHppDagang:()=>calcHppDagang(),
+  calcHppMfg:()=>calcHppMfg(),
+  updateCoaNormal:(arg,el)=>updateCoaNormal(arg,el),
+  importJSON:(arg,el)=>importJSON({target:el}),
 };
 
-document.addEventListener('click',(e)=>{
+function delegateAction(e){
   const el=e.target.closest('[data-fn]');
   if(!el)return;
   const handler=ACTIONS[el.dataset.fn];
   if(handler)handler(el.dataset.arg,el);
-});
+}
+document.addEventListener('click',delegateAction);
+document.addEventListener('change',delegateAction);
+document.addEventListener('input',delegateAction);
+
+document.getElementById('modal-bg').addEventListener('click',function(e){if(e.target===this)closeModal();});
 
 /* BOOT — async to support IndexedDB */
 (async()=>{

@@ -38,5 +38,8 @@
 /downloads/*.pdf
   Content-Disposition: attachment
 
+/downloads/siklus-akuntansi-offline.html
+  Content-Disposition: attachment
+
 /*.html
   Cache-Control: public, max-age=0, must-revalidate

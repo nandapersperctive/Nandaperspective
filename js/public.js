@@ -91,7 +91,7 @@ function buildButtons(item) {
 
     if (hasFile) {
         btns += isApp
-            ? `<a class="resource-download-btn resource-app-btn" href="${item.file}" target="_blank" rel="noopener">Buka Aplikasi</a>`
+            ? `<a class="resource-download-btn resource-app-btn" href="${item.file}" target="_blank" rel="noopener">${pt.openAppBtn}</a>`
             : `<a class="resource-download-btn" href="${item.file}" download>${pt.downloadBtn}</a>`;
     }
 
@@ -107,13 +107,13 @@ function buildFeaturedApp(item) {
                     <div class="featured-app-badges">
                         <span class="resource-type-badge badge-app">${item.type}</span>
                         <span class="resource-free-badge">${pt.freeLabel}</span>
-                        <span class="featured-app-tag">Tersedia Sekarang</span>
+                        <span class="featured-app-tag">${pt.availableNowLabel}</span>
                     </div>
                     <h2 class="featured-app-title">${item.title}</h2>
                     <p class="featured-app-desc">${item.description}</p>
                     <div class="featured-app-actions">
-                        <a class="featured-app-cta" href="${item.file}" target="_blank" rel="noopener">Buka Aplikasi</a>
-                        <a class="featured-app-cta featured-app-cta--download" href="${item.file}" download>⬇ Download</a>
+                        <a class="featured-app-cta" href="${item.file}" target="_blank" rel="noopener">${pt.openAppBtn}</a>
+                        <a class="featured-app-cta featured-app-cta--download" href="${item.downloadFile || item.file}" download>${pt.downloadIconBtn}</a>
                     </div>
                 </div>
             </div>

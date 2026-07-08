@@ -93,6 +93,26 @@ if (revealSections.length) {
     }
 }
 
+/* ── Language toggle (Public page only) ──
+   js/lang.js (which defines getLang/setLang) is only loaded on public.html,
+   so this silently does nothing on every other page — the rest of the site
+   stays English-only. */
+if (typeof getLang === 'function') {
+    const header = document.querySelector('.site-header');
+    const nav = header && header.querySelector('nav');
+
+    if (nav) {
+        const nextLang = getLang() === 'id' ? 'en' : 'id';
+        const langToggle = document.createElement('button');
+        langToggle.className = 'lang-toggle';
+        langToggle.type = 'button';
+        langToggle.textContent = nextLang.toUpperCase();
+        langToggle.setAttribute('aria-label', nextLang === 'en' ? 'Switch to English' : 'Beralih ke Bahasa Indonesia');
+        langToggle.addEventListener('click', () => setLang(nextLang));
+        nav.appendChild(langToggle);
+    }
+}
+
 /* ── Global Search ── */
 (function () {
     const header = document.querySelector('.site-header');

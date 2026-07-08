@@ -117,6 +117,29 @@ nav a:hover { color: var(--primary); }
 }
 .search-trigger:hover { box-shadow: var(--clay); color: var(--navy); }
 
+/* =====================
+   LANGUAGE TOGGLE (Public page only)
+===================== */
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 14px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--paper);
+    box-shadow: var(--clay-sm);
+    color: var(--muted);
+    font: inherit;
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    cursor: pointer;
+    transition: box-shadow .2s, color .2s;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+.lang-toggle:hover { box-shadow: var(--clay); color: var(--navy); }
+
 #gs-overlay {
     display: none;
     position: fixed;
@@ -2097,6 +2120,7 @@ footer a:hover { color: rgba(255,255,255,.55); }
 
     nav.open { display: flex; flex-wrap: wrap; gap: 10px 14px; }
     nav a { margin-left: 0; margin-right: 16px; }
+    nav.open .lang-toggle { margin-left: 0; }
 
     .hero,
     .intro,

@@ -570,10 +570,10 @@ td.neg{color:#C0392B;font-weight:600}
       <p id="page-sub">—</p>
     </div>
     <div class="topbar-right">
-      <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()">☰</button>
-      <button class="btn btn-ghost btn-sm" onclick="window.print()">🖨 Cetak</button>
-      <button class="btn btn-ghost btn-sm" onclick="exportJSON()">⬇ Ekspor</button>
-      <button class="btn btn-ghost btn-sm" onclick="showResetPeriodWarning()">↺ Reset Periode</button>
+      <button class="menu-toggle" id="menu-toggle" data-fn="toggleSidebar">☰</button>
+      <button class="btn btn-ghost btn-sm" data-fn="print">🖨 Cetak</button>
+      <button class="btn btn-ghost btn-sm" data-fn="exportJSON">⬇ Ekspor</button>
+      <button class="btn btn-ghost btn-sm" data-fn="showResetPeriodWarning">↺ Reset Periode</button>
     </div>
   </div>
   <div class="content" id="content"></div>
@@ -581,9 +581,9 @@ td.neg{color:#C0392B;font-weight:600}
 </div>
 
 <!-- MODAL -->
-<div class="modal-bg" id="modal-bg" onclick="if(event.target===this)closeModal()">
+<div class="modal-bg" id="modal-bg">
   <div class="modal">
-    <div class="modal-head"><h3 id="modal-title"></h3><button class="modal-close" onclick="closeModal()">✕</button></div>
+    <div class="modal-head"><h3 id="modal-title"></h3><button class="modal-close" data-fn="closeModal">✕</button></div>
     <div class="modal-body" id="modal-body"></div>
     <div class="modal-foot" id="modal-foot"></div>
   </div>
@@ -607,12 +607,12 @@ td.neg{color:#C0392B;font-weight:600}
       </div>
       <div class="danger-confirm-field" id="danger-type-field" style="display:none">
         <label id="danger-type-label">Ketik <strong>HAPUS</strong> untuk mengkonfirmasi:</label>
-        <input type="text" id="danger-type-input" placeholder="Ketik HAPUS" oninput="checkDangerConfirm(this)">
+        <input type="text" id="danger-type-input" placeholder="Ketik HAPUS" data-fn="checkDangerConfirm">
       </div>
     </div>
     <div class="danger-modal-foot">
-      <button class="btn btn-ghost" onclick="closeDangerModal()">Batal</button>
-      <button class="btn-danger-confirm" id="danger-confirm-btn" onclick="executeDangerAction()">Hapus Sekarang</button>
+      <button class="btn btn-ghost" data-fn="closeDangerModal">Batal</button>
+      <button class="btn-danger-confirm" id="danger-confirm-btn" data-fn="executeDangerAction">Hapus Sekarang</button>
     </div>
   </div>
 </div>
@@ -623,7 +623,7 @@ td.neg{color:#C0392B;font-weight:600}
   <h1 class="welcome-h">Pilih Jenis Perusahaan</h1>
   <p class="welcome-p">Sesuaikan siklus akuntansi dan Chart of Accounts (COA) otomatis berdasarkan jenis usaha Anda. Pilihan dapat diubah kapan saja melalui Pengaturan.</p>
 
-  <div class="type-card featured" onclick="selectCompanyType('umkm')" style="max-width:860px;margin-bottom:0">
+  <div class="type-card featured" data-fn="selectCompanyType" data-arg="umkm" style="max-width:860px;margin-bottom:0">
     <div class="type-card-tag">&#11088; Utama &mdash; Paling Populer</div>
     <div class="type-card-name">UMKM / Usaha Kecil Menengah</div>
     <div class="type-card-desc">Cocok untuk semua jenis usaha kecil. COA lengkap namun sederhana, siklus 8 langkah penuh, dan mudah dipahami tanpa latar belakang akuntansi mendalam.</div>
@@ -637,7 +637,7 @@ td.neg{color:#C0392B;font-weight:600}
   </div>
 
   <div class="type-grid-others" style="width:100%;max-width:860px">
-    <div class="type-card" onclick="selectCompanyType('jasa')">
+    <div class="type-card" data-fn="selectCompanyType" data-arg="jasa">
       <div class="type-card-tag">Perusahaan Jasa</div>
       <div class="type-card-name">Jasa</div>
       <div class="type-card-desc">Tidak ada persediaan barang. Pendapatan dari layanan atau jasa yang diberikan kepada pelanggan.</div>
@@ -648,7 +648,7 @@ td.neg{color:#C0392B;font-weight:600}
         <span class="type-tag">Laundry</span>
       </div>
     </div>
-    <div class="type-card" onclick="selectCompanyType('dagang')">
+    <div class="type-card" data-fn="selectCompanyType" data-arg="dagang">
       <div class="type-card-tag">Perusahaan Dagang + HPP</div>
       <div class="type-card-name">Dagang</div>
       <div class="type-card-desc">Beli dan jual barang dagangan. Dilengkapi perhitungan HPP Dagang (persediaan awal + pembelian bersih &minus; persediaan akhir).</div>
@@ -658,7 +658,7 @@ td.neg{color:#C0392B;font-weight:600}
         <span class="type-tag">Grosir</span>
       </div>
     </div>
-    <div class="type-card" onclick="selectCompanyType('manufaktur')">
+    <div class="type-card" data-fn="selectCompanyType" data-arg="manufaktur">
       <div class="type-card-tag">Perusahaan Manufaktur + HPP</div>
       <div class="type-card-name">Manufaktur</div>
       <div class="type-card-desc">Produksi barang. HPP lengkap: BB + BTKL + BOP &plusmn; perubahan WIP dan Barang Jadi.</div>
