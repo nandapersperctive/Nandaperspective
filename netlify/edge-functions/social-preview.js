@@ -208,11 +208,13 @@ function injectMeta(html, pageUrl, meta) {
     <meta name="twitter:image" content="${escAttr(absImage)}">` : ""}
 `;
 
-    let out = html.replace(/<title>.*?<\/title>/i, () => `<title>${title}</title>${tags}`);
-
-    // Also swap out the static og:*/twitter:* tags already baked into the page,
+    // Strip the static og:*/twitter:* tags already baked into the page FIRST,
     // so bots that read the whole <head> don't see two conflicting titles
-    // (or two og:type / twitter:card tags, which is just as confusing).
+    // (or two og:type / twitter:card tags, which is just as confusing). This
+    // must run before injecting the new tags below — otherwise these same
+    // regexes (which only remove the first match) would strip out the tags
+    // we just injected instead of the stale static ones.
+    let out = html;
     out = out.replace(/<meta property="og:type"[^>]*>/i, "");
     out = out.replace(/<meta property="og:title"[^>]*>/i, "");
     out = out.replace(/<meta property="og:description"[^>]*>/i, "");
@@ -223,6 +225,8 @@ function injectMeta(html, pageUrl, meta) {
     out = out.replace(/<meta name="twitter:description"[^>]*>/i, "");
     out = out.replace(/<meta name="twitter:image"[^>]*>/i, "");
     out = out.replace(/<meta name="description"[^>]*>/i, `<meta name="description" content="${description}">`);
+
+    out = out.replace(/<title>.*?<\/title>/i, () => `<title>${title}</title>${tags}`);
 
     return out;
 }
