@@ -25,6 +25,9 @@ animateHeading(aboutHeading, aboutText.heading);
 
 /* ── Bio: pecah jadi beberapa paragraf, animasi scroll-triggered ── */
 function splitBio(text) {
+    if (text.includes("\n")) {
+        return text.split(/\n+/).map(s => s.trim()).filter(Boolean);
+    }
     const sentences = text.replace(/\.\s+/g, ".|").split("|").filter(Boolean);
     const groups = [];
     for (let i = 0; i < sentences.length; i += 2) {
