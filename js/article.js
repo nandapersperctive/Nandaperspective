@@ -164,9 +164,20 @@ function renderShare(article) {
         });
     }
 
+    /* Start building the Story card the moment the page loads, not when
+       the button is tapped. navigator.share() only works within a very
+       short window of an actual user tap — if we wait until the click
+       to load fonts/images and encode the canvas, that async work eats
+       the window and mobile browsers silently refuse the file share,
+       falling back to the plain copy-link flow. Pre-building means the
+       image is (usually) already sitting in a resolved promise by the
+       time the user taps, so the share() call fires right away. */
+    const storyCardPromise = navigator.canShare
+        ? buildStoryCard(article).catch(() => null)
+        : null;
+
     document.getElementById("share-ig-btn").addEventListener("click", async () => {
         const btn = document.getElementById("share-ig-btn");
-        const original = btn.textContent;
 
         const fallback = () => {
             navigator.clipboard.writeText(window.location.href).then(() => {
@@ -175,12 +186,11 @@ function renderShare(article) {
             });
         };
 
-        if (!navigator.canShare) { fallback(); return; }
+        if (!storyCardPromise) { fallback(); return; }
 
-        btn.textContent = "Preparing…";
-        btn.disabled = true;
         try {
-            const blob = await buildStoryCard(article);
+            const blob = await storyCardPromise;
+            if (!blob) { fallback(); return; }
             const file = new File([blob], "nanda-perspective-story.png", { type: "image/png" });
             if (navigator.canShare({ files: [file] })) {
                 await navigator.share({ files: [file], title: article.title, text: article.excerpt });
@@ -189,9 +199,6 @@ function renderShare(article) {
             }
         } catch (err) {
             if (!err || err.name !== "AbortError") fallback();
-        } finally {
-            btn.textContent = original;
-            btn.disabled = false;
         }
     });
 }
