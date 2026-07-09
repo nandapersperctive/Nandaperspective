@@ -1919,6 +1919,7 @@ footer a:hover { color: rgba(255,255,255,.55); }
 }
 
 .share-btn:hover { transform: translateY(-3px); opacity: .92; }
+.share-btn:disabled { cursor: default; opacity: .6; transform: none; }
 
 .share-copy    { background: var(--paper); color: var(--navy); }
 .share-copy--done { background: #d4f5e0; color: #1a6b3a; }
