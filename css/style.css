@@ -2171,6 +2171,7 @@ footer a:hover { color: rgba(255,255,255,.55); }
     .hero { padding-top: 46px; min-height: auto; }
     .hero-actions, footer { flex-direction: column; }
     .featured-card, .card { padding: 20px; }
+    .card-thumb { margin: 0 -20px 18px; }
     .holding-grid { grid-template-columns: 1fr; }
 }
 
