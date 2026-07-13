@@ -126,38 +126,44 @@
   to   = "https://nandaperspective.com/:splat"
   status = 301
 
+# ── Favicon: layani permintaan default /favicon.ico ─────────────
+[[redirects]]
+  from   = "/favicon.ico"
+  to     = "/favicon-32.png"
+  status = 301
+
 # ── Blokir path yang sering disasar scanner/bot serangan ────────
 [[redirects]]
   from   = "/.env"
-  to     = "/index.html"
+  to     = "/404.html"
   status = 404
 [[redirects]]
   from   = "/.git/*"
-  to     = "/index.html"
+  to     = "/404.html"
   status = 404
 [[redirects]]
   from   = "/wp-admin/*"
-  to     = "/index.html"
+  to     = "/404.html"
   status = 404
 [[redirects]]
   from   = "/wp-login.php"
-  to     = "/index.html"
+  to     = "/404.html"
   status = 404
 [[redirects]]
   from   = "/xmlrpc.php"
-  to     = "/index.html"
+  to     = "/404.html"
   status = 404
 [[redirects]]
   from   = "/phpmyadmin/*"
-  to     = "/index.html"
+  to     = "/404.html"
   status = 404
 [[redirects]]
   from   = "/administrator/*"
-  to     = "/index.html"
+  to     = "/404.html"
   status = 404
 
 # ── Halaman 404 custom ──────────────────────────────────────────
 [[redirects]]
   from   = "/*"
-  to     = "/index.html"
+  to     = "/404.html"
   status = 404
