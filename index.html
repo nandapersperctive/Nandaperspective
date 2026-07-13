@@ -48,7 +48,7 @@
     <section class="hero" id="home">
         <div class="hero-copy">
             <p class="eyebrow" data-i18n="heroEyebrow">Personal journal</p>
-            <h1>Read Widely.<br>Think Deeply.<br>Write Honestly.</h1>
+            <h1>Read Widely.<br>Think <em class="hero-accent">Deeply.</em><br>Write Honestly.</h1>
 
             <p data-i18n="heroDescription">
                 A personal space to explore ideas across business, markets, and everyday thinking — written by a student learning to see the world more clearly.
@@ -58,7 +58,26 @@
                 <a class="button primary" href="#articles" data-i18n="readArticles">Read Insights</a>
                 <a class="button secondary" href="portfolio.html" data-i18n="viewPortfolio">View Portfolio</a>
             </div>
+
+            <div class="hero-stats" id="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-num" id="stat-articles" data-count="0">0</span>
+                    <span class="hero-stat-label" data-i18n="statInsights">Insights</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" id="stat-stocks" data-count="0">0</span>
+                    <span class="hero-stat-label" data-i18n="statStocks">Stocks Covered</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" id="stat-categories" data-count="0">0</span>
+                    <span class="hero-stat-label" data-i18n="statCategories">Categories</span>
+                </div>
+            </div>
         </div>
+
+        <a class="hero-scroll" href="#articles" aria-label="Scroll to insights">
+            <span class="hero-scroll-dot"></span>
+        </a>
     </section>
 
     <section class="section intro">
