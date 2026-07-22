@@ -59,10 +59,6 @@ const siteText = {
     contactMessagePlaceholder: "What's on your mind?",
     contactSend: "Send Email",
 
-    statInsights: "Insights",
-    statStocks: "Stocks Covered",
-    statCategories: "Categories",
-
     backToTop: "Back to top",
     backToHome: "Back to home",
     backToArticles: "← Back to insights",

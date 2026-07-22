@@ -316,43 +316,6 @@ nav a:hover { color: var(--primary); }
     color: transparent;
 }
 
-/* stat strip under the hero actions */
-.hero-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 52px;
-    animation: fadeInUp .7s ease both;
-    animation-delay: .35s;
-}
-
-.hero-stat {
-    display: grid;
-    gap: 2px;
-    padding: 16px 26px;
-    border-radius: var(--radius);
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.12);
-    backdrop-filter: blur(6px);
-    min-width: 128px;
-}
-
-.hero-stat-num {
-    font-family: 'Fraunces', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.1;
-    color: white;
-}
-
-.hero-stat-label {
-    font-size: .68rem;
-    font-weight: 700;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.5);
-}
-
 /* bouncing scroll hint */
 .hero-scroll {
     position: absolute;
@@ -2287,10 +2250,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
     .hero { padding-top: 46px; min-height: auto; }
     .hero-actions, footer { flex-direction: column; }
     .hero-scroll { display: none; }
-    .hero-stats { gap: 10px; margin-top: 38px; }
-    .hero-stat { flex: 1; min-width: 0; padding: 12px 14px; text-align: center; }
-    .hero-stat-num { font-size: 1.5rem; }
-    .hero-stat-label { font-size: .58rem; letter-spacing: .1em; }
     .featured-card, .card { padding: 20px; }
     .card-thumb { margin: 0 -20px 18px; }
     .holding-grid { grid-template-columns: 1fr; }
