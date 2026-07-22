@@ -129,7 +129,7 @@
 # ── Favicon: layani permintaan default /favicon.ico ─────────────
 [[redirects]]
   from   = "/favicon.ico"
-  to     = "/favicon-32.png"
+  to     = "/images/favicons/favicon-32.png"
   status = 301
 
 # ── Blokir path yang sering disasar scanner/bot serangan ────────
