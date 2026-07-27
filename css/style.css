@@ -532,7 +532,18 @@ nav a:hover { color: var(--primary); }
 }
 
 .search-box input  { min-width: 280px; }
-.select-box select { min-width: 140px; cursor: pointer; }
+
+.select-box select {
+    min-width: 140px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 38px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%238A7A72" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
 
 .article-summary {
     display: flex;
