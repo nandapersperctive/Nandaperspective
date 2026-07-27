@@ -285,3 +285,26 @@ if (typeof getLang === 'function') {
         timer = setTimeout(function () { render(e.target.value); }, 140);
     });
 })();
+
+/* ── Back to top (mobile-heavy scroll relief on long pages) ── */
+(function () {
+    var btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Kembali ke atas');
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>';
+    document.body.appendChild(btn);
+
+    var visible = false;
+    window.addEventListener('scroll', function () {
+        var shouldShow = window.scrollY > window.innerHeight;
+        if (shouldShow !== visible) {
+            visible = shouldShow;
+            btn.classList.toggle('back-to-top--visible', visible);
+        }
+    }, { passive: true });
+
+    btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();

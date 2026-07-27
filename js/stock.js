@@ -91,7 +91,7 @@ function renderStock() {
             let imgHtml = "";
             if (section.image) {
                 const w = sizeMap[section.imageSize] || sizeMap.medium;
-                imgHtml = `<img src="${section.image}" alt="${section.sectionTitle}" class="section-image" style="max-width:${w}">`;
+                imgHtml = `<img src="${section.image}" alt="${section.sectionTitle}" class="section-image" style="max-width:${w}" loading="lazy">`;
             }
             return `
             <div class="stock-section" id="analysis-${i + 1}">

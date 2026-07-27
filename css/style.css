@@ -1956,6 +1956,37 @@ footer a:hover { color: rgba(255,255,255,.55); }
 }
 
 /* =====================
+   BACK TO TOP
+===================== */
+.back-to-top {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+    box-shadow: var(--clay);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+    z-index: 20;
+}
+.back-to-top--visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.back-to-top:hover { opacity: .88; }
+
+/* =====================
    SHARE BAR
 ===================== */
 .share-bar {
