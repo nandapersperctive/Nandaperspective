@@ -120,11 +120,23 @@ function renderStock() {
     renderShare(holding);
 }
 
+/* Meta (WhatsApp/Facebook/Instagram) caches link-preview data per exact
+   URL, including bad/missing results, for a long time — with no way for
+   visitors to force a refresh. Appending a fixed marker makes every share
+   link one Meta has never crawled before, so it always scrapes fresh
+   og:title/description/image instead of serving a stale cached miss. */
+const SHARE_CACHE_BUST = "fbv=1";
+
+function withShareCacheBust(url) {
+    return url + (url.includes("?") ? "&" : "?") + SHARE_CACHE_BUST;
+}
+
 function renderShare(holding) {
     const shareEl = document.getElementById("stock-share");
     if (!shareEl) return;
 
-    const pageUrl   = encodeURIComponent(window.location.href);
+    const shareHref = withShareCacheBust(window.location.href);
+    const pageUrl   = encodeURIComponent(shareHref);
     const pageTitle = encodeURIComponent(`${holding.ticker} — ${holding.company} | Nanda Perspective`);
 
     const waUrl      = `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
@@ -150,7 +162,7 @@ function renderShare(holding) {
     `;
 
     document.getElementById("share-copy-btn").addEventListener("click", () => {
-        navigator.clipboard.writeText(window.location.href).then(() => {
+        navigator.clipboard.writeText(shareHref).then(() => {
             const btn = document.getElementById("share-copy-btn");
             btn.textContent = "✓ Copied!";
             btn.classList.add("share-copy--done");
@@ -166,13 +178,13 @@ function renderShare(holding) {
             navigator.share({
                 title: `${holding.ticker} — ${holding.company}`,
                 text: holding.thesis || "",
-                url: window.location.href
+                url: shareHref
             });
         });
     }
 
     document.getElementById("share-ig-btn").addEventListener("click", () => {
-        navigator.clipboard.writeText(window.location.href).then(() => {
+        navigator.clipboard.writeText(shareHref).then(() => {
             showShareToast("Link copied! Now open Instagram and paste it in your story, bio, or DM.");
             setTimeout(() => window.open("https://www.instagram.com", "_blank"), 600);
         });
