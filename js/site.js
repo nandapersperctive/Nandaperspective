@@ -47,6 +47,13 @@ if (menuToggle && mainNav) {
             menuToggle.setAttribute("aria-expanded", "false");
         }
     });
+
+    document.addEventListener("click", event => {
+        if (!mainNav.classList.contains("open")) return;
+        if (mainNav.contains(event.target) || menuToggle.contains(event.target)) return;
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
 }
 
 translatePage();
