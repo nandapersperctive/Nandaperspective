@@ -98,7 +98,7 @@ const articleCatalog = [
     readTime: "3 min read",
     date: "23 June 2026",
     excerpt: "Investing is not only for wealthy people. Students can start by understanding assets, cash flow, and risk management.",
-    image: "images/articles/article-id1.png",
+    image: "images/articles/article-id1.webp",
     imageAlt: "Why Students Should Learn Investing Early",
     audiobook: "images/profile/Feeling-Good.mp3",
     sections: [
@@ -153,7 +153,7 @@ const articleCatalog = [
     readTime: "2 min read",
     date: "23 June 2026",
     excerpt: "Interest rate changes often influence the stock market, company valuations, and investor decisions.",
-    image: "images/articles/article-id2.png",
+    image: "images/articles/article-id2.jpg",
     imageAlt: "How BI Interest Rates Affect Stock Prices",
     audiobook: "",
     sections: [
@@ -188,7 +188,7 @@ const articleCatalog = [
     readTime: "9 min read",
     date: "24 June 2026",
     excerpt: "Large revenue does not always mean a healthy business. Investors need to examine earnings quality, cash flow, and capital structure.",
-    image: "images/articles/article-id3.png",
+    image: "images/articles/article-id3.jpg",
     imageAlt: "How to Read Financial Statements Without Getting Trapped by Big Numbers",
     audiobook: "",
     sections: [
@@ -277,7 +277,7 @@ const articleCatalog = [
     readTime: "5 min read",
     date: "25 June 2026",
     excerpt: "Prices rise, money weakens, and savings quietly lose value. Understanding inflation is the first step to protecting yourself from it.",
-    image: "images/articles/article-id5.png",
+    image: "images/articles/article-id5.jpg",
     imageAlt: "What Is Inflation? Understanding the Silent Force That Shrinks Your Money",
     audiobook: "",
     sections: [

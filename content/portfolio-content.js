@@ -99,7 +99,7 @@ const portfolioText = {
     portfolioEyebrow: "Personal portfolio",
     portfolioTitle: "Stocks I Own and the Analysis Behind Them",
     portfolioDescription: "A structured view of holdings, investment thesis, risk factors, and monitoring notes. This page is for personal documentation, not investment advice.",
-    portfolioHeroImage: "images/portfolio/portfolio-banner.png",   /* Photo behind this banner, e.g. "images/portfolio/portfolio-hero.jpg". Leave empty for plain navy. */
+    portfolioHeroImage: "images/portfolio/portfolio-banner.jpg",   /* Photo behind this banner, e.g. "images/portfolio/portfolio-hero.jpg". Leave empty for plain navy. */
     portfolioStyleLabel: "Style",
     portfolioStyleValue: "Long-term, quality-first",
     portfolioRiskLabel: "Risk Control",
@@ -126,7 +126,7 @@ const portfolioHoldings = [
 {
     ticker: "BBCA",
     logo: "images/portfolio/logo-bbca.png",   /* Path to logo, e.g. "images/portfolio/logo-bbca.png". Leave empty to show ticker text. */
-    heroBg: "images/portfolio/hero-bbca.png",                     /* Wide landscape photo for hero background, e.g. "images/portfolio/bbca-hero.jpg". Leave empty for solid navy. */
+    heroBg: "images/portfolio/hero-bbca.webp",                     /* Wide landscape photo for hero background, e.g. "images/portfolio/bbca-hero.jpg". Leave empty for solid navy. */
     company: "Bank Central Asia Tbk",
     sector: "Banking",
     allocation: "Core holding",
@@ -198,7 +198,7 @@ const portfolioHoldings = [
 {
     ticker: "DKFT",
     logo: "images/portfolio/logo-dkft.png",   /* Path to logo, e.g. "images/portfolio/logo-dkft.png". Leave empty to show ticker text. */
-    heroBg: "images/portfolio/hero-dkft.png",
+    heroBg: "images/portfolio/hero-dkft.webp",
     company: "Central Omega Resources Tbk",
     sector: "Mining",
     allocation: "Growth income",
@@ -265,7 +265,7 @@ const portfolioHoldings = [
 {
     ticker: "ADRO",
     logo: "images/portfolio/logo-adro.png",   /* Path to logo, e.g. "images/portfolio/logo-adro.png". Leave empty to show ticker text. */
-    heroBg: "images/portfolio/hero-adro.png",
+    heroBg: "images/portfolio/hero-adro.jpg",
     company: "Alamtri Resources Indonesia Tbk",
     sector: "Energy",
     allocation: "Defensive income",
