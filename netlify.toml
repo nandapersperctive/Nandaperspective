@@ -132,6 +132,12 @@
   to     = "/images/favicons/favicon-32.png"
   status = 301
 
+# ── security.txt: sebagian scanner masih cek lokasi lama (non-.well-known) ──
+[[redirects]]
+  from   = "/security.txt"
+  to     = "/.well-known/security.txt"
+  status = 301
+
 # ── Blokir path yang sering disasar scanner/bot serangan ────────
 [[redirects]]
   from   = "/.env"
