@@ -41,7 +41,8 @@ export default async (request, context) => {
                     type: "article",
                     title: `${article.title} | Nanda Perspective`,
                     description: article.excerpt || "Read insights from Nanda Perspective.",
-                    image: article.image || ""
+                    image: article.image || "",
+                    jsonLd: buildArticleJsonLd(article, url)
                 };
             }
         } else {
@@ -159,7 +160,8 @@ async function findArticle(baseUrl, id) {
             return {
                 title: extractString(block, "title"),
                 excerpt: extractString(block, "excerpt"),
-                image: extractString(block, "image")
+                image: extractString(block, "image"),
+                dateValue: extractString(block, "dateValue")
             };
         }
     }
@@ -191,10 +193,32 @@ function escAttr(str) {
     ));
 }
 
+function buildArticleJsonLd(article, pageUrl) {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: article.title,
+        description: article.excerpt || "Read insights from Nanda Perspective.",
+        mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl.href },
+        author: { "@type": "Person", name: "Nanda Mulia" },
+        publisher: {
+            "@type": "Organization",
+            name: "Nanda Perspective",
+            logo: { "@type": "ImageObject", url: new URL("/images/favicons/favicon-192.png", pageUrl.origin).href }
+        }
+    };
+    if (article.image) jsonLd.image = new URL(article.image, pageUrl.origin).href;
+    if (article.dateValue) jsonLd.datePublished = article.dateValue;
+    return jsonLd;
+}
+
 function injectMeta(html, pageUrl, meta) {
     const absImage = meta.image ? new URL(meta.image, pageUrl.origin).href : "";
     const title = escAttr(meta.title);
     const description = escAttr(meta.description);
+    const jsonLdScript = meta.jsonLd
+        ? `\n    <script type="application/ld+json">${JSON.stringify(meta.jsonLd).replace(/</g, "\\u003c")}</script>`
+        : "";
 
     const tags = `
     <meta property="og:type" content="${meta.type}">
@@ -205,7 +229,7 @@ function injectMeta(html, pageUrl, meta) {
     <meta name="twitter:card" content="${absImage ? "summary_large_image" : "summary"}">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${description}">${absImage ? `
-    <meta name="twitter:image" content="${escAttr(absImage)}">` : ""}
+    <meta name="twitter:image" content="${escAttr(absImage)}">` : ""}${jsonLdScript}
 `;
 
     // Strip the static og:*/twitter:* tags already baked into the page FIRST,
