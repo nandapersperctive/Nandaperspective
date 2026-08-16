@@ -333,6 +333,82 @@ const articleCatalog = [
             ]
         }
     ]
+},
+{
+    id: 6,
+    categoryKey: "business",
+    dateValue: "2026-07-30",
+    readMinutes: 5,
+    title: "What Are Financial Statements? Understanding the 3 Core Reports",
+    category: "Business",
+    readTime: "5 min read",
+    date: "30 July 2026",
+    excerpt: "Financial statements can look intimidating, but the ideas behind them are simple. Here's a plain-language guide to the three core reports — income statement, balance sheet, and cash flow statement — and the question each one answers.",
+    sections: [
+        {
+            sectionTitle: "What Are Financial Statements?",
+            paragraphs: [
+                "Have you ever asked yourself, \"Is my business actually making money?\" or \"Where did all my cash go last month?\" The answers to both questions live in one place: your financial statements.",
+                "Unfortunately, many people treat financial statements as complicated documents that only accountants can decode. In reality, the underlying ideas are simple and anyone can grasp them. Financial statements are written summaries that show the financial condition and business performance of an organization over a given period.",
+                "Think of them as a medical check-up for your business. A doctor can't assess your health just by looking at you — they need numbers: blood pressure, blood sugar, cholesterol. Businesses work the same way. A busy-looking store isn't necessarily profitable, and a quiet one isn't necessarily losing money. The numbers in the financial statements tell you what's really going on.",
+                "These statements are built from everyday transaction records — every purchase, sale, payroll run, and payment received — which are then grouped and condensed into reports that are easy to read."
+            ]
+        },
+        {
+            sectionTitle: "Why Financial Statements Matter",
+            paragraphs: [
+                "Financial statements aren't just paperwork or a compliance requirement. They shape real decisions: is it time to open a second location, or should prices go up? Decisions like these need data, not guesswork.",
+                "They're also how performance gets measured — comparing this year's sales against last year's, or spotting operating costs that are creeping upward — and how financing gets secured, since banks and investors almost always ask for financial statements before releasing funds.",
+                "On the compliance side, corporate income tax calculations start from the profit recorded in the financial statements. And for companies with shareholders or nonprofits with donors, these reports are proof that funds are being managed properly."
+            ]
+        },
+        {
+            sectionTitle: "Who Uses Financial Statements?",
+            paragraphs: [
+                "The audience is broader than most people assume. Owners and management use them to run the business. Investors use them to judge whether a company is worth buying into. Lenders and banks use them to assess the ability to repay. Tax authorities use them for compliance. Even employees have a stake, since a company's financial stability shapes their job security."
+            ]
+        },
+        {
+            sectionTitle: "The Income Statement: Is the Business Profitable?",
+            paragraphs: [
+                "A complete set of financial statements includes several components, but three of them form the core — the ones used most often and most worth understanding. The first is the income statement, sometimes called the profit and loss statement, and it answers a single question: is my business profitable?",
+                "It lays out revenue and expenses over a period of time — monthly, quarterly, or annually — built on a simple formula: revenue minus expenses equals profit, or loss. It typically includes revenue or sales (total money generated from business activity), cost of goods sold or COGS (the direct cost of producing or buying what you sold), gross profit (revenue minus COGS), operating expenses (salaries, rent, utilities, marketing), and finally net profit — the bottom line after everything is accounted for.",
+                "A simple example: a coffee shop records $50,000 in sales for the month. Ingredients cost $20,000, staff wages $12,000, and rent plus utilities $8,000. Net profit for the month is $10,000.",
+                "By analogy, the income statement is like a video recording — it shows what happened across a stretch of time."
+            ]
+        },
+        {
+            sectionTitle: "The Balance Sheet: What Does the Business Own and Owe?",
+            paragraphs: [
+                "The second core report is the balance sheet, or statement of financial position. Where the income statement covers a stretch of time, the balance sheet shows financial condition at a single point in time — say, December 31 — built on its own foundational equation: assets equal liabilities plus equity.",
+                "Assets are everything the business owns that has value: cash, inventory, receivables from customers, equipment, vehicles, buildings. Liabilities are what the business owes others — bank loans, unpaid supplier invoices, wages payable. Equity is the owner's stake: what's left of the assets after all debts are subtracted.",
+                "A simple example: that same coffee shop holds $300,000 in assets — equipment, inventory, and cash — and still owes $100,000 on a bank loan. That leaves the owner's equity at $200,000.",
+                "It's called a balance sheet because both sides must always balance. If they don't, something has been recorded incorrectly. Unlike the income statement, the balance sheet is a photograph — it captures one moment, not a span of time."
+            ]
+        },
+        {
+            sectionTitle: "The Cash Flow Statement: Where Is the Cash Actually Going?",
+            paragraphs: [
+                "The third core report is the most frequently overlooked, yet it's often the one that determines whether a business survives. Plenty of companies show a profit on the income statement and still go under because they ran out of cash — customers hadn't paid their invoices yet, while payroll was already due.",
+                "The cash flow statement tracks money moving in and out, split into three sections. Operating activities cover the day-to-day business — cash collected from customers, cash paid to suppliers and employees — and should ideally be positive. Investing activities cover buying or selling long-term assets, such as new equipment. Financing activities cover raising capital, taking out loans, repaying debt, or paying dividends.",
+                "A simple example: the coffee shop recorded $10,000 in profit, but $7,000 of that is still sitting in receivables from a corporate client. Only $3,000 in actual cash came in — and that's the figure the cash flow statement reveals."
+            ]
+        },
+        {
+            sectionTitle: "How the Three Reports Connect",
+            paragraphs: [
+                "These aren't three separate documents — they interlock. Net profit from the income statement increases equity on the balance sheet. The ending cash balance on the cash flow statement must match the cash line on the balance sheet. And changes in balance sheet items, like receivables rising or debt shrinking, explain why cash moved the way it did.",
+                "Because they're linked, reading just one can mislead you. Strong profit without healthy cash flow is a warning sign. Large assets sitting on top of mounting debt isn't good news either. The full picture only emerges when all three are read together."
+            ]
+        },
+        {
+            sectionTitle: "Conclusion",
+            paragraphs: [
+                "Financial statements are the language a business uses to describe its own condition. The three core reports answer three different questions: the income statement tells you whether the business is generating profit, the balance sheet tells you how strong its financial position is, and the cash flow statement tells you whether it has enough cash to keep running.",
+                "You don't need to be an accountant to understand them. Start by recording transactions cleanly and consistently — that's the foundation every useful financial statement is built on."
+            ]
+        }
+    ]
 }
 ];
 
