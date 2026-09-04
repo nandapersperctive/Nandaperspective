@@ -6,7 +6,7 @@
    HOW TO EDIT AN EXISTING ARTICLE
    1. Find the article you want to change (look at "title" to spot it).
    2. Change the text between quotes " ... " however you like.
-   3. Don't delete quotes ("), commas (,), or curly braces { }.
+   3. Don’t delete quotes ("), commas (,), or curly braces { }.
    4. Save the file. Done — no other steps needed.
 
    HOW TO ADD A NEW SECTION TO AN ARTICLE
@@ -37,14 +37,14 @@
    To add a new category: write a new article and set a new categoryKey + category.
        categoryKey: "psychology",
        category:    "Psychology",
-   That's it. The filter button will appear automatically on the homepage.
+   That’s it. The filter button will appear automatically on the homepage.
    To remove a category: delete (or change) all articles that use that categoryKey.
    The filter button disappears automatically when no articles use it.
 
    HOW TO CHANGE THE BIG BLUE FEATURED ARTICLE ON THE HOME PAGE
    The home page shows one article in a big navy banner above the grid.
    1. Find the article you want featured below.
-   2. Add the line  featured: true,  anywhere inside that article's block
+   2. Add the line  featured: true,  anywhere inside that article’s block
       (right after "id:" is a good spot).
    3. If another article already has featured: true, remove that line
       (or set it to false) so only one article is featured at a time.
@@ -103,11 +103,11 @@ const articleCatalog = [
     audiobook: "images/profile/Feeling-Good.mp3",
     sections: [
         {
-            sectionTitle: "Time Is the Student's Greatest Asset",
+            sectionTitle: "Time Is the Student’s Greatest Asset",
             paragraphs: [
                 "Many students believe investing is something to think about \"later\" — after graduation, after landing a job, after the salary gets comfortable. But the truth is the opposite: the earlier you start, the less money you actually need. What students lack in capital, they more than make up for in time.",
                 "Compound growth rewards patience above all else. A student who invests a small amount monthly from age 20 will often end up wealthier than someone who invests three times as much starting at 35. The money is not doing the heavy lifting — time is.",
-                "As Warren Buffett once put it: \"Someone's sitting in the shade today because someone planted a tree a long time ago.\"",
+                "As Warren Buffett once put it: \"Someone’s sitting in the shade today because someone planted a tree a long time ago.\"",
                 "Starting early is planting that tree. Even a modest portfolio built during university becomes the seed of long-term financial independence."
             ]
         },
@@ -115,14 +115,14 @@ const articleCatalog = [
             sectionTitle: "Learn the Language Before You Need It",
             paragraphs: [
                 "Investing forces you to understand three things every adult eventually needs: assets, cash flow, and risk. An asset puts money into your pocket; a liability takes it out. Cash flow tells you whether your habits are building wealth or draining it. Risk management teaches you that protecting capital matters more than chasing quick gains.",
-                "Buffett's most famous rule captures this mindset: \"Rule No. 1: Never lose money. Rule No. 2: Never forget Rule No. 1.\"",
+                "Buffett’s most famous rule captures this mindset: \"Rule No. 1: Never lose money. Rule No. 2: Never forget Rule No. 1.\"",
                 "Students who internalize this early avoid the most expensive lessons — panic selling, gambling on hype, and confusing speculation with investing."
             ]
         },
         {
             sectionTitle: "Small Mistakes Now Beat Big Mistakes Later",
             paragraphs: [
-                "University is the cheapest classroom for financial mistakes. Losing a small sum on a poorly researched stock at 20 is tuition; making the same mistake with a family's savings at 40 is a disaster. Early exposure builds the emotional discipline — patience, skepticism, and consistency — that no textbook can teach.",
+                "University is the cheapest classroom for financial mistakes. Losing a small sum on a poorly researched stock at 20 is tuition; making the same mistake with a family’s savings at 40 is a disaster. Early exposure builds the emotional discipline — patience, skepticism, and consistency — that no textbook can teach.",
                 "Benjamin Franklin said it best: \"An investment in knowledge pays the best interest.\"",
                 "Before buying any asset, invest in understanding it. Read financial statements. Follow how businesses actually make money. For accounting students especially, this turns classroom theory into living practice."
             ]
@@ -131,7 +131,7 @@ const articleCatalog = [
             sectionTitle: "How to Start as a Student",
             paragraphs: [
                 "Start with what you have, not what you wish you had. Build a small emergency fund first. Then begin with low-cost, diversified instruments — index funds or mutual funds — rather than trying to pick winning stocks. Automate a fixed amount each month, even if it is small. Consistency beats intensity.",
-                "And remember Buffett's advice on saving: \"Do not save what is left after spending, but spend what is left after saving.\""
+                "And remember Buffett’s advice on saving: \"Do not save what is left after spending, but spend what is left after saving.\""
             ]
         },
         {
@@ -200,7 +200,7 @@ const articleCatalog = [
                 "This old accounting saying survives because it keeps proving true. Revenue tells you a company can sell; it says nothing about whether it sells profitably, or whether the money ever actually arrives. A business can book billions in sales while margins shrink, receivables pile up, and debt finances the whole show.",
                 "Consider what a revenue figure really is: a number produced by a set of recognition rules, applied by management, with real discretion at the edges. When can a sale be recorded? What counts as delivered? How are multi-year contracts split across periods? What about sales to distributors who have not yet sold anything to end customers? Every one of those questions has a defensible range of answers, and the difference between the conservative end and the aggressive end of that range can be enormous.",
                 "This is why big revenue growth should trigger curiosity, not celebration. Growth that comes from genuine customer demand looks very different, under the surface, from growth that comes from stuffing distribution channels, loosening credit terms, or booking long-term contracts up front. On the surface, both produce the same beautiful chart.",
-                "Buffett has long warned against taking reported figures at face value: \"Managers that always promise to 'make the numbers' will at some point be tempted to make up the numbers.\"",
+                "Buffett has long warned against taking reported figures at face value: \"Managers that always promise to ‘make the numbers’ will at some point be tempted to make up the numbers.\"",
                 "So start with the income statement, but never stop there."
             ]
         },
@@ -230,7 +230,7 @@ const articleCatalog = [
             paragraphs: [
                 "Finally, turn to the balance sheet and ask a simple question: how is all of this financed? Every asset a company holds is paid for either by owners (equity) or by someone who expects to be paid back (debt). The mix between the two — the capital structure — determines how fragile or resilient the business is.",
                 "Leverage is a magnifier. A heavily indebted company looks brilliant in good years, because profits are earned on a small equity base. The same company can be destroyed by a single bad year, because interest must be paid regardless of how business is going. Debt does not care about your growth story.",
-                "Buffett's most quoted warning applies directly: \"Only when the tide goes out do you discover who's been swimming naked.\"",
+                "Buffett’s most quoted warning applies directly: \"Only when the tide goes out do you discover who’s been swimming naked.\"",
                 "Rising markets and cheap credit hide weak capital structures; recessions and rate hikes expose them. So check the numbers before the tide goes out. Look at the debt-to-equity ratio, and compare it with industry peers rather than judging it in isolation — utilities and banks live with leverage that would kill a software company. Look at interest coverage: how many times can operating profit pay the annual interest bill? A ratio comfortably above three or four suggests breathing room; a ratio near one means the company is working mostly for its creditors. Look at the maturity schedule in the notes: a mountain of debt due next year is a very different risk from the same debt spread over a decade. And look at what kind of debt it is — fixed or floating rate, secured or unsecured, in which currency.",
                 "One more balance-sheet habit worth building: read the equity section skeptically. Retained earnings that grew through decades of real profit are not the same as equity inflated by revaluations or accounting adjustments. And a large pile of goodwill from past acquisitions is a monument to prices paid, not value guaranteed — it can be written off in a single painful quarter."
             ]
@@ -240,14 +240,14 @@ const articleCatalog = [
             paragraphs: [
                 "The financial statements proper occupy a few pages; the notes often run to a hundred or more. That ratio is not an accident. The notes are where companies disclose the accounting policies they chose, the estimates they made, the lawsuits they face, the commitments they signed, the related-party transactions they entered, and the debt covenants they must obey.",
                 "Nobody reads the notes for fun, and that is precisely the opportunity. Most bad surprises in investing were disclosed somewhere in the notes long before they hit the headlines. Make it a rule: any item in the main statements that is large, growing fast, or hard to understand gets traced to its note. If the note does not make it clearer — if the language turns foggy exactly where the money gets big — treat that fog as information.",
-                "Benjamin Graham, the father of value investing, set the standard for this kind of skeptical care: \"The investor's chief problem — and even his worst enemy — is likely to be himself.\"",
+                "Benjamin Graham, the father of value investing, set the standard for this kind of skeptical care: \"The investor’s chief problem — and even his worst enemy — is likely to be himself.\"",
                 "The biggest numbers on the page are the ones most likely to trigger excitement, and excitement is exactly the state in which investors skip the notes."
             ]
         },
         {
             sectionTitle: "Red Flags Worth Memorizing",
             paragraphs: [
-                "Over time, certain patterns show up again and again before trouble arrives, and it pays to recognize them on sight. Profits that grow every single quarter with machine-like smoothness, in an industry that is anything but smooth, suggest earnings are being managed rather than earned. A sudden change of auditor, or an auditor's report with qualified language, deserves far more attention than the market usually gives it. Frequent changes in accounting policy that always happen to flatter results are a pattern, not a coincidence. Heavy selling of shares by insiders while the company issues optimistic guidance is a mismatch between words and actions — trust the actions. Acquisitions announced just as organic growth stalls often exist to muddy comparisons, because merged numbers are harder to benchmark against the past. None of these signs proves wrongdoing on its own; each one simply raises the burden of proof. When three or four appear together, the wise response is usually to walk away, no matter how big the revenue number is."
+                "Over time, certain patterns show up again and again before trouble arrives, and it pays to recognize them on sight. Profits that grow every single quarter with machine-like smoothness, in an industry that is anything but smooth, suggest earnings are being managed rather than earned. A sudden change of auditor, or an auditor’s report with qualified language, deserves far more attention than the market usually gives it. Frequent changes in accounting policy that always happen to flatter results are a pattern, not a coincidence. Heavy selling of shares by insiders while the company issues optimistic guidance is a mismatch between words and actions — trust the actions. Acquisitions announced just as organic growth stalls often exist to muddy comparisons, because merged numbers are harder to benchmark against the past. None of these signs proves wrongdoing on its own; each one simply raises the burden of proof. When three or four appear together, the wise response is usually to walk away, no matter how big the revenue number is."
             ]
         },
         {
@@ -260,7 +260,7 @@ const articleCatalog = [
         {
             sectionTitle: "Closing Thought",
             paragraphs: [
-                "Big numbers are designed to impress; financial statements are designed to inform. The investor's job is to refuse the first and insist on the second. Revenue answers whether people buy. Earnings quality answers whether the business truly profits. Cash flow answers whether the money is real. Capital structure answers whether the company will survive. Ask all four questions, in that order, every time — and no big number will ever trap you again."
+                "Big numbers are designed to impress; financial statements are designed to inform. The investor’s job is to refuse the first and insist on the second. Revenue answers whether people buy. Earnings quality answers whether the business truly profits. Cash flow answers whether the money is real. Capital structure answers whether the company will survive. Ask all four questions, in that order, every time — and no big number will ever trap you again."
             ]
         }
     ]
@@ -294,7 +294,7 @@ const articleCatalog = [
         {
             sectionTitle: "How Inflation Is Measured",
             paragraphs: [
-                "Statisticians track inflation by pricing a \"basket\" of goods and services that a typical household buys — food, housing, transport, education, healthcare — and comparing the basket's cost over time. The result is the Consumer Price Index (CPI), and the percentage change in the CPI is the headline inflation rate you see in the news.",
+                "Statisticians track inflation by pricing a \"basket\" of goods and services that a typical household buys — food, housing, transport, education, healthcare — and comparing the basket’s cost over time. The result is the Consumer Price Index (CPI), and the percentage change in the CPI is the headline inflation rate you see in the news.",
                 "The measure is useful but imperfect. Your personal inflation rate depends on what you buy. A student who spends heavily on food and rent may experience much higher inflation than the national average suggests, while someone whose spending tilts toward electronics — which tend to fall in price — may experience less. Economists also watch core inflation, which strips out volatile food and energy prices to reveal the underlying trend."
             ]
         },
@@ -343,29 +343,29 @@ const articleCatalog = [
     category: "Business",
     readTime: "5 min read",
     date: "30 July 2026",
-    excerpt: "Financial statements can look intimidating, but the ideas behind them are simple. Here's a plain-language guide to the three core reports — income statement, balance sheet, and cash flow statement — and the question each one answers.",
+    excerpt: "Financial statements can look intimidating, but the ideas behind them are simple. Here’s a plain-language guide to the three core reports — income statement, balance sheet, and cash flow statement — and the question each one answers.",
     sections: [
         {
             sectionTitle: "What Are Financial Statements?",
             paragraphs: [
                 "Have you ever asked yourself, \"Is my business actually making money?\" or \"Where did all my cash go last month?\" The answers to both questions live in one place: your financial statements.",
                 "Unfortunately, many people treat financial statements as complicated documents that only accountants can decode. In reality, the underlying ideas are simple and anyone can grasp them. Financial statements are written summaries that show the financial condition and business performance of an organization over a given period.",
-                "Think of them as a medical check-up for your business. A doctor can't assess your health just by looking at you — they need numbers: blood pressure, blood sugar, cholesterol. Businesses work the same way. A busy-looking store isn't necessarily profitable, and a quiet one isn't necessarily losing money. The numbers in the financial statements tell you what's really going on.",
+                "Think of them as a medical check-up for your business. A doctor can’t assess your health just by looking at you — they need numbers: blood pressure, blood sugar, cholesterol. Businesses work the same way. A busy-looking store isn’t necessarily profitable, and a quiet one isn’t necessarily losing money. The numbers in the financial statements tell you what’s really going on.",
                 "These statements are built from everyday transaction records — every purchase, sale, payroll run, and payment received — which are then grouped and condensed into reports that are easy to read."
             ]
         },
         {
             sectionTitle: "Why Financial Statements Matter",
             paragraphs: [
-                "Financial statements aren't just paperwork or a compliance requirement. They shape real decisions: is it time to open a second location, or should prices go up? Decisions like these need data, not guesswork.",
-                "They're also how performance gets measured — comparing this year's sales against last year's, or spotting operating costs that are creeping upward — and how financing gets secured, since banks and investors almost always ask for financial statements before releasing funds.",
+                "Financial statements aren’t just paperwork or a compliance requirement. They shape real decisions: is it time to open a second location, or should prices go up? Decisions like these need data, not guesswork.",
+                "They’re also how performance gets measured — comparing this year’s sales against last year’s, or spotting operating costs that are creeping upward — and how financing gets secured, since banks and investors almost always ask for financial statements before releasing funds.",
                 "On the compliance side, corporate income tax calculations start from the profit recorded in the financial statements. And for companies with shareholders or nonprofits with donors, these reports are proof that funds are being managed properly."
             ]
         },
         {
             sectionTitle: "Who Uses Financial Statements?",
             paragraphs: [
-                "The audience is broader than most people assume. Owners and management use them to run the business. Investors use them to judge whether a company is worth buying into. Lenders and banks use them to assess the ability to repay. Tax authorities use them for compliance. Even employees have a stake, since a company's financial stability shapes their job security."
+                "The audience is broader than most people assume. Owners and management use them to run the business. Investors use them to judge whether a company is worth buying into. Lenders and banks use them to assess the ability to repay. Tax authorities use them for compliance. Even employees have a stake, since a company’s financial stability shapes their job security."
             ]
         },
         {
@@ -381,31 +381,31 @@ const articleCatalog = [
             sectionTitle: "The Balance Sheet: What Does the Business Own and Owe?",
             paragraphs: [
                 "The second core report is the balance sheet, or statement of financial position. Where the income statement covers a stretch of time, the balance sheet shows financial condition at a single point in time — say, December 31 — built on its own foundational equation: assets equal liabilities plus equity.",
-                "Assets are everything the business owns that has value: cash, inventory, receivables from customers, equipment, vehicles, buildings. Liabilities are what the business owes others — bank loans, unpaid supplier invoices, wages payable. Equity is the owner's stake: what's left of the assets after all debts are subtracted.",
-                "A simple example: that same coffee shop holds $300,000 in assets — equipment, inventory, and cash — and still owes $100,000 on a bank loan. That leaves the owner's equity at $200,000.",
-                "It's called a balance sheet because both sides must always balance. If they don't, something has been recorded incorrectly. Unlike the income statement, the balance sheet is a photograph — it captures one moment, not a span of time."
+                "Assets are everything the business owns that has value: cash, inventory, receivables from customers, equipment, vehicles, buildings. Liabilities are what the business owes others — bank loans, unpaid supplier invoices, wages payable. Equity is the owner’s stake: what’s left of the assets after all debts are subtracted.",
+                "A simple example: that same coffee shop holds $300,000 in assets — equipment, inventory, and cash — and still owes $100,000 on a bank loan. That leaves the owner’s equity at $200,000.",
+                "It’s called a balance sheet because both sides must always balance. If they don’t, something has been recorded incorrectly. Unlike the income statement, the balance sheet is a photograph — it captures one moment, not a span of time."
             ]
         },
         {
             sectionTitle: "The Cash Flow Statement: Where Is the Cash Actually Going?",
             paragraphs: [
-                "The third core report is the most frequently overlooked, yet it's often the one that determines whether a business survives. Plenty of companies show a profit on the income statement and still go under because they ran out of cash — customers hadn't paid their invoices yet, while payroll was already due.",
+                "The third core report is the most frequently overlooked, yet it’s often the one that determines whether a business survives. Plenty of companies show a profit on the income statement and still go under because they ran out of cash — customers hadn’t paid their invoices yet, while payroll was already due.",
                 "The cash flow statement tracks money moving in and out, split into three sections. Operating activities cover the day-to-day business — cash collected from customers, cash paid to suppliers and employees — and should ideally be positive. Investing activities cover buying or selling long-term assets, such as new equipment. Financing activities cover raising capital, taking out loans, repaying debt, or paying dividends.",
-                "A simple example: the coffee shop recorded $10,000 in profit, but $7,000 of that is still sitting in receivables from a corporate client. Only $3,000 in actual cash came in — and that's the figure the cash flow statement reveals."
+                "A simple example: the coffee shop recorded $10,000 in profit, but $7,000 of that is still sitting in receivables from a corporate client. Only $3,000 in actual cash came in — and that’s the figure the cash flow statement reveals."
             ]
         },
         {
             sectionTitle: "How the Three Reports Connect",
             paragraphs: [
-                "These aren't three separate documents — they interlock. Net profit from the income statement increases equity on the balance sheet. The ending cash balance on the cash flow statement must match the cash line on the balance sheet. And changes in balance sheet items, like receivables rising or debt shrinking, explain why cash moved the way it did.",
-                "Because they're linked, reading just one can mislead you. Strong profit without healthy cash flow is a warning sign. Large assets sitting on top of mounting debt isn't good news either. The full picture only emerges when all three are read together."
+                "These aren’t three separate documents — they interlock. Net profit from the income statement increases equity on the balance sheet. The ending cash balance on the cash flow statement must match the cash line on the balance sheet. And changes in balance sheet items, like receivables rising or debt shrinking, explain why cash moved the way it did.",
+                "Because they’re linked, reading just one can mislead you. Strong profit without healthy cash flow is a warning sign. Large assets sitting on top of mounting debt isn’t good news either. The full picture only emerges when all three are read together."
             ]
         },
         {
             sectionTitle: "Conclusion",
             paragraphs: [
                 "Financial statements are the language a business uses to describe its own condition. The three core reports answer three different questions: the income statement tells you whether the business is generating profit, the balance sheet tells you how strong its financial position is, and the cash flow statement tells you whether it has enough cash to keep running.",
-                "You don't need to be an accountant to understand them. Start by recording transactions cleanly and consistently — that's the foundation every useful financial statement is built on."
+                "You don’t need to be an accountant to understand them. Start by recording transactions cleanly and consistently — that’s the foundation every useful financial statement is built on."
             ]
         }
     ]

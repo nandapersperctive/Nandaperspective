@@ -43,11 +43,11 @@ const publicPageTextEN = {
     noteEyebrow:  "Note",
     noteTitle:    "All these materials are shared completely free of charge.",
     noteBody:     "No registration needed. No cost. Just click download and use it for your business or learning needs.",
-    printBtn:     "🖨 Print / Save as PDF",
+    printBtn:     "Print / Save as PDF",
     closeBtn:     "Close",
     openAppBtn:      "Open App",
     availableNowLabel: "Available Now",
-    downloadIconBtn: "⬇ Download"
+    downloadIconBtn: "Download"
 };
 
 const publicPageTextID = {
@@ -61,11 +61,11 @@ const publicPageTextID = {
     noteEyebrow:  "Catatan",
     noteTitle:    "Semua materi ini dibagikan secara cuma-cuma.",
     noteBody:     "Tidak perlu registrasi. Tidak ada biaya. Cukup klik download dan gunakan untuk keperluan bisnis atau belajar Anda.",
-    printBtn:     "🖨 Cetak / Simpan PDF",
+    printBtn:     "Cetak / Simpan PDF",
     closeBtn:     "Tutup",
     openAppBtn:      "Buka Aplikasi",
     availableNowLabel: "Tersedia Sekarang",
-    downloadIconBtn: "⬇ Download"
+    downloadIconBtn: "Download"
 };
 
 const publicPageText = (typeof getLang === "function" && getLang() === "id") ? publicPageTextID : publicPageTextEN;
