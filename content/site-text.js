@@ -4,8 +4,8 @@
    line below is the only place that text lives.
    =====================================================================
    HOW TO EDIT
-   Change the text between quotes " ... ". Don't delete quotes, commas,
-   or curly braces { }. Save the file when you're done — that's it.
+   Change the text between quotes " ... ". Don’t delete quotes, commas,
+   or curly braces { }. Save the file when you’re done — that’s it.
 
    Article text lives in content/articles-content.js
    About page text lives in content/about-content.js
@@ -56,7 +56,7 @@ const siteText = {
     contactEmailLabel: "Your Email",
     emailPlaceholder: "name@email.com",
     contactMessageLabel: "Message",
-    contactMessagePlaceholder: "What's on your mind?",
+    contactMessagePlaceholder: "What’s on your mind?",
     contactSend: "Send Email",
 
     backToTop: "Back to top",

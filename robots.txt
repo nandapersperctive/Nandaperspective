@@ -2,6 +2,7 @@
 User-agent: *
 Allow: /
 Disallow: /downloads/siklus-akuntansi.html
+Disallow: /downloads/still-accounting.html
 
 # Blokir crawler berbahaya
 User-agent: AhrefsBot

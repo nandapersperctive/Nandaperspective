@@ -1,4 +1,17 @@
 /* ═══════════════════════════════════════════
+   ICONS — one small stroke-based SVG set, reused everywhere instead of
+   emoji. Colour comes from currentColor, so each icon simply inherits
+   the text colour of whichever alert/empty-state box it sits in.
+═══════════════════════════════════════════ */
+const ICON = {
+  info:    '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="11"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+  warn:    '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+  success: '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+  empty:   '<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>',
+  star:    '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>'
+};
+
+/* ═══════════════════════════════════════════
    DATA & PERSISTENCE
 ═══════════════════════════════════════════ */
 const KEY = 'siklus_v2';
@@ -373,7 +386,7 @@ function pgWelcome(){
 
     <!-- UMKM Featured -->
     <div class="type-card featured" data-fn="selectCompanyType" data-arg="umkm">
-      <div class="type-card-tag">⭐ Utama — Paling Populer</div>
+      <div class="type-card-tag">Utama — Paling Populer</div>
       <div class="type-card-name">UMKM / Usaha Kecil Menengah</div>
       <div class="type-card-desc">Cocok untuk semua jenis usaha kecil. COA lengkap namun sederhana, siklus 8 langkah penuh, dan mudah dipahami tanpa latar belakang akuntansi mendalam.</div>
       <div class="type-card-tags">
@@ -500,11 +513,11 @@ function pgDashboard(){
   <div class="card mb-24">
     <div class="card-title">Status Siklus — ${periodLabel()}</div>
     ${stepBar(txn>0?(adj>0?6:4):1)}
-    ${txn===0?`<div class="alert alert-info"><span class="alert-icon">💡</span><div>Mulai dari <strong>Langkah 1</strong> untuk menginput transaksi bisnis Anda. Atau klik <strong>"Muat Contoh Data"</strong> untuk mencoba dengan data demo.</div></div>`:''}
+    ${txn===0?`<div class="alert alert-info"><span class="alert-icon">${ICON.info}</span><div>Mulai dari <strong>Langkah 1</strong> untuk menginput transaksi bisnis Anda. Atau klik <strong>"Muat Contoh Data"</strong> untuk mencoba dengan data demo.</div></div>`:''}
     <div class="flex-gap">
       <button class="btn btn-primary" data-fn="go" data-arg="step1">+ Tambah Transaksi</button>
-      ${txn===0?`<button class="btn btn-ghost" data-fn="loadSampleData">🎯 Muat Contoh Data</button>`:''}
-      <button class="btn btn-ghost" data-fn="go" data-arg="step7">📊 Lihat Laporan</button>
+      ${txn===0?`<button class="btn btn-ghost" data-fn="loadSampleData">Muat Contoh Data</button>`:''}
+      <button class="btn btn-ghost" data-fn="go" data-arg="step7">Lihat Laporan</button>
     </div>
   </div>
 
@@ -618,9 +631,9 @@ function pgStep1(){
     <button class="btn btn-primary" data-fn="openTxModal">+ Tambah Transaksi</button>
   </div>
   <div class="tip-box mb-16">
-    <strong>💡 Double-Entry:</strong> Setiap transaksi memiliki dua sisi — Debit dan Kredit. Total keduanya harus selalu sama. Contoh: Terima uang tunai → Debit Kas, Kredit Pendapatan.
+    <strong>Double-Entry:</strong> Setiap transaksi memiliki dua sisi — Debit dan Kredit. Total keduanya harus selalu sama. Contoh: Terima uang tunai → Debit Kas, Kredit Pendapatan.
   </div>
-  ${db.transactions.length===0?`<div class="empty"><div class="empty-icon">📋</div><h3>Belum ada transaksi</h3><p>Klik tombol "+ Tambah Transaksi" untuk mulai mencatat, atau muat contoh data dari Dasbor.</p><button class="btn btn-primary" data-fn="openTxModal">+ Tambah Transaksi</button></div>`:`
+  ${db.transactions.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada transaksi</h3><p>Klik tombol "+ Tambah Transaksi" untuk mulai mencatat, atau muat contoh data dari Dasbor.</p><button class="btn btn-primary" data-fn="openTxModal">+ Tambah Transaksi</button></div>`:`
   <div class="table-wrap">
     <table>
       <thead><tr><th>Tanggal</th><th>Ref</th><th>Keterangan</th><th>Entri</th><th class="text-right">Total Debit</th><th>Aksi</th></tr></thead>
@@ -753,7 +766,7 @@ function pgStep2(){
     </div>
     <button class="btn btn-primary" data-fn="go" data-arg="step1">+ Input Transaksi</button>
   </div>
-  ${rows.length===0?`<div class="empty"><div class="empty-icon">📒</div><h3>Belum ada jurnal</h3><p>Tambah transaksi terlebih dahulu di Langkah 1.</p></div>`:`
+  ${rows.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada jurnal</h3><p>Tambah transaksi terlebih dahulu di Langkah 1.</p></div>`:`
   <div class="table-wrap">
     <table>
       <thead><tr><th>Tanggal</th><th>Ref</th><th>Nama Akun</th><th class="text-right">Debit</th><th class="text-right">Kredit</th><th>Keterangan</th></tr></thead>
@@ -815,7 +828,7 @@ function pgStep3(){
     <h2>Buku Besar</h2>
     <p>Setiap akun ditampilkan dalam akun T. Saldo = perbedaan antara total Debit dan Kredit.</p>
   </div>
-  ${active.length===0?`<div class="empty"><div class="empty-icon">📚</div><h3>Belum ada data</h3><p>Tambah transaksi di Langkah 1 terlebih dahulu.</p></div>`:`<div class="ledger-grid">${cards}</div>`}
+  ${active.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada data</h3><p>Tambah transaksi di Langkah 1 terlebih dahulu.</p></div>`:`<div class="ledger-grid">${cards}</div>`}
   <div class="flex-between" style="margin-top:20px">
     <button class="btn btn-ghost" data-fn="go" data-arg="step2">← Langkah 2</button>
     <button class="btn btn-green" data-fn="go" data-arg="step4">Lanjut ke Neraca Saldo →</button>
@@ -833,9 +846,9 @@ function renderTB(type,stepNum,prev,next,title,hint){
   return`
   ${stepBar(stepNum)}
   <div class="page-header"><h2>${title}</h2><p>${hint}</p></div>
-  ${tb.length>0&&!balanced?`<div class="alert alert-warn"><span class="alert-icon">⚠</span><div>Neraca <strong>tidak seimbang</strong>! Periksa kembali entri transaksi Anda. Selisih: <strong>${fmt(Math.abs(totD-totK))}</strong></div></div>`:''}
-  ${tb.length>0&&balanced?`<div class="alert alert-success"><span class="alert-icon">✓</span><div>Neraca <strong>seimbang</strong> — Total Debit = Total Kredit = <strong>${fmt(totD)}</strong></div></div>`:''}
-  ${tb.length===0?`<div class="empty"><div class="empty-icon">⚖️</div><h3>Belum ada data</h3><p>Lengkapi langkah sebelumnya terlebih dahulu.</p></div>`:`
+  ${tb.length>0&&!balanced?`<div class="alert alert-warn"><span class="alert-icon">${ICON.warn}</span><div>Neraca <strong>tidak seimbang</strong>! Periksa kembali entri transaksi Anda. Selisih: <strong>${fmt(Math.abs(totD-totK))}</strong></div></div>`:''}
+  ${tb.length>0&&balanced?`<div class="alert alert-success"><span class="alert-icon">${ICON.success}</span><div>Neraca <strong>seimbang</strong> — Total Debit = Total Kredit = <strong>${fmt(totD)}</strong></div></div>`:''}
+  ${tb.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada data</h3><p>Lengkapi langkah sebelumnya terlebih dahulu.</p></div>`:`
   <div class="table-wrap">
     <table>
       <thead><tr><th>Kode</th><th>Nama Akun</th><th>Tipe</th><th class="text-right">Debit</th><th class="text-right">Kredit</th></tr></thead>
@@ -887,7 +900,7 @@ function pgHPP(){
   const type=db.settings.companyType;
   if(type==='dagang')return pgHPPDagang();
   if(type==='manufaktur')return pgHPPManufaktur();
-  return`<div class="empty"><div class="empty-icon">📊</div><h3>HPP hanya tersedia untuk Dagang & Manufaktur</h3><p>Ubah jenis perusahaan di Pengaturan.</p><button class="btn btn-ghost" data-fn="go" data-arg="settings">Buka Pengaturan</button></div>`;
+  return`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>HPP hanya tersedia untuk Dagang & Manufaktur</h3><p>Ubah jenis perusahaan di Pengaturan.</p><button class="btn btn-ghost" data-fn="go" data-arg="settings">Buka Pengaturan</button></div>`;
 }
 
 function renderHppDagangResult(pA,pmb,ang,ret,dis,pAk){
@@ -914,7 +927,7 @@ function pgHPPDagang(){
     <h2>Perhitungan HPP — Perusahaan Dagang</h2>
     <p>HPP = Persediaan Awal + Pembelian Bersih − Persediaan Akhir. Nilai ini digunakan di Laporan Laba Rugi.</p>
   </div>
-  <div class="alert alert-info mb-16"><span class="alert-icon">ℹ</span><div>Isi form, klik <strong>Simpan HPP</strong>, lalu HPP akan tampil di <strong>Laporan Laba Rugi (Langkah 7)</strong> sebagai baris terpisah antara Pendapatan dan Laba Kotor.</div></div>
+  <div class="alert alert-info mb-16"><span class="alert-icon">${ICON.info}</span><div>Isi form, klik <strong>Simpan HPP</strong>, lalu HPP akan tampil di <strong>Laporan Laba Rugi (Langkah 7)</strong> sebagai baris terpisah antara Pendapatan dan Laba Kotor.</div></div>
   <div class="card" style="max-width:560px">
     <div class="card-title">Input Data HPP Dagang — ${periodLabel()}</div>
     <div class="form-grid c2">
@@ -982,7 +995,7 @@ function pgHPPManufaktur(){
     <h2>Perhitungan HPP — Manufaktur</h2>
     <p>HPP Manufaktur = BB yang terpakai + BTKL + BOP ± perubahan WIP ± perubahan Barang Jadi.</p>
   </div>
-  <div class="alert alert-info mb-16"><span class="alert-icon">ℹ</span><div>Isi semua kolom, klik <strong>Simpan HPP</strong>, lalu HPP digunakan di <strong>Laporan Laba Rugi (Langkah 7)</strong>.</div></div>
+  <div class="alert alert-info mb-16"><span class="alert-icon">${ICON.info}</span><div>Isi semua kolom, klik <strong>Simpan HPP</strong>, lalu HPP digunakan di <strong>Laporan Laba Rugi (Langkah 7)</strong>.</div></div>
   <div class="hpp-two-col">
     <div class="card">
       <div class="card-title">1. Biaya Bahan Baku (BB)</div>
@@ -1066,7 +1079,7 @@ function lrHtml(is,co,per){
 
   return`<div class="fs-card">
     <div class="fs-header"><h3>Laporan Laba Rugi</h3><p>${esc(co)} · Periode: ${per}</p></div>
-    ${needsHPP?`<div style="padding:10px 22px 0"><div class="alert alert-warn" style="margin:0"><span class="alert-icon">⚠</span><div style="font-size:12px">Lengkapi <strong>Perhitungan HPP</strong> untuk tampilan Laba Kotor yang lebih akurat. <button class="btn btn-ghost btn-xs" data-fn="go" data-arg="hpp" style="margin-left:8px">Isi HPP →</button></div></div></div>`:''}
+    ${needsHPP?`<div style="padding:10px 22px 0"><div class="alert alert-warn" style="margin:0"><span class="alert-icon">${ICON.warn}</span><div style="font-size:12px">Lengkapi <strong>Perhitungan HPP</strong> untuk tampilan Laba Kotor yang lebih akurat. <button class="btn btn-ghost btn-xs" data-fn="go" data-arg="hpp" style="margin-left:8px">Isi HPP →</button></div></div></div>`:''}
     <div class="fs-sub">PENDAPATAN</div>
     ${is.rev.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span class="pos">${fmt(r.cr)}</span></div>`).join('')}
     <div class="fs-row subtotal"><span>Total Pendapatan</span><span class="pos">${fmt(is.totRev)}</span></div>
@@ -1109,7 +1122,7 @@ function pgStep5(){
     • <strong>Sewa terpakai</strong>: Debit Beban Sewa → Kredit Beban Dibayar Dimuka<br>
     • <strong>Perlengkapan terpakai</strong>: Debit Beban Perlengkapan → Kredit Perlengkapan
   </div>
-  ${db.adjustingEntries.length===0?`<div class="empty"><div class="empty-icon">📝</div><h3>Belum ada penyesuaian</h3><p>Klik "+ Tambah Penyesuaian" untuk membuat jurnal penyesuaian akhir periode.</p></div>`:`
+  ${db.adjustingEntries.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada penyesuaian</h3><p>Klik "+ Tambah Penyesuaian" untuk membuat jurnal penyesuaian akhir periode.</p></div>`:`
   <div class="table-wrap">
     <table>
       <thead><tr><th>Tanggal</th><th>Ref</th><th>Keterangan</th><th class="text-right">Jumlah</th><th>Aksi</th></tr></thead>
@@ -1249,7 +1262,7 @@ function pgStep7(){
     <div class="fs-row indent"><span>Laba Bersih</span><span>${fmt(is.net)}</span></div>
     <div class="fs-row subtotal"><span>Arus Kas dari Operasi (estimasi)</span><span class="${is.net>=0?'pos':'neg'}">${fmt(is.net)}</span></div>
     <div class="fs-row grand"><span>Saldo Kas & Bank Akhir Periode</span><span class="pos">${fmt(kasEnd)}</span></div>
-    <div class="alert alert-info" style="margin:12px 22px 16px"><span class="alert-icon">ℹ</span><span style="font-size:12px">Laporan arus kas lengkap memerlukan analisis perubahan modal kerja. Saldo kas diambil dari akun Kas dan Kas di Bank.</span></div>
+    <div class="alert alert-info" style="margin:12px 22px 16px"><span class="alert-icon">${ICON.info}</span><span style="font-size:12px">Laporan arus kas lengkap memerlukan analisis perubahan modal kerja. Saldo kas diambil dari akun Kas dan Kas di Bank.</span></div>
   </div>`;
 
   const content={'lr':lr,'ekuitas':ekuitas,'neraca':neraca,'kas':arusKas};
@@ -1329,8 +1342,8 @@ function pgStep8(){
     <h2>Jurnal Penutup</h2>
     <p>Menutup akun nominal (pendapatan, beban, prive) agar siap untuk periode berikutnya. Dibuat otomatis.</p>
   </div>
-  <div class="alert alert-info mb-16"><span class="alert-icon">✨</span><div>Jurnal penutup ini <strong>dibuat otomatis</strong> dari data neraca saldo disesuaikan. Anda tidak perlu input manual.</div></div>
-  ${rows.length===0?`<div class="empty"><div class="empty-icon">🔒</div><h3>Belum ada data untuk ditutup</h3><p>Pastikan Langkah 1–6 telah diisi dengan benar.</p></div>`:`
+  <div class="alert alert-info mb-16"><span class="alert-icon">${ICON.info}</span><div>Jurnal penutup ini <strong>dibuat otomatis</strong> dari data neraca saldo disesuaikan. Anda tidak perlu input manual.</div></div>
+  ${rows.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada data untuk ditutup</h3><p>Pastikan Langkah 1–6 telah diisi dengan benar.</p></div>`:`
   <div class="table-wrap mb-16">
     <table>
       <thead><tr><th>Ref</th><th>Nama Akun</th><th class="text-right">Debit</th><th class="text-right">Kredit</th><th>Keterangan</th></tr></thead>
@@ -1358,7 +1371,7 @@ function pgStep8(){
     </div>
     <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line)">
       <p class="text-muted text-sm mb-8">Siklus akuntansi periode <strong>${periodLabel()}</strong> telah selesai.</p>
-      <button class="btn btn-primary" data-fn="startNewPeriod">🔄 Mulai Periode Baru</button>
+      <button class="btn btn-primary" data-fn="startNewPeriod">Mulai Periode Baru</button>
     </div>
   </div>`}
   <div class="flex-between" style="margin-top:16px">
@@ -1589,7 +1602,7 @@ function pgAnalitik(){
   <div class="tabs">
     ${ANALITIK_TABS.map(([k,l])=>`<button class="tab ${analitikTab===k?'active':''}" data-fn="switchAnalitikTab" data-arg="${k}">${l}</button>`).join('')}
   </div>
-  ${empty?`<div class="empty"><div class="empty-icon">📈</div><h3>Belum ada data transaksi</h3><p>Tambah transaksi di Langkah 1 untuk melihat analitik.</p><button class="btn btn-primary" data-fn="go" data-arg="step1">+ Tambah Transaksi</button></div>` : `
+  ${empty?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada data transaksi</h3><p>Tambah transaksi di Langkah 1 untuk melihat analitik.</p><button class="btn btn-primary" data-fn="go" data-arg="step1">+ Tambah Transaksi</button></div>` : `
   <div class="stats-row" style="grid-template-columns:repeat(3,1fr);margin-bottom:20px">
     <div class="stat-box">
       <div class="stat-label">Total Pendapatan</div>
@@ -1732,7 +1745,7 @@ function pgSettings(){
       <input type="file" id="import-file" accept=".json" style="display:none" data-fn="importJSON">
     </div>
     <hr class="divider">
-    <button class="btn btn-danger btn-sm" data-fn="resetAllData">🗑 Hapus Semua Data</button>
+    <button class="btn btn-danger btn-sm" data-fn="resetAllData">Hapus Semua Data</button>
   </div>`;
 }
 
@@ -1961,7 +1974,7 @@ function pgPeriods(){
     <div class="stat-box"><div class="stat-label">Total Pendapatan</div><div class="stat-value green" style="font-size:1.1rem">${fmt(totAll.totP)}</div></div>
     <div class="stat-box"><div class="stat-label">Laba/Rugi Kumulatif</div><div class="stat-value ${netAll>=0?'green':'red'}" style="font-size:1.1rem">${fmt(Math.abs(netAll))}</div></div>
   </div>
-  ${periods.length===0?`<div class="empty"><div class="empty-icon">📂</div><h3>Belum ada periode tersimpan</h3><p>Mulai periode baru dari Langkah 8 untuk memulai menyimpan riwayat.</p></div>`:`
+  ${periods.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada periode tersimpan</h3><p>Mulai periode baru dari Langkah 8 untuk memulai menyimpan riwayat.</p></div>`:`
   <div class="table-wrap">
     <table>
       <thead><tr><th>Periode</th><th class="text-right">Transaksi</th><th class="text-right">Pendapatan</th><th class="text-right">Beban</th><th class="text-right">Laba / Rugi</th><th>Aksi</th></tr></thead>

@@ -187,7 +187,7 @@ if (typeof getLang === 'function') {
                         return acc.concat([s.sectionTitle]).concat(s.paragraphs || []);
                     }, []))
                     .filter(Boolean).join(' ');
-                items.push({ type: 'article', label: 'Insights', icon: '✍️', title: a.title, body: body, snippet: a.excerpt || '', url: 'articles.html?id=' + a.id });
+                items.push({ type: 'article', label: 'Insights', title: a.title, body: body, snippet: a.excerpt || '', url: 'articles.html?id=' + a.id });
             });
         }
 
@@ -198,13 +198,13 @@ if (typeof getLang === 'function') {
                         return acc.concat([sec.sectionTitle]).concat(sec.paragraphs || []);
                     }, []))
                     .filter(Boolean).join(' ');
-                items.push({ type: 'portfolio', label: 'Portfolio', icon: '📈', title: s.ticker + ' — ' + s.company, body: body, snippet: s.thesis || '', url: 'stock.html?ticker=' + s.ticker });
+                items.push({ type: 'portfolio', label: 'Portfolio', title: s.ticker + ' — ' + s.company, body: body, snippet: s.thesis || '', url: 'stock.html?ticker=' + s.ticker });
             });
         }
 
         if (typeof aboutText !== 'undefined') {
             var body = [aboutText.heading, aboutText.bio, aboutText.quote].filter(Boolean).join(' ');
-            items.push({ type: 'about', label: 'About', icon: '👤', title: 'About — Nanda Mulia', body: body, snippet: (aboutText.bio || '').slice(0, 110) + '…', url: 'about.html' });
+            items.push({ type: 'about', label: 'About', title: 'About — Nanda Mulia', body: body, snippet: (aboutText.bio || '').slice(0, 110) + '…', url: 'about.html' });
         }
 
         if (typeof publicResources !== 'undefined') {
@@ -215,7 +215,7 @@ if (typeof getLang === 'function') {
                             return acc.concat([c.heading, c.text]);
                         }, []))
                         .filter(Boolean).join(' ');
-                    items.push({ type: 'public', label: 'Public', icon: '📚', title: item.title, body: body, snippet: item.description || '', url: 'public.html' });
+                    items.push({ type: 'public', label: 'Public', title: item.title, body: body, snippet: item.description || '', url: 'public.html' });
                 });
             });
         }
@@ -269,7 +269,7 @@ if (typeof getLang === 'function') {
             return '<div class="gs-group-label">' + escHtml(label) + '</div>' +
                 groups[label].map(function (h) {
                     return '<a class="gs-item" href="' + encodeURI(h.url) + '">' +
-                        '<div class="gs-icon gs-icon-' + escHtml(h.type) + '">' + h.icon + '</div>' +
+                        '<div class="gs-icon gs-icon-' + escHtml(h.type) + '"></div>' +
                         '<div>' +
                             '<p class="gs-title">' + highlight(h.title, words) + '</p>' +
                             '<p class="gs-snippet">' + highlight(snippet(h.body, words), words) + '</p>' +

@@ -87,7 +87,7 @@ const publicResourcesEN = [
                     },
                     {
                         heading: "Why Is Accounting Important for Small Businesses?",
-                        text: "Many small business owners run their business without organized financial records. As a result, it's hard to know whether the business is making a profit or a loss, hard to apply for a bank loan, and hard to make sound business decisions. With accounting, small business owners can monitor the financial health of their business at any time."
+                        text: "Many small business owners run their business without organized financial records. As a result, it’s hard to know whether the business is making a profit or a loss, hard to apply for a bank loan, and hard to make sound business decisions. With accounting, small business owners can monitor the financial health of their business at any time."
                     },
                     {
                         heading: "Main Functions of Accounting",
@@ -108,11 +108,11 @@ const publicResourcesEN = [
                 content: [
                     {
                         heading: "The Basic Accounting Equation",
-                        text: "The entire modern accounting system rests on one fundamental equation:\n\n        ASSETS = LIABILITIES + EQUITY\n\nThis equation must always stay balanced after every transaction. If it doesn't balance, there's a recording error somewhere."
+                        text: "The entire modern accounting system rests on one fundamental equation:\n\n        ASSETS = LIABILITIES + EQUITY\n\nThis equation must always stay balanced after every transaction. If it doesn’t balance, there’s a recording error somewhere."
                     },
                     {
                         heading: "Components of the Equation",
-                        text: "ASSETS are all resources owned by the business that provide future economic benefit. Examples: cash, receivables, equipment, vehicles, and buildings.\n\nLIABILITIES are obligations the business owes to others that must be settled in the future. Examples: bank loans, accounts payable, and wages payable.\n\nEQUITY is the owner's claim on the business's assets after subtracting all liabilities. Equity increases from capital contributions and profit, and decreases from losses and owner's drawings (withdrawals by the owner)."
+                        text: "ASSETS are all resources owned by the business that provide future economic benefit. Examples: cash, receivables, equipment, vehicles, and buildings.\n\nLIABILITIES are obligations the business owes to others that must be settled in the future. Examples: bank loans, accounts payable, and wages payable.\n\nEQUITY is the owner’s claim on the business’s assets after subtracting all liabilities. Equity increases from capital contributions and profit, and decreases from losses and owner’s drawings (withdrawals by the owner)."
                     },
                     {
                         heading: "Example in Practice",
@@ -137,11 +137,11 @@ const publicResourcesEN = [
                     },
                     {
                         heading: "2. Liability Accounts",
-                        text: "Liability accounts record all of the business's obligations.\n• Short-Term Liabilities: Accounts Payable, Wages Payable, Taxes Payable.\n• Long-Term Liabilities: Bank Loans, Mortgage Payable.\n• Normal balance of liability accounts: CREDIT."
+                        text: "Liability accounts record all of the business’s obligations.\n• Short-Term Liabilities: Accounts Payable, Wages Payable, Taxes Payable.\n• Long-Term Liabilities: Bank Loans, Mortgage Payable.\n• Normal balance of liability accounts: CREDIT."
                     },
                     {
                         heading: "3. Equity Accounts",
-                        text: "Equity accounts record the owner's claim on the business.\n• Owner's Capital, Drawings (withdrawals by the owner), Income Summary.\n• Normal balance: CREDIT (except Drawings, whose normal balance is Debit)."
+                        text: "Equity accounts record the owner’s claim on the business.\n• Owner’s Capital, Drawings (withdrawals by the owner), Income Summary.\n• Normal balance: CREDIT (except Drawings, whose normal balance is Debit)."
                     },
                     {
                         heading: "4. Revenue Accounts",
@@ -159,11 +159,10 @@ const publicResourcesEN = [
         category: "Accounting Cycle",
         items: [
             {
-                title: "Small Business Accounting Cycle App",
-                description: "A complete interactive app covering all 8 steps of the accounting cycle — transaction entry, general journal, general ledger, trial balance, adjustments, financial statements, and closing entries. Runs directly in your browser, no install needed.",
+                title: "Still Accounting — Bookkeeping & POS App",
+                description: "A complete offline bookkeeping app for small businesses: point-of-sale checkout, daily cash drawer reconciliation, general journal, ledger, trial balance, adjustments, financial statements, and closing entries — with PIN-protected owner/cashier roles and an audit trail. Runs entirely in your browser, no install needed.",
                 type: "App",
-                file: "downloads/siklus-akuntansi.html",
-                downloadFile: "downloads/siklus-akuntansi-offline.html",
+                file: "downloads/still-accounting.html",
                 free: true,
                 content: []
             },
@@ -196,7 +195,7 @@ const publicResourcesEN = [
                     },
                     {
                         heading: "Step 5 — Adjusting Entries",
-                        text: "Adjustments are made to record transactions that haven't yet been recorded or that need correcting: depreciation of fixed assets, accrued expenses not yet paid, unearned revenue, and supplies used up."
+                        text: "Adjustments are made to record transactions that haven’t yet been recorded or that need correcting: depreciation of fixed assets, accrued expenses not yet paid, unearned revenue, and supplies used up."
                     },
                     {
                         heading: "Step 6 — Adjusted Trial Balance",
@@ -274,15 +273,15 @@ const publicResourcesEN = [
                 content: [
                     {
                         heading: "Why Read Financial Statements?",
-                        text: "Financial statements are your business's 'report card.' From these statements you can find out whether the business is making a profit or a loss, how large its assets are, how much debt it has, and how its cash position looks. Understanding financial statements helps you make smarter business decisions."
+                        text: "Financial statements are your business’s ‘report card.’ From these statements you can find out whether the business is making a profit or a loss, how large its assets are, how much debt it has, and how its cash position looks. Understanding financial statements helps you make smarter business decisions."
                     },
                     {
                         heading: "Reading the Income Statement",
-                        text: "The Income Statement answers the question: 'Is my business profitable?'\n\nStructure:\n  Sales Revenue                Rp xxx\n  (−) Cost of Goods Sold      (Rp xxx)\n  = Gross Profit                Rp xxx\n  (−) Operating Expenses      (Rp xxx)\n  = NET PROFIT                  Rp xxx\n\nIf the result is positive → the business is profitable. Negative → the business is at a loss."
+                        text: "The Income Statement answers the question: ‘Is my business profitable?’\n\nStructure:\n  Sales Revenue                Rp xxx\n  (−) Cost of Goods Sold      (Rp xxx)\n  = Gross Profit                Rp xxx\n  (−) Operating Expenses      (Rp xxx)\n  = NET PROFIT                  Rp xxx\n\nIf the result is positive → the business is profitable. Negative → the business is at a loss."
                     },
                     {
                         heading: "Reading the Balance Sheet",
-                        text: "The Balance Sheet answers the question: 'What does my business own, and what does it owe?'\n\nLeft Side (Assets): everything the business owns.\nRight Side (Liabilities + Equity): where those assets were funded from.\n\nFormula: Total Assets = Total Liabilities + Total Equity\n\nIf equity keeps growing from period to period → the business is growing."
+                        text: "The Balance Sheet answers the question: ‘What does my business own, and what does it owe?’\n\nLeft Side (Assets): everything the business owns.\nRight Side (Liabilities + Equity): where those assets were funded from.\n\nFormula: Total Assets = Total Liabilities + Total Equity\n\nIf equity keeps growing from period to period → the business is growing."
                     },
                     {
                         heading: "Simple Financial Ratios",
@@ -304,11 +303,11 @@ const publicResourcesEN = [
                 content: [
                     {
                         heading: "Why Do Small Businesses Need Bookkeeping?",
-                        text: "Many small businesses fail not because they can't sell, but because the owner doesn't know their financial condition. Sales money gets mixed with personal money, debts get forgotten, or the owner doesn't realize the business is actually losing money. Simple bookkeeping prevents all of this."
+                        text: "Many small businesses fail not because they can’t sell, but because the owner doesn’t know their financial condition. Sales money gets mixed with personal money, debts get forgotten, or the owner doesn’t realize the business is actually losing money. Simple bookkeeping prevents all of this."
                     },
                     {
                         heading: "Step 1 — Separate Personal and Business Finances",
-                        text: "Open a dedicated business bank account. All money coming in from sales goes into the business account. All business expenses are paid from the business account. If you need money for personal use, record it as 'drawings' (a withdrawal of capital)."
+                        text: "Open a dedicated business bank account. All money coming in from sales goes into the business account. All business expenses are paid from the business account. If you need money for personal use, record it as ‘drawings’ (a withdrawal of capital)."
                     },
                     {
                         heading: "Step 2 — Record Every Transaction Every Day",
@@ -320,7 +319,7 @@ const publicResourcesEN = [
                     },
                     {
                         heading: "Practical Tips",
-                        text: "✓ Keep every receipt — photograph it with your phone if needed.\n✓ Record transactions right away, don't put it off.\n✓ Reconcile your cash balance with your bank account every month.\n✓ Don't be afraid to ask for help — small business consultants, cooperatives, or accounting students can help."
+                        text: "✓ Keep every receipt — photograph it with your phone if needed.\n✓ Record transactions right away, don’t put it off.\n✓ Reconcile your cash balance with your bank account every month.\n✓ Don’t be afraid to ask for help — small business consultants, cooperatives, or accounting students can help."
                     }
                 ]
             },
@@ -333,15 +332,15 @@ const publicResourcesEN = [
                 content: [
                     {
                         heading: "What Is a Business Budget?",
-                        text: "A budget is a financial plan that sets revenue targets and spending limits for a given period. Budgets aren't just for large companies — small businesses need them even more, to avoid overspending and to plan for growth."
+                        text: "A budget is a financial plan that sets revenue targets and spending limits for a given period. Budgets aren’t just for large companies — small businesses need them even more, to avoid overspending and to plan for growth."
                     },
                     {
                         heading: "Steps to Build a Simple Budget",
-                        text: "1. Estimate Revenue — What's your sales target for this month? Base it on the previous months' average or a new target.\n2. List Fixed Costs — Costs that stay the same every month: rent, permanent staff salaries, loan installments.\n3. List Variable Costs — Costs that change with sales: raw materials, shipping, commissions.\n4. Calculate the Difference — Revenue − Fixed Costs − Variable Costs = Remainder (target profit)."
+                        text: "1. Estimate Revenue — What’s your sales target for this month? Base it on the previous months’ average or a new target.\n2. List Fixed Costs — Costs that stay the same every month: rent, permanent staff salaries, loan installments.\n3. List Variable Costs — Costs that change with sales: raw materials, shipping, commissions.\n4. Calculate the Difference — Revenue − Fixed Costs − Variable Costs = Remainder (target profit)."
                     },
                     {
                         heading: "Monitor and Evaluate",
-                        text: "At the end of the month, compare actual results with the budget:\n• If revenue is below target → review your sales strategy.\n• If spending exceeds the budget → find areas to cut back.\n• Update next month's budget based on what you find."
+                        text: "At the end of the month, compare actual results with the budget:\n• If revenue is below target → review your sales strategy.\n• If spending exceeds the budget → find areas to cut back.\n• Update next month’s budget based on what you find."
                     }
                 ]
             }
@@ -438,11 +437,10 @@ const publicResourcesID = [
         category: "Siklus Akuntansi",
         items: [
             {
-                title: "Aplikasi Siklus Akuntansi UMKM",
-                description: "Aplikasi interaktif lengkap 8 langkah siklus akuntansi — input transaksi, jurnal umum, buku besar, neraca saldo, penyesuaian, laporan keuangan, hingga jurnal penutup. Langsung pakai di browser, tanpa install.",
+                title: "Still Accounting — Aplikasi Pembukuan & Kasir",
+                description: "Aplikasi pembukuan lengkap untuk usaha kecil, bekerja penuh tanpa internet: kasir (POS), kas harian, jurnal umum, buku besar, neraca saldo, penyesuaian, laporan keuangan, hingga jurnal penutup — dilengkapi kunci PIN pemilik/kasir dan jejak audit. Langsung pakai di browser, tanpa install.",
                 type: "App",
-                file: "downloads/siklus-akuntansi.html",
-                downloadFile: "downloads/siklus-akuntansi-offline.html",
+                file: "downloads/still-accounting.html",
                 free: true,
                 content: []
             },
@@ -553,15 +551,15 @@ const publicResourcesID = [
                 content: [
                     {
                         heading: "Mengapa Perlu Membaca Laporan Keuangan?",
-                        text: "Laporan keuangan adalah 'rapor' bisnis Anda. Dari laporan ini Anda bisa mengetahui apakah bisnis untung atau rugi, seberapa besar aset yang dimiliki, berapa banyak utang, dan bagaimana kondisi kas. Memahami laporan keuangan membantu Anda membuat keputusan bisnis yang lebih cerdas."
+                        text: "Laporan keuangan adalah ‘rapor’ bisnis Anda. Dari laporan ini Anda bisa mengetahui apakah bisnis untung atau rugi, seberapa besar aset yang dimiliki, berapa banyak utang, dan bagaimana kondisi kas. Memahami laporan keuangan membantu Anda membuat keputusan bisnis yang lebih cerdas."
                     },
                     {
                         heading: "Membaca Laporan Laba Rugi",
-                        text: "Laporan Laba Rugi menjawab pertanyaan: 'Apakah bisnis saya untung?'\n\nStrukturnya:\n  Pendapatan Penjualan         Rp xxx\n  (−) HPP / Beban Pokok       (Rp xxx)\n  = Laba Kotor                 Rp xxx\n  (−) Beban Operasional       (Rp xxx)\n  = LABA BERSIH                Rp xxx\n\nJika hasilnya positif → bisnis untung. Negatif → bisnis rugi."
+                        text: "Laporan Laba Rugi menjawab pertanyaan: ‘Apakah bisnis saya untung?’\n\nStrukturnya:\n  Pendapatan Penjualan         Rp xxx\n  (−) HPP / Beban Pokok       (Rp xxx)\n  = Laba Kotor                 Rp xxx\n  (−) Beban Operasional       (Rp xxx)\n  = LABA BERSIH                Rp xxx\n\nJika hasilnya positif → bisnis untung. Negatif → bisnis rugi."
                     },
                     {
                         heading: "Membaca Neraca",
-                        text: "Neraca menjawab pertanyaan: 'Apa yang dimiliki dan apa yang dihutang bisnis saya?'\n\nSisi Kiri (Aset): semua yang dimiliki bisnis.\nSisi Kanan (Liabilitas + Ekuitas): dari mana aset itu didanai.\n\nRumus: Total Aset = Total Liabilitas + Total Ekuitas\n\nJika ekuitas terus bertambah dari periode ke periode → bisnis berkembang."
+                        text: "Neraca menjawab pertanyaan: ‘Apa yang dimiliki dan apa yang dihutang bisnis saya?’\n\nSisi Kiri (Aset): semua yang dimiliki bisnis.\nSisi Kanan (Liabilitas + Ekuitas): dari mana aset itu didanai.\n\nRumus: Total Aset = Total Liabilitas + Total Ekuitas\n\nJika ekuitas terus bertambah dari periode ke periode → bisnis berkembang."
                     },
                     {
                         heading: "Rasio Keuangan Sederhana",
@@ -587,7 +585,7 @@ const publicResourcesID = [
                     },
                     {
                         heading: "Langkah 1 — Pisahkan Keuangan Pribadi dan Bisnis",
-                        text: "Buka rekening bank khusus bisnis. Semua uang masuk dari penjualan masuk ke rekening bisnis. Semua pengeluaran bisnis dibayar dari rekening bisnis. Jika butuh uang pribadi, catat sebagai 'prive' (penarikan modal)."
+                        text: "Buka rekening bank khusus bisnis. Semua uang masuk dari penjualan masuk ke rekening bisnis. Semua pengeluaran bisnis dibayar dari rekening bisnis. Jika butuh uang pribadi, catat sebagai ‘prive’ (penarikan modal)."
                     },
                     {
                         heading: "Langkah 2 — Catat Setiap Transaksi Setiap Hari",

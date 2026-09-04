@@ -36,12 +36,12 @@
     </button>
 
     <nav id="main-nav" aria-label="Main navigation">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#articles">Insights</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="public.html">Public</a>
-        <a href="about.html">About</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="index.html#home" data-i18n="navHome">Home</a>
+        <a href="index.html#articles" data-i18n="navArticles">Insights</a>
+        <a href="portfolio.html" data-i18n="navPortfolio">Portfolio</a>
+        <a href="public.html" data-i18n="navPublic">Public</a>
+        <a href="about.html" data-i18n="navAbout">About</a>
+        <a href="index.html#contact" data-i18n="navContact">Contact</a>
     </nav>
 </header>
 
@@ -54,13 +54,13 @@
         <p>Nanda Perspective is a personal journal. This page explains, in plain language, what data gets collected when you visit and why.</p>
 
         <h2>Analytics</h2>
-        <p>This site uses Google Analytics to understand which articles get read and how visitors find the site — things like pages viewed, approximate location (city/country level), device type, and referral source. Google Analytics sets cookies to do this. No personal profile is built beyond what Google's standard analytics collects, and this data is never sold.</p>
+        <p>This site uses Google Analytics to understand which articles get read and how visitors find the site — things like pages viewed, approximate location (city/country level), device type, and referral source. Google Analytics sets cookies to do this. No personal profile is built beyond what Google’s standard analytics collects, and this data is never sold.</p>
 
         <h2>Contact form</h2>
-        <p>The contact form on the homepage doesn't send data to a server — it opens your own email app with a pre-filled message addressed to <a href="mailto:nandapersperctive@gmail.com">nandapersperctive@gmail.com</a>. Nothing you type there is stored by this site.</p>
+        <p>The contact form on the homepage doesn’t send data to a server — it opens your own email app with a pre-filled message addressed to <a href="mailto:nandapersperctive@gmail.com">nandapersperctive@gmail.com</a>. Nothing you type there is stored by this site.</p>
 
         <h2>Cookies</h2>
-        <p>Aside from the cookies Google Analytics sets, this site uses your browser's local storage only for your own preferences — language choice (English/Indonesian) and a local error log used for debugging. None of that leaves your device.</p>
+        <p>Aside from the cookies Google Analytics sets, this site uses your browser’s local storage only for your own preferences — language choice (English/Indonesian) and a local error log used for debugging. None of that leaves your device.</p>
 
         <h2>Third-party services</h2>
         <p>This site loads fonts from Google Fonts and analytics from Google Analytics. Both are Google services with their own privacy policies.</p>
@@ -72,7 +72,9 @@
 
 <footer>
     <p>&copy; <span id="year">2026</span> Nanda Perspective.</p>
-    <a href="index.html">Back to home</a>
+    <div class="footer-links">
+        <a href="index.html" data-i18n="backToHome">Back to home</a>
+    </div>
 </footer>
 
 <script src="content/site-text.js"></script>

@@ -2,12 +2,12 @@
    PORTFOLIO — all the text on the Portfolio page lives here.
    =====================================================================
    HOW TO EDIT
-   Change the text between quotes " ... ". Don't delete quotes, commas,
-   or curly braces { }. Save the file when done — that's it.
+   Change the text between quotes " ... ". Don’t delete quotes, commas,
+   or curly braces { }. Save the file when done — that’s it.
 
    EACH STOCK HAS TWO PARTS:
    1. The CARD (shown on the portfolio page) — ticker, logo, company name.
-   2. The FULL ANALYSIS (shown on the stock's own page) — sections with
+   2. The FULL ANALYSIS (shown on the stock’s own page) — sections with
       title, optional photo, and paragraphs.
 
    HOW TO ADD A COMPANY LOGO
@@ -22,7 +22,7 @@
       (e.g. images/bbca-hero.jpg).
    2. Find the stock below and change heroBg: "" to heroBg: "images/portfolio/bbca-hero.jpg".
    3. Save. The photo will appear as a full-width background behind the dark hero section.
-   Leave heroBg: "" if you don't want a background photo.
+   Leave heroBg: "" if you don’t want a background photo.
 
    HOW TO CHANGE THE PHOTO ON THE TOP OF THE PORTFOLIO PAGE
    (the big navy banner behind "Stocks I Own and the Analysis Behind Them")
@@ -36,7 +36,7 @@
    Inside any section in "analysis: [ ... ]", set the "image" field:
        image: "images/portfolio/bbca-chart.jpg"
    Put the image file in the images/ folder first. Leave image: "" for
-   sections where you don't want a photo.
+   sections where you don’t want a photo.
 
    HOW TO SET THE PHOTO SIZE
    Add an "imageSize" field next to "image":
@@ -54,7 +54,7 @@
    Example — 3 boxes:
        snapshot: [
            { label: "Thesis",  value: "My investment reason here." },
-           { label: "Risk",    value: "Key risks I'm watching." },
+           { label: "Risk",    value: "Key risks I’m watching." },
            { label: "Monitor", value: "Metrics I track." }
        ],
    To add a 4th box just add another line:
@@ -135,7 +135,7 @@ const portfolioHoldings = [
     risk: "Premium valuation, slowing loan growth, sensitivity to liquidity conditions, and rising digital/fintech competition.",
     monitor: "CASA ratio, loan growth, net interest margin, asset quality, and fee-based income.",
 
-    /* Full analysis — shown on the stock's own page (stock.html?ticker=BBCA).
+    /* Full analysis — shown on the stock’s own page (stock.html?ticker=BBCA).
        Edit the paragraphs below to fill in your complete personal analysis. */
     analysis: [
         {
@@ -143,20 +143,20 @@ const portfolioHoldings = [
             image: "",  /* Optional photo — e.g. "images/portfolio/bbca-overview.jpg". Leave empty for no photo. */
             imageSize: "full",            /* Photo size: "small" (200px), "medium" (380px), "large" (580px), "full" (full width) */
             paragraphs: [
-                "Bank Central Asia is Indonesia's largest private bank and, by most measures, its most admired. Its business model is deceptively simple: gather the cheapest deposits in the country, lend them out conservatively, and collect a growing stream of fee income from the payment network that millions of Indonesians use every day.",
+                "Bank Central Asia is Indonesia’s largest private bank and, by most measures, its most admired. Its business model is deceptively simple: gather the cheapest deposits in the country, lend them out conservatively, and collect a growing stream of fee income from the payment network that millions of Indonesians use every day.",
                 "The heart of the franchise is transaction banking. BCA is not primarily where Indonesians chase the highest deposit rate; it is where they park their everyday money because the ecosystem — mobile banking, ATMs, merchant networks, corporate payrolls — makes leaving inconvenient. That convenience translates into an extraordinary funding structure: current and savings accounts (CASA) reached 85.2% of third-party funds in the first quarter of 2026, among the highest of any major bank in the region.",
                 "Cheap, sticky funding is a structural advantage that compounds. It lets BCA earn a healthy net interest margin — 5.4% in early 2026, with full-year guidance of 5.4–5.6% — without stretching into risky lending, and it cushions the bank when interest rates move against the industry.",
-                "Warren Buffett's observation about the industry captures why this matters: \"Banking is a very good business if you don't do anything dumb.\"",
-                "BCA's entire history is essentially a long demonstration of not doing anything dumb."
+                "Warren Buffett’s observation about the industry captures why this matters: \"Banking is a very good business if you don’t do anything dumb.\"",
+                "BCA’s entire history is essentially a long demonstration of not doing anything dumb."
             ]
         },
         {
             sectionTitle: "Why I Own This",
             image: "",
             paragraphs: [
-                "The thesis rests on three pillars. First, the deposit franchise described above — a moat that competitors have spent two decades failing to replicate. Second, consistent profitability: return on equity has run in the 22–23% range, a level most global banks can only envy, achieved with conservative leverage and strong capital. Third, disciplined risk management: through the Asian financial crisis aftermath, the 2008 crisis, the pandemic, and every commodity cycle in between, BCA's asset quality has consistently outperformed the Indonesian banking system.",
+                "The thesis rests on three pillars. First, the deposit franchise described above — a moat that competitors have spent two decades failing to replicate. Second, consistent profitability: return on equity has run in the 22–23% range, a level most global banks can only envy, achieved with conservative leverage and strong capital. Third, disciplined risk management: through the Asian financial crisis aftermath, the 2008 crisis, the pandemic, and every commodity cycle in between, BCA’s asset quality has consistently outperformed the Indonesian banking system.",
                 "There is also a macro argument. Indonesia remains an underbanked economy with a young population, a growing middle class, and rising formalization of business. Loan penetration relative to GDP is low compared with regional peers. A dominant, trusted bank sitting on top of that demographic runway does not need heroic assumptions to keep growing for decades.",
-                "Finally, ownership here is a bet on compounding rather than re-rating. The market already knows BCA is excellent — which is precisely the risk section's problem — but excellence retained and reinvested at 20%+ returns on equity does the heavy lifting over a long holding period, regardless of what the multiple does in any given year."
+                "Finally, ownership here is a bet on compounding rather than re-rating. The market already knows BCA is excellent — which is precisely the risk section’s problem — but excellence retained and reinvested at 20%+ returns on equity does the heavy lifting over a long holding period, regardless of what the multiple does in any given year."
             ]
         },
         {
@@ -164,19 +164,19 @@ const portfolioHoldings = [
             image: "",
             paragraphs: [
                 "The latest numbers illustrate the machine at work — and show it navigating a tougher environment. Full-year 2025 net profit reached approximately Rp58 trillion, up about 5% from 2024, with earnings per share rising from Rp445 to Rp467. The first quarter of 2026 continued the pattern: net profit of Rp14.7 trillion, up 3.8% year-on-year, even as sector-wide credit demand cooled.",
-                "The moat actually widened while growth slowed. CASA balances jumped 11.2% year-on-year in 1Q26, lifting the CASA ratio to a record 85.2%. Loan growth moderated to 5.6% year-on-year (total loans of Rp994 trillion), still led by corporate lending while consumer credit — particularly auto — weakened. NIM compressed to 5.4%, within management's full-year guidance of 5.4–5.6%, reflecting rate cuts and soft credit demand rather than funding deterioration.",
+                "The moat actually widened while growth slowed. CASA balances jumped 11.2% year-on-year in 1Q26, lifting the CASA ratio to a record 85.2%. Loan growth moderated to 5.6% year-on-year (total loans of Rp994 trillion), still led by corporate lending while consumer credit — particularly auto — weakened. NIM compressed to 5.4%, within management’s full-year guidance of 5.4–5.6%, reflecting rate cuts and soft credit demand rather than funding deterioration.",
                 "Two details deserve credit. Cost discipline sharpened, with the cost-to-income ratio improving to 27.3% in 1Q26. And although provisions rose 22.5% year-on-year to Rp1.2 trillion, pre-provision operating profit of Rp19.3 trillion gives the bank enormous headroom to absorb credit-cost normalization — prudence taken through the income statement, not deferred, which is exactly the behavior a long-term shareholder should want to see.",
-                "None of these figures, taken alone, is the story. The story is their consistency: BCA produces this profile year after year, in a sector where most banks' results swing with the credit cycle."
+                "None of these figures, taken alone, is the story. The story is their consistency: BCA produces this profile year after year, in a sector where most banks’ results swing with the credit cycle."
             ]
         },
         {
             sectionTitle: "Risk Analysis",
             image: "",
             paragraphs: [
-                "Every strength has a price, and BCA's price is literal: premium valuation. The stock persistently trades at a price-to-book multiple far above Indonesian and regional banking peers. A premium multiple means expectations are already high — when growth merely meets expectations, returns can be mediocre, and any stumble can compress the multiple painfully even if the business itself remains sound. The greatest risk to a BCA shareholder has rarely been the bank; it has been the price paid for it.",
-                "The second risk is slower loan growth — no longer hypothetical, but visible in the numbers. Loan growth decelerated from 7.6% in 2025 to 5.6% by early 2026, with consumer and auto lending notably soft. As Indonesia's largest private lender, BCA is increasingly a proxy for the economy itself. If national credit demand stays weak, BCA cannot outgrow the system indefinitely without loosening standards it has no intention of loosening.",
-                "Third is sensitivity to liquidity conditions. BCA's funding advantage is most valuable when system liquidity is tight and competitors must pay up for deposits. When liquidity is abundant and rates fall, the gap between BCA's funding cost and everyone else's narrows, and with it part of the margin advantage. Shifts in Bank Indonesia policy, government cash management, and global rate cycles all feed into this channel.",
-                "A slower-burning risk deserves mention: digital competition. Fintech players and digital banks are attacking the payments layer that anchors BCA's deposit stickiness. So far BCA's own digital execution has neutralized the threat, but the moat here must be actively defended, not assumed."
+                "Every strength has a price, and BCA’s price is literal: premium valuation. The stock persistently trades at a price-to-book multiple far above Indonesian and regional banking peers. A premium multiple means expectations are already high — when growth merely meets expectations, returns can be mediocre, and any stumble can compress the multiple painfully even if the business itself remains sound. The greatest risk to a BCA shareholder has rarely been the bank; it has been the price paid for it.",
+                "The second risk is slower loan growth — no longer hypothetical, but visible in the numbers. Loan growth decelerated from 7.6% in 2025 to 5.6% by early 2026, with consumer and auto lending notably soft. As Indonesia’s largest private lender, BCA is increasingly a proxy for the economy itself. If national credit demand stays weak, BCA cannot outgrow the system indefinitely without loosening standards it has no intention of loosening.",
+                "Third is sensitivity to liquidity conditions. BCA’s funding advantage is most valuable when system liquidity is tight and competitors must pay up for deposits. When liquidity is abundant and rates fall, the gap between BCA’s funding cost and everyone else’s narrows, and with it part of the margin advantage. Shifts in Bank Indonesia policy, government cash management, and global rate cycles all feed into this channel.",
+                "A slower-burning risk deserves mention: digital competition. Fintech players and digital banks are attacking the payments layer that anchors BCA’s deposit stickiness. So far BCA’s own digital execution has neutralized the threat, but the moat here must be actively defended, not assumed."
             ]
         },
         {
@@ -203,7 +203,7 @@ const portfolioHoldings = [
     sector: "Mining",
     allocation: "Growth income",
     horizon: "Mid term",
-    thesis: "Low-cost nickel ore producer with improving margins, a strengthening balance sheet, and direct exposure to Indonesia's nickel downstreaming policy.",
+    thesis: "Low-cost nickel ore producer with improving margins, a strengthening balance sheet, and direct exposure to Indonesia’s nickel downstreaming policy.",
     risk: "Nickel price volatility, production quota (RKAB) dependency, single-commodity concentration, and smelter economics.",
     monitor: "Nickel prices, RKAB quota approvals, production and sales volume, net profit margin, and smelter utilization.",
 
@@ -212,7 +212,7 @@ const portfolioHoldings = [
             sectionTitle: "Business Overview",
             image: "",  /* Optional photo — e.g. "images/portfolio/bbca-overview.jpg". Leave empty for no photo. */
             paragraphs: [
-                "Central Omega Resources is an Indonesian nickel mining group with operations concentrated in Central and Southeast Sulawesi, the heart of the country's nickel belt. Through its subsidiaries, the company mines and sells nickel ore into the domestic market and operates a ferronickel processing facility, giving it a foot in both segments of Indonesia's nickel value chain: raw ore supply and downstream processing.",
+                "Central Omega Resources is an Indonesian nickel mining group with operations concentrated in Central and Southeast Sulawesi, the heart of the country’s nickel belt. Through its subsidiaries, the company mines and sells nickel ore into the domestic market and operates a ferronickel processing facility, giving it a foot in both segments of Indonesia’s nickel value chain: raw ore supply and downstream processing.",
                 "The strategic backdrop matters more for DKFT than for most companies. Since Indonesia banned raw nickel ore exports, all ore must be sold to domestic smelters — a policy that transformed the country into the center of global nickel processing. For a miner like DKFT, this means a captive, growing domestic customer base sitting close to its mines, with demand structurally supported by the stainless steel and electric vehicle battery supply chains being built onshore.",
                 "DKFT is a small player next to giants like Antam or the IMIP ecosystem, but small has its advantages: incremental production growth moves the needle, and operational improvements show up quickly in the bottom line."
             ]
@@ -221,10 +221,10 @@ const portfolioHoldings = [
             sectionTitle: "Why I Own This",
             image: "",
             paragraphs: [
-                "The investment case is a combination of macro tailwind and micro execution. The macro tailwind is Indonesia's downstreaming policy: domestic nickel demand from smelters keeps ore absorbed locally, and every new processing facility tightens the market for the ore DKFT digs. The company is positioned exactly where national industrial policy is pushing value creation.",
+                "The investment case is a combination of macro tailwind and micro execution. The macro tailwind is Indonesia’s downstreaming policy: domestic nickel demand from smelters keeps ore absorbed locally, and every new processing facility tightens the market for the ore DKFT digs. The company is positioned exactly where national industrial policy is pushing value creation.",
                 "The micro execution is visible in the numbers. This is a company whose profits are growing much faster than its revenue — the signature of expanding margins rather than mere volume. Management has been disciplined about costs, and the company is preparing to grow: it has applied to revise its RKAB (the government-approved work plan and budget) to raise production quotas, and secured a Rp245 billion credit facility to fund expansion, a small enough sum to leave the balance sheet comfortable.",
-                "Warren Buffett's timing principle applies to cyclical stocks more than anywhere else: \"Be fearful when others are greedy and greedy when others are fearful.\"",
-                "Nickel is a deeply cyclical commodity, and the time to study a miner is precisely when the market treats the whole sector with indifference. The position is a bet that DKFT's cost discipline lets it prosper across the cycle, not just at the top of it."
+                "Warren Buffett’s timing principle applies to cyclical stocks more than anywhere else: \"Be fearful when others are greedy and greedy when others are fearful.\"",
+                "Nickel is a deeply cyclical commodity, and the time to study a miner is precisely when the market treats the whole sector with indifference. The position is a bet that DKFT’s cost discipline lets it prosper across the cycle, not just at the top of it."
             ]
         },
         {
@@ -240,8 +240,8 @@ const portfolioHoldings = [
             sectionTitle: "Risk Analysis",
             image: "",
             paragraphs: [
-                "Every attraction here has a mirror-image risk. First and dominant: the nickel price. DKFT does not set the price of what it sells; the global market does. A margin of 47% at today's prices can compress brutally if nickel enters one of its periodic gluts — and Indonesia's own massive supply growth is the usual suspect behind such gluts. The very policy that guarantees DKFT's customers also floods the world with Indonesian nickel.",
-                "Second, regulatory dependency. Production is capped by the government-approved RKAB quota. The planned quota increase is an opportunity, but it is also a reminder that DKFT's growth requires periodic state permission. Delays or rejections in RKAB approvals — a recurring industry complaint — directly cap revenue.",
+                "Every attraction here has a mirror-image risk. First and dominant: the nickel price. DKFT does not set the price of what it sells; the global market does. A margin of 47% at today’s prices can compress brutally if nickel enters one of its periodic gluts — and Indonesia’s own massive supply growth is the usual suspect behind such gluts. The very policy that guarantees DKFT’s customers also floods the world with Indonesian nickel.",
+                "Second, regulatory dependency. Production is capped by the government-approved RKAB quota. The planned quota increase is an opportunity, but it is also a reminder that DKFT’s growth requires periodic state permission. Delays or rejections in RKAB approvals — a recurring industry complaint — directly cap revenue.",
                 "Third, concentration. This is a single-commodity, single-country, few-assets company. There is no diversified cash flow to cushion a bad year in nickel, and mining operations in Sulawesi carry weather, logistics, and community-relations risks that large diversified miners can absorb more easily.",
                 "Fourth, smelter economics. Ferronickel processing is energy-intensive and margin-volatile; a downstream facility can be a value-add in good times and a cash drain when processing spreads collapse. The smelter deserves separate scrutiny from the mining business, not consolidated applause."
             ]
@@ -250,14 +250,14 @@ const portfolioHoldings = [
             sectionTitle: "What I Monitor",
             image: "",
             paragraphs: [
-                "Five things, in order. The nickel price and Indonesian supply dynamics, because they set the ceiling on everything else. RKAB quota approvals, because they set the volume DKFT is legally allowed to sell. Quarterly production and sales volumes against those quotas, to separate price-driven results from real operational growth. Net profit margin, because the ~47% level is extraordinary and its erosion would be the first sign the cycle has turned. And smelter utilization and profitability, to confirm downstream operations are adding value rather than consuming the mine's cash."
+                "Five things, in order. The nickel price and Indonesian supply dynamics, because they set the ceiling on everything else. RKAB quota approvals, because they set the volume DKFT is legally allowed to sell. Quarterly production and sales volumes against those quotas, to separate price-driven results from real operational growth. Net profit margin, because the ~47% level is extraordinary and its erosion would be the first sign the cycle has turned. And smelter utilization and profitability, to confirm downstream operations are adding value rather than consuming the mine’s cash."
             ]
         },
         {
             sectionTitle: "Conclusion",
             image: "",
             paragraphs: [
-                "DKFT is a focused, low-cost nickel producer riding the strongest industrial-policy tailwind in Indonesia, with financials — accelerating profit growth, premium margins, modest debt — that show a management team converting that tailwind into shareholder value. But it remains a small, single-commodity cyclical whose fortunes are leased from the nickel price and licensed by the state. The position deserves to be sized accordingly, watched quarterly, and judged over a full cycle rather than a good year. The thesis holds as long as costs stay low, quotas keep coming, and margins stay well above the industry's — the moment those three slip together, the cycle, not the company, is in charge."
+                "DKFT is a focused, low-cost nickel producer riding the strongest industrial-policy tailwind in Indonesia, with financials — accelerating profit growth, premium margins, modest debt — that show a management team converting that tailwind into shareholder value. But it remains a small, single-commodity cyclical whose fortunes are leased from the nickel price and licensed by the state. The position deserves to be sized accordingly, watched quarterly, and judged over a full cycle rather than a good year. The thesis holds as long as costs stay low, quotas keep coming, and margins stay well above the industry’s — the moment those three slip together, the cycle, not the company, is in charge."
             ]
         }
     ]
@@ -279,9 +279,9 @@ const portfolioHoldings = [
             sectionTitle: "Business Overview",
             image: "",  /* Optional photo — e.g. "images/portfolio/bbca-overview.jpg". Leave empty for no photo. */
             paragraphs: [
-                "Alamtri Resources Indonesia is the company formerly known as Adaro Energy — one of Indonesia's largest energy groups — midway through the most consequential reinvention in its history. In late 2024 it spun off its thermal coal engine, Adaro Andalan Indonesia (AADI), into a separate listing, and rebranded the remaining group as Alamtri. What is left is a deliberately different animal: metallurgical (coking) coal through Adaro Minerals (ADMR), one of Indonesia's largest mining services contractors (SIS), power generation, an aluminum smelter project in North Kalimantan, and a growing renewables portfolio spanning hydro and solar.",
+                "Alamtri Resources Indonesia is the company formerly known as Adaro Energy — one of Indonesia’s largest energy groups — midway through the most consequential reinvention in its history. In late 2024 it spun off its thermal coal engine, Adaro Andalan Indonesia (AADI), into a separate listing, and rebranded the remaining group as Alamtri. What is left is a deliberately different animal: metallurgical (coking) coal through Adaro Minerals (ADMR), one of Indonesia’s largest mining services contractors (SIS), power generation, an aluminum smelter project in North Kalimantan, and a growing renewables portfolio spanning hydro and solar.",
                 "The logic of the split was to separate the cash-rich but sunset thermal coal business from the growth assets, allowing Alamtri to pursue greener, processing-oriented ventures — and cleaner ESG optics — without the thermal coal discount hanging over the whole group.",
-                "Peter Lynch's oldest rule applies with unusual force here: \"Know what you own, and know why you own it.\"",
+                "Peter Lynch’s oldest rule applies with unusual force here: \"Know what you own, and know why you own it.\"",
                 "Anyone holding ADRO today owns a fundamentally different company than the Adaro of two years ago. The analysis has to start from that fact."
             ]
         },
@@ -290,17 +290,17 @@ const portfolioHoldings = [
             image: "",
             paragraphs: [
                 "The case rests on three legs. First, proven cash generation and shareholder returns: even in a transition year, Alamtri paid out essentially its entire 2025 profit — US$447.5 million, or 99.96% of net income — as dividends, worth Rp3.40 trillion (Rp118.26 per share, paid May 2026). Few Indonesian companies match this record of returning cash, and it reflects a controlling family with a long history of aligning with minority shareholders on payouts.",
-                "Second, the metallurgical coal growth story. ADMR's coking coal serves steelmaking, not power generation — a commodity with a different demand curve and a scarcer supply base than thermal coal, and one that fits the aluminum smelter strategy: the group is effectively building an integrated energy-and-materials chain in Kalimantan.",
-                "Third, optionality on the energy transition. The Kaltara aluminum smelter, hydropower plans, and solar projects are early-stage, but they are funded by a balance sheet and operating cash flow that most transition-story companies can only wish for. If even part of this portfolio matures, today's valuation — priced largely as a shrunken coal company — gets re-rated."
+                "Second, the metallurgical coal growth story. ADMR’s coking coal serves steelmaking, not power generation — a commodity with a different demand curve and a scarcer supply base than thermal coal, and one that fits the aluminum smelter strategy: the group is effectively building an integrated energy-and-materials chain in Kalimantan.",
+                "Third, optionality on the energy transition. The Kaltara aluminum smelter, hydropower plans, and solar projects are early-stage, but they are funded by a balance sheet and operating cash flow that most transition-story companies can only wish for. If even part of this portfolio matures, today’s valuation — priced largely as a shrunken coal company — gets re-rated."
             ]
         },
         {
             sectionTitle: "Financial Highlights",
             image: "",
             paragraphs: [
-                "The 2025 numbers must be read through the lens of the spinoff. Revenue fell 9.9% to US$1.87 billion, and net profit attributable to shareholders dropped 68% to US$447.7 million — a decline driven by the deconsolidation of the thermal coal business and by weaker commodity prices through the year. Within the smaller revenue base, mining contributed US$966 million and mining services US$865 million, confirming that the group's earnings engine is now split between ADMR's coal and SIS's contracting work.",
+                "The 2025 numbers must be read through the lens of the spinoff. Revenue fell 9.9% to US$1.87 billion, and net profit attributable to shareholders dropped 68% to US$447.7 million — a decline driven by the deconsolidation of the thermal coal business and by weaker commodity prices through the year. Within the smaller revenue base, mining contributed US$966 million and mining services US$865 million, confirming that the group’s earnings engine is now split between ADMR’s coal and SIS’s contracting work.",
                 "The encouraging signal came in the first quarter of 2026: net profit jumped 67% year-on-year to US$128.1 million. Annualized, that pace would comfortably exceed the whole of 2025 — evidence that the post-spinoff base is stabilizing and the remaining businesses are gaining traction rather than merely shrinking gracefully.",
-                "The dividend deserves its own paragraph. Paying out 99.96% of profit is extraordinary — and double-edged. It signals confidence and discipline, but a payout ratio that high leaves nothing retained; it can only be sustained if operating cash flow keeps covering both the dividend and the group's ambitious capex pipeline. That tension between generosity and growth investment is the central capital-allocation question for this company."
+                "The dividend deserves its own paragraph. Paying out 99.96% of profit is extraordinary — and double-edged. It signals confidence and discipline, but a payout ratio that high leaves nothing retained; it can only be sustained if operating cash flow keeps covering both the dividend and the group’s ambitious capex pipeline. That tension between generosity and growth investment is the central capital-allocation question for this company."
             ]
         },
         {
@@ -317,14 +317,14 @@ const portfolioHoldings = [
             sectionTitle: "What I Monitor",
             image: "",
             paragraphs: [
-                "Coal prices — metallurgical above all — because they still set the earnings weather. ADMR's production volumes and costs, as the group's primary profit engine. The dividend payout ratio against operating cash flow and capex, because the 99.96% payout is either a statement of strength or a warning sign, and the cash flow statement will say which. Milestones at the Kaltara smelter and renewables projects — budgets, timelines, first production — to judge whether the transition is real. And the balance sheet: net debt creeping upward while payouts stay jumbo would be the earliest signal that something has to give."
+                "Coal prices — metallurgical above all — because they still set the earnings weather. ADMR’s production volumes and costs, as the group’s primary profit engine. The dividend payout ratio against operating cash flow and capex, because the 99.96% payout is either a statement of strength or a warning sign, and the cash flow statement will say which. Milestones at the Kaltara smelter and renewables projects — budgets, timelines, first production — to judge whether the transition is real. And the balance sheet: net debt creeping upward while payouts stay jumbo would be the earliest signal that something has to give."
             ]
         },
         {
             sectionTitle: "Conclusion",
             image: "",
             paragraphs: [
-                "Alamtri is a bet that one of Indonesia's best-run energy groups can do something very few commodity companies manage: redeploy a fortune earned in coal into durable assets on the right side of the energy transition, while paying shareholders handsomely along the way. The 2025 profit decline was the accounting cost of that choice; the 67% rebound in early 2026 is the first evidence the remaining engine works. The thesis holds as long as cash generation covers both the dividend and the buildout — and the moment those two start competing, the payout, the projects, or the balance sheet will tell the story before the headlines do."
+                "Alamtri is a bet that one of Indonesia’s best-run energy groups can do something very few commodity companies manage: redeploy a fortune earned in coal into durable assets on the right side of the energy transition, while paying shareholders handsomely along the way. The 2025 profit decline was the accounting cost of that choice; the 67% rebound in early 2026 is the first evidence the remaining engine works. The thesis holds as long as cash generation covers both the dividend and the buildout — and the moment those two start competing, the payout, the projects, or the balance sheet will tell the story before the headlines do."
             ]
         }
     ]

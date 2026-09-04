@@ -33,9 +33,9 @@
   --text:#2C1F18; --muted:#8A7A72;
   --paper:#FFFCF9; --cream:#F5EDE3; --bg:#EDE8E1; --line:#E5D9CF;
   --accent2:#5B8A5F;
-  --clay:8px 8px 28px rgba(160,100,60,.16),-4px -4px 12px rgba(255,255,255,.88),inset 0 1px 0 rgba(255,255,255,.9);
-  --clay-sm:4px 4px 14px rgba(160,100,60,.12),-2px -2px 7px rgba(255,255,255,.8);
-  --clay-inset:inset 3px 3px 8px rgba(160,100,60,.12),inset -2px -2px 6px rgba(255,255,255,.7);
+  --clay:0 10px 26px rgba(40,25,15,.15);
+  --clay-sm:0 5px 14px rgba(40,25,15,.12);
+  --clay-inset:inset 0 1px 4px rgba(40,25,15,.12);
   --r:18px; --r-sm:50px; --r-lg:24px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -85,7 +85,7 @@ input,select,textarea,button{font-family:inherit}
 }
 .nav-item:hover{background:var(--cream);color:var(--text)}
 .nav-item.active{
-  background:linear-gradient(135deg,rgba(224,90,58,.1),rgba(224,90,58,.06));
+  background:rgba(224,90,58,.08);
   color:var(--primary);font-weight:600;
 }
 .nav-item.active::before{
@@ -125,7 +125,7 @@ input,select,textarea,button{font-family:inherit}
 
 /* ── CARDS ── */
 .card{
-  background:linear-gradient(145deg,var(--paper),#fff5ef);
+  background:var(--paper);
   border-radius:var(--r);
   box-shadow:var(--clay);
   padding:22px;
@@ -136,7 +136,7 @@ input,select,textarea,button{font-family:inherit}
 /* ── STATS ── */
 .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:22px}
 .stat-box{
-  background:linear-gradient(145deg,var(--paper),#fff5ef);
+  background:var(--paper);
   border-radius:var(--r);
   box-shadow:var(--clay);
   padding:18px;
@@ -150,15 +150,15 @@ input,select,textarea,button{font-family:inherit}
 
 /* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:var(--r-sm);border:none;cursor:pointer;font-size:13px;font-weight:600;transition:all .18s;box-shadow:var(--clay-sm)}
-.btn-primary{background:linear-gradient(145deg,var(--primary),var(--primary-dark));color:#fff;box-shadow:4px 4px 14px rgba(200,80,40,.3)}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 4px 14px rgba(200,80,40,.3)}
 .btn-primary:hover{transform:translateY(-1px);box-shadow:6px 8px 20px rgba(200,80,40,.38)}
-.btn-navy{background:linear-gradient(145deg,var(--navy),var(--navy-deep));color:#fff;box-shadow:4px 4px 14px rgba(20,30,42,.3)}
+.btn-navy{background:var(--navy);color:#fff;box-shadow:0 4px 14px rgba(20,30,42,.3)}
 .btn-navy:hover{transform:translateY(-1px)}
-.btn-green{background:linear-gradient(145deg,#5B8A5F,#4a7350);color:#fff;box-shadow:4px 4px 14px rgba(80,130,80,.25)}
+.btn-green{background:#5B8A5F;color:#fff;box-shadow:0 4px 14px rgba(80,130,80,.25)}
 .btn-green:hover{transform:translateY(-1px)}
 .btn-ghost{background:var(--cream);color:var(--muted);box-shadow:var(--clay-sm)}
 .btn-ghost:hover{color:var(--text);transform:translateY(-1px)}
-.btn-danger{background:linear-gradient(145deg,#e74c3c,#c0392b);color:#fff}
+.btn-danger{background:#c0392b;color:#fff}
 .btn-sm{padding:6px 12px;font-size:12px}
 .btn-xs{padding:4px 10px;font-size:11px}
 
@@ -228,16 +228,16 @@ td.neg{color:#C0392B;font-weight:600}
   box-shadow:var(--clay-sm);flex-shrink:0;
   transition:all .2s;
 }
-.step-pill.active{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;box-shadow:4px 4px 14px rgba(200,80,40,.3)}
-.step-pill.done{background:linear-gradient(135deg,var(--accent2),#4a7350);color:#fff}
+.step-pill.active{background:var(--primary);color:#fff;box-shadow:0 4px 14px rgba(200,80,40,.3)}
+.step-pill.done{background:var(--accent2);color:#fff}
 .step-pill .sn{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:10px}
 .step-pill.active .sn,.step-pill.done .sn{background:rgba(255,255,255,.25)}
 
 /* ── LEDGER T-ACCOUNTS ── */
 .ledger-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.t-card{background:linear-gradient(145deg,var(--paper),#fff5ef);border-radius:var(--r);box-shadow:var(--clay);overflow:hidden}
+.t-card{background:var(--paper);border-radius:var(--r);box-shadow:var(--clay);overflow:hidden}
 .t-card-head{
-  background:linear-gradient(135deg,var(--navy),var(--navy-deep));
+  background:var(--navy);
   color:#fff;padding:12px 16px;
   display:flex;justify-content:space-between;align-items:center;
 }
@@ -255,8 +255,8 @@ td.neg{color:#C0392B;font-weight:600}
 .t-total{display:flex;justify-content:space-between;padding:6px 4px 2px;border-top:1.5px solid var(--line);font-size:12px;font-weight:700;margin-top:4px}
 
 /* ── FINANCIAL STATEMENTS ── */
-.fs-card{background:linear-gradient(145deg,var(--paper),#fff5ef);border-radius:var(--r-lg);box-shadow:var(--clay);overflow:hidden;margin-bottom:20px}
-.fs-header{background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:#fff;padding:16px 22px}
+.fs-card{background:var(--paper);border-radius:var(--r-lg);box-shadow:var(--clay);overflow:hidden;margin-bottom:20px}
+.fs-header{background:var(--navy);color:#fff;padding:16px 22px}
 .fs-header h3{font-family:'Fraunces',serif;font-size:1rem;font-weight:600}
 .fs-header p{font-size:11px;opacity:.7;margin-top:2px}
 .fs-sub{background:var(--cream);padding:8px 22px;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line)}
@@ -265,13 +265,13 @@ td.neg{color:#C0392B;font-weight:600}
 .fs-row.indent{padding-left:38px}
 .fs-row.subtotal{font-weight:600;background:rgba(229,217,207,.2);border-top:1px solid var(--line)}
 .fs-row.total{font-weight:700;font-family:'Fraunces',serif;font-size:14px;background:var(--cream);border-top:2px solid var(--line)}
-.fs-row.grand{font-weight:700;font-family:'Fraunces',serif;font-size:15px;background:linear-gradient(135deg,rgba(224,90,58,.08),rgba(224,90,58,.04));color:var(--primary);border-top:2px solid var(--primary)}
+.fs-row.grand{font-weight:700;font-family:'Fraunces',serif;font-size:15px;background:rgba(224,90,58,.06);color:var(--primary);border-top:2px solid var(--primary)}
 .fs-two-col{display:grid;grid-template-columns:1fr 1fr;gap:0}
 .fs-two-col .fs-col:first-child{border-right:1px solid var(--line)}
 
 /* ── CHARTS ── */
 .chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:22px}
-.chart-card{background:linear-gradient(145deg,var(--paper),#fff5ef);border-radius:var(--r);box-shadow:var(--clay);padding:20px}
+.chart-card{background:var(--paper);border-radius:var(--r);box-shadow:var(--clay);padding:20px}
 .chart-card canvas{max-height:200px}
 .chart-card-title{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px;font-family:'DM Sans',sans-serif}
 
@@ -279,7 +279,7 @@ td.neg{color:#C0392B;font-weight:600}
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(44,31,24,.55);backdrop-filter:blur(6px);z-index:200;align-items:center;justify-content:center;padding:20px}
 .modal-bg.open{display:flex}
 .modal{
-  background:linear-gradient(145deg,var(--paper),#fff5ef);
+  background:var(--paper);
   border-radius:var(--r-lg);box-shadow:var(--clay);
   width:100%;max-width:600px;max-height:92vh;
   display:flex;flex-direction:column;overflow:hidden;
@@ -294,9 +294,9 @@ td.neg{color:#C0392B;font-weight:600}
 /* ── DANGER MODAL ── */
 #danger-bg{display:none;position:fixed;inset:0;background:rgba(44,31,24,.65);backdrop-filter:blur(8px);z-index:300;align-items:center;justify-content:center;padding:20px}
 #danger-bg.open{display:flex}
-.danger-modal{background:linear-gradient(145deg,var(--paper),#fff5ef);border-radius:var(--r-lg);box-shadow:var(--clay),0 0 0 2px rgba(192,57,43,.25);width:100%;max-width:460px;overflow:hidden}
+.danger-modal{background:var(--paper);border-radius:var(--r-lg);box-shadow:var(--clay),0 0 0 2px rgba(192,57,43,.25);width:100%;max-width:460px;overflow:hidden}
 .danger-modal-head{padding:20px 22px 14px;display:flex;gap:14px;align-items:flex-start;border-bottom:1px solid rgba(192,57,43,.15)}
-.danger-icon{width:44px;height:44px;border-radius:50%;background:rgba(192,57,43,.12);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;margin-top:1px}
+.danger-icon{width:44px;height:44px;border-radius:50%;background:rgba(192,57,43,.12);color:#b91c1c;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 .danger-modal-head-text h3{font-family:'Fraunces',serif;font-size:1.05rem;color:#b91c1c;margin:0 0 4px}
 .danger-modal-head-text p{font-size:13px;color:var(--muted);margin:0;line-height:1.5}
 .danger-modal-body{padding:16px 22px}
@@ -307,7 +307,7 @@ td.neg{color:#C0392B;font-weight:600}
 .danger-confirm-field input{width:100%;padding:9px 12px;border-radius:var(--r-sm);border:1px solid var(--line);background:#fffaf7;font-size:14px;font-family:'DM Sans',sans-serif;box-shadow:inset 0 1px 3px rgba(0,0,0,.04)}
 .danger-confirm-field input:focus{outline:none;border-color:rgba(192,57,43,.4);box-shadow:inset 0 1px 3px rgba(0,0,0,.04),0 0 0 3px rgba(192,57,43,.1)}
 .danger-modal-foot{padding:14px 22px;border-top:1px solid var(--line);display:flex;gap:8px;justify-content:flex-end}
-.btn-danger-confirm{background:linear-gradient(135deg,#b91c1c,#991b1b);color:#fff;border:none;padding:10px 20px;border-radius:var(--r-sm);font-size:13px;font-weight:700;cursor:not-allowed;opacity:.38;transition:opacity .2s,filter .2s;pointer-events:all}
+.btn-danger-confirm{background:#b91c1c;color:#fff;border:none;padding:10px 20px;border-radius:var(--r-sm);font-size:13px;font-weight:700;cursor:not-allowed;opacity:.38;transition:opacity .2s,filter .2s;pointer-events:all}
 .btn-danger-confirm.ready{opacity:1;cursor:pointer}
 .btn-danger-confirm.ready:hover{filter:brightness(1.1)}
 @keyframes shake-input{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
@@ -318,7 +318,7 @@ td.neg{color:#C0392B;font-weight:600}
 /* ── TOAST ── */
 .toast{
   position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);
-  background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:#fff;
+  background:var(--navy);color:#fff;
   padding:11px 22px;border-radius:var(--r-sm);
   font-size:13px;font-weight:500;
   box-shadow:0 8px 24px rgba(20,30,42,.35);
@@ -345,7 +345,7 @@ td.neg{color:#C0392B;font-weight:600}
 /* ── DASHBOARD QUICK NAV ── */
 .quick-nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:4px}
 .quick-card{
-  background:linear-gradient(145deg,var(--paper),#fff5ef);
+  background:var(--paper);
   border-radius:var(--r);box-shadow:var(--clay);
   padding:16px;cursor:pointer;transition:transform .18s;
 }
@@ -366,11 +366,11 @@ td.neg{color:#C0392B;font-weight:600}
 .mb-24{margin-bottom:24px}
 .tabs{display:flex;gap:4px;background:var(--cream);border-radius:var(--r-sm);padding:4px;width:fit-content;margin-bottom:20px;box-shadow:var(--clay-inset)}
 .tab{padding:7px 16px;border-radius:var(--r-sm);border:none;background:none;color:var(--muted);cursor:pointer;font-size:13px;font-weight:500;transition:all .15s;font-family:inherit}
-.tab.active{background:linear-gradient(145deg,var(--paper),#fff5ef);color:var(--navy);font-weight:700;box-shadow:var(--clay-sm)}
+.tab.active{background:var(--paper);color:var(--navy);font-weight:700;box-shadow:var(--clay-sm)}
 .page-header{margin-bottom:24px}
 .page-header h2{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--navy);margin-bottom:4px}
 .page-header p{font-size:13px;color:var(--muted);line-height:1.5}
-.tip-box{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;border-radius:12px;padding:14px 16px;font-size:12.5px;color:#1e40af;line-height:1.6;margin-bottom:18px}
+.tip-box{background:#e7f1fe;border:1px solid #bfdbfe;border-radius:12px;padding:14px 16px;font-size:12.5px;color:#1e40af;line-height:1.6;margin-bottom:18px}
 .tip-box strong{font-weight:700}
 
 /* ── PRINT HEADER (hidden on screen) ── */
@@ -501,7 +501,7 @@ td.neg{color:#C0392B;font-weight:600}
 /* ── WELCOME FULL-SCREEN OVERLAY ── */
 #welcome-screen{
   position:fixed;inset:0;z-index:500;
-  background:linear-gradient(145deg,var(--bg) 0%,var(--cream) 100%);
+  background:var(--cream);
   overflow-y:auto;display:none;
   flex-direction:column;align-items:center;justify-content:flex-start;
   padding:56px 24px 48px;
@@ -511,9 +511,9 @@ td.neg{color:#C0392B;font-weight:600}
 .welcome-h{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:700;color:var(--navy);text-align:center;margin-bottom:8px}
 .welcome-p{font-size:14px;color:var(--muted);text-align:center;margin-bottom:36px;max-width:500px;line-height:1.65}
 .type-grid-others{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
-.type-card{background:linear-gradient(145deg,var(--paper),#fff5ef);border-radius:var(--r-lg);box-shadow:var(--clay);padding:22px 24px;cursor:pointer;transition:transform .2s,box-shadow .2s;border:2px solid transparent;width:100%;max-width:860px}
-.type-card:hover{transform:translateY(-4px);box-shadow:12px 14px 36px rgba(160,100,60,.22),-6px -6px 16px rgba(255,255,255,.92)}
-.type-card.featured{border-color:var(--primary);background:linear-gradient(145deg,#fff8f5,#fff3ee)}
+.type-card{background:var(--paper);border-radius:var(--r-lg);box-shadow:var(--clay);padding:22px 24px;cursor:pointer;transition:transform .2s,box-shadow .2s;border:2px solid transparent;width:100%;max-width:860px}
+.type-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(160,100,60,.24)}
+.type-card.featured{border-color:var(--primary);background:#fff5ef}
 .type-card-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--primary);margin-bottom:8px}
 .type-card-name{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--navy);margin-bottom:6px}
 .type-card-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:12px}
@@ -543,7 +543,7 @@ td.neg{color:#C0392B;font-weight:600}
   </div>
   <div class="sidebar-nav">
     <div class="nav-group-label">Dasbor</div>
-    <div class="nav-item active" data-page="dashboard"><span class="nav-badge">◉</span>Dasbor Utama</div>
+    <div class="nav-item active" data-page="dashboard"><span class="nav-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>Dasbor Utama</div>
 
     <div class="nav-group-label">8 Langkah Siklus</div>
     <div class="nav-item" data-page="step1" id="ni1"><span class="nav-badge">1</span>Input Transaksi</div>
@@ -557,12 +557,12 @@ td.neg{color:#C0392B;font-weight:600}
     <div class="nav-item" data-page="step8" id="ni8"><span class="nav-badge">8</span>Jurnal Penutup</div>
 
     <div class="nav-group-label">Analitik & Riwayat</div>
-    <div class="nav-item" data-page="analitik"><span class="nav-badge">▲</span>Laporan Analitik</div>
-    <div class="nav-item" data-page="periods"><span class="nav-badge">🗂</span>Riwayat Periode</div>
+    <div class="nav-item" data-page="analitik"><span class="nav-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>Laporan Analitik</div>
+    <div class="nav-item" data-page="periods"><span class="nav-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Riwayat Periode</div>
 
     <div class="nav-group-label">Pengaturan</div>
-    <div class="nav-item" data-page="coa"><span class="nav-badge">☰</span>Kode Akun (COA)</div>
-    <div class="nav-item" data-page="settings"><span class="nav-badge">⚙</span>Perusahaan</div>
+    <div class="nav-item" data-page="coa"><span class="nav-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>Kode Akun (COA)</div>
+    <div class="nav-item" data-page="settings"><span class="nav-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>Perusahaan</div>
   </div>
   <div class="sidebar-footer">Nanda Perspective &copy; 2026</div>
 </nav>
@@ -587,9 +587,9 @@ td.neg{color:#C0392B;font-weight:600}
     </div>
     <div class="topbar-right">
       <button class="menu-toggle" id="menu-toggle" data-fn="toggleSidebar">☰</button>
-      <button class="btn btn-ghost btn-sm" data-fn="print">🖨 Cetak</button>
-      <button class="btn btn-ghost btn-sm" data-fn="exportJSON">⬇ Ekspor</button>
-      <button class="btn btn-ghost btn-sm" data-fn="showResetPeriodWarning">↺ Reset Periode</button>
+      <button class="btn btn-ghost btn-sm" data-fn="print"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Cetak</button>
+      <button class="btn btn-ghost btn-sm" data-fn="exportJSON"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ekspor</button>
+      <button class="btn btn-ghost btn-sm" data-fn="showResetPeriodWarning"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg> Reset Periode</button>
     </div>
   </div>
   <div class="content" id="content"></div>
@@ -610,7 +610,7 @@ td.neg{color:#C0392B;font-weight:600}
 <div id="danger-bg">
   <div class="danger-modal">
     <div class="danger-modal-head">
-      <div class="danger-icon">⚠️</div>
+      <div class="danger-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
       <div class="danger-modal-head-text">
         <h3 id="danger-title">Konfirmasi Penghapusan</h3>
         <p id="danger-subtitle">Tindakan ini tidak dapat dibatalkan.</p>
@@ -640,7 +640,7 @@ td.neg{color:#C0392B;font-weight:600}
   <p class="welcome-p">Sesuaikan siklus akuntansi dan Chart of Accounts (COA) otomatis berdasarkan jenis usaha Anda. Pilihan dapat diubah kapan saja melalui Pengaturan.</p>
 
   <div class="type-card featured" data-fn="selectCompanyType" data-arg="umkm" style="max-width:860px;margin-bottom:0">
-    <div class="type-card-tag">&#11088; Utama &mdash; Paling Populer</div>
+    <div class="type-card-tag">Utama &mdash; Paling Populer</div>
     <div class="type-card-name">UMKM / Usaha Kecil Menengah</div>
     <div class="type-card-desc">Cocok untuk semua jenis usaha kecil. COA lengkap namun sederhana, siklus 8 langkah penuh, dan mudah dipahami tanpa latar belakang akuntansi mendalam.</div>
     <div class="type-card-tags">
@@ -688,6 +688,19 @@ td.neg{color:#C0392B;font-weight:600}
 </div>
 
 <script>
+/* ═══════════════════════════════════════════
+   ICONS — one small stroke-based SVG set, reused everywhere instead of
+   emoji. Colour comes from currentColor, so each icon simply inherits
+   the text colour of whichever alert/empty-state box it sits in.
+═══════════════════════════════════════════ */
+const ICON = {
+  info:    '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="11"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+  warn:    '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+  success: '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+  empty:   '<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>',
+  star:    '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>'
+};
+
 /* ═══════════════════════════════════════════
    DATA & PERSISTENCE
 ═══════════════════════════════════════════ */
@@ -1063,7 +1076,7 @@ function pgWelcome(){
 
     <!-- UMKM Featured -->
     <div class="type-card featured" data-fn="selectCompanyType" data-arg="umkm">
-      <div class="type-card-tag">⭐ Utama — Paling Populer</div>
+      <div class="type-card-tag">Utama — Paling Populer</div>
       <div class="type-card-name">UMKM / Usaha Kecil Menengah</div>
       <div class="type-card-desc">Cocok untuk semua jenis usaha kecil. COA lengkap namun sederhana, siklus 8 langkah penuh, dan mudah dipahami tanpa latar belakang akuntansi mendalam.</div>
       <div class="type-card-tags">
@@ -1190,11 +1203,11 @@ function pgDashboard(){
   <div class="card mb-24">
     <div class="card-title">Status Siklus — ${periodLabel()}</div>
     ${stepBar(txn>0?(adj>0?6:4):1)}
-    ${txn===0?`<div class="alert alert-info"><span class="alert-icon">💡</span><div>Mulai dari <strong>Langkah 1</strong> untuk menginput transaksi bisnis Anda. Atau klik <strong>"Muat Contoh Data"</strong> untuk mencoba dengan data demo.</div></div>`:''}
+    ${txn===0?`<div class="alert alert-info"><span class="alert-icon">${ICON.info}</span><div>Mulai dari <strong>Langkah 1</strong> untuk menginput transaksi bisnis Anda. Atau klik <strong>"Muat Contoh Data"</strong> untuk mencoba dengan data demo.</div></div>`:''}
     <div class="flex-gap">
       <button class="btn btn-primary" data-fn="go" data-arg="step1">+ Tambah Transaksi</button>
-      ${txn===0?`<button class="btn btn-ghost" data-fn="loadSampleData">🎯 Muat Contoh Data</button>`:''}
-      <button class="btn btn-ghost" data-fn="go" data-arg="step7">📊 Lihat Laporan</button>
+      ${txn===0?`<button class="btn btn-ghost" data-fn="loadSampleData">Muat Contoh Data</button>`:''}
+      <button class="btn btn-ghost" data-fn="go" data-arg="step7">Lihat Laporan</button>
     </div>
   </div>
 
@@ -1308,9 +1321,9 @@ function pgStep1(){
     <button class="btn btn-primary" data-fn="openTxModal">+ Tambah Transaksi</button>
   </div>
   <div class="tip-box mb-16">
-    <strong>💡 Double-Entry:</strong> Setiap transaksi memiliki dua sisi — Debit dan Kredit. Total keduanya harus selalu sama. Contoh: Terima uang tunai → Debit Kas, Kredit Pendapatan.
+    <strong>Double-Entry:</strong> Setiap transaksi memiliki dua sisi — Debit dan Kredit. Total keduanya harus selalu sama. Contoh: Terima uang tunai → Debit Kas, Kredit Pendapatan.
   </div>
-  ${db.transactions.length===0?`<div class="empty"><div class="empty-icon">📋</div><h3>Belum ada transaksi</h3><p>Klik tombol "+ Tambah Transaksi" untuk mulai mencatat, atau muat contoh data dari Dasbor.</p><button class="btn btn-primary" data-fn="openTxModal">+ Tambah Transaksi</button></div>`:`
+  ${db.transactions.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada transaksi</h3><p>Klik tombol "+ Tambah Transaksi" untuk mulai mencatat, atau muat contoh data dari Dasbor.</p><button class="btn btn-primary" data-fn="openTxModal">+ Tambah Transaksi</button></div>`:`
   <div class="table-wrap">
     <table>
       <thead><tr><th>Tanggal</th><th>Ref</th><th>Keterangan</th><th>Entri</th><th class="text-right">Total Debit</th><th>Aksi</th></tr></thead>
@@ -1443,7 +1456,7 @@ function pgStep2(){
     </div>
     <button class="btn btn-primary" data-fn="go" data-arg="step1">+ Input Transaksi</button>
   </div>
-  ${rows.length===0?`<div class="empty"><div class="empty-icon">📒</div><h3>Belum ada jurnal</h3><p>Tambah transaksi terlebih dahulu di Langkah 1.</p></div>`:`
+  ${rows.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada jurnal</h3><p>Tambah transaksi terlebih dahulu di Langkah 1.</p></div>`:`
   <div class="table-wrap">
     <table>
       <thead><tr><th>Tanggal</th><th>Ref</th><th>Nama Akun</th><th class="text-right">Debit</th><th class="text-right">Kredit</th><th>Keterangan</th></tr></thead>
@@ -1505,7 +1518,7 @@ function pgStep3(){
     <h2>Buku Besar</h2>
     <p>Setiap akun ditampilkan dalam akun T. Saldo = perbedaan antara total Debit dan Kredit.</p>
   </div>
-  ${active.length===0?`<div class="empty"><div class="empty-icon">📚</div><h3>Belum ada data</h3><p>Tambah transaksi di Langkah 1 terlebih dahulu.</p></div>`:`<div class="ledger-grid">${cards}</div>`}
+  ${active.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada data</h3><p>Tambah transaksi di Langkah 1 terlebih dahulu.</p></div>`:`<div class="ledger-grid">${cards}</div>`}
   <div class="flex-between" style="margin-top:20px">
     <button class="btn btn-ghost" data-fn="go" data-arg="step2">← Langkah 2</button>
     <button class="btn btn-green" data-fn="go" data-arg="step4">Lanjut ke Neraca Saldo →</button>
@@ -1523,9 +1536,9 @@ function renderTB(type,stepNum,prev,next,title,hint){
   return`
   ${stepBar(stepNum)}
   <div class="page-header"><h2>${title}</h2><p>${hint}</p></div>
-  ${tb.length>0&&!balanced?`<div class="alert alert-warn"><span class="alert-icon">⚠</span><div>Neraca <strong>tidak seimbang</strong>! Periksa kembali entri transaksi Anda. Selisih: <strong>${fmt(Math.abs(totD-totK))}</strong></div></div>`:''}
-  ${tb.length>0&&balanced?`<div class="alert alert-success"><span class="alert-icon">✓</span><div>Neraca <strong>seimbang</strong> — Total Debit = Total Kredit = <strong>${fmt(totD)}</strong></div></div>`:''}
-  ${tb.length===0?`<div class="empty"><div class="empty-icon">⚖️</div><h3>Belum ada data</h3><p>Lengkapi langkah sebelumnya terlebih dahulu.</p></div>`:`
+  ${tb.length>0&&!balanced?`<div class="alert alert-warn"><span class="alert-icon">${ICON.warn}</span><div>Neraca <strong>tidak seimbang</strong>! Periksa kembali entri transaksi Anda. Selisih: <strong>${fmt(Math.abs(totD-totK))}</strong></div></div>`:''}
+  ${tb.length>0&&balanced?`<div class="alert alert-success"><span class="alert-icon">${ICON.success}</span><div>Neraca <strong>seimbang</strong> — Total Debit = Total Kredit = <strong>${fmt(totD)}</strong></div></div>`:''}
+  ${tb.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada data</h3><p>Lengkapi langkah sebelumnya terlebih dahulu.</p></div>`:`
   <div class="table-wrap">
     <table>
       <thead><tr><th>Kode</th><th>Nama Akun</th><th>Tipe</th><th class="text-right">Debit</th><th class="text-right">Kredit</th></tr></thead>
@@ -1577,7 +1590,7 @@ function pgHPP(){
   const type=db.settings.companyType;
   if(type==='dagang')return pgHPPDagang();
   if(type==='manufaktur')return pgHPPManufaktur();
-  return`<div class="empty"><div class="empty-icon">📊</div><h3>HPP hanya tersedia untuk Dagang & Manufaktur</h3><p>Ubah jenis perusahaan di Pengaturan.</p><button class="btn btn-ghost" data-fn="go" data-arg="settings">Buka Pengaturan</button></div>`;
+  return`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>HPP hanya tersedia untuk Dagang & Manufaktur</h3><p>Ubah jenis perusahaan di Pengaturan.</p><button class="btn btn-ghost" data-fn="go" data-arg="settings">Buka Pengaturan</button></div>`;
 }
 
 function renderHppDagangResult(pA,pmb,ang,ret,dis,pAk){
@@ -1604,7 +1617,7 @@ function pgHPPDagang(){
     <h2>Perhitungan HPP — Perusahaan Dagang</h2>
     <p>HPP = Persediaan Awal + Pembelian Bersih − Persediaan Akhir. Nilai ini digunakan di Laporan Laba Rugi.</p>
   </div>
-  <div class="alert alert-info mb-16"><span class="alert-icon">ℹ</span><div>Isi form, klik <strong>Simpan HPP</strong>, lalu HPP akan tampil di <strong>Laporan Laba Rugi (Langkah 7)</strong> sebagai baris terpisah antara Pendapatan dan Laba Kotor.</div></div>
+  <div class="alert alert-info mb-16"><span class="alert-icon">${ICON.info}</span><div>Isi form, klik <strong>Simpan HPP</strong>, lalu HPP akan tampil di <strong>Laporan Laba Rugi (Langkah 7)</strong> sebagai baris terpisah antara Pendapatan dan Laba Kotor.</div></div>
   <div class="card" style="max-width:560px">
     <div class="card-title">Input Data HPP Dagang — ${periodLabel()}</div>
     <div class="form-grid c2">
@@ -1672,7 +1685,7 @@ function pgHPPManufaktur(){
     <h2>Perhitungan HPP — Manufaktur</h2>
     <p>HPP Manufaktur = BB yang terpakai + BTKL + BOP ± perubahan WIP ± perubahan Barang Jadi.</p>
   </div>
-  <div class="alert alert-info mb-16"><span class="alert-icon">ℹ</span><div>Isi semua kolom, klik <strong>Simpan HPP</strong>, lalu HPP digunakan di <strong>Laporan Laba Rugi (Langkah 7)</strong>.</div></div>
+  <div class="alert alert-info mb-16"><span class="alert-icon">${ICON.info}</span><div>Isi semua kolom, klik <strong>Simpan HPP</strong>, lalu HPP digunakan di <strong>Laporan Laba Rugi (Langkah 7)</strong>.</div></div>
   <div class="hpp-two-col">
     <div class="card">
       <div class="card-title">1. Biaya Bahan Baku (BB)</div>
@@ -1756,7 +1769,7 @@ function lrHtml(is,co,per){
 
   return`<div class="fs-card">
     <div class="fs-header"><h3>Laporan Laba Rugi</h3><p>${esc(co)} · Periode: ${per}</p></div>
-    ${needsHPP?`<div style="padding:10px 22px 0"><div class="alert alert-warn" style="margin:0"><span class="alert-icon">⚠</span><div style="font-size:12px">Lengkapi <strong>Perhitungan HPP</strong> untuk tampilan Laba Kotor yang lebih akurat. <button class="btn btn-ghost btn-xs" data-fn="go" data-arg="hpp" style="margin-left:8px">Isi HPP →</button></div></div></div>`:''}
+    ${needsHPP?`<div style="padding:10px 22px 0"><div class="alert alert-warn" style="margin:0"><span class="alert-icon">${ICON.warn}</span><div style="font-size:12px">Lengkapi <strong>Perhitungan HPP</strong> untuk tampilan Laba Kotor yang lebih akurat. <button class="btn btn-ghost btn-xs" data-fn="go" data-arg="hpp" style="margin-left:8px">Isi HPP →</button></div></div></div>`:''}
     <div class="fs-sub">PENDAPATAN</div>
     ${is.rev.map(r=>`<div class="fs-row indent"><span>${esc(r.name)}</span><span class="pos">${fmt(r.cr)}</span></div>`).join('')}
     <div class="fs-row subtotal"><span>Total Pendapatan</span><span class="pos">${fmt(is.totRev)}</span></div>
@@ -1799,7 +1812,7 @@ function pgStep5(){
     • <strong>Sewa terpakai</strong>: Debit Beban Sewa → Kredit Beban Dibayar Dimuka<br>
     • <strong>Perlengkapan terpakai</strong>: Debit Beban Perlengkapan → Kredit Perlengkapan
   </div>
-  ${db.adjustingEntries.length===0?`<div class="empty"><div class="empty-icon">📝</div><h3>Belum ada penyesuaian</h3><p>Klik "+ Tambah Penyesuaian" untuk membuat jurnal penyesuaian akhir periode.</p></div>`:`
+  ${db.adjustingEntries.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada penyesuaian</h3><p>Klik "+ Tambah Penyesuaian" untuk membuat jurnal penyesuaian akhir periode.</p></div>`:`
   <div class="table-wrap">
     <table>
       <thead><tr><th>Tanggal</th><th>Ref</th><th>Keterangan</th><th class="text-right">Jumlah</th><th>Aksi</th></tr></thead>
@@ -1939,7 +1952,7 @@ function pgStep7(){
     <div class="fs-row indent"><span>Laba Bersih</span><span>${fmt(is.net)}</span></div>
     <div class="fs-row subtotal"><span>Arus Kas dari Operasi (estimasi)</span><span class="${is.net>=0?'pos':'neg'}">${fmt(is.net)}</span></div>
     <div class="fs-row grand"><span>Saldo Kas & Bank Akhir Periode</span><span class="pos">${fmt(kasEnd)}</span></div>
-    <div class="alert alert-info" style="margin:12px 22px 16px"><span class="alert-icon">ℹ</span><span style="font-size:12px">Laporan arus kas lengkap memerlukan analisis perubahan modal kerja. Saldo kas diambil dari akun Kas dan Kas di Bank.</span></div>
+    <div class="alert alert-info" style="margin:12px 22px 16px"><span class="alert-icon">${ICON.info}</span><span style="font-size:12px">Laporan arus kas lengkap memerlukan analisis perubahan modal kerja. Saldo kas diambil dari akun Kas dan Kas di Bank.</span></div>
   </div>`;
 
   const content={'lr':lr,'ekuitas':ekuitas,'neraca':neraca,'kas':arusKas};
@@ -2019,8 +2032,8 @@ function pgStep8(){
     <h2>Jurnal Penutup</h2>
     <p>Menutup akun nominal (pendapatan, beban, prive) agar siap untuk periode berikutnya. Dibuat otomatis.</p>
   </div>
-  <div class="alert alert-info mb-16"><span class="alert-icon">✨</span><div>Jurnal penutup ini <strong>dibuat otomatis</strong> dari data neraca saldo disesuaikan. Anda tidak perlu input manual.</div></div>
-  ${rows.length===0?`<div class="empty"><div class="empty-icon">🔒</div><h3>Belum ada data untuk ditutup</h3><p>Pastikan Langkah 1–6 telah diisi dengan benar.</p></div>`:`
+  <div class="alert alert-info mb-16"><span class="alert-icon">${ICON.info}</span><div>Jurnal penutup ini <strong>dibuat otomatis</strong> dari data neraca saldo disesuaikan. Anda tidak perlu input manual.</div></div>
+  ${rows.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada data untuk ditutup</h3><p>Pastikan Langkah 1–6 telah diisi dengan benar.</p></div>`:`
   <div class="table-wrap mb-16">
     <table>
       <thead><tr><th>Ref</th><th>Nama Akun</th><th class="text-right">Debit</th><th class="text-right">Kredit</th><th>Keterangan</th></tr></thead>
@@ -2048,7 +2061,7 @@ function pgStep8(){
     </div>
     <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line)">
       <p class="text-muted text-sm mb-8">Siklus akuntansi periode <strong>${periodLabel()}</strong> telah selesai.</p>
-      <button class="btn btn-primary" data-fn="startNewPeriod">🔄 Mulai Periode Baru</button>
+      <button class="btn btn-primary" data-fn="startNewPeriod">Mulai Periode Baru</button>
     </div>
   </div>`}
   <div class="flex-between" style="margin-top:16px">
@@ -2279,7 +2292,7 @@ function pgAnalitik(){
   <div class="tabs">
     ${ANALITIK_TABS.map(([k,l])=>`<button class="tab ${analitikTab===k?'active':''}" data-fn="switchAnalitikTab" data-arg="${k}">${l}</button>`).join('')}
   </div>
-  ${empty?`<div class="empty"><div class="empty-icon">📈</div><h3>Belum ada data transaksi</h3><p>Tambah transaksi di Langkah 1 untuk melihat analitik.</p><button class="btn btn-primary" data-fn="go" data-arg="step1">+ Tambah Transaksi</button></div>` : `
+  ${empty?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada data transaksi</h3><p>Tambah transaksi di Langkah 1 untuk melihat analitik.</p><button class="btn btn-primary" data-fn="go" data-arg="step1">+ Tambah Transaksi</button></div>` : `
   <div class="stats-row" style="grid-template-columns:repeat(3,1fr);margin-bottom:20px">
     <div class="stat-box">
       <div class="stat-label">Total Pendapatan</div>
@@ -2422,7 +2435,7 @@ function pgSettings(){
       <input type="file" id="import-file" accept=".json" style="display:none" data-fn="importJSON">
     </div>
     <hr class="divider">
-    <button class="btn btn-danger btn-sm" data-fn="resetAllData">🗑 Hapus Semua Data</button>
+    <button class="btn btn-danger btn-sm" data-fn="resetAllData">Hapus Semua Data</button>
   </div>`;
 }
 
@@ -2651,7 +2664,7 @@ function pgPeriods(){
     <div class="stat-box"><div class="stat-label">Total Pendapatan</div><div class="stat-value green" style="font-size:1.1rem">${fmt(totAll.totP)}</div></div>
     <div class="stat-box"><div class="stat-label">Laba/Rugi Kumulatif</div><div class="stat-value ${netAll>=0?'green':'red'}" style="font-size:1.1rem">${fmt(Math.abs(netAll))}</div></div>
   </div>
-  ${periods.length===0?`<div class="empty"><div class="empty-icon">📂</div><h3>Belum ada periode tersimpan</h3><p>Mulai periode baru dari Langkah 8 untuk memulai menyimpan riwayat.</p></div>`:`
+  ${periods.length===0?`<div class="empty"><div class="empty-icon">${ICON.empty}</div><h3>Belum ada periode tersimpan</h3><p>Mulai periode baru dari Langkah 8 untuk memulai menyimpan riwayat.</p></div>`:`
   <div class="table-wrap">
     <table>
       <thead><tr><th>Periode</th><th class="text-right">Transaksi</th><th class="text-right">Pendapatan</th><th class="text-right">Beban</th><th class="text-right">Laba / Rugi</th><th>Aksi</th></tr></thead>

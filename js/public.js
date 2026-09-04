@@ -38,10 +38,12 @@ function slugify(str) {
    No inline onclick here on purpose — the site's CSP (script-src 'self')
    blocks inline event handlers, so the toggle is wired via addEventListener
    in the delegated click handler further down. */
+const SHARE_ARROW_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>';
+
 function shareBlockHtml(compact) {
     const wrapClass = "resource-share-wrap" + (compact ? " resource-share-wrap--corner" : "");
     const btnClass  = "resource-download-btn resource-share-btn" + (compact ? " resource-share-btn--icon" : "");
-    const btnLabel  = compact ? "↗" : "Share ↗";
+    const btnLabel  = compact ? SHARE_ARROW_SVG : `Share ${SHARE_ARROW_SVG}`;
     return `
         <div class="${wrapClass}">
             <button type="button" class="${btnClass} resource-share-toggle" aria-label="Share this resource" aria-haspopup="true" aria-expanded="false">${btnLabel}</button>

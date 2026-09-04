@@ -54,16 +54,11 @@ function renderPortfolio() {
             : `<span class="holding-card-ticker">${holding.ticker}</span>`;
 
         return `
-            <article class="holding-card" ${bgStyle}>
+            <a class="holding-card" href="stock.html?ticker=${holding.ticker}" ${bgStyle}>
                 ${tickerWatermark}
-                <div class="holding-card-overlay">
-                    <div>
-                        <h3>${holding.company}</h3>
-                        <p class="holding-card-meta">${holding.ticker} · ${holding.sector}</p>
-                    </div>
-                    <a class="view-analysis-link" href="stock.html?ticker=${holding.ticker}">View Full Analysis →</a>
-                </div>
-            </article>
+                <h3 class="sr-only">${holding.company}</h3>
+                <span class="view-analysis-link">View</span>
+            </a>
         `;
     }).join("");
 }
