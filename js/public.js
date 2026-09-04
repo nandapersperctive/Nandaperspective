@@ -111,7 +111,8 @@ function buildFeaturedApp(item) {
                     <h2 class="featured-app-title">${item.title}</h2>
                     <p class="featured-app-desc">${item.description}</p>
                     <div class="featured-app-actions">
-                        <a class="featured-app-cta" href="${item.downloadFile || item.file}" download>${pt.downloadBtn}</a>
+                        ${item.fileApk ? `<a class="featured-app-cta" href="${item.fileApk}" download>${pt.downloadAndroidBtn}</a>` : ""}
+                        <a class="featured-app-cta featured-app-cta--secondary" href="${item.file}" download>${pt.downloadDesktopBtn}</a>
                     </div>
                 </div>
             </div>

@@ -45,7 +45,9 @@ const publicPageTextEN = {
     noteBody:     "No registration needed. No cost. Just click download and use it for your business or learning needs.",
     printBtn:     "Print / Save as PDF",
     closeBtn:     "Close",
-    availableNowLabel: "Available Now"
+    availableNowLabel: "Available Now",
+    downloadAndroidBtn: "Download for Android",
+    downloadDesktopBtn: "Download for Desktop"
 };
 
 const publicPageTextID = {
@@ -61,7 +63,9 @@ const publicPageTextID = {
     noteBody:     "Tidak perlu registrasi. Tidak ada biaya. Cukup klik download dan gunakan untuk keperluan bisnis atau belajar Anda.",
     printBtn:     "Cetak / Simpan PDF",
     closeBtn:     "Tutup",
-    availableNowLabel: "Tersedia Sekarang"
+    availableNowLabel: "Tersedia Sekarang",
+    downloadAndroidBtn: "Download untuk Android",
+    downloadDesktopBtn: "Download untuk Desktop"
 };
 
 const publicPageText = (typeof getLang === "function" && getLang() === "id") ? publicPageTextID : publicPageTextEN;
@@ -156,9 +160,10 @@ const publicResourcesEN = [
         items: [
             {
                 title: "Still Accounting — Bookkeeping & POS App",
-                description: "A complete offline bookkeeping app for small businesses: point-of-sale checkout, daily cash drawer reconciliation, general journal, ledger, trial balance, adjustments, financial statements, and closing entries — with PIN-protected owner/cashier roles and an audit trail. Runs entirely in your browser, no install needed.",
+                description: "A complete offline bookkeeping app for small businesses: point-of-sale checkout, daily cash drawer reconciliation, general journal, ledger, trial balance, adjustments, financial statements, and closing entries — with PIN-protected owner/cashier roles and an audit trail. No internet needed once downloaded.",
                 type: "App",
                 file: "downloads/still-accounting.html",
+                fileApk: "downloads/app-debug.apk",
                 free: true,
                 content: []
             },
@@ -434,9 +439,10 @@ const publicResourcesID = [
         items: [
             {
                 title: "Still Accounting — Aplikasi Pembukuan & Kasir",
-                description: "Aplikasi pembukuan lengkap untuk usaha kecil, bekerja penuh tanpa internet: kasir (POS), kas harian, jurnal umum, buku besar, neraca saldo, penyesuaian, laporan keuangan, hingga jurnal penutup — dilengkapi kunci PIN pemilik/kasir dan jejak audit. Langsung pakai di browser, tanpa install.",
+                description: "Aplikasi pembukuan lengkap untuk usaha kecil: kasir (POS), kas harian, jurnal umum, buku besar, neraca saldo, penyesuaian, laporan keuangan, hingga jurnal penutup — dilengkapi kunci PIN pemilik/kasir dan jejak audit. Tanpa internet setelah diunduh.",
                 type: "App",
                 file: "downloads/still-accounting.html",
+                fileApk: "downloads/app-debug.apk",
                 free: true,
                 content: []
             },
