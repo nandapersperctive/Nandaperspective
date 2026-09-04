@@ -45,9 +45,7 @@ const publicPageTextEN = {
     noteBody:     "No registration needed. No cost. Just click download and use it for your business or learning needs.",
     printBtn:     "Print / Save as PDF",
     closeBtn:     "Close",
-    openAppBtn:      "Open App",
-    availableNowLabel: "Available Now",
-    downloadIconBtn: "Download"
+    availableNowLabel: "Available Now"
 };
 
 const publicPageTextID = {
@@ -63,9 +61,7 @@ const publicPageTextID = {
     noteBody:     "Tidak perlu registrasi. Tidak ada biaya. Cukup klik download dan gunakan untuk keperluan bisnis atau belajar Anda.",
     printBtn:     "Cetak / Simpan PDF",
     closeBtn:     "Tutup",
-    openAppBtn:      "Buka Aplikasi",
-    availableNowLabel: "Tersedia Sekarang",
-    downloadIconBtn: "Download"
+    availableNowLabel: "Tersedia Sekarang"
 };
 
 const publicPageText = (typeof getLang === "function" && getLang() === "id") ? publicPageTextID : publicPageTextEN;

@@ -1192,18 +1192,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
     gap: 12px;
 }
 
-.featured-app-cta--download {
-    background: rgba(255,255,255,.1);
-    color: #fff;
-    box-shadow: none;
-    border: 1px solid rgba(255,255,255,.35);
-}
-
-.featured-app-cta--download:hover {
-    background: rgba(255,255,255,.18);
-    box-shadow: none;
-}
-
 .resource-category-header {
     display: flex;
     align-items: center;
@@ -1403,14 +1391,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
 }
 .resource-read-btn:hover {
     box-shadow: 0 8px 20px rgba(31,45,61,.38);
-}
-
-.resource-app-btn {
-    background: #2563eb;
-    box-shadow: 0 4px 14px rgba(37,99,235,.3);
-}
-.resource-app-btn:hover {
-    box-shadow: 6px 8px 20px rgba(37,99,235,.4);
 }
 
 .public-note {
