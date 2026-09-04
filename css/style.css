@@ -1111,28 +1111,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
     color: inherit;
 }
 
-.featured-app-card::before {
-    content: '';
-    position: absolute;
-    top: -60px;
-    right: -60px;
-    width: 260px;
-    height: 260px;
-    background: radial-gradient(circle, rgba(224,90,58,.28) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.featured-app-card::after {
-    content: '';
-    position: absolute;
-    bottom: -80px;
-    left: 120px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(37,99,235,.18) 0%, transparent 70%);
-    pointer-events: none;
-}
-
 .featured-app-body { flex: 1; min-width: 0; position: relative; z-index: 1; }
 
 .featured-app-badges {
@@ -1150,9 +1128,19 @@ footer a:hover { color: rgba(255,255,255,.55); }
     text-transform: uppercase;
     padding: 3px 10px;
     border-radius: var(--radius-sm);
-    background: rgba(224,90,58,.22);
-    color: #f4a885;
-    border: 1px solid rgba(224,90,58,.3);
+    background: rgba(255,255,255,.12);
+    color: rgba(255,255,255,.85);
+    border: 1px solid rgba(255,255,255,.3);
+}
+
+/* Keep the badge row to one voice on the dark card — the type/free
+   badges elsewhere use colour to distinguish file types on light
+   cards, which doesn't carry over onto navy. */
+.featured-app-badges .resource-type-badge,
+.featured-app-badges .resource-free-badge {
+    background: rgba(255,255,255,.12);
+    color: rgba(255,255,255,.85);
+    border: 1px solid rgba(255,255,255,.3);
 }
 
 .featured-app-title {
