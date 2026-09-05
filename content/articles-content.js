@@ -105,9 +105,9 @@ const articleCatalog = [
         {
             sectionTitle: "Time Is the Student’s Greatest Asset",
             paragraphs: [
-                "Many students believe investing is something to think about \"later\" — after graduation, after landing a job, after the salary gets comfortable. But the truth is the opposite: the earlier you start, the less money you actually need. What students lack in capital, they more than make up for in time.",
+                "Many students believe investing is something to think about “later” — after graduation, after landing a job, after the salary gets comfortable. But the truth is the opposite: the earlier you start, the less money you actually need. What students lack in capital, they more than make up for in time.",
                 "Compound growth rewards patience above all else. A student who invests a small amount monthly from age 20 will often end up wealthier than someone who invests three times as much starting at 35. The money is not doing the heavy lifting — time is.",
-                "As Warren Buffett once put it: \"Someone’s sitting in the shade today because someone planted a tree a long time ago.\"",
+                "As Warren Buffett once put it: “Someone’s sitting in the shade today because someone planted a tree a long time ago.”",
                 "Starting early is planting that tree. Even a modest portfolio built during university becomes the seed of long-term financial independence."
             ]
         },
@@ -115,7 +115,7 @@ const articleCatalog = [
             sectionTitle: "Learn the Language Before You Need It",
             paragraphs: [
                 "Investing forces you to understand three things every adult eventually needs: assets, cash flow, and risk. An asset puts money into your pocket; a liability takes it out. Cash flow tells you whether your habits are building wealth or draining it. Risk management teaches you that protecting capital matters more than chasing quick gains.",
-                "Buffett’s most famous rule captures this mindset: \"Rule No. 1: Never lose money. Rule No. 2: Never forget Rule No. 1.\"",
+                "Buffett’s most famous rule captures this mindset: “Rule No. 1: Never lose money. Rule No. 2: Never forget Rule No. 1.”",
                 "Students who internalize this early avoid the most expensive lessons — panic selling, gambling on hype, and confusing speculation with investing."
             ]
         },
@@ -123,7 +123,7 @@ const articleCatalog = [
             sectionTitle: "Small Mistakes Now Beat Big Mistakes Later",
             paragraphs: [
                 "University is the cheapest classroom for financial mistakes. Losing a small sum on a poorly researched stock at 20 is tuition; making the same mistake with a family’s savings at 40 is a disaster. Early exposure builds the emotional discipline — patience, skepticism, and consistency — that no textbook can teach.",
-                "Benjamin Franklin said it best: \"An investment in knowledge pays the best interest.\"",
+                "Benjamin Franklin said it best: “An investment in knowledge pays the best interest.”",
                 "Before buying any asset, invest in understanding it. Read financial statements. Follow how businesses actually make money. For accounting students especially, this turns classroom theory into living practice."
             ]
         },
@@ -131,7 +131,7 @@ const articleCatalog = [
             sectionTitle: "How to Start as a Student",
             paragraphs: [
                 "Start with what you have, not what you wish you had. Build a small emergency fund first. Then begin with low-cost, diversified instruments — index funds or mutual funds — rather than trying to pick winning stocks. Automate a fixed amount each month, even if it is small. Consistency beats intensity.",
-                "And remember Buffett’s advice on saving: \"Do not save what is left after spending, but spend what is left after saving.\""
+                "And remember Buffett’s advice on saving: “Do not save what is left after spending, but spend what is left after saving.”"
             ]
         },
         {
@@ -200,7 +200,7 @@ const articleCatalog = [
                 "This old accounting saying survives because it keeps proving true. Revenue tells you a company can sell; it says nothing about whether it sells profitably, or whether the money ever actually arrives. A business can book billions in sales while margins shrink, receivables pile up, and debt finances the whole show.",
                 "Consider what a revenue figure really is: a number produced by a set of recognition rules, applied by management, with real discretion at the edges. When can a sale be recorded? What counts as delivered? How are multi-year contracts split across periods? What about sales to distributors who have not yet sold anything to end customers? Every one of those questions has a defensible range of answers, and the difference between the conservative end and the aggressive end of that range can be enormous.",
                 "This is why big revenue growth should trigger curiosity, not celebration. Growth that comes from genuine customer demand looks very different, under the surface, from growth that comes from stuffing distribution channels, loosening credit terms, or booking long-term contracts up front. On the surface, both produce the same beautiful chart.",
-                "Buffett has long warned against taking reported figures at face value: \"Managers that always promise to ‘make the numbers’ will at some point be tempted to make up the numbers.\"",
+                "Buffett has long warned against taking reported figures at face value: “Managers that always promise to ‘make the numbers’ will at some point be tempted to make up the numbers.”",
                 "So start with the income statement, but never stop there."
             ]
         },
@@ -208,10 +208,10 @@ const articleCatalog = [
             sectionTitle: "Earnings Quality: Not How Much, but How",
             paragraphs: [
                 "Two companies can report identical profits with very different realities behind them. The size of earnings is on the front page; the quality of earnings is buried in the details. Quality means durability — profits that come from the core business, recur year after year, and convert into actual cash.",
-                "When examining earnings quality, ask a few blunt questions. First, where do the profits come from? Operating profit from selling products is fundamentally different from a one-time gain on selling a building, a revaluation of assets, a favorable tax settlement, or a change in accounting estimates. One-time items are not necessarily dishonest, but they tell you nothing about next year. A company that routinely needs \"exceptional\" gains to hit its targets is telling you something important about its ordinary business.",
+                "When examining earnings quality, ask a few blunt questions. First, where do the profits come from? Operating profit from selling products is fundamentally different from a one-time gain on selling a building, a revaluation of assets, a favorable tax settlement, or a change in accounting estimates. One-time items are not necessarily dishonest, but they tell you nothing about next year. A company that routinely needs “exceptional” gains to hit its targets is telling you something important about its ordinary business.",
                 "Second, how do earnings compare with operating cash flow over several years? Net income is an opinion shaped by accounting choices — depreciation schedules, provision estimates, revenue recognition policies. Operating cash flow is much harder to dress up. In a healthy business the two track each other reasonably well over time. When reported profits march steadily upward while operating cash flow stagnates or falls, the gap has to be explained by something: ballooning receivables, swelling inventory, capitalized costs that used to be expensed. Each of those has an innocent explanation and a sinister one, and your job is to find out which applies.",
                 "Third, watch the trend in receivables and inventory relative to sales. If revenue grows 15 percent but receivables grow 40 percent, the company may be borrowing growth from the future — booking sales that customers have not paid for and may never pay for. If inventory grows much faster than sales, products may be piling up because demand is weaker than the revenue line suggests.",
-                "History is full of cautionary tales here. Enron reported spectacular earnings almost to the end. WorldCom turned ordinary expenses into \"investments\" and manufactured billions in fake profit. Wirecard showed years of impressive growth before admitting that 1.9 billion euros of cash simply did not exist. In every case, the headline numbers were big and the quality behind them was hollow — and in every case, skeptical readers of the statements saw the warning signs early: profits without cash, growth without explanation, complexity without purpose."
+                "History is full of cautionary tales here. Enron reported spectacular earnings almost to the end. WorldCom turned ordinary expenses into “investments” and manufactured billions in fake profit. Wirecard showed years of impressive growth before admitting that 1.9 billion euros of cash simply did not exist. In every case, the headline numbers were big and the quality behind them was hollow — and in every case, skeptical readers of the statements saw the warning signs early: profits without cash, growth without explanation, complexity without purpose."
             ]
         },
         {
@@ -221,8 +221,8 @@ const articleCatalog = [
                 "Focus first on cash from operations. Is the business collecting real cash from customers, after paying suppliers and employees? A consistently positive and growing operating cash flow is the signature of a genuinely healthy company. A consistently negative one means the business is being kept alive by outside money — and outside money always has conditions.",
                 "Then look at the relationship among the three sections. A mature, self-sustaining company typically generates cash from operations, spends part of it on investments, and returns part to shareholders or creditors. A company that funds dividends and expansion from its own operations is fundamentally different from one that funds them by borrowing or endlessly issuing new shares. Both may report the same net income; only the cash flow statement reveals the difference.",
                 "Free cash flow — operating cash flow minus capital expenditure — deserves special attention, because it represents the money the business truly has left over after maintaining and growing itself. Companies with strong free cash flow have options: they can survive downturns, buy competitors, raise dividends, or simply wait. Companies without it live at the mercy of their lenders.",
-                "As Charlie Munger put it: \"It is remarkable how much long-term advantage people like us have gotten by trying to be consistently not stupid, instead of trying to be very intelligent.\"",
-                "Reading the cash flow statement is exactly that kind of \"not stupid\" discipline. It rarely feels clever. It will not give you a dramatic thesis to post about. But it filters out most disasters before they can reach your portfolio."
+                "As Charlie Munger put it: “It is remarkable how much long-term advantage people like us have gotten by trying to be consistently not stupid, instead of trying to be very intelligent.”",
+                "Reading the cash flow statement is exactly that kind of “not stupid” discipline. It rarely feels clever. It will not give you a dramatic thesis to post about. But it filters out most disasters before they can reach your portfolio."
             ]
         },
         {
@@ -230,7 +230,7 @@ const articleCatalog = [
             paragraphs: [
                 "Finally, turn to the balance sheet and ask a simple question: how is all of this financed? Every asset a company holds is paid for either by owners (equity) or by someone who expects to be paid back (debt). The mix between the two — the capital structure — determines how fragile or resilient the business is.",
                 "Leverage is a magnifier. A heavily indebted company looks brilliant in good years, because profits are earned on a small equity base. The same company can be destroyed by a single bad year, because interest must be paid regardless of how business is going. Debt does not care about your growth story.",
-                "Buffett’s most quoted warning applies directly: \"Only when the tide goes out do you discover who’s been swimming naked.\"",
+                "Buffett’s most quoted warning applies directly: “Only when the tide goes out do you discover who’s been swimming naked.”",
                 "Rising markets and cheap credit hide weak capital structures; recessions and rate hikes expose them. So check the numbers before the tide goes out. Look at the debt-to-equity ratio, and compare it with industry peers rather than judging it in isolation — utilities and banks live with leverage that would kill a software company. Look at interest coverage: how many times can operating profit pay the annual interest bill? A ratio comfortably above three or four suggests breathing room; a ratio near one means the company is working mostly for its creditors. Look at the maturity schedule in the notes: a mountain of debt due next year is a very different risk from the same debt spread over a decade. And look at what kind of debt it is — fixed or floating rate, secured or unsecured, in which currency.",
                 "One more balance-sheet habit worth building: read the equity section skeptically. Retained earnings that grew through decades of real profit are not the same as equity inflated by revaluations or accounting adjustments. And a large pile of goodwill from past acquisitions is a monument to prices paid, not value guaranteed — it can be written off in a single painful quarter."
             ]
@@ -240,7 +240,7 @@ const articleCatalog = [
             paragraphs: [
                 "The financial statements proper occupy a few pages; the notes often run to a hundred or more. That ratio is not an accident. The notes are where companies disclose the accounting policies they chose, the estimates they made, the lawsuits they face, the commitments they signed, the related-party transactions they entered, and the debt covenants they must obey.",
                 "Nobody reads the notes for fun, and that is precisely the opportunity. Most bad surprises in investing were disclosed somewhere in the notes long before they hit the headlines. Make it a rule: any item in the main statements that is large, growing fast, or hard to understand gets traced to its note. If the note does not make it clearer — if the language turns foggy exactly where the money gets big — treat that fog as information.",
-                "Benjamin Graham, the father of value investing, set the standard for this kind of skeptical care: \"The investor’s chief problem — and even his worst enemy — is likely to be himself.\"",
+                "Benjamin Graham, the father of value investing, set the standard for this kind of skeptical care: “The investor’s chief problem — and even his worst enemy — is likely to be himself.”",
                 "The biggest numbers on the page are the ones most likely to trigger excitement, and excitement is exactly the state in which investors skip the notes."
             ]
         },
@@ -287,14 +287,14 @@ const articleCatalog = [
                 "Ask your parents what a plate of fried rice cost when they were students, and the answer will sound absurd. The dish has not changed; the money has. That slow, steady erosion in what a unit of currency can buy is inflation — and it is one of the most important economic forces in your financial life, precisely because it works quietly.",
                 "Inflation is a sustained increase in the general level of prices across an economy. The key words are sustained and general. One product getting more expensive is not inflation; that is a relative price change. A one-off jump that reverses next month is not inflation either. Inflation means that, on average, most goods and services cost more this year than last year — and will likely cost more again next year.",
                 "The mirror image is what matters to you: when prices rise, the purchasing power of money falls. If inflation runs at 5 percent, the same banknote buys roughly 5 percent less than it did a year ago. Nothing was taken from your wallet, yet you are poorer in real terms.",
-                "Ronald Reagan described this quality memorably: \"Inflation is as violent as a mugger, as frightening as an armed robber and as deadly as a hit man.\"",
+                "Ronald Reagan described this quality memorably: “Inflation is as violent as a mugger, as frightening as an armed robber and as deadly as a hit man.”",
                 "The comparison is dramatic, but the point is fair: unlike a visible tax, inflation takes value without ever announcing itself."
             ]
         },
         {
             sectionTitle: "How Inflation Is Measured",
             paragraphs: [
-                "Statisticians track inflation by pricing a \"basket\" of goods and services that a typical household buys — food, housing, transport, education, healthcare — and comparing the basket’s cost over time. The result is the Consumer Price Index (CPI), and the percentage change in the CPI is the headline inflation rate you see in the news.",
+                "Statisticians track inflation by pricing a “basket” of goods and services that a typical household buys — food, housing, transport, education, healthcare — and comparing the basket’s cost over time. The result is the Consumer Price Index (CPI), and the percentage change in the CPI is the headline inflation rate you see in the news.",
                 "The measure is useful but imperfect. Your personal inflation rate depends on what you buy. A student who spends heavily on food and rent may experience much higher inflation than the national average suggests, while someone whose spending tilts toward electronics — which tend to fall in price — may experience less. Economists also watch core inflation, which strips out volatile food and energy prices to reveal the underlying trend."
             ]
         },
@@ -302,7 +302,7 @@ const articleCatalog = [
             sectionTitle: "What Causes It",
             paragraphs: [
                 "Economists group the causes into three broad families. Demand-pull inflation happens when total spending grows faster than the economy can produce: too much money chasing too few goods. Think of stimulus-fueled booms or rapid credit expansion. Cost-push inflation happens when production costs rise — oil shocks, supply chain disruptions, currency depreciation that makes imports expensive — and companies pass those costs to consumers. Built-in inflation comes from expectations: when workers expect prices to rise, they demand higher wages; higher wages raise costs; higher costs raise prices. The spiral feeds itself.",
-                "Behind all three, most economists agree, sits the supply of money. Milton Friedman, the Nobel laureate who spent a career studying the subject, put it in the most quoted sentence in monetary economics: \"Inflation is always and everywhere a monetary phenomenon.\"",
+                "Behind all three, most economists agree, sits the supply of money. Milton Friedman, the Nobel laureate who spent a career studying the subject, put it in the most quoted sentence in monetary economics: “Inflation is always and everywhere a monetary phenomenon.”",
                 "When money is created much faster than the economy grows, each unit of it commands less of the real output — and prices adjust upward to say so."
             ]
         },
@@ -310,7 +310,7 @@ const articleCatalog = [
             sectionTitle: "Why a Little Is Normal and a Lot Is Dangerous",
             paragraphs: [
                 "Most central banks do not aim for zero inflation. A low, stable rate — often around 2 to 3 percent — is considered healthy. It gives wages and prices room to adjust, encourages spending and investment rather than hoarding cash, and provides a buffer against deflation, the opposite condition in which falling prices cause consumers to delay purchases and economies to stall.",
-                "The danger begins when inflation is high, volatile, or unanchored. High inflation scrambles the price signals that markets rely on: businesses cannot tell whether demand for their product is really rising or whether all prices are simply drifting up. Long-term planning becomes guesswork. And in extreme cases — hyperinflation — money fails entirely. In Weimar Germany in 1923, prices doubled every few days and workers were paid twice daily so they could shop before the money lost value. Zimbabwe in 2008 and Venezuela in the 2010s replayed the same tragedy. John Maynard Keynes understood the political stakes: \"There is no subtler, no surer means of overturning the existing basis of society than to debauch the currency.\""
+                "The danger begins when inflation is high, volatile, or unanchored. High inflation scrambles the price signals that markets rely on: businesses cannot tell whether demand for their product is really rising or whether all prices are simply drifting up. Long-term planning becomes guesswork. And in extreme cases — hyperinflation — money fails entirely. In Weimar Germany in 1923, prices doubled every few days and workers were paid twice daily so they could shop before the money lost value. Zimbabwe in 2008 and Venezuela in the 2010s replayed the same tragedy. John Maynard Keynes understood the political stakes: “There is no subtler, no surer means of overturning the existing basis of society than to debauch the currency.”"
             ]
         },
         {
@@ -348,7 +348,7 @@ const articleCatalog = [
         {
             sectionTitle: "What Are Financial Statements?",
             paragraphs: [
-                "Have you ever asked yourself, \"Is my business actually making money?\" or \"Where did all my cash go last month?\" The answers to both questions live in one place: your financial statements.",
+                "Have you ever asked yourself, “Is my business actually making money?” or “Where did all my cash go last month?” The answers to both questions live in one place: your financial statements.",
                 "Unfortunately, many people treat financial statements as complicated documents that only accountants can decode. In reality, the underlying ideas are simple and anyone can grasp them. Financial statements are written summaries that show the financial condition and business performance of an organization over a given period.",
                 "Think of them as a medical check-up for your business. A doctor can’t assess your health just by looking at you — they need numbers: blood pressure, blood sugar, cholesterol. Businesses work the same way. A busy-looking store isn’t necessarily profitable, and a quiet one isn’t necessarily losing money. The numbers in the financial statements tell you what’s really going on.",
                 "These statements are built from everyday transaction records — every purchase, sale, payroll run, and payment received — which are then grouped and condensed into reports that are easy to read."

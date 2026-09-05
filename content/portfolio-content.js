@@ -146,7 +146,7 @@ const portfolioHoldings = [
                 "Bank Central Asia is Indonesia’s largest private bank and, by most measures, its most admired. Its business model is deceptively simple: gather the cheapest deposits in the country, lend them out conservatively, and collect a growing stream of fee income from the payment network that millions of Indonesians use every day.",
                 "The heart of the franchise is transaction banking. BCA is not primarily where Indonesians chase the highest deposit rate; it is where they park their everyday money because the ecosystem — mobile banking, ATMs, merchant networks, corporate payrolls — makes leaving inconvenient. That convenience translates into an extraordinary funding structure: current and savings accounts (CASA) reached 85.2% of third-party funds in the first quarter of 2026, among the highest of any major bank in the region.",
                 "Cheap, sticky funding is a structural advantage that compounds. It lets BCA earn a healthy net interest margin — 5.4% in early 2026, with full-year guidance of 5.4–5.6% — without stretching into risky lending, and it cushions the bank when interest rates move against the industry.",
-                "Warren Buffett’s observation about the industry captures why this matters: \"Banking is a very good business if you don’t do anything dumb.\"",
+                "Warren Buffett’s observation about the industry captures why this matters: “Banking is a very good business if you don’t do anything dumb.”",
                 "BCA’s entire history is essentially a long demonstration of not doing anything dumb."
             ]
         },
@@ -223,7 +223,7 @@ const portfolioHoldings = [
             paragraphs: [
                 "The investment case is a combination of macro tailwind and micro execution. The macro tailwind is Indonesia’s downstreaming policy: domestic nickel demand from smelters keeps ore absorbed locally, and every new processing facility tightens the market for the ore DKFT digs. The company is positioned exactly where national industrial policy is pushing value creation.",
                 "The micro execution is visible in the numbers. This is a company whose profits are growing much faster than its revenue — the signature of expanding margins rather than mere volume. Management has been disciplined about costs, and the company is preparing to grow: it has applied to revise its RKAB (the government-approved work plan and budget) to raise production quotas, and secured a Rp245 billion credit facility to fund expansion, a small enough sum to leave the balance sheet comfortable.",
-                "Warren Buffett’s timing principle applies to cyclical stocks more than anywhere else: \"Be fearful when others are greedy and greedy when others are fearful.\"",
+                "Warren Buffett’s timing principle applies to cyclical stocks more than anywhere else: “Be fearful when others are greedy and greedy when others are fearful.”",
                 "Nickel is a deeply cyclical commodity, and the time to study a miner is precisely when the market treats the whole sector with indifference. The position is a bet that DKFT’s cost discipline lets it prosper across the cycle, not just at the top of it."
             ]
         },
@@ -281,7 +281,7 @@ const portfolioHoldings = [
             paragraphs: [
                 "Alamtri Resources Indonesia is the company formerly known as Adaro Energy — one of Indonesia’s largest energy groups — midway through the most consequential reinvention in its history. In late 2024 it spun off its thermal coal engine, Adaro Andalan Indonesia (AADI), into a separate listing, and rebranded the remaining group as Alamtri. What is left is a deliberately different animal: metallurgical (coking) coal through Adaro Minerals (ADMR), one of Indonesia’s largest mining services contractors (SIS), power generation, an aluminum smelter project in North Kalimantan, and a growing renewables portfolio spanning hydro and solar.",
                 "The logic of the split was to separate the cash-rich but sunset thermal coal business from the growth assets, allowing Alamtri to pursue greener, processing-oriented ventures — and cleaner ESG optics — without the thermal coal discount hanging over the whole group.",
-                "Peter Lynch’s oldest rule applies with unusual force here: \"Know what you own, and know why you own it.\"",
+                "Peter Lynch’s oldest rule applies with unusual force here: “Know what you own, and know why you own it.”",
                 "Anyone holding ADRO today owns a fundamentally different company than the Adaro of two years ago. The analysis has to start from that fact."
             ]
         },
