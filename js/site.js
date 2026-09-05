@@ -147,7 +147,7 @@ if (typeof getLang === 'function') {
         '<div class="gs-modal">' +
             '<div class="gs-input-row">' +
                 '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>' +
-                '<input id="gs-input" type="search" placeholder="Cari artikel, saham, atau topik…" autocomplete="off" spellcheck="false">' +
+                '<input id="gs-input" type="text" placeholder="Cari artikel, saham, atau topik…" autocomplete="off" spellcheck="false">' +
                 '<button class="gs-close" aria-label="Tutup">✕</button>' +
             '</div>' +
             '<div id="gs-results"><p class="gs-hint">Ketik kata kunci untuk mencari di semua halaman.</p></div>' +
