@@ -163,8 +163,7 @@ const publicResourcesEN = [
                 description: "A complete offline bookkeeping app for small businesses: point-of-sale checkout, daily cash drawer reconciliation, general journal, ledger, trial balance, adjustments, financial statements, and closing entries — with PIN-protected owner/cashier roles and an audit trail. No internet needed once downloaded.",
                 type: "App",
                 file: "downloads/still-accounting.html",
-                // fileApk: "downloads/app-debug.apk",  — hidden: still a debug build (debuggable=true),
-                // re-enable once a release-signed APK replaces downloads/app-debug.apk
+                fileApk: "downloads/app-debug.apk",
                 free: true,
                 content: []
             },
@@ -443,8 +442,7 @@ const publicResourcesID = [
                 description: "Aplikasi pembukuan lengkap untuk usaha kecil: kasir (POS), kas harian, jurnal umum, buku besar, neraca saldo, penyesuaian, laporan keuangan, hingga jurnal penutup — dilengkapi kunci PIN pemilik/kasir dan jejak audit. Tanpa internet setelah diunduh.",
                 type: "App",
                 file: "downloads/still-accounting.html",
-                // fileApk: "downloads/app-debug.apk",  — disembunyikan: masih debug build (debuggable=true),
-                // aktifkan lagi setelah APK release-signed menggantikan downloads/app-debug.apk
+                fileApk: "downloads/app-debug.apk",
                 free: true,
                 content: []
             },
