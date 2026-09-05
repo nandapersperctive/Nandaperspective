@@ -269,7 +269,6 @@ if (typeof getLang === 'function') {
             return '<div class="gs-group-label">' + escHtml(label) + '</div>' +
                 groups[label].map(function (h) {
                     return '<a class="gs-item" href="' + encodeURI(h.url) + '">' +
-                        '<div class="gs-icon gs-icon-' + escHtml(h.type) + '"></div>' +
                         '<div>' +
                             '<p class="gs-title">' + highlight(h.title, words) + '</p>' +
                             '<p class="gs-snippet">' + highlight(snippet(h.body, words), words) + '</p>' +
