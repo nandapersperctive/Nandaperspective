@@ -2215,7 +2215,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
     .article-sidebar { position: static; }
 
     .profile-card { position: static; animation: aboutPhotoIn .7s ease both; }
-    .profile-photo-card { aspect-ratio: 16/9; }
 
     .section-heading { align-items: flex-start; flex-direction: column; }
     .article-tools { width: 100%; justify-content: flex-start; }
