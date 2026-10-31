@@ -2527,3 +2527,8 @@ footer a:hover { color: rgba(255,255,255,.55); }
 
 .hero .button.primary,
 .hero .button.primary:hover { box-shadow: none; }
+
+/* Logo gambar (lockup Nanda Perspective) */
+.logo { display: inline-flex; align-items: center; line-height: 0; }
+.logo-img { display: block; height: 34px; width: auto; }
+@media (max-width: 768px) { .logo-img { height: 28px; } }

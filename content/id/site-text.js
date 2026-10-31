@@ -20,12 +20,6 @@ if (typeof getLang === "function" && getLang() === "id") {
         navContact: "Kontak",
         navPrivacy: "Privasi",
 
-        heroEyebrow: "Jurnal pribadi",
-        heroTitleHtml: 'Baca Luas.<br>Pikir <em class="hero-accent">Dalam.</em><br>Tulis Jujur.',
-        heroDescription: "Ruang pribadi untuk menjelajahi gagasan seputar bisnis, pasar, dan pemikiran sehari-hari, ditulis oleh seorang mahasiswa yang sedang belajar melihat dunia dengan lebih jernih.",
-        readArticles: "Baca Tulisan",
-        viewPortfolio: "Lihat Portofolio",
-
         approachTitle: "Menulis untuk memahami, bukan sekadar bereaksi terhadap pasar.",
         approachBody: "Setiap tulisan berawal dari satu pertanyaan sederhana: apa yang sebenarnya menentukan nilai sebuah aset, bisnis, atau kebijakan ekonomi?",
 
@@ -122,6 +116,7 @@ if (typeof getLang === "function" && getLang() === "id") {
         notFoundEyebrow: "404 · Halaman tidak ditemukan",
         notFoundTitle: "Halaman ini tidak ada.",
         notFoundBody: "Tautannya mungkin rusak, atau halamannya sudah dipindahkan. Yuk kembali ke halaman yang berguna.",
-        notFoundHomeButton: "Kembali ke Beranda"
+        notFoundHomeButton: "Kembali ke Beranda",
+        notFoundInsightsButton: "Baca Tulisan"
     });
 }
