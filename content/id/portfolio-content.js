@@ -12,9 +12,9 @@
    ===================================================================== */
 
 const stockPageTextID = {
-    backLink:             "← Kembali ke portofolio",
+    backLink:             "Kembali ke portofolio",
     contentsLabel:        "Daftar Isi",
-    viewAnalysisLink:     "Lihat Analisis Lengkap →",
+    viewAnalysisLink:     "Lihat Analisis Lengkap",
     otherHoldingsEyebrow: "Portofolio",
     otherHoldingsTitle:   "Saham Lainnya",
     disclaimerTitle:      "Bukan Saran Investasi",

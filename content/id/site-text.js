@@ -51,7 +51,7 @@ if (typeof getLang === "function" && getLang() === "id") {
 
         backToTop: "Kembali ke atas",
         backToHome: "Kembali ke beranda",
-        backToArticles: "← Kembali ke daftar tulisan",
+        backToArticles: "Kembali ke daftar tulisan",
         relatedArticles: "Tulisan Terkait",
 
         articleNotFoundTitle: "Tulisan tidak ditemukan",
@@ -88,9 +88,9 @@ if (typeof getLang === "function" && getLang() === "id") {
 
         /* Sidebar halaman tulisan */
         sidebarAuthorBio: "Mahasiswa Akuntansi Universitas Syiah Kuala yang menulis tentang investasi, ekonomi, dan bisnis dari sudut pandang jangka panjang.",
-        aboutMeLink: "Tentang saya →",
+        aboutMeLink: "Tentang saya",
         sidebarPortfolioBody: "Lihat saham yang saya miliki dan analisis di balik setiap posisi.",
-        viewPortfolioLink: "Lihat Portofolio →",
+        viewPortfolioLink: "Lihat Portofolio",
 
         /* Halaman Tentang & Portofolio */
         aboutEyebrow: "Profil Pribadi",

@@ -86,9 +86,9 @@
    Ubah sesuka hati tanpa menyentuh kode lain.
    ===================================================================== */
 const stockPageText = {
-    backLink:             "← Back to portfolio",
+    backLink:             "Back to portfolio",
     contentsLabel:        "Contents",
-    viewAnalysisLink:     "View Full Analysis →",
+    viewAnalysisLink:     "View Full Analysis",
     otherHoldingsEyebrow: "Portfolio",
     otherHoldingsTitle:   "Other Holdings",
     disclaimerTitle:      "Not Investment Advice",

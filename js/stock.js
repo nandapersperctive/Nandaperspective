@@ -16,7 +16,7 @@ document.getElementById("other-eyebrow").textContent     = pt.otherHoldingsEyebr
 document.getElementById("other-title").textContent       = pt.otherHoldingsTitle;
 document.getElementById("disclaimer-title").textContent  = pt.disclaimerTitle;
 document.getElementById("disclaimer-body").textContent   = pt.disclaimerBody;
-document.getElementById("footer-back-link").textContent  = pt.backLink.replace("← ", "");
+document.getElementById("footer-back-link").textContent  = pt.backLink;
 
 function relatedCard(holding) {
     const bgStyle = holding.logo
@@ -38,7 +38,7 @@ function renderStock() {
     if (!holding) {
         document.title = "Stock not found | Nanda Perspective";
         document.getElementById("stock-hero").innerHTML = `
-            <a class="back-link" href="portfolio.html">← Back to portfolio</a>
+            <a class="back-link" href="portfolio.html">${stockPageText.backLink}</a>
             <h1 style="margin-top:24px;color:white">Stock not found</h1>
             <p style="color:rgba(255,255,255,.7)">Return to the <a href="portfolio.html" style="color:white;font-weight:700">portfolio page</a>.</p>
         `;

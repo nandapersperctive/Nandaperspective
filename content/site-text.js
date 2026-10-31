@@ -61,7 +61,7 @@ const siteText = {
 
     backToTop: "Back to top",
     backToHome: "Back to home",
-    backToArticles: "← Back to insights",
+    backToArticles: "Back to insights",
     relatedArticles: "Related Insights",
 
     articleNotFoundTitle: "Insight not found",
