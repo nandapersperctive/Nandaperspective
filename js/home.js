@@ -7,7 +7,7 @@ const articleCount = document.getElementById("article-count");
 const emptyState = document.getElementById("empty-state");
 
 /* Build category labels automatically from the articles — no manual list needed */
-const categoryMap = { all: "All" };
+const categoryMap = { all: uiT("filterAll", "All") };
 articleCatalog.forEach(a => { categoryMap[a.categoryKey] = a.category; });
 const categoryKeys = ["all", ...new Set(articleCatalog.map(a => a.categoryKey))];
 let activeCategory = "all";

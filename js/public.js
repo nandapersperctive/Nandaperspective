@@ -36,16 +36,16 @@ const SHARE_ARROW_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="n
 function shareBlockHtml(compact) {
     const wrapClass = "resource-share-wrap" + (compact ? " resource-share-wrap--corner" : "");
     const btnClass  = "resource-download-btn resource-share-btn" + (compact ? " resource-share-btn--icon" : "");
-    const btnLabel  = compact ? SHARE_ARROW_SVG : `Share ${SHARE_ARROW_SVG}`;
+    const btnLabel  = compact ? SHARE_ARROW_SVG : `${uiT("shareButton", "Share")} ${SHARE_ARROW_SVG}`;
     return `
         <div class="${wrapClass}">
-            <button type="button" class="${btnClass} resource-share-toggle" aria-label="Share this resource" aria-haspopup="true" aria-expanded="false">${btnLabel}</button>
+            <button type="button" class="${btnClass} resource-share-toggle" aria-label="${uiT("shareResourceLabel", "Share this resource")}" aria-haspopup="true" aria-expanded="false">${btnLabel}</button>
             <div class="resource-share-menu">
                 <a class="share-btn share-wa" target="_blank" rel="noopener">WhatsApp</a>
                 <a class="share-btn share-x" target="_blank" rel="noopener">X</a>
                 <a class="share-btn share-threads" target="_blank" rel="noopener">Threads</a>
                 <button type="button" class="share-btn share-ig">Instagram</button>
-                <button type="button" class="share-btn share-copy">Copy Link</button>
+                <button type="button" class="share-btn share-copy">${uiT("copyLink", "Copy Link")}</button>
             </div>
         </div>`;
 }
@@ -171,7 +171,7 @@ function wireShareButtons() {
         copyBtn.addEventListener("click", function () {
             navigator.clipboard.writeText(url).then(function () {
                 const original = copyBtn.textContent;
-                copyBtn.textContent = "✓ Copied!";
+                copyBtn.textContent = uiT("copied", "✓ Copied!");
                 copyBtn.classList.add("share-copy--done");
                 setTimeout(function () {
                     copyBtn.textContent = original;
@@ -183,7 +183,7 @@ function wireShareButtons() {
         const igBtn = shareWrap.querySelector(".share-ig");
         igBtn.addEventListener("click", function () {
             navigator.clipboard.writeText(url).then(function () {
-                showShareToast("Link copied! Now open Instagram and paste it in your story, bio, or DM.");
+                showShareToast(uiT("igToast", "Link copied! Now open Instagram and paste it in your story, bio, or DM."));
                 setTimeout(function () { window.open("https://www.instagram.com", "_blank"); }, 600);
             });
         });

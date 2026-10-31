@@ -11,7 +11,13 @@ const year = document.getElementById("year");
    combines the shared text (content/site-text.js) with the Portfolio
    page's text (content/portfolio-content.js) so the data-i18n system
    below can read it. */
-const uiText = { ...siteText, ...portfolioText };
+const uiText = { ...siteText, ...(typeof portfolioText !== "undefined" ? portfolioText : {}) };
+
+/* Text lookup with an English fallback, for strings built in JS.
+   Indonesian values come from content/id/site-text.js. */
+function uiT(key, fallback) {
+    return (typeof siteText !== "undefined" && siteText[key]) || fallback;
+}
 
 function translatePage() {
     document.querySelectorAll("[data-i18n]").forEach(element => {
@@ -19,6 +25,14 @@ function translatePage() {
 
         if (uiText[key]) {
             element.textContent = uiText[key];
+        }
+    });
+
+    document.querySelectorAll("[data-i18n-html]").forEach(element => {
+        const key = element.dataset.i18nHtml;
+
+        if (uiText[key]) {
+            element.innerHTML = uiText[key];
         }
     });
 
@@ -100,10 +114,9 @@ if (revealSections.length) {
     }
 }
 
-/* ── Language toggle (Public page only) ──
-   js/lang.js (which defines getLang/setLang) is only loaded on public.html,
-   so this silently does nothing on every other page — the rest of the site
-   stays English-only. */
+/* ── Language toggle (EN / ID) ──
+   js/lang.js defines getLang/setLang and is loaded on every page. The
+   button shows the language you can switch TO. */
 if (typeof getLang === 'function') {
     const header = document.querySelector('.site-header');
     const nav = header && header.querySelector('nav');
@@ -130,8 +143,8 @@ if (typeof getLang === 'function') {
     // Inject trigger button at the end of nav (next to Contact)
     const trigger = document.createElement('button');
     trigger.className = 'search-trigger';
-    trigger.setAttribute('aria-label', 'Cari konten');
-    trigger.innerHTML = ICON_SVG + ' Cari';
+    trigger.setAttribute('aria-label', uiT('searchAria', 'Search content'));
+    trigger.innerHTML = ICON_SVG + ' ' + uiT('searchButton', 'Search');
 
     const nav = header.querySelector('nav');
     if (nav) nav.appendChild(trigger);
@@ -142,13 +155,13 @@ if (typeof getLang === 'function') {
     overlay.id = 'gs-overlay';
     overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
-    overlay.setAttribute('aria-label', 'Pencarian situs');
+    overlay.setAttribute('aria-label', uiT('searchDialogAria', 'Site search'));
     overlay.innerHTML =
         '<div class="gs-modal">' +
             '<div class="gs-input-row">' +
                 '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>' +
-                '<input id="gs-input" type="text" placeholder="Cari artikel, saham, atau topik…" autocomplete="off" spellcheck="false">' +
-                '<button class="gs-close" aria-label="Tutup">✕</button>' +
+                '<input id="gs-input" type="text" placeholder="' + uiT('searchInputPlaceholder', 'Search articles, stocks, or topics…') + '" autocomplete="off" spellcheck="false">' +
+                '<button class="gs-close" aria-label="' + uiT('closeLabel', 'Close') + '">✕</button>' +
             '</div>' +
             '<div id="gs-results"><p class="gs-hint">Ketik kata kunci untuk mencari di semua halaman.</p></div>' +
         '</div>';
@@ -187,7 +200,7 @@ if (typeof getLang === 'function') {
                         return acc.concat([s.sectionTitle]).concat(s.paragraphs || []);
                     }, []))
                     .filter(Boolean).join(' ');
-                items.push({ type: 'article', label: 'Insights', title: a.title, body: body, snippet: a.excerpt || '', url: 'articles.html?id=' + a.id });
+                items.push({ type: 'article', label: uiT('navArticles', 'Insights'), title: a.title, body: body, snippet: a.excerpt || '', url: 'articles.html?id=' + a.id });
             });
         }
 
@@ -198,13 +211,13 @@ if (typeof getLang === 'function') {
                         return acc.concat([sec.sectionTitle]).concat(sec.paragraphs || []);
                     }, []))
                     .filter(Boolean).join(' ');
-                items.push({ type: 'portfolio', label: 'Portfolio', title: s.ticker + ' · ' + s.company, body: body, snippet: s.thesis || '', url: 'stock.html?ticker=' + s.ticker });
+                items.push({ type: 'portfolio', label: uiT('navPortfolio', 'Portfolio'), title: s.ticker + ' · ' + s.company, body: body, snippet: s.thesis || '', url: 'stock.html?ticker=' + s.ticker });
             });
         }
 
         if (typeof aboutText !== 'undefined') {
             var body = [aboutText.heading, aboutText.bio, aboutText.quote].filter(Boolean).join(' ');
-            items.push({ type: 'about', label: 'About', title: 'About · Nanda Mulia', body: body, snippet: (aboutText.bio || '').slice(0, 110) + '…', url: 'about.html' });
+            items.push({ type: 'about', label: uiT('navAbout', 'About'), title: uiT('navAbout', 'About') + ' · Nanda Mulia', body: body, snippet: (aboutText.bio || '').slice(0, 110) + '…', url: 'about.html' });
         }
 
         if (typeof publicResources !== 'undefined') {
@@ -215,7 +228,7 @@ if (typeof getLang === 'function') {
                             return acc.concat([c.heading, c.text]);
                         }, []))
                         .filter(Boolean).join(' ');
-                    items.push({ type: 'public', label: 'Public', title: item.title, body: body, snippet: item.description || '', url: 'public.html' });
+                    items.push({ type: 'public', label: uiT('navPublic', 'Public'), title: item.title, body: body, snippet: item.description || '', url: 'public.html' });
                 });
             });
         }
@@ -251,7 +264,7 @@ if (typeof getLang === 'function') {
     function render(q) {
         var words = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
         if (!words.length) {
-            results.innerHTML = '<p class="gs-hint">Ketik kata kunci untuk mencari di semua halaman.</p>';
+            results.innerHTML = '<p class="gs-hint">' + uiT('searchHint', 'Type a keyword to search across every page.') + '</p>';
             return;
         }
         if (!idx) idx = buildIdx();
@@ -260,7 +273,7 @@ if (typeof getLang === 'function') {
             return words.every(function (w) { return lo.includes(w); });
         });
         if (!hits.length) {
-            results.innerHTML = '<p class="gs-empty">Tidak ada hasil untuk "<strong>' + escHtml(q.trim()) + '</strong>".</p>';
+            results.innerHTML = '<p class="gs-empty">' + uiT('searchEmpty', 'No results for') + ' "<strong>' + escHtml(q.trim()) + '</strong>".</p>';
             return;
         }
         var groups = {};
@@ -290,7 +303,7 @@ if (typeof getLang === 'function') {
     var btn = document.createElement('button');
     btn.className = 'back-to-top';
     btn.type = 'button';
-    btn.setAttribute('aria-label', 'Kembali ke atas');
+    btn.setAttribute('aria-label', uiT('backToTop', 'Back to top'));
     btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>';
     document.body.appendChild(btn);
 

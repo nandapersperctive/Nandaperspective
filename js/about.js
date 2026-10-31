@@ -7,7 +7,7 @@ const profileAudioEl = document.getElementById("profile-audio");
 if (profileAudioEl && aboutText.audioTrack) {
     profileAudioEl.innerHTML = `
         <div class="profile-audio-card">
-            <p class="profile-audio-label">${aboutText.audioLabel || "Now Playing"}</p>
+            <p class="profile-audio-label">${aboutText.audioLabel || uiT("nowPlaying", "Now Playing")}</p>
             <audio controls preload="none" src="${aboutText.audioTrack}"></audio>
         </div>
     `;

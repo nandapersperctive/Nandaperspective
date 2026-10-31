@@ -15,7 +15,7 @@ function renderUpdates() {
     updatesList.innerHTML = portfolioUpdates.map((yearBlock, yi) => {
         const quarters = yearBlock.quarters.map(q => {
             if (q.status === "coming") {
-                return `<li class="update-item update-coming">${q.label} <span class="coming-label">Coming Soon</span></li>`;
+                return `<li class="update-item update-coming">${q.label} <span class="coming-label">${uiT("comingSoon", "Coming Soon")}</span></li>`;
             }
             if (q.url) {
                 return `<li class="update-item"><a href="${q.url}" target="_blank" rel="noopener">${q.label}</a></li>`;
@@ -57,7 +57,7 @@ function renderPortfolio() {
             <a class="holding-card" href="stock.html?ticker=${holding.ticker}" ${bgStyle}>
                 ${tickerWatermark}
                 <h3 class="sr-only">${holding.company}</h3>
-                <span class="view-analysis-link">View</span>
+                <span class="view-analysis-link">${uiT("viewLabel", "View")}</span>
             </a>
         `;
     }).join("");

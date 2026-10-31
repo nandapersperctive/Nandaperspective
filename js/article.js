@@ -58,7 +58,7 @@ function renderArticle() {
     if (!article) {
         document.title = `${siteText.articleNotFoundTitle} | Nanda Perspective`;
         titleEl.textContent    = siteText.articleNotFoundTitle;
-        categoryEl.textContent = "Not found";
+        categoryEl.textContent = uiT("notFound", "Not found");
         metaEl.textContent     = siteText.articleNotFoundMeta;
         contentEl.innerHTML    = `
             <p>${siteText.articleNotFoundBody}</p>
@@ -95,7 +95,7 @@ function renderArticle() {
         /* Table of contents */
         tocEl.innerHTML = `
             <div class="article-toc">
-                <p class="article-toc-title">Table of Contents</p>
+                <p class="article-toc-title">${uiT("tocTitle", "Table of Contents")}</p>
                 <ol>
                     ${article.sections.map((s, i) =>
                         `<li><a href="#section-${i + 1}">${s.sectionTitle}</a></li>`
@@ -141,15 +141,15 @@ function renderShare(article) {
     const threadsUrl = `https://www.threads.net/intent/post?text=${pageTitle}%20${pageUrl}`;
 
     const nativeBtn = navigator.share
-        ? `<button class="share-btn share-native" id="share-native-btn">Share</button>`
+        ? `<button class="share-btn share-native" id="share-native-btn">${uiT("shareButton", "Share")}</button>`
         : "";
 
     document.getElementById("article-share").innerHTML = `
         <div class="share-bar">
-            <p class="share-label">Share this insight</p>
+            <p class="share-label">${uiT("shareInsightLabel", "Share this insight")}</p>
             <div class="share-buttons">
                 ${nativeBtn}
-                <button class="share-btn share-copy"  id="share-copy-btn">Copy Link</button>
+                <button class="share-btn share-copy"  id="share-copy-btn">${uiT("copyLink", "Copy Link")}</button>
                 <button class="share-btn share-ig"    id="share-ig-btn">Instagram</button>
                 <a class="share-btn share-wa"      href="${waUrl}"      target="_blank" rel="noopener">WhatsApp</a>
                 <a class="share-btn share-x"       href="${xUrl}"       target="_blank" rel="noopener">X / Twitter</a>
@@ -161,10 +161,10 @@ function renderShare(article) {
     document.getElementById("share-copy-btn").addEventListener("click", () => {
         navigator.clipboard.writeText(shareHref).then(() => {
             const btn = document.getElementById("share-copy-btn");
-            btn.textContent = "✓ Copied!";
+            btn.textContent = uiT("copied", "✓ Copied!");
             btn.classList.add("share-copy--done");
             setTimeout(() => {
-                btn.textContent = "Copy Link";
+                btn.textContent = uiT("copyLink", "Copy Link");
                 btn.classList.remove("share-copy--done");
             }, 2200);
         });
@@ -193,7 +193,7 @@ function renderShare(article) {
 
         const fallback = () => {
             navigator.clipboard.writeText(shareHref).then(() => {
-                showShareToast("Link copied! Now open Instagram and paste it in your story, bio, or DM.");
+                showShareToast(uiT("igToast", "Link copied! Now open Instagram and paste it in your story, bio, or DM."));
                 setTimeout(() => window.open("https://www.instagram.com", "_blank"), 600);
             });
         };

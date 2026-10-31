@@ -27,7 +27,7 @@ function relatedCard(holding) {
         <a class="holding-card" href="stock.html?ticker=${holding.ticker}" ${bgStyle}>
             ${watermark}
             <h3 class="sr-only">${holding.company}</h3>
-            <span class="view-analysis-link">View</span>
+            <span class="view-analysis-link">${uiT("viewLabel", "View")}</span>
         </a>
     `;
 }
@@ -139,15 +139,15 @@ function renderShare(holding) {
     const threadsUrl = `https://www.threads.net/intent/post?text=${pageTitle}%20${pageUrl}`;
 
     const nativeBtn = navigator.share
-        ? `<button class="share-btn share-native" id="share-native-btn">Share</button>`
+        ? `<button class="share-btn share-native" id="share-native-btn">${uiT("shareButton", "Share")}</button>`
         : "";
 
     shareEl.innerHTML = `
         <div class="share-bar">
-            <p class="share-label">Share this analysis</p>
+            <p class="share-label">${uiT("shareAnalysisLabel", "Share this analysis")}</p>
             <div class="share-buttons">
                 ${nativeBtn}
-                <button class="share-btn share-copy"  id="share-copy-btn">Copy Link</button>
+                <button class="share-btn share-copy"  id="share-copy-btn">${uiT("copyLink", "Copy Link")}</button>
                 <button class="share-btn share-ig"    id="share-ig-btn">Instagram</button>
                 <a class="share-btn share-wa"      href="${waUrl}"      target="_blank" rel="noopener">WhatsApp</a>
                 <a class="share-btn share-x"       href="${xUrl}"       target="_blank" rel="noopener">X / Twitter</a>
@@ -159,10 +159,10 @@ function renderShare(holding) {
     document.getElementById("share-copy-btn").addEventListener("click", () => {
         navigator.clipboard.writeText(shareHref).then(() => {
             const btn = document.getElementById("share-copy-btn");
-            btn.textContent = "✓ Copied!";
+            btn.textContent = uiT("copied", "✓ Copied!");
             btn.classList.add("share-copy--done");
             setTimeout(() => {
-                btn.textContent = "Copy Link";
+                btn.textContent = uiT("copyLink", "Copy Link");
                 btn.classList.remove("share-copy--done");
             }, 2200);
         });
@@ -180,7 +180,7 @@ function renderShare(holding) {
 
     document.getElementById("share-ig-btn").addEventListener("click", () => {
         navigator.clipboard.writeText(shareHref).then(() => {
-            showShareToast("Link copied! Now open Instagram and paste it in your story, bio, or DM.");
+            showShareToast(uiT("igToast", "Link copied! Now open Instagram and paste it in your story, bio, or DM."));
             setTimeout(() => window.open("https://www.instagram.com", "_blank"), 600);
         });
     });
