@@ -9,7 +9,7 @@
     --text:      #2C1F18;
     --muted:     #6B5E57;
     --paper:     #FFFFFF;
-    --cream:     #F5F5F3;
+    --cream:     #F5F4F2;
     --bg:        #FFFFFF;
     --latte:     #C4A99A;
     --sage:      #7A8B73;
@@ -54,7 +54,7 @@ img { max-width: 100%; display: block; }
     background: rgba(255,255,255,0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--line);
+    border-bottom: none;
 }
 
 .logo {
@@ -2377,25 +2377,30 @@ footer a:hover { color: rgba(255,255,255,.55); }
 
 /* =====================
    CLEAN WHITE (Okt 2026)
-   Latar putih, kartu bergaris tipis, tanpa kapsul,
-   tanpa bayangan tebal, tanpa efek kartu melayang.
+   Latar putih, tanpa garis, tanpa kapsul, tanpa bayangan.
+   Kartu & input dibedakan lewat latar abu sangat muda; jarak jadi pemisah.
 ===================== */
 
-/* Kartu: garis tipis menggantikan bayangan */
+/* Kartu: permukaan abu muda, tanpa garis & bayangan */
 .card,
 .resource-card,
 .holding-card,
 .contact-card,
 .updates-sidebar,
-.update-year,
 .profile-audio-card,
 .about-main,
 .article-toc,
 .sidebar-author,
 .sidebar-card,
-.empty-state,
+.empty-state {
+    background: var(--cream);
+    border: none;
+    box-shadow: none;
+}
+
+.update-year,
 .gs-modal {
-    border: 1px solid var(--line);
+    border: none;
     box-shadow: none;
 }
 
@@ -2405,21 +2410,25 @@ footer a:hover { color: rgba(255,255,255,.55); }
 .featured-card:hover {
     transform: none;
     box-shadow: none;
-    border-color: #CFCBC6;
 }
+
+.card:hover,
+.resource-card:hover { background: #EFEDEA; }
 
 .featured-card,
 .featured-app-card { box-shadow: none; }
 
-/* Tombol: sudut kecil, tanpa glow, tanpa naik saat hover */
+/* Tombol: blok warna solid, tanpa garis luar, tanpa glow */
 .button,
 .button.primary,
 .button.secondary,
 .featured-card .button,
 .featured-app-cta,
+.featured-app-cta--secondary,
 .resource-download-btn,
 .share-btn,
 .mat-print-btn {
+    border: none;
     box-shadow: none;
 }
 
@@ -2438,33 +2447,34 @@ footer a:hover { color: rgba(255,255,255,.55); }
 .featured-app-cta:hover,
 .resource-download-btn:hover { background: var(--rust); }
 
-/* Filter kategori: teks bergaris bawah, bukan kapsul */
+.button.secondary,
+.featured-app-cta--secondary {
+    background: rgba(255,255,255,.14);
+    backdrop-filter: none;
+}
+
+.button.secondary:hover,
+.featured-app-cta--secondary:hover { background: rgba(255,255,255,.22); }
+
+/* Filter kategori: cukup beda warna & tebal huruf */
 .filter-group { gap: 22px; }
 
-.filter-group button {
+.filter-group button,
+.filter-group button:hover,
+.filter-group button.active {
     min-height: auto;
     padding: 6px 0;
+    border: none;
     border-radius: 0;
     background: transparent;
     box-shadow: none;
-    color: var(--muted);
-    border-bottom: 2px solid transparent;
 }
 
-.filter-group button:hover {
-    background: transparent;
-    color: var(--navy);
-    box-shadow: none;
-}
+.filter-group button { color: var(--muted); font-weight: 500; }
+.filter-group button:hover { color: var(--navy); }
+.filter-group button.active { color: var(--primary); font-weight: 700; }
 
-.filter-group button.active {
-    background: transparent;
-    color: var(--navy);
-    border-bottom-color: var(--primary);
-    box-shadow: none;
-}
-
-/* Input & select: garis tipis, bukan kapsul melayang */
+/* Input, select & tombol kecil di header: latar abu muda, tanpa garis */
 .search-box input,
 .select-box select,
 .contact-card input,
@@ -2472,7 +2482,20 @@ footer a:hover { color: rgba(255,255,255,.55); }
 .search-trigger,
 .lang-toggle,
 .menu-toggle {
-    border: 1px solid var(--line);
+    border: none;
+    box-shadow: none;
+    background: var(--cream);
+}
+
+.contact-card input,
+.contact-card textarea { background: #FFFFFF; }
+
+.search-box input:focus,
+.select-box select:focus,
+.contact-card input:focus,
+.contact-card textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
     box-shadow: none;
 }
 
@@ -2499,13 +2522,4 @@ footer a:hover { color: rgba(255,255,255,.55); }
 }
 
 .featured-app-card .resource-share-btn { color: rgba(255,255,255,.7); }
-
 .featured-app-card .resource-share-btn:hover { color: #fff; }
-
-.search-box input:focus,
-.select-box select:focus,
-.contact-card input:focus,
-.contact-card textarea:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(194,73,43,.15);
-}
