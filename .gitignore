@@ -2,3 +2,9 @@
 .agents/
 .claude/
 skills-lock.json
+
+# Kunci tanda tangan Android, jangan pernah di-push
+*.keystore
+*.jks
+*.aab
+signing-key-info.txt

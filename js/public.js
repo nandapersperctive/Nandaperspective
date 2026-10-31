@@ -17,13 +17,6 @@ function escAttr(str) {
     });
 }
 
-function typeColor(type) {
-    if (type === "Excel") return "badge-excel";
-    if (type === "PDF")   return "badge-pdf";
-    if (type === "App")   return "badge-app";
-    return "badge-other";
-}
-
 function slugify(str) {
     return str.toLowerCase()
         .normalize("NFD").replace(/[̀-ͯ]/g, "")
@@ -103,11 +96,6 @@ function buildFeaturedApp(item) {
             <div class="featured-app-card">
                 ${shareBlockHtml(true)}
                 <div class="featured-app-body">
-                    <div class="featured-app-badges">
-                        <span class="resource-type-badge badge-app">${item.type}</span>
-                        <span class="resource-free-badge">${pt.freeLabel}</span>
-                        <span class="featured-app-tag">${pt.availableNowLabel}</span>
-                    </div>
                     <h2 class="featured-app-title">${item.title}</h2>
                     <p class="featured-app-desc">${item.description}</p>
                     <div class="featured-app-actions">
@@ -144,10 +132,7 @@ function renderResources() {
                     ${regularItems.map(item => `
                         <article class="resource-card">
                             ${shareBlockHtml(true)}
-                            <div class="resource-card-top">
-                                <span class="resource-type-badge ${typeColor(item.type)}">${item.type}</span>
-                                <span class="resource-free-badge">${pt.freeLabel}</span>
-                            </div>
+                            <p class="resource-type">${item.type}</p>
                             <h3 class="resource-card-title">${item.title}</h3>
                             <p class="resource-card-desc">${item.description}</p>
                             <div class="resource-btn-group">${buildButtons(item)}</div>

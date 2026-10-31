@@ -1,27 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
 
 :root {
-    --primary:   #E05A3A;
+    --primary:   #C2492B;
     --navy:      #1F2D3D;
     --navy-deep: #141E2A;
     --dark:      #1A1510;
     --ink:       #1A1510;
     --text:      #2C1F18;
-    --muted:     #8A7A72;
-    --paper:     #FFFCF9;
-    --cream:     #F5EDE3;
-    --bg:        #EDE8E1;
+    --muted:     #6B5E57;
+    --paper:     #FFFFFF;
+    --cream:     #F5F5F3;
+    --bg:        #FFFFFF;
     --latte:     #C4A99A;
     --sage:      #7A8B73;
-    --gold:      #E05A3A;
-    --rust:      #B8431F;
-    --line:      #E5D9CF;
-    --shadow:    0 6px 20px rgba(40,25,15,.14);
-    --clay:      0 10px 28px rgba(40,25,15,.16);
-    --clay-sm:   0 5px 14px rgba(40,25,15,.13);
-    --radius:    18px;
-    --radius-sm: 50px;
-    --radius-lg: 24px;
+    --gold:      #C2492B;
+    --rust:      #A93E1F;
+    --line:      #E7E5E2;
+    --shadow:    0 0 0 0 transparent;
+    --clay:      0 0 0 0 transparent;
+    --clay-sm:   0 0 0 0 transparent;
+    --radius:    12px;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,10 +51,10 @@ img { max-width: 100%; display: block; }
     position: sticky;
     top: 0;
     z-index: 10;
-    background: rgba(237,232,225,0.85);
+    background: rgba(255,255,255,0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(229,217,207,0.6);
+    border-bottom: 1px solid var(--line);
 }
 
 .logo {
@@ -793,8 +793,8 @@ footer {
     display: flex;
     justify-content: space-between;
     gap: 18px;
-    background: #1A1510;
-    color: #C4A99A;
+    background: var(--navy-deep);
+    color: rgba(255,255,255,.65);
     font-size: .88rem;
 }
 
@@ -2373,4 +2373,139 @@ footer a:hover { color: rgba(255,255,255,.55); }
     .mat-modal-body { padding: 20px 0; }
     .mat-heading { font-size: 1rem; border-bottom: 1px solid #ccc; }
     .mat-text { font-size: .9rem; }
+}
+
+/* =====================
+   CLEAN WHITE (Okt 2026)
+   Latar putih, kartu bergaris tipis, tanpa kapsul,
+   tanpa bayangan tebal, tanpa efek kartu melayang.
+===================== */
+
+/* Kartu: garis tipis menggantikan bayangan */
+.card,
+.resource-card,
+.holding-card,
+.contact-card,
+.updates-sidebar,
+.update-year,
+.profile-audio-card,
+.about-main,
+.article-toc,
+.sidebar-author,
+.sidebar-card,
+.empty-state,
+.gs-modal {
+    border: 1px solid var(--line);
+    box-shadow: none;
+}
+
+.card:hover,
+.resource-card:hover,
+.holding-card:hover,
+.featured-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: #CFCBC6;
+}
+
+.featured-card,
+.featured-app-card { box-shadow: none; }
+
+/* Tombol: sudut kecil, tanpa glow, tanpa naik saat hover */
+.button,
+.button.primary,
+.button.secondary,
+.featured-card .button,
+.featured-app-cta,
+.resource-download-btn,
+.share-btn,
+.mat-print-btn {
+    box-shadow: none;
+}
+
+.button.primary:hover,
+.button.secondary:hover,
+.featured-card .button:hover,
+.featured-app-cta:hover,
+.resource-download-btn:hover,
+.share-btn:hover,
+.mat-print-btn:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.button.primary:hover,
+.featured-app-cta:hover,
+.resource-download-btn:hover { background: var(--rust); }
+
+/* Filter kategori: teks bergaris bawah, bukan kapsul */
+.filter-group { gap: 22px; }
+
+.filter-group button {
+    min-height: auto;
+    padding: 6px 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+}
+
+.filter-group button:hover {
+    background: transparent;
+    color: var(--navy);
+    box-shadow: none;
+}
+
+.filter-group button.active {
+    background: transparent;
+    color: var(--navy);
+    border-bottom-color: var(--primary);
+    box-shadow: none;
+}
+
+/* Input & select: garis tipis, bukan kapsul melayang */
+.search-box input,
+.select-box select,
+.contact-card input,
+.contact-card textarea,
+.search-trigger,
+.lang-toggle,
+.menu-toggle {
+    border: 1px solid var(--line);
+    box-shadow: none;
+}
+
+/* Jenis materi (PDF / Excel): label teks biasa */
+.resource-type {
+    margin: 0;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* Tombol bagikan di pojok kartu: ikon polos tanpa lingkaran */
+.resource-share-btn {
+    background: transparent;
+    box-shadow: none;
+    color: var(--muted);
+}
+
+.resource-share-btn:hover {
+    transform: none;
+    color: var(--navy);
+}
+
+.featured-app-card .resource-share-btn { color: rgba(255,255,255,.7); }
+
+.featured-app-card .resource-share-btn:hover { color: #fff; }
+
+.search-box input:focus,
+.select-box select:focus,
+.contact-card input:focus,
+.contact-card textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(194,73,43,.15);
 }
