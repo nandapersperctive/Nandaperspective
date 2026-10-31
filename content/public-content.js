@@ -1,6 +1,6 @@
 /* =====================================================================
-   PUBLIC RESOURCES — semua teks dan daftar materi di halaman Public.
-   Halaman ini dua bahasa (EN/ID) — `publicPageText` dan `publicResources`
+   PUBLIC RESOURCES: semua teks dan daftar materi di halaman Public.
+   Halaman ini dua bahasa (EN/ID), `publicPageText` dan `publicResources`
    resolve ke bahasa yang aktif (lihat js/lang.js). Semua halaman lain di
    situs ini tetap satu bahasa (Inggris).
    =====================================================================
@@ -20,7 +20,7 @@
    --------------------------
    1. Taruh file PDF/Excel ke folder "downloads/"
    2. Di field "file" isi path-nya: "downloads/nama-file.pdf"
-   File path sama untuk kedua bahasa — hanya perlu diisi sekali per item
+   File path sama untuk kedua bahasa, hanya perlu diisi sekali per item
    di publicResourcesID (field file/downloadFile di publicResourcesEN
    ikut menyalin path yang sama).
 
@@ -91,7 +91,7 @@ const publicResourcesEN = [
                     },
                     {
                         heading: "Main Functions of Accounting",
-                        text: "1. Recording — Recording all financial transactions in chronological order.\n2. Classifying — Grouping transactions into appropriate categories.\n3. Summarizing — Presenting financial data in an easy-to-understand summary form.\n4. Reporting — Preparing financial statements as the final output of the accounting process."
+                        text: "1. Recording: Recording all financial transactions in chronological order.\n2. Classifying: Grouping transactions into appropriate categories.\n3. Summarizing: Presenting financial data in an easy-to-understand summary form.\n4. Reporting: Preparing financial statements as the final output of the accounting process."
                     },
                     {
                         heading: "Who Needs Accounting?",
@@ -159,8 +159,8 @@ const publicResourcesEN = [
         category: "Accounting Cycle",
         items: [
             {
-                title: "Still Accounting — Bookkeeping & POS App",
-                description: "A complete offline bookkeeping app for small businesses: point-of-sale checkout, daily cash drawer reconciliation, general journal, ledger, trial balance, adjustments, financial statements, and closing entries — with PIN-protected owner/cashier roles and an audit trail. No internet needed once downloaded.",
+                title: "Still Accounting: Bookkeeping & POS App",
+                description: "A complete offline bookkeeping app for small businesses: point-of-sale checkout, daily cash drawer reconciliation, general journal, ledger, trial balance, adjustments, financial statements, and closing entries, with PIN-protected owner/cashier roles and an audit trail. No internet needed once downloaded.",
                 type: "App",
                 file: "downloads/still-accounting.html",
                 fileApk: "downloads/app-debug.apk",
@@ -179,35 +179,35 @@ const publicResourcesEN = [
                         text: "The accounting cycle is a series of steps performed repeatedly every accounting period (usually monthly or annually) to produce accurate financial statements."
                     },
                     {
-                        heading: "Step 1 — Identify and Analyze Transactions",
+                        heading: "Step 1: Identify and Analyze Transactions",
                         text: "Any event that has a financial impact on the business is called a transaction. Examples: selling goods, paying wages, buying equipment. Gather transaction evidence such as receipts, sales slips, invoices, and bank statements."
                     },
                     {
-                        heading: "Step 2 — Recording in the General Journal",
+                        heading: "Step 2: Recording in the General Journal",
                         text: "Every transaction is recorded in the General Journal using the double-entry system. Every transaction affects at least two accounts: one on the Debit side and one on the Credit side. Total Debits must always equal total Credits."
                     },
                     {
-                        heading: "Step 3 — Posting to the General Ledger",
+                        heading: "Step 3: Posting to the General Ledger",
                         text: "After being recorded in the journal, each entry is transferred (posted) to the General Ledger. The General Ledger has one page per account, making it easy to see the total and balance of each account."
                     },
                     {
-                        heading: "Step 4 — Trial Balance",
+                        heading: "Step 4: Trial Balance",
                         text: "A list of all accounts along with their balances at the end of the period. Used to verify that total Debits equal total Credits before making adjustments."
                     },
                     {
-                        heading: "Step 5 — Adjusting Entries",
+                        heading: "Step 5: Adjusting Entries",
                         text: "Adjustments are made to record transactions that haven’t yet been recorded or that need correcting: depreciation of fixed assets, accrued expenses not yet paid, unearned revenue, and supplies used up."
                     },
                     {
-                        heading: "Step 6 — Adjusted Trial Balance",
+                        heading: "Step 6: Adjusted Trial Balance",
                         text: "A trial balance rebuilt after all adjusting entries have been applied. This forms the basis for preparing the financial statements."
                     },
                     {
-                        heading: "Step 7 — Financial Statements",
-                        text: "Three main statements:\n• Income Statement — revenue minus expenses = net profit/loss.\n• Balance Sheet — the position of assets, liabilities, and equity.\n• Cash Flow Statement — the flow of money in and out."
+                        heading: "Step 7: Financial Statements",
+                        text: "Three main statements:\n• Income Statement: revenue minus expenses = net profit/loss.\n• Balance Sheet: the position of assets, liabilities, and equity.\n• Cash Flow Statement: the flow of money in and out."
                     },
                     {
-                        heading: "Step 8 — Closing Entries",
+                        heading: "Step 8: Closing Entries",
                         text: "Closes all nominal accounts (revenue, expenses, drawings) so their balances return to zero, ready for the next period. Net profit/loss is transferred to the Capital account."
                     }
                 ]
@@ -307,20 +307,20 @@ const publicResourcesEN = [
                         text: "Many small businesses fail not because they can’t sell, but because the owner doesn’t know their financial condition. Sales money gets mixed with personal money, debts get forgotten, or the owner doesn’t realize the business is actually losing money. Simple bookkeeping prevents all of this."
                     },
                     {
-                        heading: "Step 1 — Separate Personal and Business Finances",
+                        heading: "Step 1: Separate Personal and Business Finances",
                         text: "Open a dedicated business bank account. All money coming in from sales goes into the business account. All business expenses are paid from the business account. If you need money for personal use, record it as ‘drawings’ (a withdrawal of capital)."
                     },
                     {
-                        heading: "Step 2 — Record Every Transaction Every Day",
+                        heading: "Step 2: Record Every Transaction Every Day",
                         text: "At minimum, record:\n• Transaction date\n• Description (what happened)\n• Money in (revenue)\n• Money out (expense)\n• Current balance\n\nYou can use a notebook, a spreadsheet, or an app like the one available on this page."
                     },
                     {
-                        heading: "Step 3 — Make a Simple Monthly Report",
+                        heading: "Step 3: Make a Simple Monthly Report",
                         text: "At the end of every month, calculate:\n• Total Revenue this month\n• Total Expenses this month\n• Profit/Loss = Revenue − Expenses\n• Ending Cash Balance for the month\n\nCompare it with the previous month to see the trend of your business."
                     },
                     {
                         heading: "Practical Tips",
-                        text: "✓ Keep every receipt — photograph it with your phone if needed.\n✓ Record transactions right away, don’t put it off.\n✓ Reconcile your cash balance with your bank account every month.\n✓ Don’t be afraid to ask for help — small business consultants, cooperatives, or accounting students can help."
+                        text: "✓ Keep every receipt: photograph it with your phone if needed.\n✓ Record transactions right away, don’t put it off.\n✓ Reconcile your cash balance with your bank account every month.\n✓ Don’t be afraid to ask for help: small business consultants, cooperatives, or accounting students can help."
                     }
                 ]
             },
@@ -333,11 +333,11 @@ const publicResourcesEN = [
                 content: [
                     {
                         heading: "What Is a Business Budget?",
-                        text: "A budget is a financial plan that sets revenue targets and spending limits for a given period. Budgets aren’t just for large companies — small businesses need them even more, to avoid overspending and to plan for growth."
+                        text: "A budget is a financial plan that sets revenue targets and spending limits for a given period. Budgets aren’t just for large companies: small businesses need them even more, to avoid overspending and to plan for growth."
                     },
                     {
                         heading: "Steps to Build a Simple Budget",
-                        text: "1. Estimate Revenue — What’s your sales target for this month? Base it on the previous months’ average or a new target.\n2. List Fixed Costs — Costs that stay the same every month: rent, permanent staff salaries, loan installments.\n3. List Variable Costs — Costs that change with sales: raw materials, shipping, commissions.\n4. Calculate the Difference — Revenue − Fixed Costs − Variable Costs = Remainder (target profit)."
+                        text: "1. Estimate Revenue: What’s your sales target for this month? Base it on the previous months’ average or a new target.\n2. List Fixed Costs: Costs that stay the same every month: rent, permanent staff salaries, loan installments.\n3. List Variable Costs: Costs that change with sales: raw materials, shipping, commissions.\n4. Calculate the Difference: Revenue − Fixed Costs − Variable Costs = Remainder (target profit)."
                     },
                     {
                         heading: "Monitor and Evaluate",
@@ -370,7 +370,7 @@ const publicResourcesID = [
                     },
                     {
                         heading: "Fungsi Utama Akuntansi",
-                        text: "1. Pencatatan (Recording) — Mencatat semua transaksi keuangan secara kronologis.\n2. Pengklasifikasian (Classifying) — Mengelompokkan transaksi ke dalam kategori yang sesuai.\n3. Pengikhtisaran (Summarizing) — Menyajikan data keuangan dalam bentuk ringkasan yang mudah dipahami.\n4. Pelaporan (Reporting) — Menyusun laporan keuangan sebagai output akhir proses akuntansi."
+                        text: "1. Pencatatan (Recording): Mencatat semua transaksi keuangan secara kronologis.\n2. Pengklasifikasian (Classifying): Mengelompokkan transaksi ke dalam kategori yang sesuai.\n3. Pengikhtisaran (Summarizing): Menyajikan data keuangan dalam bentuk ringkasan yang mudah dipahami.\n4. Pelaporan (Reporting): Menyusun laporan keuangan sebagai output akhir proses akuntansi."
                     },
                     {
                         heading: "Siapa yang Membutuhkan Akuntansi?",
@@ -438,8 +438,8 @@ const publicResourcesID = [
         category: "Siklus Akuntansi",
         items: [
             {
-                title: "Still Accounting — Aplikasi Pembukuan & Kasir",
-                description: "Aplikasi pembukuan lengkap untuk usaha kecil: kasir (POS), kas harian, jurnal umum, buku besar, neraca saldo, penyesuaian, laporan keuangan, hingga jurnal penutup — dilengkapi kunci PIN pemilik/kasir dan jejak audit. Tanpa internet setelah diunduh.",
+                title: "Still Accounting: Aplikasi Pembukuan & Kasir",
+                description: "Aplikasi pembukuan lengkap untuk usaha kecil: kasir (POS), kas harian, jurnal umum, buku besar, neraca saldo, penyesuaian, laporan keuangan, hingga jurnal penutup, dilengkapi kunci PIN pemilik/kasir dan jejak audit. Tanpa internet setelah diunduh.",
                 type: "App",
                 file: "downloads/still-accounting.html",
                 fileApk: "downloads/app-debug.apk",
@@ -458,35 +458,35 @@ const publicResourcesID = [
                         text: "Siklus akuntansi adalah serangkaian langkah yang dilakukan secara berulang setiap periode akuntansi (biasanya setiap bulan atau tahun) untuk menghasilkan laporan keuangan yang akurat."
                     },
                     {
-                        heading: "Langkah 1 — Identifikasi dan Analisis Transaksi",
+                        heading: "Langkah 1: Identifikasi dan Analisis Transaksi",
                         text: "Setiap kejadian yang memiliki dampak keuangan pada bisnis disebut transaksi. Contoh: penjualan barang, pembayaran gaji, pembelian peralatan. Kumpulkan bukti transaksi seperti kwitansi, nota, faktur, dan rekening koran."
                     },
                     {
-                        heading: "Langkah 2 — Pencatatan ke Jurnal Umum",
+                        heading: "Langkah 2: Pencatatan ke Jurnal Umum",
                         text: "Setiap transaksi dicatat ke dalam Jurnal Umum menggunakan sistem double-entry (pencatatan ganda). Setiap transaksi mempengaruhi minimal dua akun: satu di sisi Debit dan satu di sisi Kredit. Total Debit harus selalu sama dengan total Kredit."
                     },
                     {
-                        heading: "Langkah 3 — Posting ke Buku Besar",
+                        heading: "Langkah 3: Posting ke Buku Besar",
                         text: "Setelah dicatat di jurnal, setiap entri dipindahkan (diposting) ke Buku Besar. Buku Besar berisi satu halaman untuk setiap akun, sehingga mudah melihat total dan saldo masing-masing akun."
                     },
                     {
-                        heading: "Langkah 4 — Neraca Saldo (Trial Balance)",
+                        heading: "Langkah 4: Neraca Saldo (Trial Balance)",
                         text: "Daftar semua akun beserta saldonya pada akhir periode. Digunakan untuk memverifikasi bahwa total Debit sama dengan total Kredit sebelum membuat penyesuaian."
                     },
                     {
-                        heading: "Langkah 5 — Jurnal Penyesuaian",
+                        heading: "Langkah 5: Jurnal Penyesuaian",
                         text: "Penyesuaian dilakukan untuk mencatat transaksi yang belum tercatat atau yang perlu dikoreksi: depresiasi aset tetap, beban yang masih terutang (akrual), pendapatan yang belum terrealisasi, dan perlengkapan yang terpakai."
                     },
                     {
-                        heading: "Langkah 6 — Neraca Saldo Disesuaikan",
+                        heading: "Langkah 6: Neraca Saldo Disesuaikan",
                         text: "Neraca saldo yang dibuat ulang setelah semua jurnal penyesuaian diterapkan. Ini adalah dasar penyusunan laporan keuangan."
                     },
                     {
-                        heading: "Langkah 7 — Laporan Keuangan",
-                        text: "Tiga laporan utama:\n• Laporan Laba Rugi — pendapatan dikurangi beban = laba/rugi bersih.\n• Neraca (Balance Sheet) — posisi aset, liabilitas, dan ekuitas.\n• Laporan Arus Kas — aliran uang masuk dan keluar."
+                        heading: "Langkah 7: Laporan Keuangan",
+                        text: "Tiga laporan utama:\n• Laporan Laba Rugi: pendapatan dikurangi beban = laba/rugi bersih.\n• Neraca (Balance Sheet): posisi aset, liabilitas, dan ekuitas.\n• Laporan Arus Kas: aliran uang masuk dan keluar."
                     },
                     {
-                        heading: "Langkah 8 — Jurnal Penutup",
+                        heading: "Langkah 8: Jurnal Penutup",
                         text: "Menutup semua akun nominal (pendapatan, beban, prive) agar saldonya kembali ke nol, siap untuk periode berikutnya. Laba/rugi bersih dipindahkan ke akun Modal."
                     }
                 ]
@@ -586,20 +586,20 @@ const publicResourcesID = [
                         text: "Banyak usaha kecil gulung tikar bukan karena tidak laku, tapi karena tidak tahu kondisi keuangannya. Uang penjualan tercampur dengan uang pribadi, lupa bayar utang, atau tidak sadar bahwa bisnis sebenarnya rugi. Pembukuan sederhana mencegah semua ini."
                     },
                     {
-                        heading: "Langkah 1 — Pisahkan Keuangan Pribadi dan Bisnis",
+                        heading: "Langkah 1: Pisahkan Keuangan Pribadi dan Bisnis",
                         text: "Buka rekening bank khusus bisnis. Semua uang masuk dari penjualan masuk ke rekening bisnis. Semua pengeluaran bisnis dibayar dari rekening bisnis. Jika butuh uang pribadi, catat sebagai ‘prive’ (penarikan modal)."
                     },
                     {
-                        heading: "Langkah 2 — Catat Setiap Transaksi Setiap Hari",
+                        heading: "Langkah 2: Catat Setiap Transaksi Setiap Hari",
                         text: "Minimal catat:\n• Tanggal transaksi\n• Keterangan (apa yang terjadi)\n• Uang masuk (pendapatan)\n• Uang keluar (beban)\n• Saldo saat ini\n\nBisa pakai buku catatan, spreadsheet, atau aplikasi seperti yang tersedia di halaman ini."
                     },
                     {
-                        heading: "Langkah 3 — Buat Laporan Bulanan Sederhana",
+                        heading: "Langkah 3: Buat Laporan Bulanan Sederhana",
                         text: "Di akhir setiap bulan, hitung:\n• Total Pendapatan bulan ini\n• Total Pengeluaran bulan ini\n• Laba/Rugi = Pendapatan − Pengeluaran\n• Saldo Kas akhir bulan\n\nBandingkan dengan bulan sebelumnya untuk melihat tren bisnis."
                     },
                     {
                         heading: "Tips Praktis",
-                        text: "✓ Simpan semua nota/kwitansi — foto dengan HP jika perlu.\n✓ Catat transaksi segera, jangan ditunda.\n✓ Rekonsiliasi saldo kas dengan rekening bank setiap bulan.\n✓ Jangan takut meminta bantuan — konsultan UMKM, koperasi, atau mahasiswa akuntansi bisa membantu."
+                        text: "✓ Simpan semua nota/kwitansi: foto dengan HP jika perlu.\n✓ Catat transaksi segera, jangan ditunda.\n✓ Rekonsiliasi saldo kas dengan rekening bank setiap bulan.\n✓ Jangan takut meminta bantuan: konsultan UMKM, koperasi, atau mahasiswa akuntansi bisa membantu."
                     }
                 ]
             },
@@ -612,11 +612,11 @@ const publicResourcesID = [
                 content: [
                     {
                         heading: "Apa Itu Anggaran Bisnis?",
-                        text: "Anggaran adalah rencana keuangan yang menetapkan target pendapatan dan batas pengeluaran untuk periode tertentu. Anggaran bukan hanya untuk perusahaan besar — UMKM justru sangat perlu anggaran agar tidak boros dan bisa merencanakan pertumbuhan."
+                        text: "Anggaran adalah rencana keuangan yang menetapkan target pendapatan dan batas pengeluaran untuk periode tertentu. Anggaran bukan hanya untuk perusahaan besar. UMKM justru sangat perlu anggaran agar tidak boros dan bisa merencanakan pertumbuhan."
                     },
                     {
                         heading: "Langkah Membuat Anggaran Sederhana",
-                        text: "1. Estimasi Pendapatan — Berapa target penjualan bulan ini? Berdasarkan rata-rata bulan sebelumnya atau target baru.\n2. Daftar Biaya Tetap — Biaya yang sama setiap bulan: sewa, gaji karyawan tetap, cicilan.\n3. Daftar Biaya Variabel — Biaya yang berubah sesuai penjualan: bahan baku, ongkos kirim, komisi.\n4. Hitung Selisih — Pendapatan − Biaya Tetap − Biaya Variabel = Sisa (target laba)."
+                        text: "1. Estimasi Pendapatan: Berapa target penjualan bulan ini? Berdasarkan rata-rata bulan sebelumnya atau target baru.\n2. Daftar Biaya Tetap: Biaya yang sama setiap bulan: sewa, gaji karyawan tetap, cicilan.\n3. Daftar Biaya Variabel: Biaya yang berubah sesuai penjualan: bahan baku, ongkos kirim, komisi.\n4. Hitung Selisih: Pendapatan − Biaya Tetap − Biaya Variabel = Sisa (target laba)."
                     },
                     {
                         heading: "Pantau dan Evaluasi",

@@ -45,7 +45,7 @@ function renderStock() {
         return;
     }
 
-    document.title = `${holding.ticker} — ${holding.company} | Nanda Perspective`;
+    document.title = `${holding.ticker} · ${holding.company} | Nanda Perspective`;
 
     const hero = document.getElementById("stock-hero");
 
@@ -132,7 +132,7 @@ function renderShare(holding) {
 
     const shareHref = withShareCacheBust(window.location.href);
     const pageUrl   = encodeURIComponent(shareHref);
-    const pageTitle = encodeURIComponent(`${holding.ticker} — ${holding.company} | Nanda Perspective`);
+    const pageTitle = encodeURIComponent(`${holding.ticker} · ${holding.company} | Nanda Perspective`);
 
     const waUrl      = `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
     const xUrl       = `https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`;
@@ -171,7 +171,7 @@ function renderShare(holding) {
     if (navigator.share) {
         document.getElementById("share-native-btn").addEventListener("click", () => {
             navigator.share({
-                title: `${holding.ticker} — ${holding.company}`,
+                title: `${holding.ticker} · ${holding.company}`,
                 text: holding.thesis || "",
                 url: shareHref
             });

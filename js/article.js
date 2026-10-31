@@ -134,7 +134,7 @@ function withShareCacheBust(url) {
 function renderShare(article) {
     const shareHref = withShareCacheBust(window.location.href);
     const pageUrl   = encodeURIComponent(shareHref);
-    const pageTitle = encodeURIComponent(article.title + " — Nanda Perspective");
+    const pageTitle = encodeURIComponent(article.title + " | Nanda Perspective");
 
     const waUrl      = `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
     const xUrl       = `https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`;

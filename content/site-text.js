@@ -1,18 +1,18 @@
 /* =====================================================================
-   SITE TEXT — shared text used across pages (nav, home page, CTA section,
+   SITE TEXT: shared text used across pages (nav, home page, CTA section,
    footer, etc.). The site is single-language (English) now, so each
    line below is the only place that text lives.
    =====================================================================
    HOW TO EDIT
    Change the text between quotes " ... ". Don’t delete quotes, commas,
-   or curly braces { }. Save the file when you’re done — that’s it.
+   or curly braces { }. Save the file when you’re done. That’s it.
 
    Article text lives in content/articles-content.js
    About page text lives in content/about-content.js
    Portfolio page text lives in content/portfolio-content.js
 
    AUDIOBOOK PLAYER IN THE ARTICLE SIDEBAR
-   Each article has its own audiobook file — set per article using the
+   Each article has its own audiobook file, set per article using the
    "audiobook" field in content/articles-content.js (see the instructions
    near the top of that file). audiobookEyebrow/audiobookBody below are
    just the shared label and description shown above the player.
@@ -27,7 +27,7 @@ const siteText = {
     navContact: "Contact",
 
     heroEyebrow: "Personal journal",
-    heroDescription: "A personal space to explore ideas across business, markets, and everyday thinking — written by a student learning to see the world more clearly.",
+    heroDescription: "A personal space to explore ideas across business, markets, and everyday thinking, written by a student learning to see the world more clearly.",
     readArticles: "Read Insights",
     viewPortfolio: "View Portfolio",
 
@@ -50,7 +50,7 @@ const siteText = {
 
     contactEyebrow: "Get in Touch",
     contactTitle: "Have a question or feedback?",
-    contactBody: "Fill in the form below — it will open in your email app, ready to send straight to nandaperspective@gmail.com.",
+    contactBody: "Fill in the form below. It will open in your email app, ready to send straight to nandaperspective@gmail.com.",
     contactNameLabel: "Name",
     contactNamePlaceholder: "Your name",
     contactEmailLabel: "Your Email",

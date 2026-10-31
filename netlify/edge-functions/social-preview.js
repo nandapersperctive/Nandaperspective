@@ -51,7 +51,7 @@ export default async (request, context) => {
             if (holding && holding.company) {
                 meta = {
                     type: "article",
-                    title: `${holding.ticker} — ${holding.company} | Nanda Perspective`,
+                    title: `${holding.ticker} · ${holding.company} | Nanda Perspective`,
                     description: holding.thesis || "Stock analysis from Nanda Perspective.",
                     image: holding.heroBg || holding.logo || ""
                 };

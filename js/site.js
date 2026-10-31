@@ -1,7 +1,7 @@
 /* Appended to the end of every long-form piece of writing on the site
    (articles, stock analysis, public materials) — see article.js, stock.js,
    public.js. */
-const CONTENT_SIGNATURE = '<p class="content-signature">— Nanda Perspective —</p>';
+const CONTENT_SIGNATURE = '<p class="content-signature">Nanda Perspective</p>';
 
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.getElementById("main-nav");
@@ -71,7 +71,7 @@ if (contactForm) {
         const message    = document.getElementById("contact-message").value.trim();
 
         const subject = encodeURIComponent(`Message from ${name} via Nanda Perspective`);
-        const body    = encodeURIComponent(`${message}\n\n— ${name} (${fromEmail})`);
+        const body    = encodeURIComponent(`${message}\n\n${name} (${fromEmail})`);
 
         window.location.href = `mailto:nandaperspective@gmail.com?subject=${subject}&body=${body}`;
     });
@@ -198,13 +198,13 @@ if (typeof getLang === 'function') {
                         return acc.concat([sec.sectionTitle]).concat(sec.paragraphs || []);
                     }, []))
                     .filter(Boolean).join(' ');
-                items.push({ type: 'portfolio', label: 'Portfolio', title: s.ticker + ' — ' + s.company, body: body, snippet: s.thesis || '', url: 'stock.html?ticker=' + s.ticker });
+                items.push({ type: 'portfolio', label: 'Portfolio', title: s.ticker + ' · ' + s.company, body: body, snippet: s.thesis || '', url: 'stock.html?ticker=' + s.ticker });
             });
         }
 
         if (typeof aboutText !== 'undefined') {
             var body = [aboutText.heading, aboutText.bio, aboutText.quote].filter(Boolean).join(' ');
-            items.push({ type: 'about', label: 'About', title: 'About — Nanda Mulia', body: body, snippet: (aboutText.bio || '').slice(0, 110) + '…', url: 'about.html' });
+            items.push({ type: 'about', label: 'About', title: 'About · Nanda Mulia', body: body, snippet: (aboutText.bio || '').slice(0, 110) + '…', url: 'about.html' });
         }
 
         if (typeof publicResources !== 'undefined') {

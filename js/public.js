@@ -159,7 +159,7 @@ function wireShareButtons() {
         card.id = "resource-" + slug;
 
         const url     = window.location.origin + window.location.pathname + "#resource-" + slug;
-        const text    = title + " — Nanda Perspective";
+        const text    = title + " | Nanda Perspective";
         const encUrl  = encodeURIComponent(url);
         const encText = encodeURIComponent(text);
 

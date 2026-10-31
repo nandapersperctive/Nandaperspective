@@ -277,10 +277,7 @@ nav a:hover { color: var(--primary); }
     font-style: normal;
     line-height: 1.3;
     display: inline-block;
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 8px;
-    text-decoration-color: rgba(224,90,58,.4);
+    text-decoration: none;
 }
 
 /* bouncing scroll hint */
@@ -2523,3 +2520,6 @@ footer a:hover { color: rgba(255,255,255,.55); }
 
 .featured-app-card .resource-share-btn { color: rgba(255,255,255,.7); }
 .featured-app-card .resource-share-btn:hover { color: #fff; }
+
+.hero .button.primary,
+.hero .button.primary:hover { box-shadow: none; }
