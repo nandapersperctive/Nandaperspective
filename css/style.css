@@ -278,7 +278,10 @@ nav a:hover { color: var(--primary); }
     font-style: normal;
     line-height: 1.3;
     display: inline-block;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+    text-decoration-color: rgba(232,71,28,.4);
 }
 
 /* bouncing scroll hint */
