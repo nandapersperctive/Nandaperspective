@@ -130,6 +130,18 @@ if (typeof getLang === 'function') {
         langToggle.setAttribute('aria-label', nextLang === 'en' ? 'Switch to English' : 'Beralih ke Bahasa Indonesia');
         langToggle.addEventListener('click', () => setLang(nextLang));
         nav.appendChild(langToggle);
+
+        /* On phones the nav is hidden behind the Menu button, so a second
+           copy sits right next to Menu where it is always visible. CSS
+           shows only one of the two depending on screen width. */
+        const menuBtn = header.querySelector('.menu-toggle');
+        if (menuBtn) {
+            const headerToggle = langToggle.cloneNode(true);
+            headerToggle.classList.add('lang-toggle--header');
+            headerToggle.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>' + nextLang.toUpperCase();
+            headerToggle.addEventListener('click', () => setLang(nextLang));
+            header.insertBefore(headerToggle, menuBtn);
+        }
     }
 }
 

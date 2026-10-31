@@ -2532,3 +2532,22 @@ footer a:hover { color: rgba(255,255,255,.55); }
 .logo { display: inline-flex; align-items: center; line-height: 0; }
 .logo-img { display: block; height: 34px; width: auto; }
 @media (max-width: 768px) { .logo-img { height: 28px; } }
+
+/* Tombol bahasa di samping Menu (khusus layar kecil) */
+.lang-toggle--header { display: none; }
+
+@media (max-width: 900px) {
+    .site-header { grid-template-columns: 1fr auto auto; column-gap: 10px; }
+    .lang-toggle--header {
+        display: inline-flex;
+        gap: 6px;
+        min-height: 44px;
+        padding: 8px 14px;
+        margin: 0;
+        color: var(--navy);
+        font-weight: 700;
+        border: 1px solid var(--rule);
+        background: #FFFFFF;
+    }
+    nav .lang-toggle { display: none; }
+}
