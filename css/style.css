@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
 
 :root {
-    --primary:   #C2492B;
+    --primary:   #E8471C;
     --navy:      #1F2D3D;
     --navy-deep: #141E2A;
     --dark:      #1A1510;
@@ -13,8 +13,8 @@
     --bg:        #FFFFFF;
     --latte:     #C4A99A;
     --sage:      #7A8B73;
-    --gold:      #C2492B;
-    --rust:      #A93E1F;
+    --gold:      #E8471C;
+    --rust:      #C93A12;
     --line:      #E7E5E2;
     --shadow:    0 0 0 0 transparent;
     --clay:      0 0 0 0 transparent;
