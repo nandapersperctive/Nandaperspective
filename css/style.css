@@ -7,7 +7,7 @@
     --dark:      #1A1510;
     --ink:       #1A1510;
     --text:      #2C1F18;
-    --muted:     #6B5E57;
+    --muted:     #4A5768;
     --paper:     #FFFFFF;
     --cream:     #F5F4F2;
     --bg:        #FFFFFF;
@@ -22,6 +22,7 @@
     --radius:    12px;
     --radius-sm: 8px;
     --radius-lg: 16px;
+    --rule:      #141E2A;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -2374,11 +2375,11 @@ footer a:hover { color: rgba(255,255,255,.55); }
 
 /* =====================
    CLEAN WHITE (Okt 2026)
-   Latar putih, tanpa garis, tanpa kapsul, tanpa bayangan.
-   Kartu & input dibedakan lewat latar abu sangat muda; jarak jadi pemisah.
+   Latar putih, kartu & input putih bergaris hitam tipis.
+   Tanpa kapsul, tanpa bayangan.
 ===================== */
 
-/* Kartu: permukaan abu muda, tanpa garis & bayangan */
+/* Kartu: putih dengan garis hitam 1px */
 .card,
 .resource-card,
 .holding-card,
@@ -2390,8 +2391,8 @@ footer a:hover { color: rgba(255,255,255,.55); }
 .sidebar-author,
 .sidebar-card,
 .empty-state {
-    background: var(--cream);
-    border: none;
+    background: #FFFFFF;
+    border: 1px solid var(--rule);
     box-shadow: none;
 }
 
@@ -2410,7 +2411,10 @@ footer a:hover { color: rgba(255,255,255,.55); }
 }
 
 .card:hover,
-.resource-card:hover { background: #EFEDEA; }
+.resource-card:hover { background: #FFFFFF; }
+
+.card:hover h3,
+.resource-card:hover .resource-card-title { color: var(--primary); }
 
 .featured-card,
 .featured-app-card { box-shadow: none; }
@@ -2479,13 +2483,10 @@ footer a:hover { color: rgba(255,255,255,.55); }
 .search-trigger,
 .lang-toggle,
 .menu-toggle {
-    border: none;
+    border: 1px solid var(--rule);
     box-shadow: none;
-    background: var(--cream);
+    background: #FFFFFF;
 }
-
-.contact-card input,
-.contact-card textarea { background: #FFFFFF; }
 
 .search-box input:focus,
 .select-box select:focus,
