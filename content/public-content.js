@@ -47,7 +47,21 @@ const publicPageTextEN = {
     closeBtn:     "Close",
     availableNowLabel: "Available Now",
     downloadAndroidBtn: "Download for Android",
-    downloadDesktopBtn: "Download for Desktop"
+    downloadDesktopBtn: "Download for Desktop",
+
+    /* Iklan Still Accounting di bagian atas halaman */
+    appName:      "Still Accounting",
+    appLead:      "Every sale, straight into the books.",
+    appStory:     "A food stall in Bener Meriah kept its sales in a notebook, and the cash never matched. I built an offline app that turns every sale into a journal entry, with PSAK statements ready at any time.",
+    statScreens:  "screens",
+    statButtons:  "buttons tested",
+    statOffline:  "offline",
+    cardSaleTitle:    "Sale recorded",
+    cardSaleBody:     "Nasi Goreng ×3 · Rp 45.000",
+    cardProfitTitle:  "Net profit this month",
+    cardProfitBody:   "Rp 883.000",
+    cardOfflineTitle: "Works offline",
+    cardOfflineBody:  "No internet needed"
 };
 
 const publicPageTextID = {
@@ -65,7 +79,20 @@ const publicPageTextID = {
     closeBtn:     "Tutup",
     availableNowLabel: "Tersedia Sekarang",
     downloadAndroidBtn: "Download untuk Android",
-    downloadDesktopBtn: "Download untuk Desktop"
+    downloadDesktopBtn: "Download untuk Desktop",
+
+    appName:      "Still Accounting",
+    appLead:      "Setiap penjualan, langsung masuk pembukuan.",
+    appStory:     "Sebuah warung makan di Bener Meriah mencatat penjualannya di buku tulis, dan uang kasnya tidak pernah cocok. Saya membuat aplikasi offline yang mengubah setiap penjualan menjadi jurnal, dengan laporan keuangan sesuai PSAK yang siap kapan saja.",
+    statScreens:  "layar",
+    statButtons:  "tombol diuji",
+    statOffline:  "offline",
+    cardSaleTitle:    "Penjualan tercatat",
+    cardSaleBody:     "Nasi Goreng ×3 · Rp 45.000",
+    cardProfitTitle:  "Laba bersih bulan ini",
+    cardProfitBody:   "Rp 883.000",
+    cardOfflineTitle: "Bisa offline",
+    cardOfflineBody:  "Tanpa internet"
 };
 
 const publicPageText = (typeof getLang === "function" && getLang() === "id") ? publicPageTextID : publicPageTextEN;

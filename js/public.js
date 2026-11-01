@@ -2,9 +2,6 @@
 
 const pt = publicPageText;
 
-document.getElementById("public-eyebrow").textContent     = pt.eyebrow;
-document.getElementById("public-title").textContent       = pt.title;
-document.getElementById("public-description").textContent = pt.description;
 document.getElementById("public-note-eyebrow").textContent = pt.noteEyebrow;
 document.getElementById("public-note-title").textContent   = pt.noteTitle;
 document.getElementById("public-note-body").textContent    = pt.noteBody;
@@ -91,22 +88,35 @@ function buildButtons(item) {
 }
 
 function buildFeaturedApp(item) {
+    const img = "images/app/";
     return `
-        <div class="featured-app-wrap">
-            <div class="featured-app-card">
-                ${shareBlockHtml(true)}
-                <div class="featured-app-body">
-                    <h2 class="featured-app-title">${item.title}</h2>
-                    <p class="featured-app-desc">${item.description}</p>
-                    <div class="featured-app-actions">
-                        ${item.fileApk
-                            ? `<a class="featured-app-cta" href="${item.fileApk}" download>${pt.downloadAndroidBtn}</a>
-                               <a class="featured-app-cta featured-app-cta--secondary" href="${item.file}" download>${pt.downloadDesktopBtn}</a>`
-                            : `<a class="featured-app-cta" href="${item.file}" download>${pt.downloadBtn}</a>`}
-                    </div>
+        <section class="app-band">
+            <div class="ab-text">
+                <h2 class="ab-title">${pt.appName}</h2>
+                <p class="ab-lead">${pt.appLead}</p>
+                <p class="ab-story">${pt.appStory}</p>
+                <div class="ab-stats">
+                    <div><b class="ab-c1">27</b><span>${pt.statScreens}</span></div>
+                    <div><b class="ab-c2">799</b><span>${pt.statButtons}</span></div>
+                    <div><b class="ab-c3">100%</b><span>${pt.statOffline}</span></div>
+                </div>
+                <div class="ab-buttons">
+                    ${item.fileApk
+                        ? `<a class="ab-primary" href="${item.fileApk}" download>${pt.downloadAndroidBtn}</a>
+                           <a class="ab-secondary" href="${item.file}" download>${pt.downloadDesktopBtn}</a>`
+                        : `<a class="ab-primary" href="${item.file}" download>${pt.downloadBtn}</a>`}
                 </div>
             </div>
-        </div>`;
+            <div class="ab-stage" aria-hidden="true">
+                <img class="ab-icon" src="${img}still-accounting-icon.svg" alt="">
+                <div class="ab-phone ab-phone--left"><img src="${img}still-accounting-kasir.webp" alt="" loading="lazy"></div>
+                <div class="ab-phone ab-phone--right"><img src="${img}still-accounting-laporan.webp" alt="" loading="lazy"></div>
+                <div class="ab-phone ab-phone--center"><img src="${img}still-accounting-dasbor.webp" alt=""></div>
+                <div class="ab-card ab-card--sale"><i class="ab-i1">✓</i><div><b>${pt.cardSaleTitle}</b><span>${pt.cardSaleBody}</span></div></div>
+                <div class="ab-card ab-card--profit"><i class="ab-i2">Rp</i><div><b>${pt.cardProfitTitle}</b><span>${pt.cardProfitBody}</span></div></div>
+                <div class="ab-card ab-card--offline"><i class="ab-i3">⚡</i><div><b>${pt.cardOfflineTitle}</b><span>${pt.cardOfflineBody}</span></div></div>
+            </div>
+        </section>`;
 }
 
 function renderResources() {
