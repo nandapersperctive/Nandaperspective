@@ -23,6 +23,7 @@ const siteText = {
     navArticles: "Insights",
     navPortfolio: "Portfolio",
     navPublic: "App",
+    navResources: "Resources",
     navAbout: "About",
     navContact: "Contact",
 

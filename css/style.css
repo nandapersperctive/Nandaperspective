@@ -2677,3 +2677,15 @@ footer a:hover { color: rgba(255,255,255,.55); }
     .ab-card--profit { right: 0; top: 205px; }
     .ab-card--offline { left: 6px; bottom: 6px; }
 }
+
+/* Header: 7 menu items fit on one line on small laptops */
+nav a { white-space: nowrap; }
+@media (min-width: 901px) {
+    nav { display: flex; align-items: center; flex-wrap: nowrap; }
+}
+@media (min-width: 901px) and (max-width: 1180px) {
+    .site-header { padding-left: 5%; padding-right: 5%; gap: 16px; }
+    nav a { margin-left: 18px; font-size: .84rem; }
+    .logo-img { height: 30px; }
+    .search-trigger { margin-left: 12px; padding: 7px 12px; }
+}

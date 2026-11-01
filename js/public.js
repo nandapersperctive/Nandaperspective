@@ -2,9 +2,18 @@
 
 const pt = publicPageText;
 
-document.getElementById("public-note-eyebrow").textContent = pt.noteEyebrow;
-document.getElementById("public-note-title").textContent   = pt.noteTitle;
-document.getElementById("public-note-body").textContent    = pt.noteBody;
+/* Shared by public.html (App page) and resources.html (materials page):
+   each element is filled only if that page has it. */
+function setText(id, text) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+}
+setText("public-eyebrow", pt.eyebrow);
+setText("public-title", pt.title);
+setText("public-description", pt.description);
+setText("public-note-eyebrow", pt.noteEyebrow);
+setText("public-note-title", pt.noteTitle);
+setText("public-note-body", pt.noteBody);
 document.getElementById("mat-print-btn").textContent = pt.printBtn;
 document.getElementById("mat-close-btn").setAttribute("aria-label", pt.closeBtn);
 
@@ -151,7 +160,10 @@ function renderResources() {
             </section>`;
     }).join("");
 
-    container.innerHTML = featuredHtml + categoriesHtml;
+    const show = container.dataset.show;
+    container.innerHTML = show === "app" ? featuredHtml
+                        : show === "materials" ? categoriesHtml
+                        : featuredHtml + categoriesHtml;
     wireShareButtons();
 }
 
@@ -237,7 +249,13 @@ document.addEventListener("click", function (e) {
 
 renderResources();
 
-/* Jump straight to a shared resource, e.g. public.html#resource-template-jurnal-umum */
+/* Materials moved from public.html to resources.html: forward old shared links. */
+if (document.getElementById("resources-container").dataset.show === "app" &&
+    window.location.hash.indexOf("#resource-") === 0) {
+    window.location.replace("resources.html" + window.location.hash);
+}
+
+/* Jump straight to a shared resource, e.g. resources.html#resource-template-jurnal-umum */
 if (window.location.hash.indexOf("#resource-") === 0) {
     const target = document.getElementById(window.location.hash.slice(1));
     if (target) {
