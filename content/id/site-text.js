@@ -15,7 +15,7 @@ if (typeof getLang === "function" && getLang() === "id") {
         navHome: "Beranda",
         navArticles: "Tulisan",
         navPortfolio: "Portofolio",
-        navPublic: "Publik",
+        navPublic: "Aplikasi",
         navAbout: "Tentang",
         navContact: "Kontak",
         navPrivacy: "Privasi",

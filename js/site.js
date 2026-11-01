@@ -240,7 +240,7 @@ if (typeof getLang === 'function') {
                             return acc.concat([c.heading, c.text]);
                         }, []))
                         .filter(Boolean).join(' ');
-                    items.push({ type: 'public', label: uiT('navPublic', 'Public'), title: item.title, body: body, snippet: item.description || '', url: 'public.html' });
+                    items.push({ type: 'public', label: uiT('navPublic', 'App'), title: item.title, body: body, snippet: item.description || '', url: 'public.html' });
                 });
             });
         }
