@@ -88,7 +88,7 @@
     Cache-Control = "public, max-age=86400"
 
 [[headers]]
-  for = "/downloads/*.xlsx"
+  for = "/downloads/template/*.xlsx"
   [headers.values]
     Content-Disposition = "attachment"
 
@@ -98,7 +98,7 @@
     Content-Disposition = "attachment"
 
 [[headers]]
-  for = "/downloads/siklus-akuntansi-offline.html"
+  for = "/downloads/aplikasi/siklus-akuntansi-offline.html"
   [headers.values]
     Content-Disposition = "attachment"
 
@@ -167,6 +167,52 @@
   from   = "/administrator/*"
   to     = "/404.html"
   status = 404
+
+# ── Alamat lama folder downloads (sebelum dipisah ke aplikasi/ & template/) ──
+[[redirects]]
+  from   = "/downloads/template-jurnal-umum.xlsx"
+  to     = "/downloads/template/template-jurnal-umum.xlsx"
+  status = 301
+[[redirects]]
+  from   = "/downloads/template-buku-besar.xlsx"
+  to     = "/downloads/template/template-buku-besar.xlsx"
+  status = 301
+[[redirects]]
+  from   = "/downloads/template-neraca-saldo.xlsx"
+  to     = "/downloads/template/template-neraca-saldo.xlsx"
+  status = 301
+[[redirects]]
+  from   = "/downloads/template-laporan-laba-rugi.xlsx"
+  to     = "/downloads/template/template-laporan-laba-rugi.xlsx"
+  status = 301
+[[redirects]]
+  from   = "/downloads/template-neraca.xlsx"
+  to     = "/downloads/template/template-neraca.xlsx"
+  status = 301
+[[redirects]]
+  from   = "/downloads/template-laporan-arus-kas.xlsx"
+  to     = "/downloads/template/template-laporan-arus-kas.xlsx"
+  status = 301
+[[redirects]]
+  from   = "/downloads/app-debug.apk"
+  to     = "/downloads/aplikasi/app-debug.apk"
+  status = 301
+[[redirects]]
+  from   = "/downloads/still-accounting.html"
+  to     = "/downloads/aplikasi/still-accounting.html"
+  status = 301
+[[redirects]]
+  from   = "/downloads/siklus-akuntansi.html"
+  to     = "/downloads/aplikasi/siklus-akuntansi.html"
+  status = 301
+[[redirects]]
+  from   = "/downloads/siklus-akuntansi.js"
+  to     = "/downloads/aplikasi/siklus-akuntansi.js"
+  status = 301
+[[redirects]]
+  from   = "/downloads/siklus-akuntansi-offline.html"
+  to     = "/downloads/aplikasi/siklus-akuntansi-offline.html"
+  status = 301
 
 # ── Halaman 404 custom ──────────────────────────────────────────
 [[redirects]]

@@ -18,8 +18,8 @@
 
    HOW TO ADD A DOWNLOAD FILE
    --------------------------
-   1. Taruh file PDF/Excel ke folder "downloads/"
-   2. Di field "file" isi path-nya: "downloads/nama-file.pdf"
+   1. Taruh file ke "downloads/template/" (Excel/PDF) atau "downloads/aplikasi/" (aplikasi)
+   2. Di field "file" isi path-nya: "downloads/template/nama-file.pdf"
    File path sama untuk kedua bahasa, hanya perlu diisi sekali per item
    di publicResourcesID (field file/downloadFile di publicResourcesEN
    ikut menyalin path yang sama).
@@ -189,8 +189,8 @@ const publicResourcesEN = [
                 title: "Still Accounting: Bookkeeping & POS App",
                 description: "A complete offline bookkeeping app for small businesses: point-of-sale checkout, daily cash drawer reconciliation, general journal, ledger, trial balance, adjustments, financial statements, and closing entries, with PIN-protected owner/cashier roles and an audit trail. No internet needed once downloaded.",
                 type: "App",
-                file: "downloads/still-accounting.html",
-                fileApk: "downloads/app-debug.apk",
+                file: "downloads/aplikasi/still-accounting.html",
+                fileApk: "downloads/aplikasi/app-debug.apk",
                 free: true,
                 content: []
             },
@@ -243,7 +243,7 @@ const publicResourcesEN = [
                 title: "General Journal Template",
                 description: "A complete Excel template with automatic formulas: 40 transaction rows, automatic Debit = Credit balance check, PSAK-compliant double-entry format. Nanda Perspective watermark.",
                 type: "Excel",
-                file: "downloads/template-jurnal-umum.xlsx",
+                file: "downloads/template/template-jurnal-umum.xlsx",
                 free: true,
                 content: []
             },
@@ -251,7 +251,7 @@ const publicResourcesEN = [
                 title: "General Ledger Template",
                 description: "An Excel template with 20 standard accounts (Cash, Receivables, Payables, Capital, Revenue, Expenses, etc.) with automatic running balances and a D/C indicator per row.",
                 type: "Excel",
-                file: "downloads/template-buku-besar.xlsx",
+                file: "downloads/template/template-buku-besar.xlsx",
                 free: true,
                 content: []
             },
@@ -259,7 +259,7 @@ const publicResourcesEN = [
                 title: "Trial Balance Template",
                 description: "A complete Excel trial balance template: 20 PSAK-compliant accounts, automatic balance check with a ✓ BALANCED / ✗ NOT BALANCED message, and color-coding by account type.",
                 type: "Excel",
-                file: "downloads/template-neraca-saldo.xlsx",
+                file: "downloads/template/template-neraca-saldo.xlsx",
                 free: true,
                 content: []
             }
@@ -272,7 +272,7 @@ const publicResourcesEN = [
                 title: "Income Statement Template",
                 description: "A PSAK 1-compliant multi-step Excel template: Revenue → COGS → Gross Profit → Operating Expenses → Operating Profit → Tax → Net Profit. Everything is calculated automatically.",
                 type: "Excel",
-                file: "downloads/template-laporan-laba-rugi.xlsx",
+                file: "downloads/template/template-laporan-laba-rugi.xlsx",
                 free: true,
                 content: []
             },
@@ -280,7 +280,7 @@ const publicResourcesEN = [
                 title: "Balance Sheet Template",
                 description: "A PSAK 1-compliant two-column Excel template: Current & Non-Current Assets vs. Liabilities & Equity. Automatically checks that Total Assets = Liabilities + Equity.",
                 type: "Excel",
-                file: "downloads/template-neraca.xlsx",
+                file: "downloads/template/template-neraca.xlsx",
                 free: true,
                 content: []
             },
@@ -288,7 +288,7 @@ const publicResourcesEN = [
                 title: "Cash Flow Statement Template",
                 description: "A PSAK 2 indirect-method Excel template: Operating, Investing & Financing Activities. The ending cash balance is automatically calculated from all three activities.",
                 type: "Excel",
-                file: "downloads/template-laporan-arus-kas.xlsx",
+                file: "downloads/template/template-laporan-arus-kas.xlsx",
                 free: true,
                 content: []
             },
@@ -468,8 +468,8 @@ const publicResourcesID = [
                 title: "Still Accounting: Aplikasi Pembukuan & Kasir",
                 description: "Aplikasi pembukuan lengkap untuk usaha kecil: kasir (POS), kas harian, jurnal umum, buku besar, neraca saldo, penyesuaian, laporan keuangan, hingga jurnal penutup, dilengkapi kunci PIN pemilik/kasir dan jejak audit. Tanpa internet setelah diunduh.",
                 type: "App",
-                file: "downloads/still-accounting.html",
-                fileApk: "downloads/app-debug.apk",
+                file: "downloads/aplikasi/still-accounting.html",
+                fileApk: "downloads/aplikasi/app-debug.apk",
                 free: true,
                 content: []
             },
@@ -522,7 +522,7 @@ const publicResourcesID = [
                 title: "Template Jurnal Umum",
                 description: "Template Excel lengkap dengan formula otomatis: 40 baris transaksi, cek saldo Debit = Kredit, format PSAK double-entry. Watermark Nanda Perspective.",
                 type: "Excel",
-                file: "downloads/template-jurnal-umum.xlsx",
+                file: "downloads/template/template-jurnal-umum.xlsx",
                 free: true,
                 content: []
             },
@@ -530,7 +530,7 @@ const publicResourcesID = [
                 title: "Template Buku Besar",
                 description: "Template Excel 20 akun standar (Kas, Piutang, Utang, Modal, Pendapatan, Beban, dll.) dengan saldo berjalan otomatis dan indikator D/K per baris.",
                 type: "Excel",
-                file: "downloads/template-buku-besar.xlsx",
+                file: "downloads/template/template-buku-besar.xlsx",
                 free: true,
                 content: []
             },
@@ -538,7 +538,7 @@ const publicResourcesID = [
                 title: "Template Neraca Saldo",
                 description: "Template Excel neraca saldo lengkap: 20 akun PSAK, cek seimbang otomatis dengan pesan ✓ SEIMBANG / ✗ TIDAK SEIMBANG, kode warna per tipe akun.",
                 type: "Excel",
-                file: "downloads/template-neraca-saldo.xlsx",
+                file: "downloads/template/template-neraca-saldo.xlsx",
                 free: true,
                 content: []
             }
@@ -551,7 +551,7 @@ const publicResourcesID = [
                 title: "Template Laporan Laba Rugi",
                 description: "Template Excel PSAK 1 multi-step: Pendapatan → HPP → Laba Kotor → Beban Operasi → Laba Usaha → Pajak → Laba Bersih. Semua dihitung otomatis.",
                 type: "Excel",
-                file: "downloads/template-laporan-laba-rugi.xlsx",
+                file: "downloads/template/template-laporan-laba-rugi.xlsx",
                 free: true,
                 content: []
             },
@@ -559,7 +559,7 @@ const publicResourcesID = [
                 title: "Template Neraca (Balance Sheet)",
                 description: "Template Excel PSAK 1 dua kolom: Aset Lancar & Tidak Lancar vs Liabilitas & Ekuitas. Cek seimbang Total Aset = Liabilitas + Ekuitas secara otomatis.",
                 type: "Excel",
-                file: "downloads/template-neraca.xlsx",
+                file: "downloads/template/template-neraca.xlsx",
                 free: true,
                 content: []
             },
@@ -567,7 +567,7 @@ const publicResourcesID = [
                 title: "Template Laporan Arus Kas",
                 description: "Template Excel PSAK 2 metode tidak langsung: Aktivitas Operasi, Investasi & Pendanaan. Saldo akhir kas dihitung otomatis dari ketiga aktivitas.",
                 type: "Excel",
-                file: "downloads/template-laporan-arus-kas.xlsx",
+                file: "downloads/template/template-laporan-arus-kas.xlsx",
                 free: true,
                 content: []
             },

@@ -32,13 +32,13 @@
 /downloads/*
   Cache-Control: public, max-age=86400
 
-/downloads/*.xlsx
+/downloads/template/*.xlsx
   Content-Disposition: attachment
 
 /downloads/*.pdf
   Content-Disposition: attachment
 
-/downloads/siklus-akuntansi-offline.html
+/downloads/aplikasi/siklus-akuntansi-offline.html
   Content-Disposition: attachment
 
 /*.html
