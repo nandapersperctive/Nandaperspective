@@ -3167,10 +3167,10 @@ const bulanIni=()=>{const d=new Date();
   return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')};
 
 const pengaturanAwal=()=>({
-  company:'Mutiara Nasi Goreng',
-  owner:'M Husin',
-  address:'Jl. Takengon - Bireun, Simpang Teritit, Kec. Wih Pesam, Kabupaten Bener Meriah, Aceh',
-  phone:'', email:'halo@mutiaranasgor.co.id',
+  company:'',
+  owner:'',
+  address:'',
+  phone:'', email:'',
   period:bulanIni(), currency:'Rp', companyType:null,
 });
 
@@ -4993,7 +4993,6 @@ function pgDashboard(){
       dulu; sistemnya yang menempatkan.</p>
       <div class="de-actions">
         <button class="btn btn-primary" data-fn="openTxModal">Catat transaksi pertama</button>
-        <button class="btn btn-ghost" data-fn="loadSampleData">Lihat dengan data contoh</button>
       </div>
     </div>`;
   }
@@ -5502,40 +5501,7 @@ function initCharts(){/* grafik kini SVG, ikut ter-render bersama halaman */}
 /* ═══════════════════════════════════════════
    SAMPLE DATA
 ═══════════════════════════════════════════ */
-function loadSampleData(){
-  /* Data contoh memakai usaha fiktif, jadi profil usaha yang sedang
-     terpasang ikut tertimpa. Itu harus disebut, bukan cuma "lanjutkan?". */
-  if(!confirm('Data contoh memakai usaha fiktif "Toko Maju Jaya" periode Jan 2026.\n\n'+
-    'Nama, pemilik, dan alamat usaha Anda sekarang ('+db.settings.company+') akan tertimpa. '+
-    'Lanjutkan?'))return;
-  db.settings={company:'Toko Maju Jaya',owner:'Budi Santoso',address:'Jl. Pasar Baru No. 12, Sawah Besar, Jakarta Pusat 10710',phone:'021-3456-7890',email:'halo@tokomajujaya.co.id',period:'2026-01',currency:'Rp',companyType:'umkm'};
-  db.transactions=[
-    {date:'2026-01-01',ref:'JU-001',description:'Modal awal dari pemilik',entries:[{account:'1-1100',debit:50000000,credit:0},{account:'3-1000',debit:0,credit:50000000}]},
-    {date:'2026-01-02',ref:'JU-002',description:'Sewa toko 1 bulan dibayar dimuka',entries:[{account:'1-1600',debit:3000000,credit:0},{account:'1-1100',debit:0,credit:3000000}]},
-    {date:'2026-01-03',ref:'JU-003',description:'Beli peralatan toko tunai',entries:[{account:'1-2100',debit:8000000,credit:0},{account:'1-1100',debit:0,credit:8000000}]},
-    {date:'2026-01-05',ref:'JU-004',description:'Beli persediaan barang dagangan',entries:[{account:'1-1400',debit:15000000,credit:0},{account:'1-1100',debit:0,credit:15000000}]},
-    {date:'2026-01-10',ref:'JU-005',description:'Penjualan barang tunai',entries:[{account:'1-1100',debit:12000000,credit:0},{account:'4-1000',debit:0,credit:12000000}]},
-    {date:'2026-01-10',ref:'JU-006',description:'HPP penjualan Jan-10',entries:[{account:'5-1000',debit:7000000,credit:0},{account:'1-1400',debit:0,credit:7000000}]},
-    {date:'2026-01-15',ref:'JU-007',description:'Bayar gaji karyawan',entries:[{account:'5-1100',debit:3500000,credit:0},{account:'1-1100',debit:0,credit:3500000}]},
-    {date:'2026-01-20',ref:'JU-008',description:'Penjualan barang kredit',entries:[{account:'1-1300',debit:8000000,credit:0},{account:'4-1000',debit:0,credit:8000000}]},
-    {date:'2026-01-20',ref:'JU-009',description:'HPP penjualan Jan-20',entries:[{account:'5-1000',debit:5000000,credit:0},{account:'1-1400',debit:0,credit:5000000}]},
-    {date:'2026-01-25',ref:'JU-010',description:'Terima pembayaran piutang',entries:[{account:'1-1100',debit:5000000,credit:0},{account:'1-1300',debit:0,credit:5000000}]},
-    {date:'2026-01-28',ref:'JU-011',description:'Bayar listrik & air',entries:[{account:'5-1300',debit:450000,credit:0},{account:'1-1100',debit:0,credit:450000}]},
-    {date:'2026-01-30',ref:'JU-012',description:'Prive pemilik',entries:[{account:'3-2000',debit:1000000,credit:0},{account:'1-1100',debit:0,credit:1000000}]},
-  ];
-  db.adjustingEntries=[
-    {date:'2026-01-31',ref:'AJE-001',description:'Penyusutan peralatan (Rp 8 jt / 48 bln)',entries:[{account:'5-1500',debit:167000,credit:0},{account:'1-2200',debit:0,credit:167000}]},
-    {date:'2026-01-31',ref:'AJE-002',description:'Sewa terpakai 1 bulan',entries:[{account:'5-1200',debit:3000000,credit:0},{account:'1-1600',debit:0,credit:3000000}]},
-  ];
-  /* Daftar akun ikut disetel — data contoh memakai kode akun UMKM. */
-  if(typeof COA_BY_TYPE!=='undefined'&&COA_BY_TYPE.umkm)
-    db.coa=COA_BY_TYPE.umkm.map(a=>({...a}));
-  if(!db.hppData)db.hppData={};
-  saveData();
-  hideWelcome();                 /* tanpa ini layar sambutan menutupi aplikasi */
-  toast('Data contoh dimuat.');
-  go('dashboard');
-}
+
 
 /* ═══════════════════════════════════════════
    HALAMAN: TRANSAKSI
@@ -6679,13 +6645,13 @@ function siapGambar(){
       <div class="siap-kop">
         ${titik(1)}
         <h1>Selamat datang</h1>
-        <p>Isi data usaha Bapak sekali saja. Nama dan logo ini yang akan muncul di setiap laporan dan struk.</p>
+        <p>Isi data usaha sekali saja. Nama dan logo ini yang akan muncul di setiap laporan dan struk.</p>
       </div>
       <div class="siap-kartu">
         <div class="field mb-16"><label for="su-company">Nama usaha</label>
-          <input type="text" id="su-company" value="${esc(s.company||'')}" placeholder="Mutiara Nasi Goreng"></div>
+          <input type="text" id="su-company" value="${esc(s.company||'')}" placeholder="Nama usaha kamu"></div>
         <div class="field mb-16"><label for="su-owner">Nama pemilik</label>
-          <input type="text" id="su-owner" value="${esc(s.owner||'')}" placeholder="Nama Bapak"></div>
+          <input type="text" id="su-owner" value="${esc(s.owner||'')}" placeholder="Nama pemilik usaha"></div>
         <div class="field mb-16"><label for="su-address">Alamat</label>
           <textarea id="su-address" placeholder="Jalan, kota">${esc(s.address||'')}</textarea></div>
         <div class="field mb-16"><label for="su-phone">Nomor telepon</label>
@@ -7953,7 +7919,6 @@ function pgKasir(){
         ? `<p>Isi dulu barang atau menu yang dijual beserta harga jual dan modalnya. Setelah itu penjualan tinggal diketuk.</p>
            <div class="flex-gap" style="justify-content:center;flex-wrap:wrap">
              <button class="btn btn-primary" data-fn="posFormBarang">Tambah barang</button>
-             <button class="btn btn-ghost" data-fn="posMenuContoh">Pakai menu contoh</button>
            </div>`
         : `<p>Belum ada barang yang bisa dijual. Mintalah pemilik mengisi daftar barangnya lebih dulu.</p>`}
     </div>`;
@@ -8483,29 +8448,7 @@ function posHapusBarang(id){
   });
 }
 
-/* Menu contoh: cukup untuk mencoba kasir tanpa mengetik apa pun dulu. */
-function posMenuContoh(){
-  if(!wajibPemilik('ubahBarang'))return;
-  const contoh=[
-    {nama:'Nasi Goreng',      kategori:'Makanan', harga:15000, hpp:8000},
-    {nama:'Mie Goreng',       kategori:'Makanan', harga:14000, hpp:7500},
-    {nama:'Ayam Geprek',      kategori:'Makanan', harga:18000, hpp:10000},
-    {nama:'Nasi Putih',       kategori:'Makanan', harga:5000,  hpp:2000},
-    {nama:'Es Teh Manis',     kategori:'Minuman', harga:5000,  hpp:1500, satuan:'gelas'},
-    {nama:'Es Jeruk',         kategori:'Minuman', harga:7000,  hpp:2500, satuan:'gelas'},
-    {nama:'Kopi Susu',        kategori:'Minuman', harga:10000, hpp:4000, satuan:'gelas'},
-    {nama:'Air Mineral 600ml',kategori:'Minuman', harga:4000,  hpp:2200, satuan:'botol', stokAktif:true, stok:24},
-    {nama:'Kerupuk',          kategori:'Tambahan',harga:2000,  hpp:800,  satuan:'bungkus', stokAktif:true, stok:40},
-  ];
-  db.products=db.products||[];
-  contoh.forEach(c=>{
-    posDaftarkanKategori(c.kategori);
-    if(!db.products.some(p=>p.nama===c.nama))db.products.push(normalProduk(c));
-  });
-  saveData();
-  toast(contoh.length+' menu contoh ditambahkan. Ubah harganya lewat Daftar Barang.');
-  go('kasir');
-}
+
 
 /* ── Struk ──────────────────────────────────────────────────── */
 const STRUK_W=226.77;        /* kertas 80mm dalam satuan poin */
@@ -10152,7 +10095,6 @@ const ACTIONS={
   lgSemua:()=>lgSemua(),
   closeModal:()=>closeModal(),
   exportJSON:()=>exportJSON(),
-  loadSampleData:()=>loadSampleData(),
   resetAllData:()=>resetAllData(),
   showChangeTypeWarning:()=>showChangeTypeWarning(),
   startNewPeriod:()=>startNewPeriod(),
@@ -10251,7 +10193,6 @@ const ACTIONS={
   posToggleStok:(a,el)=>posToggleStok(a,el),
   posPilihFoto:(a,el)=>posPilihFoto(a,el),
   posHapusFoto:()=>posHapusFoto(),
-  posMenuContoh:()=>posMenuContoh(),
   katTambah:()=>katTambah(),
   katSimpanBaru:()=>katSimpanBaru(),
   katUbah:(a)=>katUbah(a),
