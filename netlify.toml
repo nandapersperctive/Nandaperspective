@@ -203,11 +203,11 @@
   status = 301
 [[redirects]]
   from   = "/downloads/siklus-akuntansi.html"
-  to     = "/downloads/aplikasi/siklus-akuntansi.html"
+  to     = "/downloads/aplikasi/siklus-akuntansi-offline.html"
   status = 301
 [[redirects]]
-  from   = "/downloads/siklus-akuntansi.js"
-  to     = "/downloads/aplikasi/siklus-akuntansi.js"
+  from   = "/downloads/aplikasi/siklus-akuntansi.html"
+  to     = "/downloads/aplikasi/siklus-akuntansi-offline.html"
   status = 301
 [[redirects]]
   from   = "/downloads/siklus-akuntansi-offline.html"
