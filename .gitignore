@@ -8,3 +8,7 @@ skills-lock.json
 *.jks
 *.aab
 signing-key-info.txt
+
+# Kunci tanda tangan APK Still Accounting (jangan di-push)
+_kunci-apk/
+*.pem
