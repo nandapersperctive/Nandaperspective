@@ -2689,3 +2689,26 @@ nav a { white-space: nowrap; }
     .logo-img { height: 30px; }
     .search-trigger { margin-left: 12px; padding: 7px 12px; }
 }
+
+/* =====================
+   LABEL APLIKASI + STILL DAILY (blok kedua halaman App, posisi dibalik)
+===================== */
+.ab-tag { display: inline-block; font-size: .8rem; font-weight: 700; color: #0B57B5; border: 1.5px solid currentColor; border-radius: 999px; padding: 5px 12px; margin: 0 0 14px; }
+.ab-d1 { color: #C2410C; }
+.ab-i4 { background: #C2410C; }
+.ab-i5 { background: #0B57B5; }
+.app-band--daily { padding-top: 56px; border-top: 1px solid #E3EAF2; }
+.app-band--rev { grid-template-columns: 1.15fr 1fr; }
+.app-band--rev .ab-text { order: 2; }
+.app-band--rev .ab-stage { order: 1; }
+.app-band--daily .ab-icon { left: 3%; right: auto; transform: rotate(-6deg); }
+.app-band--daily .ab-card--sale { left: auto; right: 0; }
+.app-band--daily .ab-card--profit { right: auto; left: 0; }
+.app-band--daily .ab-card--offline { left: auto; right: 2%; }
+
+@media (max-width: 900px) {
+    .ab-tag { order: 0; align-self: flex-start; }
+    .app-band--daily { padding-top: 40px; }
+    .app-band--rev .ab-stage { order: 3; }
+    .app-band--daily .ab-icon { left: 6px; right: auto; }
+}

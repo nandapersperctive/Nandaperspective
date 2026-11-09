@@ -61,7 +61,23 @@ const publicPageTextEN = {
     cardProfitTitle:  "Net profit this month",
     cardProfitBody:   "Rp 883.000",
     cardOfflineTitle: "Works offline",
-    cardOfflineBody:  "No internet needed"
+    cardOfflineBody:  "No internet needed",
+    tagBusiness:      "For business",
+
+    /* Iklan Still Daily (blok kedua, posisi dibalik) */
+    tagPersonal:      "For personal use",
+    dailyName:        "Still Daily",
+    dailyLead:        "Log a purchase in 5 seconds, end the month calm.",
+    dailyStory:       "Set your monthly budget once and Still Daily works out a safe amount to spend each day. Every expense shows exactly where your money goes, with charts and a monthly report you can export.",
+    dailyStat1:       "5 sec",
+    dailyStat1Label:  "to log one expense",
+    dailyStat2Label:  "app size",
+    dailyCard1Title:  "Gayo coffee",
+    dailyCard1Body:   "Food & drinks · Rp 25,000",
+    dailyCard2Title:  "Safe to spend today",
+    dailyCard2Body:   "Rp 86,045 per day",
+    dailyCard3Title:  "Monthly report",
+    dailyCard3Body:   "Export to CSV"
 };
 
 const publicPageTextID = {
@@ -92,7 +108,22 @@ const publicPageTextID = {
     cardProfitTitle:  "Laba bersih bulan ini",
     cardProfitBody:   "Rp 883.000",
     cardOfflineTitle: "Bisa offline",
-    cardOfflineBody:  "Tanpa internet"
+    cardOfflineBody:  "Tanpa internet",
+    tagBusiness:      "Untuk usaha",
+
+    tagPersonal:      "Untuk pribadi",
+    dailyName:        "Still Daily",
+    dailyLead:        "Catat jajan dalam 5 detik, akhir bulan tetap tenang.",
+    dailyStory:       "Masukkan anggaran bulanan sekali, Still Daily menghitung batas aman belanja per hari. Setiap pengeluaran langsung terlihat larinya ke mana, lengkap dengan grafik dan laporan bulanan yang bisa diekspor.",
+    dailyStat1:       "5 detik",
+    dailyStat1Label:  "untuk satu catatan",
+    dailyStat2Label:  "ukuran aplikasi",
+    dailyCard1Title:  "Kopi Gayo",
+    dailyCard1Body:   "Makan & Minum · Rp 25.000",
+    dailyCard2Title:  "Batas aman hari ini",
+    dailyCard2Body:   "Rp 86.045 per hari",
+    dailyCard3Title:  "Laporan bulanan",
+    dailyCard3Body:   "Ekspor ke CSV"
 };
 
 const publicPageText = (typeof getLang === "function" && getLang() === "id") ? publicPageTextID : publicPageTextEN;
@@ -191,6 +222,15 @@ const publicResourcesEN = [
                 type: "App",
                 file: "downloads/aplikasi/still-accounting.html",
                 fileApk: "downloads/aplikasi/app-debug.apk",
+                free: true,
+                content: []
+            },
+            {
+                title: "Still Daily: Personal Expense Tracker",
+                description: "An offline app for logging daily personal expenses, with a safe daily spending limit, charts and a monthly report.",
+                type: "App",
+                app: "daily",
+                fileApk: "downloads/aplikasi/still-daily.apk",
                 free: true,
                 content: []
             },
@@ -470,6 +510,15 @@ const publicResourcesID = [
                 type: "App",
                 file: "downloads/aplikasi/still-accounting.html",
                 fileApk: "downloads/aplikasi/app-debug.apk",
+                free: true,
+                content: []
+            },
+            {
+                title: "Still Daily: Catatan Pengeluaran Pribadi",
+                description: "Aplikasi offline untuk mencatat pengeluaran pribadi harian, dengan batas aman belanja per hari, grafik, dan laporan bulanan.",
+                type: "App",
+                app: "daily",
+                fileApk: "downloads/aplikasi/still-daily.apk",
                 free: true,
                 content: []
             },

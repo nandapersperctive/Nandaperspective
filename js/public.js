@@ -97,10 +97,12 @@ function buildButtons(item) {
 }
 
 function buildFeaturedApp(item) {
+    if (item.app === "daily") return buildDailyApp(item);
     const img = "images/app/";
     return `
         <section class="app-band">
             <div class="ab-text">
+                <span class="ab-tag">${pt.tagBusiness}</span>
                 <h2 class="ab-title">${pt.appName}</h2>
                 <p class="ab-lead">${pt.appLead}</p>
                 <p class="ab-story">${pt.appStory}</p>
@@ -124,6 +126,38 @@ function buildFeaturedApp(item) {
                 <div class="ab-card ab-card--sale"><i class="ab-i1">✓</i><div><b>${pt.cardSaleTitle}</b><span>${pt.cardSaleBody}</span></div></div>
                 <div class="ab-card ab-card--profit"><i class="ab-i2">Rp</i><div><b>${pt.cardProfitTitle}</b><span>${pt.cardProfitBody}</span></div></div>
                 <div class="ab-card ab-card--offline"><i class="ab-i3">⚡</i><div><b>${pt.cardOfflineTitle}</b><span>${pt.cardOfflineBody}</span></div></div>
+            </div>
+        </section>`;
+}
+
+/* Still Daily: blok yang sama dengan Still Accounting, posisi dibalik
+   (layar HP di kiri, teks di kanan). Gambar ada di images/app/still-daily-*. */
+function buildDailyApp(item) {
+    const img = "images/app/";
+    return `
+        <section class="app-band app-band--rev app-band--daily">
+            <div class="ab-text">
+                <span class="ab-tag">${pt.tagPersonal}</span>
+                <h2 class="ab-title">${pt.dailyName}</h2>
+                <p class="ab-lead">${pt.dailyLead}</p>
+                <p class="ab-story">${pt.dailyStory}</p>
+                <div class="ab-stats">
+                    <div><b class="ab-d1">${pt.dailyStat1}</b><span>${pt.dailyStat1Label}</span></div>
+                    <div><b class="ab-c1">141 KB</b><span>${pt.dailyStat2Label}</span></div>
+                    <div><b class="ab-c3">100%</b><span>${pt.statOffline}</span></div>
+                </div>
+                <div class="ab-buttons">
+                    <a class="ab-primary" href="${item.fileApk}" download>${pt.downloadAndroidBtn}</a>
+                </div>
+            </div>
+            <div class="ab-stage" aria-hidden="true">
+                <img class="ab-icon" src="${img}still-daily-icon.png" alt="">
+                <div class="ab-phone ab-phone--left"><img src="${img}still-daily-riwayat.webp" alt="" loading="lazy"></div>
+                <div class="ab-phone ab-phone--right"><img src="${img}still-daily-laporan.webp" alt="" loading="lazy"></div>
+                <div class="ab-phone ab-phone--center"><img src="${img}still-daily-dasbor.webp" alt="" loading="lazy"></div>
+                <div class="ab-card ab-card--sale"><i class="ab-i4">−</i><div><b>${pt.dailyCard1Title}</b><span>${pt.dailyCard1Body}</span></div></div>
+                <div class="ab-card ab-card--profit"><i class="ab-i1">✓</i><div><b>${pt.dailyCard2Title}</b><span>${pt.dailyCard2Body}</span></div></div>
+                <div class="ab-card ab-card--offline"><i class="ab-i5">↓</i><div><b>${pt.dailyCard3Title}</b><span>${pt.dailyCard3Body}</span></div></div>
             </div>
         </section>`;
 }
