@@ -409,6 +409,92 @@ const articleCatalog = [
             ]
         }
     ]
+},
+{
+    id: 7,
+    categoryKey: "business",
+    dateValue: "2026-11-09",
+    readMinutes: 7,
+    title: "How Accounting Methods Shape Financial Statements",
+    category: "Business",
+    readTime: "7 min read",
+    date: "9 November 2026",
+    excerpt: "Two businesses with the same sales and the same cash can report different profits. Not because anyone lied, but because they chose different accounting methods. Here’s how those choices move the numbers, and how to read past them.",
+    sections: [
+        {
+            sectionTitle: "Same Business, Different Profit",
+            paragraphs: [
+                "Imagine two shops on the same street. Both buy the same goods at the same prices, sell the same amount, and end the year with the same cash in the bank. Yet one reports a higher profit than the other. Nobody made a mistake and nobody committed fraud. They simply recorded things differently.",
+                "Accounting standards often allow more than one acceptable way to record the same event. Each choice is called an accounting policy or accounting method. The choice does not change what actually happened, but it changes when a cost or an income shows up, and at what value. That is enough to move profit, assets and equity.",
+                "If you only look at the bottom line, you can be misled. If you understand the methods behind it, you can compare businesses fairly and spot numbers that look better than they really are."
+            ]
+        },
+        {
+            sectionTitle: "Cash Basis vs Accrual Basis: When Is It Recorded?",
+            paragraphs: [
+                "The most basic choice is when to record a transaction. Under the cash basis, income is recorded when money comes in and expenses when money goes out. Under the accrual basis, income is recorded when it is earned and expenses when they are incurred, whether or not cash has moved yet.",
+                "Take a catering business that delivers a Rp15,000,000 order in December, with payment arriving in January. On a cash basis, December shows no income from that order and January shows Rp15,000,000. On an accrual basis, December records Rp15,000,000 of revenue plus a receivable, and January simply records the cash collection.",
+                "Cash basis is easy and many small businesses start with it. But it can make a month look terrible or excellent depending on when customers happen to pay. That is why Indonesian financial accounting standards, like international standards, require the accrual basis for the main financial statements. The cash flow statement is the one place where cash timing is shown on purpose."
+            ]
+        },
+        {
+            sectionTitle: "Inventory: FIFO vs Weighted Average",
+            paragraphs: [
+                "When prices change, the method used to value inventory decides how much of your purchase cost becomes cost of goods sold and how much stays on the balance sheet. Indonesian standards (PSAK 202, previously PSAK 14) allow FIFO (first in, first out) and the weighted average method. LIFO is not permitted.",
+                "A simple example: a shop buys 100 units at Rp10,000, then another 100 units at Rp12,000. It sells 120 units at Rp20,000 each, so revenue is Rp2,400,000.",
+                "Under FIFO, the oldest units are treated as sold first: 100 × Rp10,000 + 20 × Rp12,000 = Rp1,240,000 cost of goods sold. Gross profit is Rp1,160,000, and the 80 units left are valued at Rp960,000.",
+                "Under weighted average, every unit costs Rp11,000. Cost of goods sold is Rp1,320,000, gross profit is Rp1,080,000, and ending inventory is Rp880,000.",
+                "Same goods, same sales, same cash. FIFO reports Rp80,000 more profit and Rp80,000 more inventory. When prices are rising, FIFO tends to show higher profit and a more current inventory value; weighted average smooths out price swings. Neither is wrong. They tell the same story with a different emphasis."
+            ]
+        },
+        {
+            sectionTitle: "Depreciation: Straight-Line vs Declining Balance",
+            paragraphs: [
+                "Long-term assets such as machines, vehicles and buildings are not expensed all at once. Their cost is spread over their useful life through depreciation, and the method chosen decides the shape of that spread (PSAK 216, previously PSAK 16).",
+                "Say a coffee shop buys an espresso machine for Rp60,000,000 with a five-year life and no residual value. Straight-line depreciation charges Rp12,000,000 every year. The double declining balance method charges 40% of the remaining book value: Rp24,000,000 in year one, Rp14,400,000 in year two, Rp8,640,000 in year three, and smaller amounts after that.",
+                "In the first year, declining balance reports Rp12,000,000 less profit than straight-line and a lower machine value on the balance sheet. In later years the effect reverses. Over the full five years the total expense is exactly the same: Rp60,000,000. Depreciation methods move profit between years; they do not create or destroy it.",
+                "Estimates matter as much as the method. Stretching the useful life from five years to eight lowers the yearly expense and raises reported profit, without a single rupiah of extra cash coming in."
+            ]
+        },
+        {
+            sectionTitle: "Revenue Recognition: Money Received Is Not Always Revenue",
+            paragraphs: [
+                "A business can receive cash long before it has earned it. Under PSAK 115 (previously PSAK 72), revenue is recognized when the business fulfils its obligation to the customer, not simply when payment arrives.",
+                "Suppose a gym sells a one-year membership for Rp12,000,000, paid in full in January. On the day of payment, the gym has not provided twelve months of service yet. So it records Rp1,000,000 of revenue each month, and the rest sits on the balance sheet as a contract liability: something it still owes the customer.",
+                "A business that books the full Rp12,000,000 as January revenue would show a spectacular first month and eleven empty ones. This is one of the most common ways small businesses misread their own performance, and one of the first things auditors check in larger companies."
+            ]
+        },
+        {
+            sectionTitle: "Receivables: How Much Will Customers Actually Pay?",
+            paragraphs: [
+                "Not every customer who owes money will pay it. Under PSAK 109 (previously PSAK 71), businesses estimate expected credit losses and set up an allowance that reduces receivables on the balance sheet and is recorded as an expense.",
+                "If a distributor has Rp100,000,000 in receivables and estimates that 3% will never be collected, it records a Rp3,000,000 expense. If it estimates 8%, the expense is Rp8,000,000. That single judgment changes reported profit by Rp5,000,000, while the customers and the invoices are exactly the same.",
+                "An allowance that is too small makes profit look good today and pushes the bad news into a later year. One that is too large does the opposite. Good accounting aims for the most reasonable estimate based on payment history and current conditions."
+            ]
+        },
+        {
+            sectionTitle: "What Methods Do Not Change",
+            paragraphs: [
+                "Across all these examples, one thing stays the same: cash. Accounting methods change the timing and the measurement of profit and assets, but they do not change how much money actually came in or went out. Over the full life of an asset or a contract, the totals usually end up identical.",
+                "That is why the cash flow statement is such a useful cross-check. If a company keeps reporting rising profit while operating cash flow stays weak, it is worth asking which methods and estimates are carrying that profit."
+            ]
+        },
+        {
+            sectionTitle: "Why Consistency and Disclosure Matter",
+            paragraphs: [
+                "Because choices affect the numbers, standards require two things. First, consistency: a business should use the same method from period to period, so that this year can be compared with last year. A change is allowed only when it gives more reliable or relevant information, and under PSAK 208 (previously PSAK 25) the prior figures are usually restated so the comparison still holds.",
+                "Second, disclosure. Every set of financial statements includes notes that explain the accounting policies used: the inventory method, depreciation method and useful lives, how revenue is recognized, and how receivables are assessed. Those notes are not filler. They are the instructions for reading the numbers.",
+                "When comparing two companies, check their policies first. A company using FIFO in a period of rising prices is not necessarily more efficient than one using weighted average. It may simply be telling the story with a different lens."
+            ]
+        },
+        {
+            sectionTitle: "Conclusion",
+            paragraphs: [
+                "Financial statements are not a direct photograph of reality. They are reality measured with a set of rules, and some of those rules leave room for choice. The choice of cash or accrual basis, inventory method, depreciation method, revenue timing and credit loss estimates all shape the profit and position a business reports.",
+                "For business owners, this means picking methods that reflect how the business really works and sticking with them. For readers, it means never stopping at the bottom line. Read the notes, compare against cash flow, and ask what would change if a different method had been used."
+            ]
+        }
+    ]
 }
 ];
 

@@ -311,6 +311,89 @@ const articleTranslationsID = {
             ]
         }
     ]
+},
+
+7: {
+    title: "Bagaimana Metode Akuntansi Memengaruhi Laporan Keuangan",
+    category: "Bisnis",
+    readTime: "7 menit baca",
+    date: "9 November 2026",
+    excerpt: "Dua usaha dengan penjualan dan kas yang sama bisa melaporkan laba yang berbeda. Bukan karena ada yang berbohong, tetapi karena metode akuntansi yang dipilih berbeda. Inilah cara pilihan itu menggeser angka, dan cara membacanya dengan jeli.",
+    sections: [
+        {
+            sectionTitle: "Usaha Sama, Laba Berbeda",
+            paragraphs: [
+                "Bayangkan dua toko di jalan yang sama. Keduanya membeli barang yang sama dengan harga yang sama, menjual jumlah yang sama, dan menutup tahun dengan saldo kas yang sama di bank. Tetapi yang satu melaporkan laba lebih besar daripada yang lain. Tidak ada yang salah catat dan tidak ada yang curang. Keduanya hanya mencatat dengan cara yang berbeda.",
+                "Standar akuntansi sering membolehkan lebih dari satu cara yang sah untuk mencatat kejadian yang sama. Setiap pilihan itu disebut kebijakan akuntansi atau metode akuntansi. Pilihan ini tidak mengubah apa yang benar-benar terjadi, tetapi mengubah kapan sebuah beban atau pendapatan muncul, dan berapa nilainya. Itu sudah cukup untuk menggeser laba, aset, dan ekuitas.",
+                "Kalau hanya melihat angka laba bersih, kamu bisa tertipu. Kalau memahami metode di baliknya, kamu bisa membandingkan usaha secara adil dan mengenali angka yang terlihat lebih bagus dari kenyataannya."
+            ]
+        },
+        {
+            sectionTitle: "Basis Kas vs Basis Akrual: Kapan Dicatat?",
+            paragraphs: [
+                "Pilihan paling dasar adalah kapan sebuah transaksi dicatat. Dengan basis kas, pendapatan dicatat saat uang masuk dan beban dicatat saat uang keluar. Dengan basis akrual, pendapatan dicatat saat sudah dihasilkan dan beban dicatat saat sudah terjadi, terlepas dari apakah uangnya sudah berpindah tangan.",
+                "Ambil contoh usaha katering yang mengantar pesanan senilai Rp15.000.000 pada bulan Desember, sementara pembayarannya baru masuk bulan Januari. Dengan basis kas, Desember tidak mencatat pendapatan apa pun dari pesanan itu dan Januari mencatat Rp15.000.000. Dengan basis akrual, Desember mencatat pendapatan Rp15.000.000 beserta piutang, lalu Januari hanya mencatat penerimaan kasnya.",
+                "Basis kas mudah dan banyak usaha kecil memulai dari sini. Tetapi basis kas bisa membuat satu bulan terlihat sangat buruk atau sangat bagus hanya karena kapan pelanggan kebetulan membayar. Karena itu, standar akuntansi keuangan di Indonesia, seperti standar internasional, mewajibkan basis akrual untuk laporan keuangan utama. Laporan arus kas adalah satu-satunya tempat di mana waktu masuk dan keluarnya kas memang sengaja ditampilkan."
+            ]
+        },
+        {
+            sectionTitle: "Persediaan: FIFO vs Rata-rata Tertimbang",
+            paragraphs: [
+                "Ketika harga berubah, metode penilaian persediaan menentukan berapa bagian biaya pembelian yang menjadi harga pokok penjualan dan berapa yang tetap tercatat di neraca. Standar di Indonesia (PSAK 202, sebelumnya PSAK 14) membolehkan metode FIFO (masuk pertama, keluar pertama) dan metode rata-rata tertimbang. Metode LIFO tidak diperbolehkan.",
+                "Contoh sederhana: sebuah toko membeli 100 unit seharga Rp10.000, lalu 100 unit lagi seharga Rp12.000. Toko itu menjual 120 unit dengan harga Rp20.000 per unit, jadi pendapatannya Rp2.400.000.",
+                "Dengan FIFO, unit yang paling lama dianggap terjual lebih dulu: 100 × Rp10.000 + 20 × Rp12.000 = Rp1.240.000 harga pokok penjualan. Laba kotornya Rp1.160.000, dan 80 unit yang tersisa bernilai Rp960.000.",
+                "Dengan rata-rata tertimbang, setiap unit bernilai Rp11.000. Harga pokok penjualannya Rp1.320.000, laba kotornya Rp1.080.000, dan persediaan akhirnya Rp880.000.",
+                "Barangnya sama, penjualannya sama, kasnya sama. FIFO melaporkan laba Rp80.000 lebih besar dan persediaan Rp80.000 lebih besar. Saat harga naik, FIFO cenderung menunjukkan laba lebih tinggi dan nilai persediaan yang lebih mendekati harga terkini, sedangkan rata-rata tertimbang meredam naik-turunnya harga. Tidak ada yang salah. Keduanya menceritakan kisah yang sama dengan penekanan yang berbeda."
+            ]
+        },
+        {
+            sectionTitle: "Penyusutan: Garis Lurus vs Saldo Menurun",
+            paragraphs: [
+                "Aset jangka panjang seperti mesin, kendaraan, dan bangunan tidak langsung dibebankan sekaligus. Biayanya dibagi sepanjang masa manfaatnya melalui penyusutan, dan metode yang dipilih menentukan bentuk pembagian itu (PSAK 216, sebelumnya PSAK 16).",
+                "Misalnya sebuah kedai kopi membeli mesin espresso seharga Rp60.000.000 dengan masa manfaat lima tahun dan tanpa nilai sisa. Metode garis lurus membebankan Rp12.000.000 setiap tahun. Metode saldo menurun ganda membebankan 40% dari nilai buku yang tersisa: Rp24.000.000 di tahun pertama, Rp14.400.000 di tahun kedua, Rp8.640.000 di tahun ketiga, dan semakin kecil sesudahnya.",
+                "Di tahun pertama, metode saldo menurun melaporkan laba Rp12.000.000 lebih kecil daripada garis lurus, dan nilai mesin di neraca juga lebih rendah. Di tahun-tahun berikutnya, efeknya berbalik. Selama lima tahun penuh, total bebannya sama persis: Rp60.000.000. Metode penyusutan memindahkan laba antartahun, bukan menciptakan atau menghilangkannya.",
+                "Estimasi sama pentingnya dengan metode. Memperpanjang masa manfaat dari lima tahun menjadi delapan tahun akan menurunkan beban per tahun dan menaikkan laba yang dilaporkan, padahal tidak ada satu rupiah pun kas tambahan yang masuk."
+            ]
+        },
+        {
+            sectionTitle: "Pengakuan Pendapatan: Uang Diterima Belum Tentu Pendapatan",
+            paragraphs: [
+                "Sebuah usaha bisa menerima uang jauh sebelum benar-benar menghasilkannya. Menurut PSAK 115 (sebelumnya PSAK 72), pendapatan diakui ketika usaha sudah memenuhi kewajibannya kepada pelanggan, bukan sekadar ketika pembayaran masuk.",
+                "Misalkan sebuah pusat kebugaran menjual keanggotaan satu tahun seharga Rp12.000.000 yang dibayar lunas pada bulan Januari. Pada hari pembayaran, pusat kebugaran itu belum memberikan layanan selama dua belas bulan. Jadi setiap bulan dicatat pendapatan Rp1.000.000, dan sisanya tercatat di neraca sebagai liabilitas kontrak: sesuatu yang masih menjadi kewajibannya kepada pelanggan.",
+                "Usaha yang mencatat seluruh Rp12.000.000 sebagai pendapatan Januari akan terlihat luar biasa di bulan pertama dan kosong di sebelas bulan sisanya. Ini salah satu cara paling umum usaha kecil salah membaca kinerjanya sendiri, dan salah satu hal pertama yang diperiksa auditor di perusahaan besar."
+            ]
+        },
+        {
+            sectionTitle: "Piutang: Berapa yang Benar-benar Akan Dibayar Pelanggan?",
+            paragraphs: [
+                "Tidak semua pelanggan yang berutang akan membayar. Menurut PSAK 109 (sebelumnya PSAK 71), usaha memperkirakan kerugian kredit ekspektasian dan membentuk cadangan yang mengurangi piutang di neraca serta dicatat sebagai beban.",
+                "Jika sebuah distributor memiliki piutang Rp100.000.000 dan memperkirakan 3% di antaranya tidak akan tertagih, distributor itu mencatat beban Rp3.000.000. Jika perkiraannya 8%, bebannya menjadi Rp8.000.000. Satu penilaian itu saja mengubah laba yang dilaporkan sebesar Rp5.000.000, padahal pelanggan dan tagihannya sama persis.",
+                "Cadangan yang terlalu kecil membuat laba terlihat bagus hari ini dan mendorong kabar buruknya ke tahun berikutnya. Cadangan yang terlalu besar melakukan kebalikannya. Akuntansi yang baik mengejar perkiraan yang paling wajar berdasarkan riwayat pembayaran dan kondisi saat ini."
+            ]
+        },
+        {
+            sectionTitle: "Yang Tidak Diubah oleh Metode",
+            paragraphs: [
+                "Dari semua contoh di atas, ada satu hal yang tetap sama: kas. Metode akuntansi mengubah waktu dan cara mengukur laba serta aset, tetapi tidak mengubah berapa uang yang benar-benar masuk dan keluar. Sepanjang umur penuh sebuah aset atau kontrak, totalnya biasanya berakhir sama.",
+                "Karena itu laporan arus kas sangat berguna sebagai pembanding. Jika sebuah perusahaan terus melaporkan laba yang naik sementara arus kas operasinya tetap lemah, layak ditanyakan metode dan estimasi mana yang sedang menopang laba itu."
+            ]
+        },
+        {
+            sectionTitle: "Kenapa Konsistensi dan Pengungkapan Penting",
+            paragraphs: [
+                "Karena pilihan metode memengaruhi angka, standar mewajibkan dua hal. Pertama, konsistensi: usaha sebaiknya memakai metode yang sama dari periode ke periode, supaya tahun ini bisa dibandingkan dengan tahun lalu. Perubahan hanya boleh dilakukan jika menghasilkan informasi yang lebih andal atau lebih relevan, dan menurut PSAK 208 (sebelumnya PSAK 25) angka periode sebelumnya biasanya disajikan kembali supaya perbandingannya tetap adil.",
+                "Kedua, pengungkapan. Setiap laporan keuangan dilengkapi catatan atas laporan keuangan yang menjelaskan kebijakan akuntansi yang dipakai: metode persediaan, metode dan masa manfaat penyusutan, cara pengakuan pendapatan, dan cara menilai piutang. Catatan ini bukan pelengkap. Catatan inilah petunjuk untuk membaca angka-angkanya.",
+                "Saat membandingkan dua perusahaan, periksa dulu kebijakan akuntansinya. Perusahaan yang memakai FIFO di masa harga naik belum tentu lebih efisien daripada yang memakai rata-rata tertimbang. Bisa jadi perusahaan itu hanya bercerita dengan lensa yang berbeda."
+            ]
+        },
+        {
+            sectionTitle: "Kesimpulan",
+            paragraphs: [
+                "Laporan keuangan bukan foto langsung dari kenyataan. Laporan keuangan adalah kenyataan yang diukur dengan seperangkat aturan, dan sebagian aturan itu memberi ruang untuk memilih. Pilihan basis kas atau akrual, metode persediaan, metode penyusutan, waktu pengakuan pendapatan, dan estimasi kerugian kredit semuanya membentuk laba dan posisi keuangan yang dilaporkan sebuah usaha.",
+                "Bagi pemilik usaha, artinya pilihlah metode yang mencerminkan cara usaha benar-benar berjalan, lalu pakai secara konsisten. Bagi pembaca laporan, artinya jangan pernah berhenti di angka laba bersih. Baca catatannya, bandingkan dengan arus kas, dan tanyakan apa yang akan berubah seandainya metode lain yang dipakai."
+            ]
+        }
+    ]
 }
 
 };
